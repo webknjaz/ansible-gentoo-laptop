@@ -1,0 +1,14 @@
+---
+# defaults file for gentoo-apps
+emerge_load_average: 4
+emerge_jobs_number: 9
+ebuilds:
+- app-emulation/docker
+- awesome
+- git
+- gentoo-sources
+- htop
+- layman
+#- lxc
+- neovim
+- rust-bin

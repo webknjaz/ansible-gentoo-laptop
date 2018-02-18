@@ -1,0 +1,8 @@
+---
+- name: Set up wk user on gentoo laptop
+  hosts: laptop
+  become: yes
+  become_user: wk
+  tasks:
+  - import_role:
+      name: gentoo-userspace

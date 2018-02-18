@@ -1,0 +1,7 @@
+---
+- name: Set up gentoo laptop
+  hosts: laptop
+  become: yes
+  tasks:
+  - import_role:
+      name: gentoo-apps

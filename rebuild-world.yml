@@ -1,0 +1,14 @@
+---
+- name: Do gentoo world rebuild
+  hosts: laptop
+  become: yes
+  tasks:
+  - name: Rebuild the @world
+    portage:
+      name: "@world"
+      state: emerged
+      update: yes
+      verbose: yes
+      newuse: yes
+      loadavg: 4
+      jobs: 9

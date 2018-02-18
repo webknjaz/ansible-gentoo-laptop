@@ -1,0 +1,27 @@
+---
+# tasks file for gentoo-apps
+- name: Merge ebuilds
+  portage:
+    package: "{{ ebuilds }}"
+    state: emerged
+    update: yes
+    verbose: yes
+    newuse: yes
+    loadavg: "{{ emerge_load_average }}"
+    jobs: "{{ emerge_jobs_number }}"
+- name: Add wk to docker group
+  user:
+    append: yes
+    comment: Sviat
+    createhome: yes
+    group: wk
+    groups:
+    - docker
+    name: wk
+    shell: /bin/zsh
+    state: present
+- name: Enable and start docker service
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
