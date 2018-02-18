@@ -1,1 +1,0 @@
-# ansible-gentoo-laptop
