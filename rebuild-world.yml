@@ -7,6 +7,7 @@
     portage:
       name: "@world"
       state: emerged
+      deep: yes
       update: yes
       verbose: yes
       newuse: yes
