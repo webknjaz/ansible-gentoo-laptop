@@ -5,6 +5,7 @@ emerge_jobs_number: 9
 ebuilds:
 - app-emulation/docker
 - awesome
+- bind-tools
 - git
 - gentoo-sources
 - htop
