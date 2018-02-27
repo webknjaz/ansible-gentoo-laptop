@@ -16,6 +16,10 @@
   template:
     src: zshrc.zsh-template
     dest: ~/.zshrc
+- name: Put Awesome WM enabled .xinitrc config in place
+  template:
+    src: xinitrc-template
+    dest: ~/.xinitrc
 - name: Ensure Vagga installed
   become_user: root
   shell: "curl -sSf https://files.zerogw.com/vagga/vagga-install{{ '-testing' if vagga_testing else '' }}.sh | sh"

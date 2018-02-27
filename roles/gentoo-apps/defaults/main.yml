@@ -9,7 +9,10 @@ ebuilds:
 - git
 - gentoo-sources
 - htop
+- i3lock
 - layman
 #- lxc
+- lxdm
 - neovim
 - rust-bin
+- xautolock
