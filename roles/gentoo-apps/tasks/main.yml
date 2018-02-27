@@ -25,3 +25,5 @@
     name: docker
     enabled: yes
     state: started
+  register: docker_start_srv
+  failed_when: "docker_start_srv.failed and 'Service is in unknown state' not in docker_start_srv.msg"
