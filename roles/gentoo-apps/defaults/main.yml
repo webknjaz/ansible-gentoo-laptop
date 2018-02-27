@@ -16,3 +16,4 @@ ebuilds:
 - neovim
 - rust-bin
 - xautolock
+- xorg-x11
