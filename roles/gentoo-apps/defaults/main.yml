@@ -14,6 +14,7 @@ ebuilds:
 #- lxc
 - lxdm
 - neovim
+- networkmanager
 - rust-bin
 - xautolock
 - xorg-x11
