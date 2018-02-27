@@ -20,6 +20,15 @@
   template:
     src: xinitrc-template
     dest: ~/.xinitrc
+- name: Create Awesome WM config dir within userspace
+  file:
+    dest: ~/.config/awesome
+    state: directory
+- name: Put Awesome WM resource script in place
+  file:
+    src: awesome-rc.lua-template
+    dest: ~/.config/awesome/rc.lua
+    state: file
 - name: Ensure Vagga installed
   become_user: root
   shell: "curl -sSf https://files.zerogw.com/vagga/vagga-install{{ '-testing' if vagga_testing else '' }}.sh | sh"
