@@ -34,3 +34,10 @@
     state: started
   register: lxdm_start_srv
   failed_when: "lxdm_start_srv.failed and 'Service is in unknown state' not in lxdm_start_srv.msg"
+- name: Enable and start NetworkManager service
+  systemd:
+    name: NetworkManager
+    enabled: yes
+    state: started
+  register: nm_start_srv
+  failed_when: "nm_start_srv.failed and 'Service is in unknown state' not in nm_start_srv.msg"
