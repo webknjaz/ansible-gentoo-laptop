@@ -8,6 +8,7 @@ ebuilds:
 - bind-tools
 - git
 - gentoo-sources
+- google-chrome
 - htop
 - i3lock
 - layman
