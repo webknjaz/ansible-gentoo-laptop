@@ -18,5 +18,6 @@ ebuilds:
 - networkmanager
 - rust-bin
 - st
+- tmux
 - xautolock
 - xorg-x11
