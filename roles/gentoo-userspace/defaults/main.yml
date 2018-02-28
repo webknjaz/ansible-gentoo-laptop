@@ -3,3 +3,9 @@ vagga_testing: no
 git_options:
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
+oh_my_zsh:
+  plugins:
+  - git
+  - pyenv
+  - ssh-agent
+  - gpg-agent
