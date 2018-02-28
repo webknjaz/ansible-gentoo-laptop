@@ -16,5 +16,6 @@ ebuilds:
 - neovim
 - networkmanager
 - rust-bin
+- st
 - xautolock
 - xorg-x11
