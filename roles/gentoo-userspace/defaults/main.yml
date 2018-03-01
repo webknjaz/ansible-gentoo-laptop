@@ -4,6 +4,7 @@ git_options:
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
 oh_my_zsh:
+  editor: nvim
   plugins:
   - git
   - pyenv
