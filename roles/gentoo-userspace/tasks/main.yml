@@ -44,3 +44,35 @@
     (sysctl_cmd.rc == 0 and
      'kernel.unprivileged_userns_clone = 0'
      in sysctl_cmd.stdout_lines)
+- name: Create experiments dir
+  file:
+    dest: "{{ code_workspace.source_dir }}/experiments"
+    state: directory
+- name: Sync github.com repos
+  git:
+    clone: yes
+    dest: "{{ code_workspace.source_dir }}/github/{{ item }}"
+    recursive: yes
+    repo: "ssh://git@github.com/{{ item }}.git"
+    update: yes
+  with_items: "{{ code_workspace.repos.github }}"
+  when: code_workspace.repos.github
+  when: "'github' in code_workspace.repos"
+- name: Sync bitbucket.org repos
+  git:
+    clone: yes
+    dest: "{{ code_workspace.source_dir }}/bitbucket/{{ item }}"
+    recursive: yes
+    repo: "ssh://git@bitbucket.org/{{ item }}.git"
+    update: yes
+  with_items: "{{ code_workspace.repos.bitbucket }}"
+  when: "'bitbucket' in code_workspace.repos"
+- name: Sync gitlab.org repos
+  git:
+    clone: yes
+    dest: "{{ code_workspace.source_dir }}/gitlab/{{ item }}"
+    recursive: yes
+    repo: "ssh://git@gitlab.org/{{ item }}.git"
+    update: yes
+  with_items: "{{ code_workspace.repos.gitlab }}"
+  when: "'gitlab' in code_workspace.repos"

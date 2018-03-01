@@ -10,3 +10,9 @@ oh_my_zsh:
   - pyenv
   - ssh-agent
   - gpg-agent
+code_workspace:
+  source_dir: ~/src
+  repos:
+    github:
+    - ansible/ansible
+    bitbucket: []
