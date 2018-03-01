@@ -56,7 +56,6 @@
     repo: "ssh://git@github.com/{{ item }}.git"
     update: yes
   with_items: "{{ code_workspace.repos.github }}"
-  when: code_workspace.repos.github
   when: "'github' in code_workspace.repos"
 - name: Sync bitbucket.org repos
   git:
