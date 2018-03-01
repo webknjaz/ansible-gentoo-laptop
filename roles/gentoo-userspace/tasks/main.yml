@@ -48,30 +48,13 @@
   file:
     dest: "{{ code_workspace.source_dir }}/experiments"
     state: directory
-- name: Sync github.com repos
+- name: Sync source code repos
   git:
     clone: yes
-    dest: "{{ code_workspace.source_dir }}/github/{{ item }}"
+    dest: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
     recursive: yes
-    repo: "ssh://git@github.com/{{ item }}.git"
+    repo: "ssh://git@{{ item.0.fqdn }}/{{ item.1 }}.git"
     update: yes
-  with_items: "{{ code_workspace.repos.github }}"
-  when: "'github' in code_workspace.repos"
-- name: Sync bitbucket.org repos
-  git:
-    clone: yes
-    dest: "{{ code_workspace.source_dir }}/bitbucket/{{ item }}"
-    recursive: yes
-    repo: "ssh://git@bitbucket.org/{{ item }}.git"
-    update: yes
-  with_items: "{{ code_workspace.repos.bitbucket }}"
-  when: "'bitbucket' in code_workspace.repos"
-- name: Sync gitlab.org repos
-  git:
-    clone: yes
-    dest: "{{ code_workspace.source_dir }}/gitlab/{{ item }}"
-    recursive: yes
-    repo: "ssh://git@gitlab.org/{{ item }}.git"
-    update: yes
-  with_items: "{{ code_workspace.repos.gitlab }}"
-  when: "'gitlab' in code_workspace.repos"
+  with_subelements:
+  - "{{ code_workspace.repos }}"
+  - slugs

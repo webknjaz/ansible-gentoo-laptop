@@ -13,6 +13,10 @@ oh_my_zsh:
 code_workspace:
   source_dir: ~/src
   repos:
-    github:
-    - ansible/ansible
-    bitbucket: []
+    - name: github
+      fqdn: github.com
+      slugs:
+      - ansible/ansible
+    - name: bitbucket
+      fqdn: bitbucket.org
+      slugs: []
