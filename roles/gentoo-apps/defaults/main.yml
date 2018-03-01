@@ -16,6 +16,8 @@ ebuilds:
 - lxdm
 - neovim
 - networkmanager
+- pavucontrol
+- pulseaudio
 - rust-bin
 - st
 - tmux
