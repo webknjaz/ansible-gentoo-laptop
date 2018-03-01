@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
 
-xautolock -time 5 -locker "i3lock -c 000000" &
+xautolock -time 5 -locker "i3lock -c 000000 -f" &
 xset +dpms dpms 20 100 &
 exec awesome
