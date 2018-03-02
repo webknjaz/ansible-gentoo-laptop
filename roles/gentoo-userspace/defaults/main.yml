@@ -17,6 +17,9 @@ code_workspace:
       fqdn: github.com
       slugs:
       - ansible/ansible
+      - cherrypy/cheroot
+      - cherrypy/cherrypy
+      - cherrypy/magicbus
     - name: bitbucket
       fqdn: bitbucket.org
       slugs: []
