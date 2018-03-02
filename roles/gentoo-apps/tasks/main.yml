@@ -41,3 +41,13 @@
     state: started
   register: nm_start_srv
   failed_when: "nm_start_srv.failed and 'Service is in unknown state' not in nm_start_srv.msg"
+- name: Enable and start CUPS services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  register: cups_start_srv
+  failed_when: "cups_start_srv.failed and 'Service is in unknown state' not in cups_start_srv.msg"
+  with_items:
+  - cups
+  - cups-browsed
