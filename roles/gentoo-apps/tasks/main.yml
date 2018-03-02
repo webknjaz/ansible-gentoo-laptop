@@ -51,3 +51,12 @@
   with_items:
   - cups
   - cups-browsed
+- name: Enable and start systemd services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  register: start_srv
+  failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
+  with_items:
+  - systemd-timesyncd
