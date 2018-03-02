@@ -12,6 +12,7 @@ ebuilds:
 - htop
 - i3lock
 - layman
+- libgnomecups
 #- lxc
 - lxdm
 - neovim
