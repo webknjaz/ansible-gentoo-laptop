@@ -1,6 +1,11 @@
 ---
 vagga_testing: no
 nvm_version: v0.33.8
+node_versions:
+  install:
+  - &def_node_ver v9.8.0
+  - 8
+  default: *def_node_ver
 git_options:
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
