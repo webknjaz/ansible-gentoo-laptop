@@ -27,6 +27,7 @@ code_workspace:
       - cherrypy/cheroot
       - cherrypy/cherrypy
       - cherrypy/magicbus
+      - itkpi/beej-s-guide-to-network
     - name: bitbucket
       fqdn: bitbucket.org
       slugs: []
