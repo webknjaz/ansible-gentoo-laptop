@@ -12,6 +12,11 @@
     recursive: yes
     repo: git://github.com/robbyrussell/oh-my-zsh.git
     update: yes
+- name: Install nvm
+  git:
+    repo: https://github.com/creationix/nvm.git
+    dest: ~/.nvm
+    version: "{{ nvm_version }}"
 - name: Put oh-my-zsh enabled .zshrc config in place
   template:
     src: zshrc.zsh-template
