@@ -1,0 +1,23 @@
+[sssd]
+config_file_version = 2
+services = pam
+domains = redhat.com
+
+[nss]
+
+[pam]
+
+[domain/redhat.com]
+id_provider = ldap
+ldap_search_base = dc=redhat,dc=com
+
+auth_provider = krb5
+krb5_realm = REDHAT.COM
+krb5_store_password_if_offline = true
+
+access_provider = simple
+simple_allow_users = rhatkerberosid
+
+cache_credentials = true
+override_homedir = /home/%u
+lookup_family_order = ipv4_only

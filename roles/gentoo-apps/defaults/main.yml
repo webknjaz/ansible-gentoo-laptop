@@ -21,6 +21,7 @@ ebuilds:
 - pavucontrol
 - pulseaudio
 - rust-bin
+- sssd
 - st
 - tmux
 - xautolock

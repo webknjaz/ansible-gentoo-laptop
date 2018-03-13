@@ -60,3 +60,19 @@
   failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
   with_items:
   - systemd-timesyncd
+- name: Set up Kerberos
+  template:
+    src: krb5.conf.template
+    dest: /etc/krb5.conf
+- name: Set up sssd
+  template:
+    src: sssd.conf.template
+    dest: /etc/sssd/sssd.conf
+    mode: u=rw,g=,o=
+- name: Enable and start sssd service
+  systemd:
+    name: sssd
+    enabled: yes
+    state: started
+  register: start_srv
+  failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
