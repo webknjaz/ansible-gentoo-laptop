@@ -17,6 +17,7 @@ ebuilds:
 - lxdm
 - neovim
 - networkmanager
+- networkmanager-openvpn
 - pavucontrol
 - pulseaudio
 - rust-bin
