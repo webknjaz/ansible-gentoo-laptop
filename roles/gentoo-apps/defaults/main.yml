@@ -11,6 +11,7 @@ ebuilds:
 - google-chrome
 - htop
 - i3lock
+- irssi
 - layman
 - libgnomecups
 #- lxc
