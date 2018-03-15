@@ -28,6 +28,7 @@ code_workspace:
       - cherrypy/cherrypy
       - cherrypy/magicbus
       - itkpi/beej-s-guide-to-network
+      - pyenv/pyenv
     - name: bitbucket
       fqdn: bitbucket.org
       slugs: []
