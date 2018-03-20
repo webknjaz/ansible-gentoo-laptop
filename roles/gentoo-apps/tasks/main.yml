@@ -48,6 +48,13 @@
     path: /etc/cups/cups-browsed.conf
     regexp: ^BrowsePoll\scups.brq.redhat.com$
     state: present
+- name: Configure remote network printer naming in CUPS
+  lineinfile:
+    insertafter: "# LocalQueueNamingRemoteCUPS RemoteName"
+    line: LocalQueueNamingRemoteCUPS RemoteName
+    path: /etc/cups/cups-browsed.conf
+    regexp: ^LocalQueueNamingRemoteCUPS\sRemoteName$
+    state: present
 - name: Enable and start CUPS services
   systemd:
     name: "{{ item }}"
