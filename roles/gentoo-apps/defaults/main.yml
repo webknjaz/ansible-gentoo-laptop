@@ -7,6 +7,9 @@ ebuilds:
 - awesome
 - bind-tools
 - cndrvcups-common-lb
+- foomatic-db
+- foomatic-db-engine
+- foomatic-db-ppds
 - git
 - gentoo-sources
 - google-chrome
