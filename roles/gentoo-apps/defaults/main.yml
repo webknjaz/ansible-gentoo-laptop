@@ -27,6 +27,7 @@ ebuilds:
 - sic
 - sssd
 - st
+- telnet-bsd
 - tmux
 - xautolock
 - xorg-x11
