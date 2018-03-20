@@ -41,6 +41,13 @@
     state: started
   register: nm_start_srv
   failed_when: "nm_start_srv.failed and 'Service is in unknown state' not in nm_start_srv.msg"
+- name: Configure network printer lookup in CUPS
+  lineinfile:
+    insertafter: "# Use BrowsePoll to poll a particular CUPS server"
+    line: BrowsePoll cups.brq.redhat.com
+    path: /etc/cups/cups-browsed.conf
+    regexp: ^BrowsePoll\scups.brq.redhat.com$
+    state: present
 - name: Enable and start CUPS services
   systemd:
     name: "{{ item }}"

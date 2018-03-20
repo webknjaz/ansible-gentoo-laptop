@@ -6,9 +6,11 @@ ebuilds:
 - app-emulation/docker
 - awesome
 - bind-tools
+- cndrvcups-common-lb
 - git
 - gentoo-sources
 - google-chrome
+- gutenprint
 - htop
 - i3lock
 - irssi
