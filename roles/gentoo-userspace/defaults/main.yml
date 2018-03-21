@@ -11,6 +11,7 @@ git_options:
   gpg.program: gpg2
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
+  user.signingkey: 9345E8FEA89CA455
 oh_my_zsh:
   editor: nvim
   plugins:
