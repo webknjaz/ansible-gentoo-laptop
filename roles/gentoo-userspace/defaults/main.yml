@@ -7,6 +7,8 @@ node_versions:
   - 8
   default: *def_node_ver
 git_options:
+  commit.gpgsign: true
+  gpg.program: gpg2
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
 oh_my_zsh:
