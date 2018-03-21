@@ -23,6 +23,8 @@ ebuilds:
 - libgnomecups
 #- lxc
 - lxdm
+- luajson
+- luasocket
 - neovim
 - networkmanager
 - networkmanager-openvpn

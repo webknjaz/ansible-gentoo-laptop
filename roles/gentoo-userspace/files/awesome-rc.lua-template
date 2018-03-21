@@ -15,6 +15,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 -- Instanciate a battery widget
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 
 -- {{{ Error handling
@@ -221,6 +222,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+            weather_widget,
             batteryarc_widget,
             mytextclock,
             s.mylayoutbox,
