@@ -1,4 +1,8 @@
 -- vi: ft=lua
+-- Set up env vars for widgets
+local posix = require("posix")
+posix.setenv("AWW_WEATHER_CITY", "Brno, CZ")
+--os.setenv("AWW_WEATHER_API_KEY", "--------")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")

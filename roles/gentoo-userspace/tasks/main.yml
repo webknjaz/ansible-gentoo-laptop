@@ -41,6 +41,15 @@
     recursive: yes
     repo: git://github.com/streetturtle/awesome-wm-widgets.git
     update: yes
+- name: Install bit32 lua lib
+  become_user: root
+  shell: luarocks install bit32
+  args:
+    creates: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
+- file:
+    src: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
+    dest: ~/.config/awesome/bit32.so
+    state: link
 - name: Put Awesome WM resource script in place
   copy:
     src: awesome-rc.lua-template

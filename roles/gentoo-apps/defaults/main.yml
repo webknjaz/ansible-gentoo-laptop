@@ -25,6 +25,8 @@ ebuilds:
 #- lxc
 - lxdm
 - luajson
+- luaposix
+- luarocks
 - luasocket
 - neovim
 - networkmanager
