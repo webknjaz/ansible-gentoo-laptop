@@ -34,6 +34,13 @@
   file:
     dest: ~/.config/awesome
     state: directory
+- name: Get Awesome WM widgets into config dir
+  git:
+    clone: yes
+    dest: ~/.config/awesome/awesome-wm-widgets
+    recursive: yes
+    repo: git://github.com/streetturtle/awesome-wm-widgets.git
+    update: yes
 - name: Put Awesome WM resource script in place
   copy:
     src: awesome-rc.lua-template

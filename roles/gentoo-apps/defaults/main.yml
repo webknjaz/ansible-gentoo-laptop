@@ -3,7 +3,9 @@
 emerge_load_average: 4
 emerge_jobs_number: 9
 ebuilds:
+- acpi
 - app-emulation/docker
+- arc-theme
 - awesome
 - bind-tools
 - cndrvcups-common-lb
