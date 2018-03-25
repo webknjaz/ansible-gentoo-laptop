@@ -74,6 +74,14 @@
   file:
     dest: "{{ code_workspace.source_dir }}/experiments"
     state: directory
+- name: Populate user's known_hosts file
+  known_hosts:
+    state: present
+    host: "{{ item.0.fqdn }}"
+    key: "{{ item.0.fqdn }} {{ item.1 }}"
+  with_subelements:
+  - "{{ code_workspace.repos }}"
+  - ssh_host_keys
 - name: Sync source code repos
   git:
     clone: yes
