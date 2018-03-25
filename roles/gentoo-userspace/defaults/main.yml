@@ -32,8 +32,10 @@ code_workspace:
       - cherrypy/cheroot
       - cherrypy/cherrypy
       - cherrypy/magicbus
+      - dokku/dokku-mariadb
       - itkpi/beej-s-guide-to-network
       - pyenv/pyenv
+      - webknjaz/mrgall-ansible
     - name: bitbucket
       fqdn: bitbucket.org
       ssh_host_keys:
