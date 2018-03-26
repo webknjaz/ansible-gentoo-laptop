@@ -13,3 +13,10 @@
       newuse: yes
       loadavg: 4
       jobs: 9
+  - name: Rebuild the @preserved-rebuild
+    portage:
+      name: "@preserved-rebuild"
+      state: emerged
+      verbose: yes
+      loadavg: 4
+      jobs: 9
