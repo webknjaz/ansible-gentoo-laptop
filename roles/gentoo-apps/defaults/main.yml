@@ -31,7 +31,9 @@ ebuilds:
 - neovim
 - networkmanager
 - networkmanager-openvpn
+- parcellite
 - pavucontrol
+- pcsc-lite
 - pulseaudio
 - rust-bin
 - sic
