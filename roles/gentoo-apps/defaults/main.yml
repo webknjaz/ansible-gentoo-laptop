@@ -1,5 +1,5 @@
 ---
-# defaults file for gentoo-apps
+vagga_testing: no
 emerge_load_average: 4
 emerge_jobs_number: 9
 ebuilds:
