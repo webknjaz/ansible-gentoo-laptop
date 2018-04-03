@@ -9,6 +9,22 @@
     newuse: yes
     loadavg: "{{ emerge_load_average }}"
     jobs: "{{ emerge_jobs_number }}"
+- name: Ensure Vagga installed
+  become_user: root
+  shell: "curl -sSf https://files.zerogw.com/vagga/vagga-install{{ '-testing' if vagga_testing else '' }}.sh | sh"
+  args:
+    creates: /usr/bin/vagga
+- name: Check kernel.unprivileged_userns_clone sysctl value
+  become_user: root
+  shell: sysctl kernel.unprivileged_userns_clone
+  register: sysctl_cmd
+  failed_when: >
+    (sysctl_cmd.rc != 0 and
+     'sysctl: cannot stat /proc/sys/kernel/unprivileged_userns_clone: No such file or directory'
+     not in sysctl_cmd.stderr_lines) or
+    (sysctl_cmd.rc == 0 and
+     'kernel.unprivileged_userns_clone = 0'
+     in sysctl_cmd.stdout_lines)
 - name: Add wk to docker group
   user:
     append: yes
