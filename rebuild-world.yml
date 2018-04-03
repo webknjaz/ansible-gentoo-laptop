@@ -4,6 +4,7 @@
   become: yes
   tasks:
   - name: Rebuild the @world
+    notify: ensure-services-started
     portage:
       name: "@world"
       state: emerged
@@ -14,6 +15,7 @@
       loadavg: 4
       jobs: 9
   - name: Rebuild the @preserved-rebuild
+    notify: ensure-services-started
     portage:
       name: "@preserved-rebuild"
       state: emerged

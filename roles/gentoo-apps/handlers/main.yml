@@ -1,2 +1,24 @@
 ---
-# handlers file for gentoo-apps
+
+# This must go first to preserve order
+- name: Reload service definitions
+  listen: reload-srv
+  systemd:
+    daemon_reload: yes
+
+- name: Enable and start systemd services
+  listen: ensure-services-started
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  register: start_srv
+  failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
+  with_items:
+  - docker
+  - lxdm  # LightDM
+  - NetworkManager
+  - cups  # CUPS
+  - cups-browsed  # CUPS network printers
+  - systemd-timesyncd  # NTP sync
+  - sssd  # Kerberos?
