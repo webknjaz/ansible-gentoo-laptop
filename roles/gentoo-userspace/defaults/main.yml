@@ -30,6 +30,8 @@ code_workspace:
       - aio-libs/aiohttp
       - aio-libs/multidict
       - ansible/ansible
+      - ansible/foreman-test-container
+      - benjaminp/six
       - cherrypy/cheroot
       - cherrypy/cherrypy
       - cherrypy/magicbus
