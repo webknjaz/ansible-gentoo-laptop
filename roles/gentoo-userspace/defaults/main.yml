@@ -32,6 +32,7 @@ code_workspace:
       - ansible/ansible
       - ansible/foreman-test-container
       - benjaminp/six
+      - candlepin/candlepin
       - cherrypy/cheroot
       - cherrypy/cherrypy
       - cherrypy/magicbus
