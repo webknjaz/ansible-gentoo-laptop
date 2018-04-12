@@ -355,6 +355,8 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86AudioMute", function () awful.spawn("amixer -D pulse set Master +1 toggle") end, {description = "mute volume", group = "custom"}),
 
     -- Screen brightness:
+    awful.key({ modkey          }, ";", function () awful.spawn("xbacklight -inc 20") end, {description = "increase screen brightness", group = "custom"}),
+    awful.key({ modkey, "Shift" }, ";", function () awful.spawn("xbacklight -dec 20") end, {description = "decrease screen brightness", group = "custom"}),
     awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 20") end, {description = "increase screen brightness", group = "custom"}),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 20") end, {description = "decrease screen brightness", group = "custom"})
 )
