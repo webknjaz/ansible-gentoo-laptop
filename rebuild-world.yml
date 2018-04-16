@@ -3,6 +3,9 @@
   hosts: laptop
   become: yes
   tasks:
+  - name: Sync portage/layman trees and index ebuilds
+    eix:
+      action: sync
   - name: Rebuild the @world
     notify: ensure-services-started
     portage:
