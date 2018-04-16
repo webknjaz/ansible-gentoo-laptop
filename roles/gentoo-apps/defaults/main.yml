@@ -43,6 +43,7 @@ ebuilds:
 - st
 - telnet-bsd
 - tmux
+- unicode-emoji
 - wmname
 - xautolock
 - xorg-x11
