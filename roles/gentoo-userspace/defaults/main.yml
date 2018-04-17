@@ -29,6 +29,7 @@ code_workspace:
       slugs:
       - aio-libs/aiohttp
       - aio-libs/multidict
+      - amol-/dukpy
       - ansible/ansible
       - ansible/foreman-test-container
       - benjaminp/six
