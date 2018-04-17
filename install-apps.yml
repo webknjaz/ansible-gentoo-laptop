@@ -3,5 +3,8 @@
   hosts: laptop
   become: yes
   tasks:
-  - import_role:
-      name: gentoo-apps
+  - include_role:
+      name: "{{ item }}"
+    with_items:
+    - gentoo-services-ctl
+    - gentoo-apps

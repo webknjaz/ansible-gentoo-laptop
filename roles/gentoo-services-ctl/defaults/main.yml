@@ -1,0 +1,9 @@
+---
+systemd_services:
+- docker
+- lxdm  # LightDM
+- NetworkManager
+- cups  # CUPS
+- cups-browsed  # CUPS network printers
+- systemd-timesyncd  # NTP sync
+- sssd  # Kerberos?

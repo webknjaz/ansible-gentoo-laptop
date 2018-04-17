@@ -3,11 +3,15 @@
   hosts: laptop
   become: yes
   tasks:
+  - import_role:
+      name: gentoo-services-ctl
   - name: Sync portage/layman trees and index ebuilds
     eix:
       action: sync
   - name: Rebuild the @world
-    notify: ensure-services-started
+    notify:
+    - ensure-services-started
+    - ensure-services-reloaded
     portage:
       name: "@world"
       state: emerged
@@ -18,7 +22,9 @@
       loadavg: 4
       jobs: 9
   - name: Rebuild the @preserved-rebuild
-    notify: ensure-services-started
+    notify:
+    - ensure-services-started
+    - ensure-services-reloaded
     portage:
       name: "@preserved-rebuild"
       state: emerged
