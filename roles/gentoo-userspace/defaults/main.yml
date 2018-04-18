@@ -40,6 +40,19 @@ code_workspace:
       - dokku/dokku-mariadb
       - itkpi/beej-s-guide-to-network
       - pyenv/pyenv
+      - pypa/auditwheel
+      - pypa/get-pip
+      - pypa/manylinux
+      - pypa/pip
+      - pypa/pipenv
+      - pypa/pipfile
+      - pypa/setuptools
+      - pypa/setuptools_scm
+      - pypa/ssl
+      - pypa/twine
+      - pypa/virtualenv
+      - pypa/warehouse
+      - pypa/wheel
       - webknjaz/mrgall-ansible
     - name: bitbucket
       fqdn: bitbucket.org
