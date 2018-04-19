@@ -31,3 +31,23 @@
       verbose: yes
       loadavg: 4
       jobs: 9
+  - name: Rebuild the @module-rebuild
+    notify:
+    - ensure-services-started
+    - ensure-services-reloaded
+    portage:
+      name: "@module-rebuild"
+      state: emerged
+      verbose: yes
+      loadavg: 4
+      jobs: 9
+  - name: Rebuild the @x11-module-rebuild
+    notify:
+    - ensure-services-started
+    - ensure-services-reloaded
+    portage:
+      name: "@x11-module-rebuild"
+      state: emerged
+      verbose: yes
+      loadavg: 4
+      jobs: 9
