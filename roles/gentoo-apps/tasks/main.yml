@@ -10,8 +10,8 @@
     loadavg: "{{ emerge_load_average }}"
     jobs: "{{ emerge_jobs_number }}"
   notify:
-  - reload-srv
   - ensure-services-started
+  - ensure-services-reloaded
 
 - name: Ensure Vagga installed
   become_user: root
