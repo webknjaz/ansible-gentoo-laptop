@@ -9,6 +9,7 @@ ebuilds:
 - arc-theme
 - awesome
 - bind-tools
+- bbswitch
 - cndrvcups-common-lb
 - fira-code
 - foomatic-db
@@ -20,6 +21,7 @@ ebuilds:
 - gutenprint
 - htop
 - i3lock
+- intel-ocl-sdk
 - irssi
 - keybase
 - layman
