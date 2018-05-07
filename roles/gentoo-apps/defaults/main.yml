@@ -40,6 +40,7 @@ ebuilds:
 - pavucontrol
 - pcsc-lite
 - pulseaudio
+- qrencode
 - rust-bin
 - sic
 - sssd
