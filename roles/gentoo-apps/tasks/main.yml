@@ -29,6 +29,15 @@
     (sysctl_cmd.rc == 0 and
      'kernel.unprivileged_userns_clone = 0'
      in sysctl_cmd.stdout_lines)
+- name: Set up subuid/subgid
+  lineinfile:
+    create: yes
+    line: wk:100000:65536
+    path: /etc/sub{{ item }}id
+    state: present
+  with_items:
+  - u
+  - g
 
 - name: Add wk to docker group
   user:
