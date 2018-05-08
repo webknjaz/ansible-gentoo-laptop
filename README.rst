@@ -12,3 +12,10 @@ Rebuild world::
 Configure userspace stuff::
 
     ansible-playbook -i hosts --connection=local configure-userspace.yml
+
+Prerequisites
+-------------
+
+Before using, make sure you have ``kbfs`` running::
+
+    kbfsfuse
