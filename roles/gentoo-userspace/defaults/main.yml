@@ -39,6 +39,7 @@ code_workspace:
       - cherrypy/magicbus
       - dokku/dokku-mariadb
       - itkpi/beej-s-guide-to-network
+      - jctanner/ansible-reproducers
       - pyenv/pyenv
       - pypa/auditwheel
       - pypa/get-pip
