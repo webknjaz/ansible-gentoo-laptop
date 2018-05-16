@@ -1,0 +1,4 @@
+{
+    "AuthServerWhitelist": "*.redhat.com",
+    "AuthNegotiateDelegateWhitelist": "*.redhat.com"
+}

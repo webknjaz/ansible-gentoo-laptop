@@ -83,3 +83,27 @@
     mode: u=rw,g=,o=
   notify:
   - ensure-services-started
+
+- name: Create config dir structure for Google Chrome and Chromium
+  file:
+    dest: "{{ item.key }}"
+    mode: "{{ item.value }}"
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+  with_dict:
+    /etc/chromium/policies/managed/: u+rwx,g=rx,o=rx
+    /etc/chromium/policies/recommended/: u+rwx,g=rwx,o=rx
+    /etc/opt/chrome/policies/managed/: u+rwx,g=rx,o=rx
+    /etc/opt/chrome/policies/recommended/: u+rwx,g=rwx,o=rx
+- name: Set up policies with whitelisted Kerberos servers for Google Chrome and Chromium
+  copy:
+    src: chrome-redhat-policy.json
+    dest: "{{ item }}"
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+  with_items:
+  - /etc/chromium/policies/managed/redhat.json
+  - /etc/opt/chrome/policies/managed/redhat.json
