@@ -1,5 +1,6 @@
 ---
 systemd_services:
+- acpid
 - docker
 - lxdm  # LightDM
 - NetworkManager
