@@ -25,6 +25,7 @@ ebuilds:
 - irssi
 - keybase
 - layman
+- libfprint
 - libgnomecups
 #- lxc
 - lxdm
