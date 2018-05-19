@@ -27,6 +27,7 @@ ebuilds:
 - layman
 - libfprint
 - libgnomecups
+- links
 #- lxc
 - lxdm
 - luajson
