@@ -1,10 +1,12 @@
 ---
-systemd_services:
+systemd_services_safe_restart:
 - acpid
-- docker
-- lxdm  # LightDM
 - NetworkManager
 - cups  # CUPS
 - cups-browsed  # CUPS network printers
 - systemd-timesyncd  # NTP sync
 - sssd  # Kerberos?
+
+systemd_services_unsafe_restart:
+- docker
+- lxdm  # LightDM

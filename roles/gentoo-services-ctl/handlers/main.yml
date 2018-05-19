@@ -18,13 +18,22 @@
     state: started
   register: start_srv
   failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
-  with_items: "{{ systemd_services }}"
+  with_items: "{{ systemd_services_safe_restart + systemd_services_unsafe_restart }}"
 
-- name: Restart systemd services
+- name: Reload systemd services
   listen: ensure-services-reloaded
   systemd:
     name: "{{ item }}"
-    state: reloaded
+    state: reloaded-or-restarted
   register: start_srv
   failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
-  with_items: "{{ systemd_services }}"
+  with_items: "{{ systemd_services_safe_restart }}"
+
+- name: Restart systemd services
+  listen: ensure-services-reloaded-unsafe
+  systemd:
+    name: "{{ item }}"
+    state: reloaded-or-restarted
+  register: start_srv
+  failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
+  with_items: "{{ systemd_services_safe_restart + systemd_services_unsafe_restart }}"
