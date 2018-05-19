@@ -1,0 +1,13 @@
+---
+- name: Control systemd services
+  hosts: laptop
+  become: yes
+  tasks:
+  - import_role:
+      name: gentoo-services-ctl
+  - debug:
+      msg: Restarting all services unsafely
+  - name: Restart services regardlessly
+    shell: /bin/true
+    notify:
+    - ensure-services-reloaded-unsafe
