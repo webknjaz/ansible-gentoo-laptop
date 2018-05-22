@@ -54,6 +54,7 @@ code_workspace:
       - pypa/virtualenv
       - pypa/warehouse
       - pypa/wheel
+      - travis-ci/dpl
       - webknjaz/mrgall-ansible
     - name: bitbucket
       fqdn: bitbucket.org
