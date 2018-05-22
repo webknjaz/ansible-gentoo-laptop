@@ -82,6 +82,10 @@ class EixCmdFailedError(EixModuleError):
 
 
 class EixAnsibleModule(AnsibleModule):
+    @classmethod
+    def execute(cls):
+        cls().run()
+
     def __init__(self):
         super(EixAnsibleModule, self).__init__(
             argument_spec=dict(
@@ -158,4 +162,4 @@ class EixAnsibleModule(AnsibleModule):
 
 
 if __name__ == '__main__':
-    EixAnsibleModule().run()
+    EixAnsibleModule.execute()
