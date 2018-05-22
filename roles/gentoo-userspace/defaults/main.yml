@@ -56,6 +56,7 @@ code_workspace:
       - pypa/wheel
       - travis-ci/dpl
       - webknjaz/mrgall-ansible
+      - webknjaz/twitter-reporter
     - name: bitbucket
       fqdn: bitbucket.org
       ssh_host_keys:
