@@ -55,6 +55,7 @@ code_workspace:
       - pypa/warehouse
       - pypa/wheel
       - python/core-workflow
+      - python/miss-islington
       - travis-ci/dpl
       - webknjaz/mrgall-ansible
       - webknjaz/twitter-reporter
