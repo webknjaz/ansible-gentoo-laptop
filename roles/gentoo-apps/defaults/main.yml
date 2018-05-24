@@ -7,6 +7,7 @@ ebuilds:
 - alsa-utils
 - app-emulation/docker
 - arc-theme
+- asciinema
 - awesome
 - bind-tools
 - bbswitch
