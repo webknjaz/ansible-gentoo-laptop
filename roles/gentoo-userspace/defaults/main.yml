@@ -57,6 +57,7 @@ code_workspace:
       - python/core-workflow
       - python/miss-islington
       - travis-ci/dpl
+      - webknjaz/check-in
       - webknjaz/mrgall-ansible
       - webknjaz/twitter-reporter
     - name: bitbucket
