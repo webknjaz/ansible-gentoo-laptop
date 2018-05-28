@@ -38,6 +38,7 @@ ebuilds:
 - neovim
 - networkmanager
 - networkmanager-openvpn
+- noto
 - pam_krb5
 - parcellite
 - pavucontrol
