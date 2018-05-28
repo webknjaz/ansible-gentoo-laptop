@@ -51,6 +51,7 @@ ebuilds:
 - st
 - telnet-bsd
 - tmux
+- twemoji-color-font
 - unicode-emoji
 - wmname
 - xautolock
