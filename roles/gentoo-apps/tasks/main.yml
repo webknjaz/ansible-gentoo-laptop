@@ -84,6 +84,14 @@
   notify:
   - ensure-services-started
 
+- name: Set up X.Org X11 server subsystem
+  copy:
+    src: etc/X11/xorg.conf
+    dest: /etc/X11/xorg.conf
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+
 - name: Create config dir structure for Google Chrome and Chromium
   file:
     dest: "{{ item.key }}"
