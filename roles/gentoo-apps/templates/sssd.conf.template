@@ -23,3 +23,5 @@ override_homedir = /home/%u
 lookup_family_order = ipv4_only
 
 krb5_map_user = wk:ssydoren
+krb5_renewable_lifetime = 7d
+krb5_renew_interval = 30m
