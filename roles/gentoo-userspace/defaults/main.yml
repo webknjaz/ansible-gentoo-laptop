@@ -19,6 +19,8 @@ oh_my_zsh:
   - ssh-agent
   - gpg-agent
   - nvm
+  custom_plugins:
+    zsh-autosuggestions: git://github.com/zsh-users/zsh-autosuggestions.git
 code_workspace:
   source_dir: ~/src
   repos:

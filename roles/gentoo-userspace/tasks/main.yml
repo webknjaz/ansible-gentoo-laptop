@@ -12,6 +12,14 @@
     recursive: yes
     repo: git://github.com/robbyrussell/oh-my-zsh.git
     update: yes
+- name: Get oh-my-zsh custom plugins onto machine
+  git:
+    clone: yes
+    dest: ~/.oh-my-zsh/custom/plugins/{{ item.key }}
+    recursive: yes
+    repo: "{{ item.value }}"
+    update: yes
+  with_dict: "{{ oh_my_zsh.custom_plugins }}"
 - name: Install nvm
   git:
     repo: https://github.com/creationix/nvm.git

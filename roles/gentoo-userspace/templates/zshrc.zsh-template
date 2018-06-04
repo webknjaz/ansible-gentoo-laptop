@@ -60,6 +60,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   {{ oh_my_zsh.plugins | default([]) | join(' ') }}
+  {{ oh_my_zsh.custom_plugins.keys() | default([]) | join(' ') }}
 )
 
 source $ZSH/oh-my-zsh.sh
