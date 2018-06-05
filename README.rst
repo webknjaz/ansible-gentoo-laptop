@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.com/webknjaz/ansible-gentoo-laptop.svg?branch=master
+   :target: https://travis-ci.com/webknjaz/ansible-gentoo-laptop
+
 ansible-gentoo-laptop
 =====================
 
