@@ -40,6 +40,7 @@ code_workspace:
       - cherrypy/cherrypy
       - cherrypy/magicbus
       - dokku/dokku-mariadb
+      - gentoo/gentoo
       - itkpi/beej-s-guide-to-network
       - jctanner/ansible-reproducers
       - pyenv/pyenv
