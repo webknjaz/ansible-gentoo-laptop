@@ -44,6 +44,7 @@ code_workspace:
       - itkpi/beej-s-guide-to-network
       - jctanner/ansible-reproducers
       - pyenv/pyenv
+      - PyGithub/PyGithub
       - pypa/auditwheel
       - pypa/get-pip
       - pypa/manylinux
