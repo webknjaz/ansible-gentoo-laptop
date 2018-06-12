@@ -12,6 +12,7 @@ ebuilds:
 - bind-tools
 - bbswitch
 - cndrvcups-common-lb
+- dpkg
 - fira-code
 - foomatic-db
 - foomatic-db-engine
