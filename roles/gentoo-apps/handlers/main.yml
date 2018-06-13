@@ -1,3 +1,8 @@
 ---
-
-# handlers file for roles/gentoo-apps
+- name: Set up certificates
+  listen: update-ca-trust
+  command: update-ca-certificates
+  register: update_certs
+  changed_when: >
+    '0 added' not in update_certs.stdout or
+    '0 removed' not in update_certs.stdout

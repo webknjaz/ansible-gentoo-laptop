@@ -115,3 +115,40 @@
   with_items:
   - /etc/chromium/policies/managed/redhat.json
   - /etc/opt/chrome/policies/managed/redhat.json
+
+- name: Create a custom trusted CA certificates dir
+  file:
+    dest: "{{ item.key }}"
+    mode: "{{ item.value }}"
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+  with_dict:
+    /usr/local/share/ca-certificates/: u+rwx,g=rx,o=rx
+    /etc/pki/nssdb/: u+rwx,g=rx,o=rx
+- name: Getting Red Hat Legacy Root CA and IT Root CA
+  get_url:
+    url: https://password.corp.redhat.com/{{ item.value.filename }}.crt
+    dest: /usr/local/share/ca-certificates/{{ item.key }}.crt
+    checksum: sha256:{{ item.value.sha256sum }}
+  with_dict: "{{ ca_certificates }}"
+  notify:
+  - update-ca-trust
+- name: Verify downloaded Red Hat Legacy Root CA and IT Root CA
+  shell: >
+    openssl x509 -noout -in '/usr/local/share/ca-certificates/{{ item.key }}.crt' -fingerprint -sha256 | grep 'SHA256 Fingerprint={{ item.value.sha256fingerprint }}'
+  register: sha256fingerprint
+  changed_when: false
+  failed_when: >
+    sha256fingerprint.rc != 0 or
+    sha256fingerprint.stdout != (('SHA256 Fingerprint', item.value.sha256fingerprint) | join('='))
+  with_dict: "{{ ca_certificates }}"
+- name: Install CA certs into NSS database
+  # TODO: check out https://galaxy.ansible.com/pixelart/nssdb
+  shell: certutil -A -n '{{ item.key }}' -t 'T,T,T' -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/etc/pki/nssdb
+  with_dict: "{{ ca_certificates }}"
+- name: Install CA certs into per-user NSS database, used by Chrome/Firefox
+  become: no
+  shell: certutil -A -n '{{ item.key }}' -t 'T,T,T' -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/home/wk/.pki/nssdb
+  with_dict: "{{ ca_certificates }}"
