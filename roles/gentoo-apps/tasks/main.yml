@@ -128,6 +128,7 @@
     /usr/local/share/ca-certificates/: u+rwx,g=rx,o=rx
     /etc/pki/nssdb/: u+rwx,g=rx,o=rx
 - name: Create a custom trusted CA certificates wk user dir
+  become: no
   file:
     dest: /home/wk/.pki/nssdb/
     mode: u+rwx,g=rx,o=rx
