@@ -127,13 +127,11 @@
   with_dict:
     /usr/local/share/ca-certificates/: u+rwx,g=rx,o=rx
     /etc/pki/nssdb/: u+rwx,g=rx,o=rx
-- name: Create a custom trusted CA certificates wk user dir
+- name: Create a custom trusted CA certificates user dir
   become: no
   file:
-    dest: /home/wk/.pki/nssdb/
+    dest: $HOME/.pki/nssdb/
     mode: u+rwx,g=rx,o=rx
-    owner: wk
-    group: wk
     state: directory
     recurse: yes
 - name: Getting Red Hat Legacy Root CA and IT Root CA
@@ -159,5 +157,5 @@
   with_dict: "{{ ca_certificates }}"
 - name: Install CA certs into per-user NSS database, used by Chrome/Firefox
   become: no
-  shell: certutil -A -n '{{ item.key }}' -t C -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/home/wk/.pki/nssdb
+  shell: certutil -A -n '{{ item.key }}' -t C -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:$HOME/.pki/nssdb
   with_dict: "{{ ca_certificates }}"
