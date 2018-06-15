@@ -146,9 +146,9 @@
   with_dict: "{{ ca_certificates }}"
 - name: Install CA certs into NSS database
   # TODO: check out https://galaxy.ansible.com/pixelart/nssdb
-  shell: certutil -A -n '{{ item.key }}' -t 'T,T,T' -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/etc/pki/nssdb
+  shell: certutil -A -n '{{ item.key }}' -t C -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/etc/pki/nssdb
   with_dict: "{{ ca_certificates }}"
 - name: Install CA certs into per-user NSS database, used by Chrome/Firefox
   become: no
-  shell: certutil -A -n '{{ item.key }}' -t 'T,T,T' -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/home/wk/.pki/nssdb
+  shell: certutil -A -n '{{ item.key }}' -t C -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/home/wk/.pki/nssdb
   with_dict: "{{ ca_certificates }}"
