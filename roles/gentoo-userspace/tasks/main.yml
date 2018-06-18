@@ -92,3 +92,19 @@
      git_sync_cmd.msg !=
      'Local modifications exist in repository (force=no).' and
      'Failed to checkout branch' not in git_sync_cmd.msg)
+- name: Set up additional repo remotes for forks
+  shell: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
+  args:
+    chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
+  with_subelements:
+  - "{{ code_workspace.repos }}"
+  - slugs
+  when: item.1 in item.0.forked_as
+  register: git_remote
+  failed_when: >
+    git_remote.rc != 0 and
+    'fatal: remote fork already exists.' not in git_remote.stderr_lines
+  changed_when: >
+    git_remote.rc == 0 and
+    not git_remote.stderr_lines | count and
+    not git_remote.stdout_lines | count
