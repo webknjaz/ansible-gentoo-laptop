@@ -68,7 +68,16 @@ code_workspace:
       - webknjaz/twitter-reporter
       - yaml/pyyaml
       forked_as:
+        amol-/dukpy: webknjaz/dukpy
+        ansible/ansible: webknjaz/ansible
+        benjaminp/six: webknjaz/six
+        gentoo/gentoo: webknjaz/gentoo
+        jctanner/ansible-reproducers: webknjaz/ansible-reproducers
+        pyenv/pyenv: webknjaz/pyenv
+        PyGithub/PyGithub: webknjaz/PyGithub
+        python/core-workflow: webknjaz/core-workflow
         travis-ci/dpl: webknjaz/dpl
+        yaml/pyyaml: webknjaz/pyyaml
     - name: bitbucket
       fqdn: bitbucket.org
       ssh_host_keys:
