@@ -66,6 +66,7 @@ code_workspace:
       - webknjaz/check-in
       - webknjaz/mrgall-ansible
       - webknjaz/twitter-reporter
+      - yaml/pyyaml
     - name: bitbucket
       fqdn: bitbucket.org
       ssh_host_keys:
