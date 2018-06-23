@@ -25,6 +25,7 @@ ebuilds:
 - i3lock
 - intel-ocl-sdk
 - irssi
+- jre
 - keybase
 - layman
 - libfprint
