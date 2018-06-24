@@ -13,6 +13,7 @@ ebuilds:
 - bbswitch
 - cndrvcups-common-lb
 - dpkg
+- enchant
 - fira-code
 - foomatic-db
 - foomatic-db-engine
