@@ -34,6 +34,7 @@ code_workspace:
       - aio-libs/multidict
       - amol-/dukpy
       - ansible/ansible
+      - ansible/ansible-examples
       - ansible/foreman-test-container
       - benjaminp/six
       - candlepin/candlepin
