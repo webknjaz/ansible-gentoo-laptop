@@ -75,6 +75,7 @@ code_workspace:
         ansible/ansible: webknjaz/ansible
         benjaminp/six: webknjaz/six
         gentoo/gentoo: webknjaz/gentoo
+        gliderlabs/herokuish: webknjaz/herokuish
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
