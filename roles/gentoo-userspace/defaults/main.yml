@@ -43,6 +43,7 @@ code_workspace:
       - cherrypy/magicbus
       - dokku/dokku-mariadb
       - gentoo/gentoo
+      - gliderlabs/herokuish
       - itkpi/beej-s-guide-to-network
       - jctanner/ansible-reproducers
       - kpi-web-guild/django-girls-blog-serhii73
