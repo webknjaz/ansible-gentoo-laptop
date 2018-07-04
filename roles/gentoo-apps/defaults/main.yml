@@ -14,10 +14,12 @@ ebuilds:
 - cndrvcups-common-lb
 - dpkg
 - enchant
+- exfat-utils
 - fira-code
 - foomatic-db
 - foomatic-db-engine
 - foomatic-db-ppds
+- fuse-exfat
 - git
 - gentoo-sources
 - google-chrome
