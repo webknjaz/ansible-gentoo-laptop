@@ -22,6 +22,7 @@ oh_my_zsh:
   - nvm
   - common-aliases
   - docker
+  - kubectl
   custom_plugins:
     zsh-autosuggestions: git://github.com/zsh-users/zsh-autosuggestions.git
     zsh-syntax-highlighting: git://github.com/zsh-users/zsh-syntax-highlighting.git
