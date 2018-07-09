@@ -20,6 +20,20 @@
     repo: "{{ item.value }}"
     update: yes
   with_dict: "{{ oh_my_zsh.custom_plugins }}"
+- name: Get oh-my-zsh custom themes onto machine
+  git:
+    clone: yes
+    dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}
+    recursive: yes
+    repo: "{{ item.value }}"
+    update: yes
+  with_dict: "{{ oh_my_zsh.custom_themes }}"
+- name: Symlink oh-my-zsh custom themes
+  file:
+    src: ~/.oh-my-zsh/custom/themes/{{ item.key }}/{{ item.key }}.zsh-theme
+    dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}.zsh-theme
+    state: link
+  with_dict: "{{ oh_my_zsh.custom_themes }}"
 - name: Install nvm
   git:
     repo: https://github.com/creationix/nvm.git
