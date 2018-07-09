@@ -25,6 +25,7 @@ oh_my_zsh:
   - kubectl
   - sudo
   - systemd
+  - tmux
   custom_plugins:
     zsh-autosuggestions: git://github.com/zsh-users/zsh-autosuggestions.git
     zsh-syntax-highlighting: git://github.com/zsh-users/zsh-syntax-highlighting.git
