@@ -63,6 +63,12 @@ plugins=(
   {{ oh_my_zsh.custom_plugins.keys() | default([]) | join(' ') }}
 )
 
+{% for plugin_name, plugin_config in oh_my_zsh.plugin_settings.items() %}
+{% for setting_name, setting_value in plugin_config.items() %}
+zstyle :omz:plugins:{{ plugin_name }} {{ setting_name }} {{ setting_value }}
+{% endfor %}
+{% endfor %}
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

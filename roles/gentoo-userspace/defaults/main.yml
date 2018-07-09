@@ -21,6 +21,11 @@ oh_my_zsh:
   - nvm
   custom_plugins:
     zsh-autosuggestions: git://github.com/zsh-users/zsh-autosuggestions.git
+  plugin_settings:
+    ssh-agent:
+      agent-forwarding: "on"
+      identities: id_rsa id_rsa_encrypted
+      #lifetime: 4h  # Forever by default
 code_workspace:
   source_dir: ~/src
   repos:
