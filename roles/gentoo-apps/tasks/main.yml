@@ -14,12 +14,10 @@
   - ensure-services-reloaded
 
 - name: Ensure Vagga installed
-  become_user: root
   shell: "curl -sSf https://files.zerogw.com/vagga/vagga-install{{ '-testing' if vagga_testing else '' }}.sh | sh"
   args:
     creates: /usr/bin/vagga
 - name: Check kernel.unprivileged_userns_clone sysctl value
-  become_user: root
   shell: sysctl kernel.unprivileged_userns_clone
   register: sysctl_cmd
   changed_when: false
