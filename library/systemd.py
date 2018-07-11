@@ -28,10 +28,10 @@ options:
         description:
             - C(started)/C(stopped) are idempotent actions that will not run commands unless necessary.
               C(restarted) will always bounce the service. C(reloaded) will always reload.
-              C(tried-restarting) - restart unit if active.
-              C(reloaded-or-restarted) - reload unit if possible, otherwise start or restart.
-              C(tried-reloading-or-restarting) - if active, reload unit, if supported, otherwise restart.
-        choices: [ reloaded, restarted, started, stopped ]
+              C(tried-restarting) - restart unit if active (added in 2.7).
+              C(reloaded-or-restarted) - reload unit if possible, otherwise start or restart (added in 2.7).
+              C(tried-reloading-or-restarting) - if active, reload unit, if supported, otherwise restart (added in 2.7).
+        choices: [ tried-restarting, reloaded-or-restarted, tried-reloading-or-restarting, reloaded, restarted, started, stopped ]
     enabled:
         description:
             - Whether the service should start on boot. B(At least one of state and enabled are required.)
@@ -238,7 +238,10 @@ status:
             "WatchdogTimestampMonotonic": "0",
             "WatchdogUSec": "0",
         }
-'''  # NOQA
+'''  # noqa: E501
+
+from collections import namedtuple
+from functools import partial
 
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.service import sysv_exists, sysv_is_enabled, fail_if_missing
@@ -288,6 +291,156 @@ def parse_systemctl_show(lines):
     return parsed
 
 
+def unit_supports_reload(module, systemctl_executable, systemd_unit):
+    """Feature-detect whether given unit supports reload action.
+
+    Args:
+        module (AnsibleModule): Instance of ansible module singleton.
+        systemctl_executable (str): systemctl executable with default
+            arguments pre-filled.
+        systemd_unit (str): Name of systemd unit being checked.
+
+    Returns:
+        bool: True if systemd unit supports reload, False otherwise.
+    """
+    rc, out, err = module.run_command(
+        r"%s %s '%s' | grep ^ExecReload="
+        % (systemctl_executable, 'cat', systemd_unit)
+    )
+    return rc == 0
+
+
+DO_NOTHING = None
+
+
+def unit_is_active(module, systemctl_executable, systemd_unit):
+    rc, out, err = module.run_command(
+        r"%s %s '%s'"
+        % (systemctl_executable, 'is-active', systemd_unit)
+    )
+    return rc == 0
+
+
+SystemdFeatures = namedtuple(
+    'SystemdFeatures',
+    (
+        'try_restart',
+        'reload_or_restart',
+        'try_reload_or_restart',
+    ),
+)
+
+
+def run_systemctl(module, systemctl, unit, action):
+    rc, out, err = module.run_command("%s %s '%s'" % (systemctl, action, unit))
+    if rc != 0:
+        module.fail_json(msg="Unable to %s service %s: %s" % (action, unit, err))
+    return rc, out, err
+
+
+def try_restart(module, systemctl, unit):
+    if unit_is_active(module, systemctl, unit):
+        run_systemctl(module, systemctl, unit, 'restart')
+
+
+def reload_or_restart(module, systemctl, unit):
+    if unit_supports_reload(module, systemctl, unit):
+        run_systemctl(module, systemctl, unit, 'reload')
+    else:
+        run_systemctl(module, systemctl, unit, 'restart')
+        run_systemctl(module, systemctl, unit, 'start')
+
+
+def try_reload_or_restart(module, systemctl, unit):
+    if (
+        unit_is_active(module, systemctl, unit) and
+        unit_supports_reload(module, systemctl, unit)
+    ):
+        run_systemctl(module, systemctl, unit, 'reload')
+    else:
+        run_systemctl(module, systemctl, unit, 'restart')
+
+
+FALLBACK_ACTIONS = {
+    'try-restart': try_restart,
+    'reload-or-restart': reload_or_restart,
+    'try-reload-or-restart': try_reload_or_restart,
+}
+
+
+def detect_systemd_features(ansible_module, systemctl_executable):
+    """Return SystemdFeatures instance with features detected."""
+    rc, out, err = ansible_module.run_command(
+        r"%s %s" % (systemctl_executable, '--help')
+    )
+    commands_block = (
+        out.
+        partition('Unit Commands:\n')[-1].
+        partition('\n\nUnit File Commands')[0]
+    )
+    transformed_commands = (
+        l[:38].strip().partition(' ')[0]  # command descriptions start at 38th
+                                          # symbol, partition will separate
+                                          # command from its args
+        for l in commands_block.splitlines()
+    )
+    commands_list = set(filter(bool, transformed_commands))  # drop empty lines
+    return SystemdFeatures(**dict(
+        (f, f.replace('_', '-') in commands_list)
+        for f in SystemdFeatures._fields
+    ))
+
+
+def convert_action_to_actor(action, systemd_features):
+    try:
+        if not systemd_features.get(action.replace('_', '-')):
+            return FALLBACK_ACTIONS[action]
+        else:
+            return partial(run_systemctl, action=action)
+    except (AttributeError, KeyError) as exc:
+        return DO_NOTHING
+
+
+def get_action_from_state(requested_state, current_state, fallback_action):
+    """Decide final action string from current state.
+
+    Args:
+        requested_state (str): The desired state, requested via module
+            argument in task.
+        current_state (bool): The initial state of the service.
+            True for running, False for stopped.
+        fallback_action (str): action, happening if there's no pre-
+            filled state transformation.
+
+    Returns:
+        str: The actual action this module is going to run.
+    """
+    RUNNING_NOW = True
+    STOPPED_NOW = False
+    state_transitions = {
+        # current state => new state action:
+        ('started', STOPPED_NOW): 'start',
+        ('started', RUNNING_NOW): DO_NOTHING,
+        ('stopped', RUNNING_NOW): 'stop',
+        ('stopped', STOPPED_NOW): DO_NOTHING,
+        ('restarted', RUNNING_NOW): 'restart',
+        ('restarted', STOPPED_NOW): 'start',
+        ('reloaded', RUNNING_NOW): 'reload',
+        ('reloaded', STOPPED_NOW): 'start',
+        ('tried-restarting', RUNNING_NOW): 'try-restart',
+        ('tried-restarting', STOPPED_NOW): 'start',
+        ('reloaded-or-restarted', RUNNING_NOW): 'reload-or-restart',
+        ('reloaded-or-restarted', STOPPED_NOW): 'start',
+        ('tried-reloading-or-restarting', RUNNING_NOW): 'try-reload-or-restart',
+        ('tried-reloading-or-restarting', STOPPED_NOW): 'start',
+    }
+    return state_transitions.get(
+        (requested_state, current_state),
+        # Fall back to start if not matched:
+        fallback_action,
+    )
+
+
 # ===========================================
 # Main control flow
 
@@ -296,7 +449,15 @@ def main():
     module = AnsibleModule(
         argument_spec=dict(
             name=dict(type='str', aliases=['service', 'unit']),
-            state=dict(type='str', choices=['tried-restarting', 'reloaded-or-restarted', 'tried-reloading-or-restarting', 'reloaded', 'restarted', 'started', 'stopped']),
+            state=dict(
+                type='str',
+                choices=[
+                    'tried-restarting', 'reloaded-or-restarted',
+                    'tried-reloading-or-restarting',
+                    'reloaded', 'restarted',
+                    'started', 'stopped',
+                ]
+            ),
             enabled=dict(type='bool'),
             force=dict(type='bool'),
             masked=dict(type='bool'),
@@ -432,51 +593,34 @@ def main():
 
             # What is current service state?
             if 'ActiveState' in result['status']:
-                RUNNING_NOW = True
-                STOPPED_NOW = False
-                DO_NOTHING = None
                 is_service_running = is_running_service(result['status'])
-                state_to_action = {
-                    # current state => new state action:
-                    ('started', STOPPED_NOW): 'start',
-                    ('started', RUNNING_NOW): DO_NOTHING,
-                    ('stopped', RUNNING_NOW): 'stop',
-                    ('stopped', STOPPED_NOW): DO_NOTHING,
-                    ('restarted', RUNNING_NOW): 'restart',
-                    ('restarted', STOPPED_NOW): 'start',
-                    ('reloaded', RUNNING_NOW): 'reload',
-                    ('reloaded', STOPPED_NOW): 'start',
-                    ('tried-restarting', RUNNING_NOW): 'try-restart',
-                    ('tried-restarting', STOPPED_NOW): 'start',
-                    ('reloaded-or-restarted', RUNNING_NOW): 'reload-or-restart',
-                    ('reloaded-or-restarted', STOPPED_NOW): 'start',
-                    ('tried-reloading-or-restarting', RUNNING_NOW): 'try-reload-or-restart',
-                    ('tried-reloading-or-restarting', STOPPED_NOW): 'start',
-                }
-                action = state_to_action.get(
-                    (module.params['state'], is_service_running),
+                action = get_action_from_state(
+                    requested_state=module.params['state'],
+                    current_state=is_service_running,
                     # Fall back to start if not running:
-                    DO_NOTHING if is_service_running else 'start',
+                    fallback_action=DO_NOTHING if is_service_running else 'start',
                 )
                 if module.params['state'] not in ('started', 'stopped'):
                     result['state'] = 'started'
 
-                if action is not DO_NOTHING:
+                supported_features = detect_systemd_features(module, systemctl)
+                actor = convert_action_to_actor(action, supported_features)
+
+                if actor is not DO_NOTHING:
                     result['changed'] = True
-                    if action == 'reloaded':
-                        rc, out, err = module.run_command(
-                            r"%s %s '%s' | grep ^ExecReload="
-                            % (systemctl, 'cat', unit)
+                    if action == 'reload' and not unit_supports_reload(module, systemctl, unit):
+                        module.warn(
+                            'The service (%s) does not support '
+                            '`reload` action and it is likely to fail. '
+                            'you may try `reloaded-or-restarted`, '
+                            '`tried-reloading-or-restarting` or anything else '
+                            'which suits your needs better. '
+                            'If you maintain this unit, you might want to '
+                            'implement ExecReload there first.'
+                            % unit
                         )
-                        if rc != 0:
-                            module.warn(
-                                'The service (%s) does not support `reload` action and it is likely to fail.'
-                                % unit
-                            )
                     if not module.check_mode:
-                        (rc, out, err) = module.run_command("%s %s '%s'" % (systemctl, action, unit))
-                        if rc != 0:
-                            module.fail_json(msg="Unable to %s service %s: %s" % (action, unit, err))
+                        actor(module, systemctl, unit)
             else:
                 # this should not happen?
                 module.fail_json(msg="Service is in unknown state", status=result['status'])
