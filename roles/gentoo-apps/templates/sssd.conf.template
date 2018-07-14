@@ -16,7 +16,7 @@ krb5_realm = REDHAT.COM
 krb5_store_password_if_offline = true
 
 access_provider = simple
-simple_allow_users = rhatkerberosid
+simple_allow_users = ssydoren
 
 cache_credentials = true
 override_homedir = /home/%u
