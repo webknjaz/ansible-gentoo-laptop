@@ -4,6 +4,7 @@ emerge_load_average: 4
 emerge_jobs_number: 9
 ebuilds:
 - acpi
+- alacritty
 - alsa-utils
 - app-emulation/docker
 - arc-theme
