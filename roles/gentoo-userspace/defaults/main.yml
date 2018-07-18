@@ -12,7 +12,7 @@ git_options:
   user.name: Sviatoslav Sydorenko
   user.signingkey: 9345E8FEA89CA455
 oh_my_zsh:
-  theme: ys  # default: robbyrussell; was: spaceship
+  theme: spaceship  # default: robbyrussell; was: ys
   custom_themes:
     spaceship: git://github.com/denysdovhan/spaceship-prompt.git
   editor: nvim
