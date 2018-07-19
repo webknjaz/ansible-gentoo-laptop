@@ -52,6 +52,8 @@ ebuilds:
 - pavucontrol
 - pcsc-lite
 - pulseaudio
+- python:3.6
+- python:3.7
 - qrencode
 - rust-bin
 - sic
