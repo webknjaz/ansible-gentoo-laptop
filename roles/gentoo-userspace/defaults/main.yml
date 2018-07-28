@@ -70,6 +70,7 @@ code_workspace:
       - cherrypy/cherrypy
       - cherrypy/magicbus
       - dokku/dokku-mariadb
+      - EuroPython/ep-config
       - gentoo/gentoo
       - gliderlabs/herokuish
       - itkpi/beej-s-guide-to-network
