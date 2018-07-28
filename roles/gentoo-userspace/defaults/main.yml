@@ -76,6 +76,7 @@ code_workspace:
       - itkpi/beej-s-guide-to-network
       - jctanner/ansible-reproducers
       - kpi-web-guild/django-girls-blog-serhii73
+      - matrixise/europython-config-the-revenant
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
