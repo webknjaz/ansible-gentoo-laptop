@@ -98,6 +98,7 @@ code_workspace:
       - travis-ci/dpl
       - webknjaz/check-in
       - webknjaz/mrgall-ansible
+      - webknjaz/pypi-deployment
       - webknjaz/twitter-reporter
       - yaml/pyyaml
       forked_as:
