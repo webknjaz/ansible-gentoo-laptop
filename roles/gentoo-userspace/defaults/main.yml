@@ -63,6 +63,7 @@ code_workspace:
       - amol-/dukpy
       - ansible/ansible
       - ansible/ansible-examples
+      - ansible/ansibullbot
       - ansible/foreman-test-container
       - benjaminp/six
       - candlepin/candlepin
@@ -104,6 +105,7 @@ code_workspace:
       forked_as:
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
+        ansible/ansibullbot: webknjaz/ansibullbot
         benjaminp/six: webknjaz/six
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
