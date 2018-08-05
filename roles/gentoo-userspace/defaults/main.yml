@@ -78,6 +78,7 @@ code_workspace:
       - jctanner/ansible-reproducers
       - kpi-web-guild/django-girls-blog-serhii73
       - matrixise/europython-config-the-revenant
+      - open-craft-guild/aio-feature-flags
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
