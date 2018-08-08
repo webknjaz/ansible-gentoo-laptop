@@ -72,6 +72,7 @@ code_workspace:
       - cherrypy/magicbus
       - dokku/dokku-mariadb
       - EuroPython/ep-config
+      - FreeCAD/FreeCAD
       - gentoo/gentoo
       - gliderlabs/herokuish
       - itkpi/beej-s-guide-to-network
@@ -109,6 +110,7 @@ code_workspace:
         ansible/ansible: webknjaz/ansible
         ansible/ansibullbot: webknjaz/ansibullbot
         benjaminp/six: webknjaz/six
+        FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
