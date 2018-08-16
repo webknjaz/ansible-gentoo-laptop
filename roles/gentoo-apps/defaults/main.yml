@@ -52,6 +52,7 @@ ebuilds:
 - parcellite
 - pavucontrol
 - pcsc-lite
+- powerline-symbols
 - pulseaudio
 - python:3.6
 - python:3.7
