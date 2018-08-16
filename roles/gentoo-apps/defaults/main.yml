@@ -62,6 +62,7 @@ ebuilds:
 - sssd
 - st
 - strace
+- symbola
 - telnet-bsd
 - tmux
 - twemoji-color-font
