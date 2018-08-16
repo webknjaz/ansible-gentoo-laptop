@@ -5,6 +5,14 @@
     scope: global
     value: "{{ item.value }}"
   with_dict: "{{ git_options }}"
+- name: Create Kitty config dir within userspace
+  file:
+    dest: ~/.config/kitty
+    state: directory
+- name: Put Kitty config file in place
+  copy:
+    src: kitty.conf
+    dest: ~/.config/kitty/kitty.conf
 - name: Get oh-my-zsh onto machine
   git:
     clone: yes
