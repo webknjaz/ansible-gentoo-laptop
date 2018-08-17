@@ -57,6 +57,7 @@ ebuilds:
 - python:3.6
 - python:3.7
 - qrencode
+- pam_yubico
 - rust-bin
 - sic
 - sssd
@@ -70,6 +71,7 @@ ebuilds:
 - wmname
 - xautolock
 - xorg-x11
+- yubikey-manager
 ca_certificates:
   RH-legacy-Root-CA:
     filename: legacy
