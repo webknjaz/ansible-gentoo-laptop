@@ -80,6 +80,7 @@ code_workspace:
       - kpi-web-guild/django-girls-blog-serhii73
       - matrixise/europython-config-the-revenant
       - open-craft-guild/aio-feature-flags
+      - patron-it/opencanary
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
