@@ -100,6 +100,7 @@ code_workspace:
       - python/cpython
       - python/miss-islington
       - travis-ci/dpl
+      - takluyver/flit
       - webknjaz/check-in
       - webknjaz/docker-freecad-cli
       - webknjaz/mrgall-ansible
@@ -118,6 +119,7 @@ code_workspace:
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         python/core-workflow: webknjaz/core-workflow
+        takluyver/flit: webknjaz/flit
         travis-ci/dpl: webknjaz/dpl
         yaml/pyyaml: webknjaz/pyyaml
     - name: bitbucket
