@@ -13,6 +13,7 @@ ebuilds:
 - bind-tools
 - bbswitch
 - cndrvcups-common-lb
+- dnsmasq
 - dpkg
 - enchant
 - exfat-utils
