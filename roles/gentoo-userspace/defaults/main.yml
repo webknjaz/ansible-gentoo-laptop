@@ -101,6 +101,7 @@ code_workspace:
       - python/miss-islington
       - travis-ci/dpl
       - takluyver/flit
+      - webknjaz/ansiwatch-bot
       - webknjaz/check-in
       - webknjaz/docker-freecad-cli
       - webknjaz/mrgall-ansible
