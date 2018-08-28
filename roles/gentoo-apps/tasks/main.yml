@@ -1,5 +1,23 @@
 ---
 # tasks file for gentoo-apps
+
+- name: Create a patch dir structure for dev-libs/cyrus-sasl
+  file:
+    dest: /etc/portage/patches/dev-libs/cyrus-sasl-2.1.26
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+
+- name: Add patch for dev-libs/cyrus-sasl
+  copy:
+    src: cyrus-sasl-2.1.26-openssl-1.1.patch
+    dest: /etc/portage/patches/dev-libs/cyrus-sasl-2.1.26/
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+
 - name: Merge ebuilds
   portage:
     package: "{{ ebuilds }}"
