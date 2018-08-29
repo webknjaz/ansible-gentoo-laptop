@@ -71,6 +71,7 @@ ebuilds:
 - tmux
 - twemoji-color-font
 - unicode-emoji
+- visual-studio-code
 - wmname
 - xautolock
 - xorg-x11
