@@ -12,6 +12,12 @@ git_options:
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
   user.signingkey: 9345E8FEA89CA455
+kitty:
+  plugins_dir: ~/.config/kitty/plugins
+  plugins:
+  - name: base16
+    src: git://github.com/kdrag0n/base16-kitty.git
+    config: colors/base16-darktooth-256.conf
 oh_my_zsh:
   theme: spaceship  # default: robbyrussell; was: ys
   custom_themes:
