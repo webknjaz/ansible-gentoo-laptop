@@ -106,6 +106,7 @@ code_workspace:
       - python/core-workflow
       - python/cpython
       - python/miss-islington
+      - tox-dev/tox
       - travis-ci/dpl
       - takluyver/flit
       - webknjaz/ansiwatch-bot
@@ -128,6 +129,7 @@ code_workspace:
         PyGithub/PyGithub: webknjaz/PyGithub
         python/core-workflow: webknjaz/core-workflow
         takluyver/flit: webknjaz/flit
+        tox-dev/tox: webknjaz/tox
         travis-ci/dpl: webknjaz/dpl
         yaml/pyyaml: webknjaz/pyyaml
     - name: bitbucket
