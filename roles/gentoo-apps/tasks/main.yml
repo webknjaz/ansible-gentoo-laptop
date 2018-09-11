@@ -62,6 +62,17 @@
   - u
   - g
 
+- name: Load 'tun' kernel module
+  modprobe:
+    name: tun
+    state: present
+
+- name: Configure 'tun' module autoload
+  lineinfile:
+    create: yes
+    line: tun
+    path: /etc/modules-load.d/tun.conf
+
 - name: Add wk to docker group
   user:
     append: yes
