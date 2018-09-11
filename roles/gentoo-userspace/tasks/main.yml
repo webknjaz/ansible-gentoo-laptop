@@ -89,7 +89,7 @@
     dest: ~/.config/awesome/bit32.so
     state: link
 - name: Put Awesome WM resource script in place
-  copy:
+  template:
     src: awesome-rc.lua-template
     dest: ~/.config/awesome/rc.lua
 - name: Create experiments dir

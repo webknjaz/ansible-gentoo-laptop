@@ -1,3 +1,4 @@
+{% raw %}
 -- vi: ft=lua
 -- Set up env vars for widgets
 local posix = require("posix")
@@ -50,7 +51,9 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+{% endraw %}
+beautiful.init(gears.filesystem.get_themes_dir() .. "{{ awesome.theme | default('default') }}/theme.lua")
+{% raw %}
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
@@ -613,3 +616,4 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+{% endraw %}

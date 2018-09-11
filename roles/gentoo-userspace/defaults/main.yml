@@ -12,6 +12,8 @@ git_options:
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
   user.signingkey: 9345E8FEA89CA455
+awesome:
+  theme: zenburn
 kitty:
   plugins_dir: ~/.config/kitty/plugins
   plugins:
