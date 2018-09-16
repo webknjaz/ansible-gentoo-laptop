@@ -116,6 +116,7 @@ code_workspace:
       - travis-ci/dpl
       - takluyver/flit
       - webknjaz/ansiwatch-bot
+      - webknjaz/bifit-ua-procreditbank-signplugin-linux
       - webknjaz/check-in
       - webknjaz/docker-freecad-cli
       - webknjaz/mrgall-ansible
