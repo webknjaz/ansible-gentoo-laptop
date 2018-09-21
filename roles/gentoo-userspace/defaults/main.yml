@@ -36,6 +36,7 @@ oh_my_zsh:
   - shrink-path
   - helm
   - kubectl
+  - oc
   - sudo
   - systemd
   - tmux
