@@ -34,6 +34,7 @@ oh_my_zsh:
   - common-aliases
   - docker
   - shrink-path
+  - helm
   - kubectl
   - sudo
   - systemd
