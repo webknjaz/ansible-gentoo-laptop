@@ -114,6 +114,7 @@ code_workspace:
       - python/core-workflow
       - python/cpython
       - python/miss-islington
+      - tox-dev/detox
       - tox-dev/tox
       - travis-ci/dpl
       - takluyver/flit
@@ -139,6 +140,7 @@ code_workspace:
         PyGithub/PyGithub: webknjaz/PyGithub
         python/core-workflow: webknjaz/core-workflow
         takluyver/flit: webknjaz/flit
+        tox-dev/detox: webknjaz/detox
         tox-dev/tox: webknjaz/tox
         travis-ci/dpl: webknjaz/dpl
         yaml/pyyaml: webknjaz/pyyaml
