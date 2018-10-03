@@ -118,6 +118,7 @@ code_workspace:
       - tox-dev/tox
       - travis-ci/dpl
       - takluyver/flit
+      - webknjaz/ansible.module_utils._text
       - webknjaz/ansiwatch-bot
       - webknjaz/bifit-ua-procreditbank-signplugin-linux
       - webknjaz/check-in
