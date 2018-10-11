@@ -1,0 +1,7 @@
+---
+#- name: Converge
+#  hosts: all
+#  tasks:
+#  - include_role:
+#    - name: ../../gentoo-userspace
+- import_playbook: ../../configure-userspace.yml
