@@ -74,6 +74,7 @@ ebuilds:
 - visual-studio-code
 - wmname
 - xautolock
+- xflux-gui
 - xorg-x11
 - yubikey-manager
 ca_certificates:
