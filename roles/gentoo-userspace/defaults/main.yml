@@ -122,7 +122,6 @@ code_workspace:
       - takluyver/flit
       - webknjaz/ansible.module_utils._text
       - webknjaz/ansiwatch-bot
-      - webknjaz/bifit-ua-procreditbank-signplugin-linux
       - webknjaz/check-in
       - webknjaz/docker-freecad-cli
       - webknjaz/mrgall-ansible
