@@ -128,6 +128,7 @@ code_workspace:
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
       - webknjaz/twitter-reporter
+      - willthames/ansible-review
       - yaml/pyyaml
       forked_as:
         amol-/dukpy: webknjaz/dukpy
@@ -146,6 +147,7 @@ code_workspace:
         tox-dev/detox: webknjaz/detox
         tox-dev/tox: webknjaz/tox
         travis-ci/dpl: webknjaz/dpl
+        willthames/ansible-review: webknjaz/ansible-review
         yaml/pyyaml: webknjaz/pyyaml
     - name: bitbucket
       fqdn: bitbucket.org
