@@ -119,6 +119,7 @@ code_workspace:
       - tox-dev/detox
       - tox-dev/tox
       - travis-ci/dpl
+      - travis-ci/travis-yml
       - takluyver/flit
       - webknjaz/ansible.module_utils._text
       - webknjaz/ansiwatch-bot
