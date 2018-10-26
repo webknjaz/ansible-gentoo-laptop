@@ -116,11 +116,11 @@ code_workspace:
       - python/cpython
       - python/miss-islington
       - sclorg/s2i-python-container
+      - takluyver/flit
       - tox-dev/detox
       - tox-dev/tox
       - travis-ci/dpl
       - travis-ci/travis-yml
-      - takluyver/flit
       - webknjaz/ansible.module_utils._text
       - webknjaz/ansiwatch-bot
       - webknjaz/check-in
