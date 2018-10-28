@@ -142,6 +142,7 @@ code_workspace:
         joepvd/tty-solarized: webknjaz/tty-solarized
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
+        pypa/virtualenv: webknjaz/virtualenv
         python/core-workflow: webknjaz/core-workflow
         takluyver/flit: webknjaz/flit
         tox-dev/detox: webknjaz/detox
