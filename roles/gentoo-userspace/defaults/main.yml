@@ -78,6 +78,7 @@ code_workspace:
       - amol-/dukpy
       - ansible/ansible
       - ansible/ansible-examples
+      - ansible/ansible-lint
       - ansible/ansibullbot
       - ansible/foreman-test-container
       - benjaminp/six
@@ -133,6 +134,7 @@ code_workspace:
       forked_as:
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
+        ansible/ansible-lint: webknjaz/ansible-lint
         ansible/ansibullbot: webknjaz/ansibullbot
         benjaminp/six: webknjaz/six
         FreeCAD/FreeCAD: webknjaz/FreeCAD
