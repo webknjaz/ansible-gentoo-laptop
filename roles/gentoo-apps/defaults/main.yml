@@ -6,6 +6,7 @@ ebuilds:
 - acpi
 - alacritty
 - alsa-utils
+- android-tools
 - app-emulation/docker
 - arc-theme
 - asciinema
