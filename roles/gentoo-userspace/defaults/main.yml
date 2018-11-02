@@ -81,6 +81,7 @@ code_workspace:
       - ansible/ansible-lint
       - ansible/ansibullbot
       - ansible/foreman-test-container
+      - ansible/molecule
       - benjaminp/six
       - candlepin/candlepin
       - cherrypy/cheroot
@@ -136,6 +137,7 @@ code_workspace:
         ansible/ansible: webknjaz/ansible
         ansible/ansible-lint: webknjaz/ansible-lint
         ansible/ansibullbot: webknjaz/ansibullbot
+        ansible/molecule: webknjaz/molecule
         benjaminp/six: webknjaz/six
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
