@@ -8,6 +8,7 @@ node_versions:
 git_options:
   commit.gpgsign: true
   gpg.program: gpg2
+  pull.ff: only
   push.gpgsign: if-asked
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
