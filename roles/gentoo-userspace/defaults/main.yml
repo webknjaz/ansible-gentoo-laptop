@@ -97,6 +97,8 @@ code_workspace:
       - jctanner/ansible-reproducers
       - joepvd/tty-solarized
       - kpi-web-guild/django-girls-blog-serhii73
+      - lxc/python2-lxc
+      - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
       - open-craft-guild/aio-feature-flags
       - patron-it/opencanary
@@ -146,6 +148,8 @@ code_workspace:
         gliderlabs/herokuish: webknjaz/herokuish
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         joepvd/tty-solarized: webknjaz/tty-solarized
+        lxc/python2-lxc: webknjaz/python2-lxc
+        lxc/python3-lxc: webknjaz/python3-lxc
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/virtualenv: webknjaz/virtualenv
