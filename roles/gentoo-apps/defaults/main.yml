@@ -27,6 +27,7 @@ ebuilds:
 - fuse-exfat
 - git
 - gentoo-sources
+- gnome-color-manager
 - google-chrome
 - gutenprint
 - htop
