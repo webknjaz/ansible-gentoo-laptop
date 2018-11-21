@@ -64,6 +64,7 @@ ebuilds:
 - qrencode
 - pam_u2f
 - pam_yubico
+- redshift
 - rust-bin
 - sic
 - sssd
