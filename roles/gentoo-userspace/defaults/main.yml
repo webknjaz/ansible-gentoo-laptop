@@ -101,6 +101,7 @@ code_workspace:
       - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
       - open-craft-guild/aio-feature-flags
+      - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pyenv/pyenv
       - PyGithub/PyGithub
