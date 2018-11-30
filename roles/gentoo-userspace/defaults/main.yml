@@ -153,6 +153,7 @@ code_workspace:
         gliderlabs/herokuish: webknjaz/herokuish
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         joepvd/tty-solarized: webknjaz/tty-solarized
+        libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
         pyenv/pyenv: webknjaz/pyenv
