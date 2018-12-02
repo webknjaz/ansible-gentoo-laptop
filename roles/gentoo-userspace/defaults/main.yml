@@ -107,6 +107,7 @@ code_workspace:
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
+      - pypa/browntruck
       - pypa/get-pip
       - pypa/manylinux
       - pypa/pip
@@ -158,6 +159,7 @@ code_workspace:
         lxc/python3-lxc: webknjaz/python3-lxc
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
+        pypa/browntruck: sanitizers/browntruck
         pypa/virtualenv: webknjaz/virtualenv
         python/core-workflow: webknjaz/core-workflow
         sdispater/poetry: webknjaz/poetry
