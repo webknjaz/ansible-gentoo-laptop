@@ -123,6 +123,7 @@ code_workspace:
       - python/core-workflow
       - python/cpython
       - python/miss-islington
+      - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sclorg/s2i-python-container
       - sdispater/poetry
