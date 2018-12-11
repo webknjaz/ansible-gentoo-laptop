@@ -161,6 +161,7 @@ code_workspace:
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/browntruck: sanitizers/browntruck
+        pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
         python/core-workflow: webknjaz/core-workflow
         sdispater/poetry: webknjaz/poetry
