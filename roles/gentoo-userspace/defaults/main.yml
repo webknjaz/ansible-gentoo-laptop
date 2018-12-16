@@ -61,6 +61,9 @@ vundle:
   # and Language Server Protocol (LSP) integration
   - id: w0rp/ale
 
+  # show a git diff in the gutter (sign column)
+  - id: airblade/vim-gitgutter
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
