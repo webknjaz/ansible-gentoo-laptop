@@ -32,6 +32,7 @@ vundle:
   - id: MicahElliott/Rocannon
 
   - id: scrooloose/nerdtree
+  - id: altercation/vim-colors-solarized
 
   # Examples:
 
