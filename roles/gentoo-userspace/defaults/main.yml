@@ -36,6 +36,9 @@ vundle:
 
   - id: jplaut/vim-arduino-ino
 
+  # fuzzy finder :Files
+  - id: junegunn/fzf.vim
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html

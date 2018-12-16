@@ -25,6 +25,7 @@ ebuilds:
 - foomatic-db-engine
 - foomatic-db-ppds
 - fuse-exfat
+- fzf
 - git
 - gentoo-sources
 - gnome-color-manager
