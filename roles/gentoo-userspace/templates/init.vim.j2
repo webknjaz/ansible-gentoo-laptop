@@ -1,5 +1,41 @@
 " nvim config entry point
 
+" Vundle config start
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+={{ vundle_self_path }}
+call vundle#begin('{{ vundle.bundle_path }}')
+
+" let Vundle manage Vundle, required
+Plugin '{{ vundle.self_plugin }}'
+
+{% for plugin in vundle.plugins or [] %}
+
+Plugin '{{ plugin.id }}'{% if plugin.config is defined
+%}, {{ plugin.config }}{%
+endif %}
+
+{% endfor %}
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+" The rest of config
+
 set number!
 
 set colorcolumn=73,80,101

@@ -13,6 +13,37 @@ git_options:
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
   user.signingkey: 9345E8FEA89CA455
+vundle:
+  self_plugin: VundleVim/Vundle.vim
+  bundle_path: ~/.config/nvim/bundle
+  self_dir: Vundle.vim
+  plugins:
+
+  # Examples:
+
+  # plugin on GitHub repo
+  # - id: tpope/vim-fugitive
+
+  # plugin from http://vim-scripts.org/vim/scripts.html
+  #- id: L9
+
+  # Git plugin not hosted on GitHub
+  #- id: git://git.wincent.com/command-t.git
+
+  # git repos on your local machine (i.e. when working on your own plugin)
+  #- id: file:///home/gmarik/path/to/plugin
+
+  # The sparkup vim script is in a subdirectory of this repo called vim.
+  # Pass the path to set the runtimepath properly.
+  #- id: rstacruz/sparkup
+  #  config:
+  #    rtp: vim/
+
+  # Install L9 and avoid a Naming conflict if you've already installed a
+  # different version somewhere else.
+  #- id: ascenator/L9
+  #  config:
+  #    name: newL9
 awesome:
   terminal: kitty
   theme: zenburn

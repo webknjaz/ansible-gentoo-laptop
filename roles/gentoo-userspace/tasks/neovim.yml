@@ -1,4 +1,31 @@
+- name: Identify the Vundle installation path
+  set_fact:
+    vundle_self_path: >-
+      {{ vundle.bundle_path }}/{{ vundle.self_dir }}
+- name: Get Vundle into userspace
+  git:
+    clone: yes
+    dest: >-
+      {{ vundle_self_path }}
+    recursive: yes
+    repo: git://github.com/{{ vundle.self_plugin }}.git
+    update: yes
 - name: Generate a NeoVim config from the template
   template:
     src: init.vim.j2
     dest: ~/.config/nvim/init.vim
+- name: Wipe all unused Vundle plugins from NeoVim
+  command: nvim +PluginClean! +qall
+- name: Install and upgrade Vundle plugins in NeoVim
+  command: nvim +PluginInstall! +qall
+- name: List installed Vundle plugins in NeoVim
+  command: nvim +PluginList +qall
+  register: vundle_plugins_cmd
+- name: Save Vundle plugins list
+  set_fact:
+    vundle_plugins_installed: >-
+      {{ vundle_plugins_cmd.stdout_lines }}
+# TODO: figure out how to retrieve plugin list the right way
+#- name: Output Vundle plugins list
+#  debug:
+#    var: vundle_plugins_installed
