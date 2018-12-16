@@ -51,6 +51,9 @@ vundle:
   # surround.vim: quoting/parenthesizing made simple
   - id: tpope/vim-surround
 
+  # editorconfig.org
+  - id: editorconfig/editorconfig-vim
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
