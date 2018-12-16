@@ -18,13 +18,13 @@ vundle:
   bundle_path: ~/.config/nvim/bundle
   self_dir: Vundle.vim
   plugins:
+  # fugitive.vim is a Git wrapper for Vim (plugin on GitHub repo)
+  - id: tpope/vim-fugitive
+
   #- id: pearofducks/ansible-vim
   - id: MicahElliott/Rocannon
 
   # Examples:
-
-  # plugin on GitHub repo
-  # - id: tpope/vim-fugitive
 
   # plugin from http://vim-scripts.org/vim/scripts.html
   #- id: L9
