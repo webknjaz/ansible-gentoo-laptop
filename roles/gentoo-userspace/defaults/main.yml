@@ -48,6 +48,9 @@ vundle:
   # eunuch.vim: Helpers for UNIX
   - id: tpope/vim-eunuch
 
+  # surround.vim: quoting/parenthesizing made simple
+  - id: tpope/vim-surround
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
