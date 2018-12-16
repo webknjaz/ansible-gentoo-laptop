@@ -57,6 +57,10 @@ vundle:
   # emmet for vim
   - id: mattn/emmet-vim
 
+  # Asynchronous linting/fixing for Vim
+  # and Language Server Protocol (LSP) integration
+  - id: w0rp/ale
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
