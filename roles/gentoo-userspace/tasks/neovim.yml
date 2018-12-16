@@ -1,0 +1,4 @@
+- name: Generate a NeoVim config from the template
+  template:
+    src: init.vim.j2
+    dest: ~/.config/nvim/init.vim

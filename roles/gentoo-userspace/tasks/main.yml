@@ -9,6 +9,8 @@
   file:
     dest: "{{ kitty.plugins_dir }}"
     state: directory
+- name: Ensure that NeoVim is configured
+  import_tasks: neovim.yml
 - name: Get kitty plugins onto machine
   git:
     clone: yes

@@ -1,0 +1,19 @@
+" nvim config entry point
+
+set number!
+
+set colorcolumn=73,80,101
+"  set colorcolumn=73,80,101 set colorcolumn=73,80,101 set colorcolumn=73,80,101 hehe loooooolllllooolllll
+highlight ColorColumn ctermbg=darkgrey ctermfg=lightgreen guibg=lightgrey
+
+highlight OverLength ctermbg=208 ctermfg=white guibg=#592929
+match OverLength /\%<81v.\%>80v/
+
+highlight CriticalOverLength ctermbg=red ctermfg=white guibg=#592929
+2match CriticalOverLength /\%<102v.\%>101v/
+
+" There's also 3match: https://superuser.com/a/211965/182499
+highlight DocOverLength ctermbg=green ctermfg=white guibg=#592929
+"3match DocOverLength /\%<74v.\%>73v/
+
+" https://github.com/klardotsh/dotfiles/blob/1b78d67613435793208d2ded2d0e067891e1ab34/.config/nvim/init.vim
