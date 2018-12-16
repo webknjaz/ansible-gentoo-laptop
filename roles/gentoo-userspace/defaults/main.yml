@@ -45,6 +45,9 @@ vundle:
   # multicursor feature
   - id: terryma/vim-multiple-cursors
 
+  # eunuch.vim: Helpers for UNIX
+  - id: tpope/vim-eunuch
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
