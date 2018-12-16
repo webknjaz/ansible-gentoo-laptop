@@ -54,6 +54,9 @@ vundle:
   # editorconfig.org
   - id: editorconfig/editorconfig-vim
 
+  # emmet for vim
+  - id: mattn/emmet-vim
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
