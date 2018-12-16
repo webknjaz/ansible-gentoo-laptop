@@ -31,6 +31,8 @@ vundle:
   #- id: pearofducks/ansible-vim
   - id: MicahElliott/Rocannon
 
+  - id: scrooloose/nerdtree
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html

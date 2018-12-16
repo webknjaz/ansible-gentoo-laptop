@@ -56,3 +56,21 @@ highlight DocOverLength ctermbg=green ctermfg=white guibg=#592929
 "3match DocOverLength /\%<74v.\%>73v/
 
 " https://github.com/klardotsh/dotfiles/blob/1b78d67613435793208d2ded2d0e067891e1ab34/.config/nvim/init.vim
+
+"------------------------"
+"NERDTREE PLUGIN SETTINGS"
+"------------------------"
+"Shortcut for NERDTreeToggle
+nmap <leader>nt :NERDTreeToggle <CR>
+
+"Show hidden files in NerdTree
+let NERDTreeShowHidden=1
+
+"autopen NERDTree and focus cursor in new document
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+" NERDTree
+nmap <silent> <F2> :NERDTreeToggle<CR>
+imap <silent> <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
