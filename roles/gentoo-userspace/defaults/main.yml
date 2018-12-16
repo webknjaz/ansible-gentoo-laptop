@@ -18,6 +18,8 @@ vundle:
   bundle_path: ~/.config/nvim/bundle
   self_dir: Vundle.vim
   plugins:
+  #- id: pearofducks/ansible-vim
+  - id: MicahElliott/Rocannon
 
   # Examples:
 
