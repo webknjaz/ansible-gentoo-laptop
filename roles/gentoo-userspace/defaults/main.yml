@@ -42,6 +42,9 @@ vundle:
   # lightline statusline theme
   - id: itchyny/lightline.vim
 
+  # multicursor feature
+  - id: terryma/vim-multiple-cursors
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
