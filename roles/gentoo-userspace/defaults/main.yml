@@ -39,6 +39,9 @@ vundle:
   # fuzzy finder :Files
   - id: junegunn/fzf.vim
 
+  # lightline statusline theme
+  - id: itchyny/lightline.vim
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
