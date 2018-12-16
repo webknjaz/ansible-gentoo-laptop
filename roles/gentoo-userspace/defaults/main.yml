@@ -21,6 +21,13 @@ vundle:
   # fugitive.vim is a Git wrapper for Vim (plugin on GitHub repo)
   - id: tpope/vim-fugitive
 
+  # HTML speedup
+  # The sparkup vim script is in a subdirectory of this repo called vim.
+  # Pass the path to set the runtimepath properly.
+  - id: rstacruz/sparkup
+    config:
+      rtp: vim/
+
   #- id: pearofducks/ansible-vim
   - id: MicahElliott/Rocannon
 
@@ -34,12 +41,6 @@ vundle:
 
   # git repos on your local machine (i.e. when working on your own plugin)
   #- id: file:///home/gmarik/path/to/plugin
-
-  # The sparkup vim script is in a subdirectory of this repo called vim.
-  # Pass the path to set the runtimepath properly.
-  #- id: rstacruz/sparkup
-  #  config:
-  #    rtp: vim/
 
   # Install L9 and avoid a Naming conflict if you've already installed a
   # different version somewhere else.
