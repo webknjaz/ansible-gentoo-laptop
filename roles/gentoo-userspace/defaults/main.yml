@@ -151,6 +151,7 @@ code_workspace:
       - ansible/foreman-test-container
       - ansible/molecule
       - benjaminp/six
+      - bitprophet/alabaster
       - candlepin/candlepin
       - cherrypy/cheroot
       - cherrypy/cherrypy
@@ -217,6 +218,7 @@ code_workspace:
         ansible/ansibullbot: webknjaz/ansibullbot
         ansible/molecule: webknjaz/molecule
         benjaminp/six: webknjaz/six
+        bitprophet/alabaster: webknjaz/alabaster
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
