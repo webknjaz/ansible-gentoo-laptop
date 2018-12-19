@@ -15,16 +15,8 @@
   import_tasks: kitty.yml
 - name: Ensure that Oh My ZSH is configured
   import_tasks: omz.yml
-- name: Install nvm
-  git:
-    repo: https://github.com/creationix/nvm.git
-    dest: ~/.nvm
-    version: "{{ nvm_version }}"
-- name: Install Nodes
-  shell: "source ~/.nvm/nvm.sh && nvm install {{ item }}"
-  with_items: "{{ node_versions.install }}"
-- name: Set default Node version
-  shell: "source ~/.nvm/nvm.sh && nvm alias default {{ node_versions.default }}"
+- name: Ensure that NodeJS is configured with nvm
+  import_tasks: nvm.yml
 - name: Ensure that Awesome WM is configured
   import_tasks: awesome.yml
   when:
