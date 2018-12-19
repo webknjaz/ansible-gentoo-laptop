@@ -25,10 +25,6 @@
   with_items: "{{ node_versions.install }}"
 - name: Set default Node version
   shell: "source ~/.nvm/nvm.sh && nvm alias default {{ node_versions.default }}"
-- name: Put oh-my-zsh enabled .zshrc config in place
-  template:
-    src: zshrc.zsh-template
-    dest: ~/.zshrc
 - name: Ensure that Awesome WM is configured
   import_tasks: awesome.yml
   when:
