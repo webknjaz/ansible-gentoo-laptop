@@ -1,5 +1,6 @@
 --- # vim:se ft=ansible:
-- name: Set up user's git config git_config
+- name: Set up user's git config
+  git_config:
     name: "{{ item.key }}"
     scope: global
     value: "{{ item.value }}"
