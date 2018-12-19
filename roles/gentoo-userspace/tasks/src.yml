@@ -12,6 +12,8 @@
   - "{{ code_workspace.repos }}"
   - ssh_host_keys
 - name: Sync source code repos
+  async: 45
+  poll: 0
   git:
     clone: yes
     dest: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
@@ -21,14 +23,25 @@
   with_subelements:
   - "{{ code_workspace.repos }}"
   - slugs
-  register: git_sync_cmd
+  register: git_sync_cmd_async_jobs
+- name: Wait for syncing the source code repos to finish
+  async_status:
+    jid: >
+      {{ git_sync_cmd_result.ansible_job_id }}
+  loop: >
+    {{ git_sync_cmd_async_jobs.results }}
+  loop_control:
+    loop_var: git_sync_cmd_result
+  register: git_sync_cmd_results
+  until: git_sync_cmd_results.finished
+  retries: 300
   failed_when: >
-    ('rc' in git_sync_cmd and git_sync_cmd.rc == 128 and
-     'Failed to checkout branch' not in git_sync_cmd.msg) or
-    (git_sync_cmd.failed and
-     git_sync_cmd.msg !=
+    ('rc' in git_sync_cmd_result and git_sync_cmd_result.rc == 128 and
+     'Failed to checkout branch' not in git_sync_cmd_result.msg) or
+    (git_sync_cmd_result.failed and
+     git_sync_cmd_result.msg !=
      'Local modifications exist in repository (force=no).' and
-     'Failed to checkout branch' not in git_sync_cmd.msg)
+     'Failed to checkout branch' not in git_sync_cmd_result.msg)
 - name: Set up additional repo remotes for forks
   shell: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
   args:
