@@ -1,4 +1,13 @@
 --- # vim:se ft=ansible:
+- name: Patch Git config var for macOS
+  set_fact:
+    git_options: >
+      {{ git_options | combine(mac_gpg_config, recursive=True) }}
+  vars:
+    mac_gpg_config:
+      gpg.program: gpg
+  when:
+  - ansible_distribution == 'MacOSX'
 - name: Set up user's git config
   git_config:
     name: "{{ item.key }}"
