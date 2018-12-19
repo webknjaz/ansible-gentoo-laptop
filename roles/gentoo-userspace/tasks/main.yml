@@ -5,10 +5,6 @@
     scope: global
     value: "{{ item.value }}"
   with_dict: "{{ git_options }}"
-- name: Create Kitty plugins config dir within userspace
-  file:
-    dest: "{{ kitty.plugins_dir }}"
-    state: directory
 - name: Ensure that NeoVim is configured
   import_tasks: neovim.yml
 - name: Ensure that kitty is configured
