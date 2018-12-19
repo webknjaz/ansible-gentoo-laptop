@@ -1,0 +1,30 @@
+- name: Get oh-my-zsh onto machine
+  git:
+    clone: yes
+    dest: ~/.oh-my-zsh
+    recursive: yes
+    repo: git://github.com/robbyrussell/oh-my-zsh.git
+    update: yes
+- name: Get oh-my-zsh custom plugins onto machine
+  git:
+    clone: yes
+    dest: ~/.oh-my-zsh/custom/plugins/{{ item.key }}
+    recursive: yes
+    repo: "{{ item.value }}"
+    update: yes
+  with_dict: "{{ oh_my_zsh.custom_plugins }}"
+- name: Get oh-my-zsh custom themes onto machine
+  git:
+    clone: yes
+    dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}
+    recursive: yes
+    repo: "{{ item.value }}"
+    update: yes
+  with_dict: "{{ oh_my_zsh.custom_themes }}"
+- name: Symlink oh-my-zsh custom themes
+  file:
+    src: ~/.oh-my-zsh/custom/themes/{{ item.key }}/{{ item.key }}.zsh-theme
+    dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}.zsh-theme
+    state: link
+  with_dict: "{{ oh_my_zsh.custom_themes }}"
+
