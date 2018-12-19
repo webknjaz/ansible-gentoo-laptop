@@ -66,34 +66,11 @@
   template:
     src: zshrc.zsh-template
     dest: ~/.zshrc
-- name: Put Awesome WM enabled .xinitrc config in place
-  template:
-    src: xinitrc-template
-    dest: ~/.xinitrc
-- name: Create Awesome WM config dir within userspace
-  file:
-    dest: ~/.config/awesome
-    state: directory
-- name: Get Awesome WM widgets into config dir
-  git:
-    clone: yes
-    dest: ~/.config/awesome/awesome-wm-widgets
-    recursive: yes
-    repo: git://github.com/streetturtle/awesome-wm-widgets.git
-    update: yes
-- name: Install bit32 lua lib
-  become_user: root
-  shell: luarocks install bit32
-  args:
-    creates: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
-- file:
-    src: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
-    dest: ~/.config/awesome/bit32.so
-    state: link
-- name: Put Awesome WM resource script in place
-  template:
-    src: awesome-rc.lua-template
-    dest: ~/.config/awesome/rc.lua
+- name: Ensure that Awesome WM is configured
+  import_tasks: awesome.yml
+  when:
+  #- ansible_distribution == 'Gentoo'
+  - ansible_distribution != 'MacOSX'
 - name: Create experiments dir
   file:
     dest: "{{ code_workspace.source_dir }}/experiments"

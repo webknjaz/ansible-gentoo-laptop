@@ -1,6 +1,7 @@
 ---
 - name: Set up wk user on gentoo laptop
   hosts: laptop
+  gather_facts: true
   become: yes
   become_user: wk
   tasks:
