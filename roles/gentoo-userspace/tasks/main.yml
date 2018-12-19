@@ -1,10 +1,6 @@
 --- # vim:se ft=ansible:
-- name: Set up user's git config
-  git_config:
-    name: "{{ item.key }}"
-    scope: global
-    value: "{{ item.value }}"
-  with_dict: "{{ git_options }}"
+- name: Ensure that Git is configured
+  import_tasks: git.yml
 - name: Ensure that NeoVim is configured
   import_tasks: neovim.yml
 - name: Ensure that kitty is configured
@@ -18,49 +14,5 @@
   when:
   #- ansible_distribution == 'Gentoo'
   - ansible_distribution != 'MacOSX'
-- name: Create experiments dir
-  file:
-    dest: "{{ code_workspace.source_dir }}/experiments"
-    state: directory
-- name: Populate user's known_hosts file
-  known_hosts:
-    state: present
-    host: "{{ item.0.fqdn }}"
-    key: "{{ item.0.fqdn }} {{ item.1 }}"
-  with_subelements:
-  - "{{ code_workspace.repos }}"
-  - ssh_host_keys
-- name: Sync source code repos
-  git:
-    clone: yes
-    dest: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
-    recursive: yes
-    repo: "ssh://git@{{ item.0.fqdn }}/{{ item.1 }}.git"
-    update: yes
-  with_subelements:
-  - "{{ code_workspace.repos }}"
-  - slugs
-  register: git_sync_cmd
-  failed_when: >
-    ('rc' in git_sync_cmd and git_sync_cmd.rc == 128 and
-     'Failed to checkout branch' not in git_sync_cmd.msg) or
-    (git_sync_cmd.failed and
-     git_sync_cmd.msg !=
-     'Local modifications exist in repository (force=no).' and
-     'Failed to checkout branch' not in git_sync_cmd.msg)
-- name: Set up additional repo remotes for forks
-  shell: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
-  args:
-    chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
-  with_subelements:
-  - "{{ code_workspace.repos }}"
-  - slugs
-  when: item.1 in item.0.forked_as
-  register: git_remote
-  failed_when: >
-    git_remote.rc != 0 and
-    'fatal: remote fork already exists.' not in git_remote.stderr_lines
-  changed_when: >
-    git_remote.rc == 0 and
-    not git_remote.stderr_lines | count and
-    not git_remote.stdout_lines | count
+- name: Ensure that source code projects are in place
+  import_tasks: src.yml

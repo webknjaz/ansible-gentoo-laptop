@@ -1,0 +1,5 @@
+- name: Set up user's git config git_config:
+    name: "{{ item.key }}"
+    scope: global
+    value: "{{ item.value }}"
+  with_dict: "{{ git_options }}"
