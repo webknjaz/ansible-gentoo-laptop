@@ -1,0 +1,12 @@
+- name: Get kitty plugins onto machine
+  git:
+    clone: yes
+    dest: "{{ kitty.plugins_dir }}/{{ item.name }}"
+    recursive: yes
+    repo: "{{ item.src }}"
+    update: yes
+  loop: "{{ kitty.plugins }}"
+- name: Generate Kitty config from template
+  template:
+    src: kitty.conf
+    dest: ~/.config/kitty/kitty.conf
