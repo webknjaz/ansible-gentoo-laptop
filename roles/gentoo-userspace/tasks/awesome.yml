@@ -1,3 +1,4 @@
+--- # vim:se ft=ansible:
 - name: Put Awesome WM enabled .xinitrc config in place
   template:
     src: xinitrc-template

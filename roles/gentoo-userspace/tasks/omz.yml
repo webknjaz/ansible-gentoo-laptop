@@ -1,3 +1,4 @@
+--- # vim:se ft=ansible:
 - name: Get oh-my-zsh onto machine
   git:
     clone: yes

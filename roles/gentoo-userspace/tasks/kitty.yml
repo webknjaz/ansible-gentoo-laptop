@@ -1,3 +1,4 @@
+--- # vim:se ft=ansible:
 - name: Create Kitty plugins config dir within userspace
   file:
     dest: "{{ kitty.plugins_dir }}"

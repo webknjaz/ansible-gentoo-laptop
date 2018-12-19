@@ -1,3 +1,4 @@
+--- # vim:se ft=ansible:
 - name: Create experiments dir
   file:
     dest: "{{ code_workspace.source_dir }}/experiments"
