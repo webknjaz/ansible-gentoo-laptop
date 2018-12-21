@@ -64,6 +64,9 @@ vundle:
   # show a git diff in the gutter (sign column)
   - id: airblade/vim-gitgutter
 
+  # LaTeX
+  - id: lervag/vimtex
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
