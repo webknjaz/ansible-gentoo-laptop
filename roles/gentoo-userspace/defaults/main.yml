@@ -66,6 +66,7 @@ vundle:
 
   # LaTeX
   - id: lervag/vimtex
+  - id: donRaphaco/neotex
 
   # Examples:
 
