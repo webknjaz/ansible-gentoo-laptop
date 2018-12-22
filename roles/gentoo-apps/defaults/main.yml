@@ -73,6 +73,7 @@ ebuilds:
 - strace
 - symbola
 - telnet-bsd
+- texlive-langcyrillic
 - tmux
 - twemoji-color-font
 - unicode-emoji
