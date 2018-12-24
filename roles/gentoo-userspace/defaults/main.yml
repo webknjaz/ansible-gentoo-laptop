@@ -176,6 +176,7 @@ code_workspace:
       - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
       - open-craft-guild/aio-feature-flags
+      - open-craft-guild/prze-merge-2017-kurwa
       - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pyenv/pyenv
