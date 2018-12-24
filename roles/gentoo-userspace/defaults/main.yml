@@ -215,6 +215,7 @@ code_workspace:
       - webknjaz/gentoo-overlay
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
+      - webknjaz/talk-drafts
       - webknjaz/twitter-reporter
       - willthames/ansible-review
       - yaml/pyyaml
