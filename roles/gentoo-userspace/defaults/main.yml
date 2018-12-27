@@ -97,6 +97,7 @@ oh_my_zsh:
   custom_themes:
     spaceship: git://github.com/denysdovhan/spaceship-prompt.git
   editor: nvim
+  locale: en_US.UTF-8  # uk_UA.UTF-8
   plugins:
   - git
   - pyenv
