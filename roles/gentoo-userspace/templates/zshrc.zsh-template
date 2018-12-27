@@ -90,7 +90,7 @@ export LANG='{{ oh_my_zsh.locale | default('en_US.UTF-8') }}'
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='{{ oh_my_zsh.editor }}'
+export EDITOR='{{ oh_my_zsh.editor | default('vim') }}'
 export VISUAL="$EDITOR"
 
 # Compilation flags
