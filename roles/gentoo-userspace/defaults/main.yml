@@ -198,6 +198,7 @@ code_workspace:
       - python/core-workflow
       - python/cpython
       - python/miss-islington
+      - python-trio/trustme
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sclorg/s2i-python-container
@@ -241,6 +242,7 @@ code_workspace:
         pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
         python/core-workflow: webknjaz/core-workflow
+        python-trio/trustme: webknjaz/trustme
         sdispater/poetry: webknjaz/poetry
         takluyver/flit: webknjaz/flit
         tox-dev/detox: webknjaz/detox
