@@ -80,6 +80,7 @@ ebuilds:
 - unicode-emoji
 - usbutils
 - visual-studio-code
+- wireshark
 - wmname
 - xautolock
 - xflux-gui
