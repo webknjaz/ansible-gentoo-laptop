@@ -7,6 +7,8 @@ node_versions:
   default: *def_node_ver
 git_options:
   commit.gpgsign: true
+  commit.template: >-
+    ~/src/github/webknjaz/ansible-gentoo-laptop/roles/gentoo-userspace/files/git-commit.template
   gpg.program: gpg2
   pull.ff: only
   push.gpgsign: if-asked
