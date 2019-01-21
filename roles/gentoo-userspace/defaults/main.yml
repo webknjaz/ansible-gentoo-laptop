@@ -201,6 +201,7 @@ code_workspace:
       - python/cpython
       - python/miss-islington
       - python-trio/trustme
+      - re-actors/manylinux1_x86_64-action
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sclorg/s2i-python-container
