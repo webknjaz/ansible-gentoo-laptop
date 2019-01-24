@@ -157,6 +157,7 @@ code_workspace:
       - ansible/ansible-lint
       - ansible/ansibullbot
       - ansible/foreman-test-container
+      - ansible/lightbulb
       - ansible/molecule
       - benjaminp/six
       - bitprophet/alabaster
@@ -228,6 +229,7 @@ code_workspace:
         ansible/ansible: webknjaz/ansible
         ansible/ansible-lint: webknjaz/ansible-lint
         ansible/ansibullbot: webknjaz/ansibullbot
+        ansible/lightbulb: webknjaz/lightbulb
         ansible/molecule: webknjaz/molecule
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
