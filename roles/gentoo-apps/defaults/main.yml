@@ -48,6 +48,7 @@ ebuilds:
 - links
 #- lxc
 - lxdm
+- lsof
 - luajson
 - luaposix
 - luarocks
