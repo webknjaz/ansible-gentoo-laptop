@@ -43,6 +43,7 @@ ebuilds:
 - kitty
 - layman
 - libfprint
+- libinput-gestures
 - libgnomecups
 - links
 #- lxc
