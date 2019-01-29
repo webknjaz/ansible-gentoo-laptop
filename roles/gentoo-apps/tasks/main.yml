@@ -126,6 +126,17 @@
     owner: root
     group: root
 
+- name: >-
+    Set up udev rules: make Android devices accessible by plugdev group
+  copy:
+    src: etc/udev/rules.d/51-android.rules
+    dest: /etc/udev/rules.d/51-android.rules
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+  notify:
+  - update-udev-rules
+
 - name: Create config dir structure for Google Chrome and Chromium
   file:
     dest: "{{ item.key }}"
