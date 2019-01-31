@@ -217,6 +217,7 @@ code_workspace:
       - webknjaz/check-in
       - webknjaz/docker-freecad-cli
       - webknjaz/docker-freecad-cli-dev
+      - webknjaz/fortunate-pkg
       - webknjaz/gentoo-overlay
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
