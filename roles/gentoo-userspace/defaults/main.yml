@@ -9,6 +9,7 @@ git_options:
   commit.gpgsign: true
   commit.template: >-
     ~/src/github/webknjaz/ansible-gentoo-laptop/roles/gentoo-userspace/files/git-commit.template
+  core.repositoryFormatVersion: 1
   gpg.program: gpg2
   pull.ff: only
   push.gpgsign: if-asked
