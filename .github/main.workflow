@@ -6,4 +6,7 @@ workflow "Roles testing workflow" {
 action "re-actors/ansible-molecule-action@ad0e2db" {
   uses = "re-actors/ansible-molecule-action@master"
   args = "--debug test"
+  env = {
+    ANSIBLE_ASYNC_DIR = "/tmp/ansible/async"
+  }
 }
