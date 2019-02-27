@@ -5,7 +5,5 @@ workflow "Roles testing workflow" {
 
 action "re-actors/ansible-molecule-action@ad0e2db" {
   uses = "re-actors/ansible-molecule-action@master"
-  env = {
-    MOLECULE_DEBUG = "true"
-  }
+  args = "--debug test"
 }
