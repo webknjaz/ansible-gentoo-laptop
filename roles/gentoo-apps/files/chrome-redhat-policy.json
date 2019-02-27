@@ -1,4 +1,5 @@
 {
-    "AuthServerWhitelist": "*.redhat.com",
-    "AuthNegotiateDelegateWhitelist": "*.redhat.com"
+    "AuthNegotiateDelegateWhitelist": "*.redhat.com",
+    "AuthSchemes": "negotiate,ntlm,digest,basic",
+    "AuthServerWhitelist": "*.redhat.com"
 }

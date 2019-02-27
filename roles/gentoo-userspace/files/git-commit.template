@@ -1,0 +1,27 @@
+# If applied, this commit will...
+
+
+# Why is this change needed?
+Prior to this change, 
+
+
+# How does it address the issue?
+This change
+
+
+# Provide links to any relevant tickets, articles or other resources
+
+# References: 
+# * https://chris.beams.io/posts/git-commit/
+# * https://alistapart.com/article/the-art-of-the-commit
+# * https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
+# * https://github.com/erlang/otp/wiki/writing-good-commit-messages
+# * https://wiki.openstack.org/wiki/GitCommitMessages
+# * https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+# * https://dev.to/gonedark/when-to-make-a-git-commit
+
+# ### Credits ###
+# This commit template is based on:
+# * https://codeinthehole.com/tips/a-useful-template-for-commit-messages/
+
+# FIXME: research more commit templates

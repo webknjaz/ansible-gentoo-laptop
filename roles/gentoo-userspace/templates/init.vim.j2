@@ -1,0 +1,103 @@
+" nvim config entry point
+" vim:se ft=vim:
+
+" Vundle config start
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+={{ vundle_self_path }}
+call vundle#begin('{{ vundle.bundle_path }}')
+
+" let Vundle manage Vundle, required
+Plugin '{{ vundle.self_plugin }}'
+
+{% for plugin in vundle.plugins or [] %}
+
+Plugin '{{ plugin.id }}'{% if plugin.config is defined
+%}, {{ plugin.config }}{%
+endif %}
+
+{% endfor %}
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+" The rest of config
+
+set shell=zsh
+
+set number
+
+set colorcolumn=73,80,101
+"  set colorcolumn=73,80,101 set colorcolumn=73,80,101 set colorcolumn=73,80,101 hehe loooooolllllooolllll
+highlight ColorColumn ctermbg=darkgrey ctermfg=lightgreen guibg=lightgrey
+
+highlight OverLength ctermbg=208 ctermfg=white guibg=#592929
+match OverLength /\%<81v.\%>80v/
+
+highlight CriticalOverLength ctermbg=red ctermfg=white guibg=#592929
+2match CriticalOverLength /\%<102v.\%>101v/
+
+" There's also 3match: https://superuser.com/a/211965/182499
+highlight DocOverLength ctermbg=green ctermfg=white guibg=#592929
+"3match DocOverLength /\%<74v.\%>73v/
+
+" https://github.com/klardotsh/dotfiles/blob/1b78d67613435793208d2ded2d0e067891e1ab34/.config/nvim/init.vim
+
+
+"Set the color scheme. Change this to your preference.
+"Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
+"colorscheme twilight
+"colorscheme sea
+
+" Color scheme
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+"------------------------"
+"NERDTREE PLUGIN SETTINGS"
+"------------------------"
+"Shortcut for NERDTreeToggle
+nmap <leader>nt :NERDTreeToggle <CR>
+
+"Show hidden files in NerdTree
+let NERDTreeShowHidden=1
+
+"autopen NERDTree and focus cursor in new document
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
+
+" NERDTree
+nmap <silent> <F2> :NERDTreeToggle<CR>
+imap <silent> <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
+
+"------------------------"
+"      fuzzy finder      "
+"------------------------"
+map ; :Files<CR>
+
+"------------------------"
+"       gitgutter        "
+"------------------------"
+set signcolumn=yes
+
+"------------------------"
+"          fzf           "
+"------------------------"
+set rtp+=/usr/local/opt/fzf

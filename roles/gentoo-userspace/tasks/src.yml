@@ -1,0 +1,60 @@
+--- # vim:se ft=ansible:
+- name: Create experiments dir
+  file:
+    dest: "{{ code_workspace.source_dir }}/experiments"
+    state: directory
+- name: Populate user's known_hosts file
+  known_hosts:
+    state: present
+    host: "{{ item.0.fqdn }}"
+    key: "{{ item.0.fqdn }} {{ item.1 }}"
+  with_subelements:
+  - "{{ code_workspace.repos }}"
+  - ssh_host_keys
+- name: Sync source code repos
+  async: 45
+  poll: 0
+  git:
+    clone: yes
+    dest: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
+    recursive: yes
+    repo: "ssh://git@{{ item.0.fqdn }}/{{ item.1 }}.git"
+    update: yes
+  with_subelements:
+  - "{{ code_workspace.repos }}"
+  - slugs
+  register: git_sync_cmd_async_jobs
+- name: Wait for syncing the source code repos to finish
+  async_status:
+    jid: >
+      {{ git_sync_cmd_result.ansible_job_id }}
+  loop: >
+    {{ git_sync_cmd_async_jobs.results }}
+  loop_control:
+    loop_var: git_sync_cmd_result
+  register: git_sync_cmd_results
+  until: git_sync_cmd_results.finished
+  retries: 300
+  failed_when: >
+    ('rc' in git_sync_cmd_result and git_sync_cmd_result.rc == 128 and
+     'Failed to checkout branch' not in git_sync_cmd_result.msg) or
+    (git_sync_cmd_result.failed and
+     git_sync_cmd_result.msg !=
+     'Local modifications exist in repository (force=no).' and
+     'Failed to checkout branch' not in git_sync_cmd_result.msg)
+- name: Set up additional repo remotes for forks
+  shell: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
+  args:
+    chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
+  with_subelements:
+  - "{{ code_workspace.repos }}"
+  - slugs
+  when: item.1 in item.0.forked_as
+  register: git_remote
+  failed_when: >
+    git_remote.rc != 0 and
+    'fatal: remote fork already exists.' not in git_remote.stderr_lines
+  changed_when: >
+    git_remote.rc == 0 and
+    not git_remote.stderr_lines | count and
+    not git_remote.stdout_lines | count

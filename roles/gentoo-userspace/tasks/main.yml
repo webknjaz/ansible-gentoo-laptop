@@ -1,140 +1,18 @@
----
-- name: Set up user's git config
-  git_config:
-    name: "{{ item.key }}"
-    scope: global
-    value: "{{ item.value }}"
-  with_dict: "{{ git_options }}"
-- name: Create Kitty plugins config dir within userspace
-  file:
-    dest: "{{ kitty.plugins_dir }}"
-    state: directory
-- name: Get kitty plugins onto machine
-  git:
-    clone: yes
-    dest: "{{ kitty.plugins_dir }}/{{ item.name }}"
-    recursive: yes
-    repo: "{{ item.src }}"
-    update: yes
-  loop: "{{ kitty.plugins }}"
-- name: Generate Kitty config from template
-  template:
-    src: kitty.conf
-    dest: ~/.config/kitty/kitty.conf
-- name: Get oh-my-zsh onto machine
-  git:
-    clone: yes
-    dest: ~/.oh-my-zsh
-    recursive: yes
-    repo: git://github.com/robbyrussell/oh-my-zsh.git
-    update: yes
-- name: Get oh-my-zsh custom plugins onto machine
-  git:
-    clone: yes
-    dest: ~/.oh-my-zsh/custom/plugins/{{ item.key }}
-    recursive: yes
-    repo: "{{ item.value }}"
-    update: yes
-  with_dict: "{{ oh_my_zsh.custom_plugins }}"
-- name: Get oh-my-zsh custom themes onto machine
-  git:
-    clone: yes
-    dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}
-    recursive: yes
-    repo: "{{ item.value }}"
-    update: yes
-  with_dict: "{{ oh_my_zsh.custom_themes }}"
-- name: Symlink oh-my-zsh custom themes
-  file:
-    src: ~/.oh-my-zsh/custom/themes/{{ item.key }}/{{ item.key }}.zsh-theme
-    dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}.zsh-theme
-    state: link
-  with_dict: "{{ oh_my_zsh.custom_themes }}"
-- name: Install nvm
-  git:
-    repo: https://github.com/creationix/nvm.git
-    dest: ~/.nvm
-    version: "{{ nvm_version }}"
-- name: Install Nodes
-  shell: "source ~/.nvm/nvm.sh && nvm install {{ item }}"
-  with_items: "{{ node_versions.install }}"
-- name: Set default Node version
-  shell: "source ~/.nvm/nvm.sh && nvm alias default {{ node_versions.default }}"
-- name: Put oh-my-zsh enabled .zshrc config in place
-  template:
-    src: zshrc.zsh-template
-    dest: ~/.zshrc
-- name: Put Awesome WM enabled .xinitrc config in place
-  template:
-    src: xinitrc-template
-    dest: ~/.xinitrc
-- name: Create Awesome WM config dir within userspace
-  file:
-    dest: ~/.config/awesome
-    state: directory
-- name: Get Awesome WM widgets into config dir
-  git:
-    clone: yes
-    dest: ~/.config/awesome/awesome-wm-widgets
-    recursive: yes
-    repo: git://github.com/streetturtle/awesome-wm-widgets.git
-    update: yes
-- name: Install bit32 lua lib
-  become_user: root
-  shell: luarocks install bit32
-  args:
-    creates: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
-- file:
-    src: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
-    dest: ~/.config/awesome/bit32.so
-    state: link
-- name: Put Awesome WM resource script in place
-  template:
-    src: awesome-rc.lua-template
-    dest: ~/.config/awesome/rc.lua
-- name: Create experiments dir
-  file:
-    dest: "{{ code_workspace.source_dir }}/experiments"
-    state: directory
-- name: Populate user's known_hosts file
-  known_hosts:
-    state: present
-    host: "{{ item.0.fqdn }}"
-    key: "{{ item.0.fqdn }} {{ item.1 }}"
-  with_subelements:
-  - "{{ code_workspace.repos }}"
-  - ssh_host_keys
-- name: Sync source code repos
-  git:
-    clone: yes
-    dest: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
-    recursive: yes
-    repo: "ssh://git@{{ item.0.fqdn }}/{{ item.1 }}.git"
-    update: yes
-  with_subelements:
-  - "{{ code_workspace.repos }}"
-  - slugs
-  register: git_sync_cmd
-  failed_when: >
-    ('rc' in git_sync_cmd and git_sync_cmd.rc == 128 and
-     'Failed to checkout branch' not in git_sync_cmd.msg) or
-    (git_sync_cmd.failed and
-     git_sync_cmd.msg !=
-     'Local modifications exist in repository (force=no).' and
-     'Failed to checkout branch' not in git_sync_cmd.msg)
-- name: Set up additional repo remotes for forks
-  shell: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
-  args:
-    chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
-  with_subelements:
-  - "{{ code_workspace.repos }}"
-  - slugs
-  when: item.1 in item.0.forked_as
-  register: git_remote
-  failed_when: >
-    git_remote.rc != 0 and
-    'fatal: remote fork already exists.' not in git_remote.stderr_lines
-  changed_when: >
-    git_remote.rc == 0 and
-    not git_remote.stderr_lines | count and
-    not git_remote.stdout_lines | count
+--- # vim:se ft=ansible:
+- name: Ensure that Git is configured
+  import_tasks: git.yml
+- name: Ensure that NeoVim is configured
+  import_tasks: neovim.yml
+- name: Ensure that kitty is configured
+  import_tasks: kitty.yml
+- name: Ensure that Oh My ZSH is configured
+  import_tasks: omz.yml
+- name: Ensure that NodeJS is configured with nvm
+  import_tasks: nvm.yml
+- name: Ensure that Awesome WM is configured
+  import_tasks: awesome.yml
+  when:
+  #- ansible_distribution == 'Gentoo'
+  - ansible_distribution != 'MacOSX'
+- name: Ensure that source code projects are in place
+  import_tasks: src.yml

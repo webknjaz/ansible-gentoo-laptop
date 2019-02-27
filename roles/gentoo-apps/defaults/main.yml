@@ -3,13 +3,17 @@ vagga_testing: no
 emerge_load_average: 4
 emerge_jobs_number: 9
 ebuilds:
+- abrt
 - acpi
 - alacritty
 - alsa-utils
+- android-tools
+- anydesk
 - app-emulation/docker
 - arc-theme
 - asciinema
 - awesome
+- axel
 - bind-tools
 - bbswitch
 - cndrvcups-common-lb
@@ -23,8 +27,10 @@ ebuilds:
 - foomatic-db-engine
 - foomatic-db-ppds
 - fuse-exfat
+- fzf
 - git
 - gentoo-sources
+- gnome-color-manager
 - google-chrome
 - gutenprint
 - htop
@@ -37,10 +43,12 @@ ebuilds:
 - kitty
 - layman
 - libfprint
+- libinput-gestures
 - libgnomecups
 - links
 #- lxc
 - lxdm
+- lsof
 - luajson
 - luaposix
 - luarocks
@@ -61,6 +69,7 @@ ebuilds:
 - qrencode
 - pam_u2f
 - pam_yubico
+- redshift
 - rust-bin
 - sic
 - sssd
@@ -68,10 +77,13 @@ ebuilds:
 - strace
 - symbola
 - telnet-bsd
+- texlive-langcyrillic
 - tmux
 - twemoji-color-font
 - unicode-emoji
+- usbutils
 - visual-studio-code
+- wireshark
 - wmname
 - xautolock
 - xflux-gui

@@ -54,6 +54,10 @@ ZSH_THEME="{{ oh_my_zsh.theme | default('robbyrussell') }}"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+{% if ansible_distribution == 'MacOSX' %}
+ZSH_DISABLE_COMPFIX=true
+{% endif %}
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -69,14 +73,20 @@ zstyle :omz:plugins:{{ plugin_name }} {{ setting_name }} {{ setting_value }}
 {% endfor %}
 {% endfor %}
 
+#zstyle :omz:plugins:ssh-agent agent-forwarding on
+#zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_encrypted
+#zstyle :omz:plugins:ssh-agent lifetime 4h  # Forever by default
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG='{{ oh_my_zsh.locale | default('en_US.UTF-8') }}'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -84,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='{{ oh_my_zsh.editor }}'
+export EDITOR='{{ oh_my_zsh.editor | default('vim') }}'
 export VISUAL="$EDITOR"
 
 # Compilation flags
@@ -101,7 +111,3 @@ export VISUAL="$EDITOR"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_encrypted
-#zstyle :omz:plugins:ssh-agent lifetime 4h  # Forever by default

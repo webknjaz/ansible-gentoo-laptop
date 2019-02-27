@@ -7,11 +7,86 @@ node_versions:
   default: *def_node_ver
 git_options:
   commit.gpgsign: true
+  commit.template: >-
+    ~/src/github/webknjaz/ansible-gentoo-laptop/roles/gentoo-userspace/files/git-commit.template
+  core.repositoryFormatVersion: 1
   gpg.program: gpg2
+  pull.ff: only
   push.gpgsign: if-asked
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
   user.signingkey: 9345E8FEA89CA455
+vundle:
+  self_plugin: VundleVim/Vundle.vim
+  bundle_path: ~/.config/nvim/bundle
+  self_dir: Vundle.vim
+  plugins:
+  # fugitive.vim is a Git wrapper for Vim (plugin on GitHub repo)
+  - id: tpope/vim-fugitive
+
+  # HTML speedup
+  # The sparkup vim script is in a subdirectory of this repo called vim.
+  # Pass the path to set the runtimepath properly.
+  - id: rstacruz/sparkup
+    config:
+      rtp: vim/
+
+  #- id: pearofducks/ansible-vim
+  - id: MicahElliott/Rocannon
+
+  - id: scrooloose/nerdtree
+  - id: altercation/vim-colors-solarized
+
+  - id: jplaut/vim-arduino-ino
+
+  # fuzzy finder :Files
+  - id: junegunn/fzf.vim
+
+  # lightline statusline theme
+  - id: itchyny/lightline.vim
+
+  # multicursor feature
+  - id: terryma/vim-multiple-cursors
+
+  # eunuch.vim: Helpers for UNIX
+  - id: tpope/vim-eunuch
+
+  # surround.vim: quoting/parenthesizing made simple
+  - id: tpope/vim-surround
+
+  # editorconfig.org
+  - id: editorconfig/editorconfig-vim
+
+  # emmet for vim
+  - id: mattn/emmet-vim
+
+  # Asynchronous linting/fixing for Vim
+  # and Language Server Protocol (LSP) integration
+  - id: w0rp/ale
+
+  # show a git diff in the gutter (sign column)
+  - id: airblade/vim-gitgutter
+
+  # LaTeX
+  - id: lervag/vimtex
+  - id: donRaphaco/neotex
+
+  # Examples:
+
+  # plugin from http://vim-scripts.org/vim/scripts.html
+  #- id: L9
+
+  # Git plugin not hosted on GitHub
+  #- id: git://git.wincent.com/command-t.git
+
+  # git repos on your local machine (i.e. when working on your own plugin)
+  #- id: file:///home/gmarik/path/to/plugin
+
+  # Install L9 and avoid a Naming conflict if you've already installed a
+  # different version somewhere else.
+  #- id: ascenator/L9
+  #  config:
+  #    name: newL9
 awesome:
   terminal: kitty
   theme: zenburn
@@ -26,6 +101,7 @@ oh_my_zsh:
   custom_themes:
     spaceship: git://github.com/denysdovhan/spaceship-prompt.git
   editor: nvim
+  locale: en_US.UTF-8  # uk_UA.UTF-8
   plugins:
   - git
   - pyenv
@@ -53,6 +129,8 @@ oh_my_zsh:
   - ng
   - lol
   - last-working-dir
+  # custom
+  - kitty
   custom_plugins:
     zsh-autosuggestions: git://github.com/zsh-users/zsh-autosuggestions.git
     zsh-syntax-highlighting: git://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -72,15 +150,20 @@ code_workspace:
       ssh_host_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
       slugs:
+      - ahlinc/invoicer
       - aio-libs/aiohttp
       - aio-libs/aiohttp-devtools
       - aio-libs/multidict
       - amol-/dukpy
       - ansible/ansible
       - ansible/ansible-examples
+      - ansible/ansible-lint
       - ansible/ansibullbot
       - ansible/foreman-test-container
+      - ansible/lightbulb
+      - ansible/molecule
       - benjaminp/six
+      - bitprophet/alabaster
       - candlepin/candlepin
       - cherrypy/cheroot
       - cherrypy/cherrypy
@@ -94,12 +177,18 @@ code_workspace:
       - jctanner/ansible-reproducers
       - joepvd/tty-solarized
       - kpi-web-guild/django-girls-blog-serhii73
+      - libgit2/pygit2
+      - lxc/python2-lxc
+      - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
       - open-craft-guild/aio-feature-flags
+      - open-craft-guild/prze-merge-2017-kurwa
+      - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
+      - pypa/browntruck
       - pypa/get-pip
       - pypa/manylinux
       - pypa/pip
@@ -115,37 +204,61 @@ code_workspace:
       - python/core-workflow
       - python/cpython
       - python/miss-islington
+      - python-trio/trustme
+      - re-actors/manylinux1_x86_64-action
+      - sanitizers/chronographer-github-app
+      - sanitizers/ci-mediator-github-app
       - sclorg/s2i-python-container
+      - sdispater/poetry
+      - takluyver/flit
       - tox-dev/detox
       - tox-dev/tox
       - travis-ci/dpl
-      - takluyver/flit
+      - travis-ci/travis-yml
       - webknjaz/ansible.module_utils._text
       - webknjaz/ansiwatch-bot
-      - webknjaz/bifit-ua-procreditbank-signplugin-linux
       - webknjaz/check-in
       - webknjaz/docker-freecad-cli
+      - webknjaz/docker-freecad-cli-dev
+      - webknjaz/fortunate-pkg
+      - webknjaz/gentoo-overlay
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
+      - webknjaz/talk-drafts
       - webknjaz/twitter-reporter
+      - willthames/ansible-review
       - yaml/pyyaml
       forked_as:
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
+        ansible/ansible-lint: webknjaz/ansible-lint
         ansible/ansibullbot: webknjaz/ansibullbot
+        ansible/lightbulb: webknjaz/lightbulb
+        ansible/molecule: webknjaz/molecule
         benjaminp/six: webknjaz/six
+        bitprophet/alabaster: webknjaz/alabaster
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         joepvd/tty-solarized: webknjaz/tty-solarized
+        libgit2/pygit2: webknjaz/pygit2
+        lxc/python2-lxc: webknjaz/python2-lxc
+        lxc/python3-lxc: webknjaz/python3-lxc
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
+        pypa/browntruck: sanitizers/browntruck
+        pypa/twine: webknjaz/twine
+        pypa/virtualenv: webknjaz/virtualenv
         python/core-workflow: webknjaz/core-workflow
+        python-trio/trustme: webknjaz/trustme
+        sdispater/poetry: webknjaz/poetry
         takluyver/flit: webknjaz/flit
         tox-dev/detox: webknjaz/detox
         tox-dev/tox: webknjaz/tox
         travis-ci/dpl: webknjaz/dpl
+        travis-ci/travis-yml: webknjaz/travis-yml
+        willthames/ansible-review: webknjaz/ansible-review
         yaml/pyyaml: webknjaz/pyyaml
     - name: bitbucket
       fqdn: bitbucket.org
