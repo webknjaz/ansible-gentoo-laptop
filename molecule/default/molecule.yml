@@ -8,6 +8,7 @@ lint:
 platforms:
 - name: instance
   image: centos:7
+  volumes: []
 provisioner:
   name: ansible
   inventory:
