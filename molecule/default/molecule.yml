@@ -39,7 +39,7 @@ scenario:
   - destroy
   test_sequence:
   #- lint
-  - destroy
+  #- destroy
   - dependency
   - syntax
   - create
