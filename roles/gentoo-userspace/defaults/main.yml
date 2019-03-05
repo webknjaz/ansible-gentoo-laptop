@@ -71,6 +71,9 @@ vundle:
   - id: lervag/vimtex
   - id: donRaphaco/neotex
 
+  # Python
+  - id: davidhalter/jedi-vim
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
