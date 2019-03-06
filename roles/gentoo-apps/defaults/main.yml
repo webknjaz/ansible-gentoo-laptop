@@ -11,6 +11,7 @@ ebuilds:
 - anydesk
 - app-emulation/docker
 - arc-theme
+- arphicfonts
 - asciinema
 - awesome
 - axel
@@ -89,6 +90,7 @@ ebuilds:
 - xflux-gui
 - xorg-x11
 - yubikey-manager
+- zh-kcfonts
 ca_certificates:
   RH-legacy-Root-CA:
     filename: legacy
