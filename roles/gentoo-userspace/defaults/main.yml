@@ -161,6 +161,7 @@ code_workspace:
       - ansible/ansible
       - ansible/ansible-examples
       - ansible/ansible-lint
+      - ansible/ansible-lint-action
       - ansible/ansibullbot
       - ansible/foreman-test-container
       - ansible/lightbulb
