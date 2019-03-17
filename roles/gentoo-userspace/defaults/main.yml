@@ -212,6 +212,7 @@ code_workspace:
       - re-actors/manylinux1_x86_64-action
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
+      - sanitizers/github-bot-tutorial
       - sanitizers/octomachinery
       - sclorg/s2i-python-container
       - sdispater/poetry
