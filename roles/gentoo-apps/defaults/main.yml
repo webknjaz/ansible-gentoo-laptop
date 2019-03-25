@@ -21,6 +21,7 @@ ebuilds:
 - cndrvcups-common-lb
 - dnsmasq
 - dpkg
+- emojione-color-font
 - enchant
 - exfat-utils
 - fira-code
@@ -60,6 +61,7 @@ ebuilds:
 - networkmanager
 - networkmanager-openvpn
 - noto
+- noto-emoji
 - pam_krb5
 - parcellite
 - pavucontrol
