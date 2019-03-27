@@ -210,6 +210,7 @@ code_workspace:
       - python/miss-islington
       - python-trio/trustme
       - re-actors/manylinux1_x86_64-action
+      - re-actors/pypi-action
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sanitizers/github-bot-tutorial
