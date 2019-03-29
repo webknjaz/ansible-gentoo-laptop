@@ -40,6 +40,7 @@ ebuilds:
 - i3lock-color
 - intel-ocl-sdk
 - iosevka
+- iperf:3
 - iptraf-ng
 - irssi
 - jre
