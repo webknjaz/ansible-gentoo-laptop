@@ -213,6 +213,7 @@ code_workspace:
       - re-actors/pypi-action
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
+      - sanitizers/diactoros-github-app
       - sanitizers/github-bot-tutorial
       - sanitizers/octomachinery
       - sclorg/s2i-python-container
