@@ -211,6 +211,7 @@ code_workspace:
       - python-trio/trustme
       - re-actors/manylinux1_x86_64-action
       - re-actors/pypi-action
+      - RedHatOfficial/RedHatOfficial.github.io
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sanitizers/diactoros-github-app
@@ -260,6 +261,8 @@ code_workspace:
         pypa/virtualenv: webknjaz/virtualenv
         python/core-workflow: webknjaz/core-workflow
         python-trio/trustme: webknjaz/trustme
+        RedHatOfficial/RedHatOfficial.github.io: >-
+          webknjaz/RedHatOfficial.github.io
         sdispater/poetry: webknjaz/poetry
         takluyver/flit: webknjaz/flit
         tox-dev/detox: webknjaz/detox
