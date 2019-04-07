@@ -260,6 +260,7 @@ code_workspace:
         pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
         python/core-workflow: webknjaz/core-workflow
+        python/cpython: webknjaz/cpython
         python-trio/trustme: webknjaz/trustme
         RedHatOfficial/RedHatOfficial.github.io: >-
           webknjaz/RedHatOfficial.github.io
