@@ -212,6 +212,7 @@ code_workspace:
       - re-actors/manylinux1_x86_64-action
       - re-actors/pypi-action
       - RedHatOfficial/RedHatOfficial.github.io
+      - rtfd/readthedocs-docker-images
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sanitizers/diactoros-github-app
