@@ -33,6 +33,7 @@ ebuilds:
 - fzf
 - git
 - gentoo-sources
+- gentoo-zsh-completions
 - gnome-color-manager
 - google-chrome
 - gutenprint
@@ -77,6 +78,7 @@ ebuilds:
 - pam_yubico
 - redshift
 - rust-bin
+- rust-zshcomp
 - sic
 - sssd
 - st
@@ -96,6 +98,7 @@ ebuilds:
 - xorg-x11
 - yubikey-manager
 - zh-kcfonts
+- zsh-completions
 ca_certificates:
   RH-legacy-Root-CA:
     filename: legacy
