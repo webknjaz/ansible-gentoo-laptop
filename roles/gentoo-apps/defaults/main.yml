@@ -81,7 +81,6 @@ ebuilds:
 - rust-zshcomp
 - sic
 - sssd
-- st
 - strace
 - symbola
 - telnet-bsd
