@@ -166,6 +166,7 @@ code_workspace:
       - ansible/foreman-test-container
       - ansible/lightbulb
       - ansible/molecule
+      - bcoca/collection
       - benjaminp/six
       - bitprophet/alabaster
       - candlepin/candlepin
