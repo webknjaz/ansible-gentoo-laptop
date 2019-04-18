@@ -29,6 +29,7 @@ ebuilds:
 - foomatic-db
 - foomatic-db-engine
 - foomatic-db-ppds
+- freerdp
 - fuse-exfat
 - fzf
 - git
