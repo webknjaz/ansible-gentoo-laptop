@@ -236,6 +236,7 @@ code_workspace:
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
       - webknjaz/talk-drafts
+      - webknjaz/talks
       - webknjaz/twitter-reporter
       - willthames/ansible-review
       - yaml/pyyaml
