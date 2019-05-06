@@ -223,6 +223,7 @@ code_workspace:
       - sdispater/poetry
       - takluyver/flit
       - tox-dev/detox
+      - tox-dev/gh-action-tox
       - tox-dev/tox
       - travis-ci/dpl
       - travis-ci/travis-yml
