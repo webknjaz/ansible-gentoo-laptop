@@ -190,6 +190,7 @@ code_workspace:
       - open-craft-guild/prze-merge-2017-kurwa
       - patron-it/ansible-opencanary
       - patron-it/opencanary
+      - pyca/bcrypt
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
