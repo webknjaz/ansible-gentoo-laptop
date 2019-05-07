@@ -259,6 +259,7 @@ code_workspace:
         libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
+        pyca/bcrypt: webknjaz/bcrypt
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/browntruck: sanitizers/browntruck
