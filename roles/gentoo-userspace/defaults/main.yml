@@ -78,6 +78,13 @@ vundle:
   - id: leafgarland/typescript-vim
   - id: HerringtonDarkholme/yats.vim
 
+  # SCSS
+  - id: cakebaker/scss-syntax.vim
+
+  # SASS
+  - id: tpope/vim-haml
+  - id: shmargum/vim-sass-colors
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
