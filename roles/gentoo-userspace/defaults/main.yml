@@ -83,7 +83,7 @@ vundle:
 
   # SASS
   - id: tpope/vim-haml
-  - id: shmargum/vim-sass-colors
+  # - id: shmargum/vim-sass-colors  # causes errors
 
   # Examples:
 
