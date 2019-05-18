@@ -74,6 +74,10 @@ vundle:
   # Python
   - id: davidhalter/jedi-vim
 
+  # TypeScript
+  - id: leafgarland/typescript-vim
+  - id: HerringtonDarkholme/yats.vim
+
   # Examples:
 
   # plugin from http://vim-scripts.org/vim/scripts.html
