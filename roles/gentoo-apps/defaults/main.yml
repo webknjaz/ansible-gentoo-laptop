@@ -64,6 +64,7 @@ ebuilds:
 - neovim
 - networkmanager
 - networkmanager-openvpn
+- nmap
 - noto
 - noto-emoji
 - pam_krb5
