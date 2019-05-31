@@ -218,6 +218,7 @@ code_workspace:
       - pypa/virtualenv
       - pypa/warehouse
       - pypa/wheel
+      - python/cherry_picker
       - python/core-workflow
       - python/cpython
       - python/miss-islington
@@ -279,6 +280,7 @@ code_workspace:
         pypa/setuptools: webknjaz/setuptools
         pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
+        python/cherry_picker: webknjaz/cherry_picker
         python/core-workflow: webknjaz/core-workflow
         python/cpython: webknjaz/cpython
         python-hyper/h11: webknjaz/h11
@@ -310,4 +312,13 @@ code_workspace:
       - remak-dva/docker-freecad-cli
       - remak-dva/phex-recutech-mcs
       - remak-dva/tbe-mcs
+      forked_as: []
+    - name: gitlab-kentigen
+      fqdn: gitlab.kentigen.com
+      ssh_host_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCbjLW4UyWneMZ7sYg5jcWYdXEh1ePlyrLU+y0GJFC19lM6wQDn6ySrIzVQdbc2B1WFkkGexcPWKA/Sbdjq+0gf7ydyEJ5VqPW4kklqDp5zrhgI3YBKtCm5BK3Ed3t8F+GiBy3L71tVYMrQsraiKM9/roQLLLIPJBEtCvm4BEh838QfxYG45imylKXKaDq5P3YTo03pK1CL3HrDK2Qsqn/JlnuHgC9Q5KAh5PFbX13yS4vXMiyVGQjw6aqks/vIEszJy0LY4r+faEZ/8+1ojsL6FF3I6utoB3UkraoNYVQ2Scpi2vhUB/k/SGi5UWWY1b31o7PaXillarzFQKqvBeOz
+      - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDe+z2leG8YTRmU4xfMC1zptIqnhYQFcr1WSjuuQRvyQtiXc6Q1y4VAJzb2pnQGJBK/xbw8P+OaLcyNiA03ed0Y=
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKmRAW+xXYH6Rz/UfPYF7+PR4TbbX2867IJsBzFQ0W1+
+      slugs:
+      - so2019-037_tcl_tk/std-6
       forked_as: []
