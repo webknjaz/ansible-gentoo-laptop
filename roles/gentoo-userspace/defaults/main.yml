@@ -321,4 +321,5 @@ code_workspace:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKmRAW+xXYH6Rz/UfPYF7+PR4TbbX2867IJsBzFQ0W1+
       slugs:
       - so2019-037_tcl_tk/std-6
+      - so2019-037_tcl_tk/std-6-original-tcl
       forked_as: []
