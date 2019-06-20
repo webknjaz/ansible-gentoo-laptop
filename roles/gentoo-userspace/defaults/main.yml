@@ -188,6 +188,7 @@ code_workspace:
       - EuroPython/ep-config
       - FreeCAD/FreeCAD
       - gentoo/gentoo
+      - github-actions-playground/enroll-me
       - gliderlabs/herokuish
       - itkpi/beej-s-guide-to-network
       - jctanner/ansible-reproducers
