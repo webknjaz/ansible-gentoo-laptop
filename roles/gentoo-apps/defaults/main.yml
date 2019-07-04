@@ -64,6 +64,7 @@ ebuilds:
 - neovim
 - networkmanager
 - networkmanager-openvpn
+- networkmanager-sstp
 - nmap
 - noto
 - noto-emoji
