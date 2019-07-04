@@ -326,3 +326,7 @@ code_workspace:
       - so2019-037_tcl_tk/std-6
       - so2019-037_tcl_tk/std-6-original-tcl
       forked_as: []
+
+ibank_websigner_plugin:
+  url: https://ibank.procreditbank.com.ua/websigner-linux.bin
+  sha256sum: 55ed76a74400e43b490b4e57306a10a79ece09bae28732aad0d14b007d306512
