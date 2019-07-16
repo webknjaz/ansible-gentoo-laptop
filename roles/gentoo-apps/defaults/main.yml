@@ -10,6 +10,7 @@ ebuilds:
 - android-tools
 - anydesk
 - app-emulation/docker
+- app-misc/screen
 - arc-theme
 - arphicfonts
 - asciinema
