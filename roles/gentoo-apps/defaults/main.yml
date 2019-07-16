@@ -93,6 +93,7 @@ ebuilds:
 - twemoji-color-font
 - unicode-emoji
 - usbutils
+- virtualbox-bin
 - visual-studio-code
 - wireshark
 - wmname
