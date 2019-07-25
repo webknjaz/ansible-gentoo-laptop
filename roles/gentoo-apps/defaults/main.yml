@@ -94,6 +94,7 @@ ebuilds:
 - twemoji-color-font
 - unicode-emoji
 - usbutils
+- vagrant
 - virtualbox-bin
 - visual-studio-code
 - wireshark
