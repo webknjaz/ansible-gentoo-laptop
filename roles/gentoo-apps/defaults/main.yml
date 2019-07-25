@@ -19,6 +19,7 @@ ebuilds:
 - axel
 - bind-tools
 - bbswitch
+- bundler
 - cndrvcups-common-lb
 - dnsmasq
 - dpkg
