@@ -283,6 +283,7 @@ code_workspace:
         pypa/setuptools: webknjaz/setuptools
         pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
+        pypa/warehouse: webknjaz/warehouse
         python/cherry_picker: webknjaz/cherry_picker
         python/core-workflow: webknjaz/core-workflow
         python/cpython: webknjaz/cpython
