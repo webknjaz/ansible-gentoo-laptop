@@ -224,6 +224,7 @@ code_workspace:
       - python/core-workflow
       - python/cpython
       - python/miss-islington
+      - python/peps
       - python-hyper/h11
       - python-trio/trustme
       - re-actors/manylinux1_x86_64-action
@@ -287,6 +288,7 @@ code_workspace:
         python/cherry_picker: webknjaz/cherry_picker
         python/core-workflow: webknjaz/core-workflow
         python/cpython: webknjaz/cpython
+        python/peps: webknjaz/peps
         python-hyper/h11: webknjaz/h11
         python-trio/trustme: webknjaz/trustme
         RedHatOfficial/RedHatOfficial.github.io: >-
