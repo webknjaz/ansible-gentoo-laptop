@@ -47,6 +47,7 @@ ebuilds:
 - iperf:3
 - iptraf-ng
 - irssi
+- jq
 - jre
 - keybase
 - kitty
