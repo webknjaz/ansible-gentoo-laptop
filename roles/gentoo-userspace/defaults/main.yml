@@ -192,6 +192,7 @@ code_workspace:
       - gliderlabs/herokuish
       - itkpi/beej-s-guide-to-network
       - jctanner/ansible-reproducers
+      - jctanner/gravity
       - joepvd/tty-solarized
       - kpi-web-guild/django-girls-blog-serhii73
       - libgit2/pygit2
@@ -272,6 +273,7 @@ code_workspace:
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
+        jctanner/gravity: webknjaz/gravity
         joepvd/tty-solarized: webknjaz/tty-solarized
         libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
