@@ -227,6 +227,7 @@ code_workspace:
       - python/miss-islington
       - python/peps
       - python-hyper/h11
+      - python-trio/snekomatic
       - python-trio/trustme
       - re-actors/manylinux1_x86_64-action
       - re-actors/pypi-action
