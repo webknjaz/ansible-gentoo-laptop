@@ -205,6 +205,8 @@ code_workspace:
       - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pyca/bcrypt
+      - PyCQA/baron
+      - PyCQA/redbaron
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
@@ -280,6 +282,8 @@ code_workspace:
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
         pyca/bcrypt: webknjaz/bcrypt
+        PyCQA/baron: webknjaz/baron
+        PyCQA/redbaron: webknjaz/redbaron
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/browntruck: sanitizers/browntruck
@@ -337,4 +341,4 @@ code_workspace:
 
 ibank_websigner_plugin:
   url: https://ibank.procreditbank.com.ua/websigner-linux.bin
-  sha256sum: 55ed76a74400e43b490b4e57306a10a79ece09bae28732aad0d14b007d306512
+  sha256sum: fbeb4b363fae74e360660a50184b688059b21f2c63c38201abf9417b9e44a8ae
