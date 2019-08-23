@@ -212,6 +212,7 @@ code_workspace:
       - pypa/auditwheel
       - pypa/browntruck
       - pypa/get-pip
+      - pypa/gh-action-pypi-publish
       - pypa/manylinux
       - pypa/pip
       - pypa/pipenv
