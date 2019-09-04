@@ -82,6 +82,7 @@ ebuilds:
 - qrencode
 - pam_u2f
 - pam_yubico
+- qemu
 - redshift
 - rust-bin
 - rust-zshcomp
