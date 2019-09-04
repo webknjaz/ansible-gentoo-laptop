@@ -99,6 +99,7 @@ ebuilds:
 - usbutils
 - vagrant
 - virtualbox-bin
+- virt-manager
 - visual-studio-code
 - vlc
 - wireshark
