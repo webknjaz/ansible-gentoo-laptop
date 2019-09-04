@@ -55,6 +55,7 @@ ebuilds:
 - libfprint
 - libinput-gestures
 - libgnomecups
+- libvirt
 - links
 #- lxc
 - lxdm
