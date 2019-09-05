@@ -23,6 +23,7 @@ ebuilds:
 - cndrvcups-common-lb
 - dnsmasq
 - dpkg
+- ebtables
 - emojione-color-font
 - enchant
 - exfat-utils
