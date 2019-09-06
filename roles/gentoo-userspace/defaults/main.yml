@@ -202,6 +202,7 @@ code_workspace:
       - open-craft-guild/aio-feature-flags
       - open-craft-guild/ansible-fedora-laptop
       - open-craft-guild/prze-merge-2017-kurwa
+      - open-craft-guild/python-smsfly
       - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pyca/bcrypt
