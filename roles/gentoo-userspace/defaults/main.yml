@@ -216,6 +216,7 @@ code_workspace:
       - pypa/get-pip
       - pypa/gh-action-pypi-publish
       - pypa/manylinux
+      - pypa/packaging.python.org
       - pypa/pip
       - pypa/pipenv
       - pypa/pipfile
