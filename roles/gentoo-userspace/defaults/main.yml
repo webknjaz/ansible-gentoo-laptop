@@ -293,6 +293,7 @@ code_workspace:
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/browntruck: sanitizers/browntruck
+        pypa/packaging.python.org: webknjaz/packaging.python.org
         pypa/pip: webknjaz/pip
         pypa/setuptools: webknjaz/setuptools
         pypa/twine: webknjaz/twine
