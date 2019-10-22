@@ -246,6 +246,7 @@ code_workspace:
       - sanitizers/octomachinery
       - sclorg/s2i-python-container
       - sdispater/poetry
+      - sphinx-doc/sphinx
       - streetturtle/awesome-wm-widgets
       - takluyver/flit
       - tox-dev/detox
@@ -309,6 +310,7 @@ code_workspace:
         RedHatOfficial/RedHatOfficial.github.io: >-
           webknjaz/RedHatOfficial.github.io
         sdispater/poetry: webknjaz/poetry
+        sphinx-doc/sphinx: webknjaz/sphinx
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
         takluyver/flit: webknjaz/flit
         tox-dev/detox: webknjaz/detox
