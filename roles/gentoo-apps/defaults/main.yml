@@ -93,9 +93,11 @@ ebuilds:
 - sssd
 - strace
 - symbola
+- tcptraceroute
 - telnet-bsd
 - texlive-langcyrillic
 - tmux
+- traceroute
 - twemoji-color-font
 - unicode-emoji
 - usbutils
