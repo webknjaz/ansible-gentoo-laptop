@@ -192,6 +192,7 @@ code_workspace:
       - github-actions-playground/enroll-me
       - gliderlabs/herokuish
       - itkpi/beej-s-guide-to-network
+      - jaraco/rst.linker
       - jctanner/ansible-reproducers
       - jctanner/gravity
       - joepvd/tty-solarized
