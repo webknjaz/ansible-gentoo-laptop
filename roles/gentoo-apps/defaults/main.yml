@@ -96,6 +96,7 @@ ebuilds:
 - tcptraceroute
 - telnet-bsd
 - texlive-langcyrillic
+- texlive-latexrecommended
 - thunderbird-bin
 - tmux
 - traceroute
