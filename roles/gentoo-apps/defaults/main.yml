@@ -74,6 +74,7 @@ ebuilds:
 - nmap
 - noto
 - noto-emoji
+- ntfs3g
 - pam_krb5
 - parcellite
 - pavucontrol
