@@ -298,6 +298,7 @@ code_workspace:
         pypa/packaging.python.org: webknjaz/packaging.python.org
         pypa/pip: webknjaz/pip
         pypa/setuptools: webknjaz/setuptools
+        pypa/setuptools_scm: webknjaz/setuptools_scm
         pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
         pypa/warehouse: webknjaz/warehouse
