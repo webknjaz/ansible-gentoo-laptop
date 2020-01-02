@@ -67,6 +67,7 @@ ebuilds:
 - luarocks
 - luasocket
 - materia-theme
+- mesa-progs
 - neovim
 - networkmanager
 - networkmanager-openvpn
