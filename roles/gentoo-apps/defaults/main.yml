@@ -110,6 +110,7 @@ ebuilds:
 - virt-manager
 - visual-studio-code
 - vlc
+- wget2
 - wireshark
 - wmname
 - xautolock
