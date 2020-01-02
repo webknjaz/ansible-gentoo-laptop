@@ -58,6 +58,7 @@ ebuilds:
 - libinput-gestures
 - libgnomecups
 - libvirt
+- light
 - links
 #- lxc
 - lxdm
