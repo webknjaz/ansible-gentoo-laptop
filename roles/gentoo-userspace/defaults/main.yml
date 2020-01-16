@@ -178,6 +178,7 @@ code_workspace:
       - ansible/foreman-test-container
       - ansible/lightbulb
       - ansible/molecule
+      - ansible/pylibssh
       - bcoca/collection
       - benjaminp/six
       - bitprophet/alabaster
