@@ -57,6 +57,7 @@ ebuilds:
 - libfprint
 - libinput-gestures
 - libgnomecups
+- libpod
 - libvirt
 - light
 - links
