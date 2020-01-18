@@ -222,6 +222,7 @@ code_workspace:
       - pypa/pip
       - pypa/pipenv
       - pypa/pipfile
+      - pypa/pypi-support
       - pypa/setuptools
       - pypa/setuptools_scm
       - pypa/ssl
@@ -298,6 +299,7 @@ code_workspace:
         pypa/browntruck: sanitizers/browntruck
         pypa/packaging.python.org: webknjaz/packaging.python.org
         pypa/pip: webknjaz/pip
+        pypa/pypi-support: webknjaz/pypi-support
         pypa/setuptools: webknjaz/setuptools
         pypa/setuptools_scm: webknjaz/setuptools_scm
         pypa/twine: webknjaz/twine
