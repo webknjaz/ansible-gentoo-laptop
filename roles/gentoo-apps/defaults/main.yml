@@ -99,6 +99,7 @@ ebuilds:
 - symbola
 - tcptraceroute
 - telnet-bsd
+- termtosvg
 - texlive-langcyrillic
 - texlive-latexrecommended
 - thunderbird-bin
