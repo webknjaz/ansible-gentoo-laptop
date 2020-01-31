@@ -102,7 +102,7 @@ vundle:
   #  config:
   #    name: newL9
 awesome:
-  terminal: kitty
+  terminal: kitty --start-as=maximized --single-instance
   theme: zenburn
 kitty:
   plugins_dir: ~/.config/kitty/plugins
