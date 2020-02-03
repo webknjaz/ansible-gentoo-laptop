@@ -10,6 +10,7 @@ git_options:
   commit.template: >-
     ~/src/github/webknjaz/ansible-gentoo-laptop/roles/gentoo-userspace/files/git-commit.template
   core.repositoryFormatVersion: 1
+  fetch.parallel: 0  # auto, fetch from different remotes simultaneously
   gpg.program: gpg2
   pull.ff: only
   push.gpgsign: if-asked
