@@ -9,6 +9,7 @@ ebuilds:
 - alsa-utils
 - android-tools
 - anydesk
+- apache-tools
 - app-emulation/docker
 - app-misc/screen
 - arc-theme
