@@ -221,6 +221,7 @@ code_workspace:
       - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pyca/bcrypt
+      - PyCQA/astroid
       - PyCQA/baron
       - PyCQA/redbaron
       - pyenv/pyenv
@@ -304,6 +305,7 @@ code_workspace:
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
         pyca/bcrypt: webknjaz/bcrypt
+        PyCQA/astroid: webknjaz/astroid
         PyCQA/baron: webknjaz/baron
         PyCQA/redbaron: webknjaz/redbaron
         pyenv/pyenv: webknjaz/pyenv
