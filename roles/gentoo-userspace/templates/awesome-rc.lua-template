@@ -55,6 +55,9 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "{{ awesome.theme | default('default') }}/theme.lua")
 {% raw %}
 
+-- Gap between the windows
+beautiful.useless_gap = 7
+
 -- This is used later as the default terminal and editor to run.
 {% endraw %}
 terminal = "{{ awesome.terminal | default('xterm') }}"
