@@ -105,6 +105,7 @@ ebuilds:
 - termtosvg
 - texlive-langcyrillic
 - texlive-latexrecommended
+- thunar
 - thunderbird-bin
 - tmux
 - traceroute
