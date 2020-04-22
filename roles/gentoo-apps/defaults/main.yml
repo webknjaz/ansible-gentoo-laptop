@@ -37,9 +37,10 @@ ebuilds:
 - freerdp
 - fuse-exfat
 - fzf
-- git
+- genkernel
 - gentoo-sources
 - gentoo-zsh-completions
+- git
 - gnome-color-manager
 - google-chrome
 - gutenprint
