@@ -21,6 +21,7 @@ ebuilds:
 - bind-tools
 - bbswitch
 - bundler
+- ccache
 - cndrvcups-common-lb
 - dnsmasq
 - dpkg
