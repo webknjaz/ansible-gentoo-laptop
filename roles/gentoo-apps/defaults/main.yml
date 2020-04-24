@@ -63,6 +63,7 @@ ebuilds:
 - libvirt
 - light
 - links
+- linux-firmware
 #- lxc
 - lxdm
 - lsof
