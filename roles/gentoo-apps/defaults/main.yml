@@ -54,6 +54,7 @@ ebuilds:
 - irssi
 - jq
 - jre
+- kexec-tools
 - keybase
 - kitty
 - layman
