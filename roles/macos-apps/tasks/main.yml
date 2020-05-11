@@ -4,7 +4,7 @@
   shell: |
     os=$(sw_vers -productVersion | awk -F. '{print $1 "." $2}')
     if softwareupdate --history | grep --silent "Command Line Tools.*${os}"; then
-        echo 'Command-line tools already installed.' 
+        echo 'Command-line tools already installed.'
     else
         echo 'Installing Command-line tools...'
         in_progress=/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
