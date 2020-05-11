@@ -1,12 +1,12 @@
 --- # vim:se ft=ansible:
-- name: Get oh-my-zsh onto machine
+- name: Get oh-my-zsh onto machine  # noqa 401
   git:
     clone: yes
     dest: ~/.oh-my-zsh
     recursive: yes
     repo: git://github.com/robbyrussell/oh-my-zsh.git
     update: yes
-- name: Get oh-my-zsh custom plugins onto machine
+- name: Get oh-my-zsh custom plugins onto machine  # noqa 401
   git:
     clone: yes
     dest: ~/.oh-my-zsh/custom/plugins/{{ item.key }}
@@ -14,7 +14,7 @@
     repo: "{{ item.value }}"
     update: yes
   with_dict: "{{ oh_my_zsh.custom_plugins }}"
-- name: Get oh-my-zsh custom themes onto machine
+- name: Get oh-my-zsh custom themes onto machine  # noqa 401
   git:
     clone: yes
     dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}

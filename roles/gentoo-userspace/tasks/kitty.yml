@@ -3,7 +3,7 @@
   file:
     dest: "{{ kitty.plugins_dir }}"
     state: directory
-- name: Get kitty plugins onto machine
+- name: Get kitty plugins onto machine  # noqa 401
   git:
     clone: yes
     dest: "{{ kitty.plugins_dir }}/{{ item.name }}"

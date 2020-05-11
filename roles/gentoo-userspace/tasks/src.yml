@@ -11,7 +11,7 @@
   with_subelements:
   - "{{ code_workspace.repos }}"
   - ssh_host_keys
-- name: Sync source code repos
+- name: Sync source code repos  # noqa 401
   async: 45
   poll: 0
   git:
@@ -42,8 +42,8 @@
      git_sync_cmd_result.msg !=
      'Local modifications exist in repository (force=no).' and
      'Failed to checkout branch' not in git_sync_cmd_result.msg)
-- name: Set up additional repo remotes for forks
-  shell: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
+- name: Set up additional repo remotes for forks  # noqa 303
+  command: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
   args:
     chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
   with_subelements:

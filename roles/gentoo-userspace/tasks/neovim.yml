@@ -3,7 +3,7 @@
   set_fact:
     vundle_self_path: >-
       {{ vundle.bundle_path }}/{{ vundle.self_dir }}
-- name: Get Vundle into userspace
+- name: Get Vundle into userspace  # noqa 401
   git:
     clone: yes
     dest: >-
@@ -15,11 +15,11 @@
   template:
     src: init.vim.j2
     dest: ~/.config/nvim/init.vim
-- name: Wipe all unused Vundle plugins from NeoVim
+- name: Wipe all unused Vundle plugins from NeoVim  # noqa 301  # FIXME
   command: nvim +PluginClean! +qall
-- name: Install and upgrade Vundle plugins in NeoVim
+- name: Install and upgrade Vundle plugins in NeoVim  # noqa 301  # FIXME
   command: nvim +PluginInstall! +qall
-- name: List installed Vundle plugins in NeoVim
+- name: List installed Vundle plugins in NeoVim  # noqa 301  # FIXME
   command: nvim +PluginList +qall
   register: vundle_plugins_cmd
 - name: Save Vundle plugins list

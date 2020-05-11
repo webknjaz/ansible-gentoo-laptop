@@ -1,7 +1,8 @@
 ---
-- name: Install xcode
+- name: Install xcode  # noqa 301  # FIXME
   become: true
   shell: |
+    set -euxo pipefail
     os=$(sw_vers -productVersion | awk -F. '{print $1 "." $2}')
     if softwareupdate --history | grep --silent "Command Line Tools.*${os}"; then
         echo 'Command-line tools already installed.'

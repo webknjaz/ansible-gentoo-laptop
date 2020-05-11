@@ -7,7 +7,7 @@
   file:
     dest: ~/.config/awesome
     state: directory
-- name: Get Awesome WM widgets into config dir
+- name: Get Awesome WM widgets into config dir  # noqa 401
   git:
     clone: yes
     dest: ~/.config/awesome/awesome-wm-widgets
@@ -15,11 +15,13 @@
     repo: git://github.com/streetturtle/awesome-wm-widgets.git
     update: yes
 - name: Install bit32 lua lib
+  become: yes
   become_user: root
-  shell: luarocks install bit32
+  command: luarocks install bit32
   args:
     creates: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
-- file:
+- name: Ensure that bit32 from luarocks is linked under user dir
+  file:
     src: /usr/lib64/lua/luarocks/lib/lua/5.1/bit32.so
     dest: ~/.config/awesome/bit32.so
     state: link
