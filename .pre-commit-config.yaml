@@ -1,6 +1,9 @@
+---
 repos:
 - repo: https://github.com/ansible/ansible-lint.git
-  rev: v4.3.0a0
+  rev: c7b714e
   hooks:
   - id: ansible-lint
-    files: \.(yaml|yml)$
+    entry: ansible-lint --force-color
+    types:
+    - yaml
