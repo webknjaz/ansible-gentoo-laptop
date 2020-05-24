@@ -106,6 +106,7 @@ ebuilds:
 - rust-bin
 - rust-zshcomp
 - sic
+- sshfs
 - sssd
 - strace
 - symbola
