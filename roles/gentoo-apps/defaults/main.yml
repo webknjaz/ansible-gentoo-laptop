@@ -98,10 +98,11 @@ ebuilds:
 - pulseaudio
 - python:3.6
 - python:3.7
-- qrencode
 - pam_u2f
 - pam_yubico
 - qemu
+- qrencode
+- quivira
 - redshift
 - rust-bin
 - rust-zshcomp
