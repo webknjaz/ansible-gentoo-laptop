@@ -244,6 +244,7 @@ code_workspace:
       - pypa/virtualenv
       - pypa/warehouse
       - pypa/wheel
+      - pytest-dev/pytest
       - pytest-dev/pytest-forked
       - python/cherry_picker
       - python/core-workflow
@@ -324,6 +325,7 @@ code_workspace:
         pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
         pypa/warehouse: webknjaz/warehouse
+        pytest-dev/pytest: webknjaz/pytest
         pytest-dev/pytest-forked: webknjaz/pytest-forked
         python/cherry_picker: webknjaz/cherry_picker
         python/core-workflow: webknjaz/core-workflow
