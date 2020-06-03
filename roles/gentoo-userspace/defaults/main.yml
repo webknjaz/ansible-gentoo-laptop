@@ -14,6 +14,7 @@ git_options:
   gpg.program: gpg2
   pull.ff: only
   push.gpgsign: if-asked
+  rerere.enabled: true
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
   user.signingkey: 9345E8FEA89CA455
