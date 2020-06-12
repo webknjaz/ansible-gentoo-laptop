@@ -276,6 +276,7 @@ code_workspace:
       - travis-ci/dpl
       - travis-ci/travis-yml
       - webknjaz/ansible.module_utils._text
+      - webknjaz/ansinight
       - webknjaz/ansiwatch-bot
       - webknjaz/check-in
       - webknjaz/cython-coverage-extern-bug-repro-issue3636
