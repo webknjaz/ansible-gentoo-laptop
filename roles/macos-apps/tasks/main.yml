@@ -1,4 +1,22 @@
 ---
+- name: Create a homebrewers group
+  become: true
+  group:
+    name: homebrewers
+    state: present
+- name: Add users to homebrewers group
+  become: true
+  user:
+    name: >-
+      {{ username }}
+    append: yes
+    groups:
+    - homebrewers
+  loop:
+  - bluebirrrrd
+  - wk
+  loop_control:
+    loop_var: username
 - name: Install xcode  # noqa 301  # FIXME
   become: true
   shell: |
