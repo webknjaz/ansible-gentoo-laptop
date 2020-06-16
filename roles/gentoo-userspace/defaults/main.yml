@@ -200,6 +200,7 @@ code_workspace:
       - cherrypy/cherrypy
       - cherrypy/magicbus
       - cython/cython
+      - deadsnakes/action
       - dokku/dokku-mariadb
       - EuroPython/ep-config
       - FreeCAD/FreeCAD
@@ -303,6 +304,7 @@ code_workspace:
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
         cython/cython: webknjaz/cython
+        deadsnakes/action: webknjaz/deadsnakes-action
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
