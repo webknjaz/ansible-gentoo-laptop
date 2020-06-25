@@ -192,6 +192,7 @@ code_workspace:
       - ansible/lightbulb
       - ansible/molecule
       - ansible/pylibssh
+      - ansible-community/sphinx_ansible_theme
       - bcoca/collection
       - benjaminp/six
       - bitprophet/alabaster
