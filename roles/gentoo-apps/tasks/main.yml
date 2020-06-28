@@ -106,6 +106,16 @@
   notify:
   - ensure-services-started
 
+- name: Enable the Bluetooth Fast Connectable setting
+  lineinfile:
+    insertafter: "#FastConnectable = false"
+    line: FastConnectable = true
+    path: /etc/bluetooth/main.conf
+    regexp: ^FastConnectable\s=\strue$
+    state: present
+  notify:
+  - ensure-services-started
+
 - name: Set up Kerberos
   template:
     src: krb5.conf.template
