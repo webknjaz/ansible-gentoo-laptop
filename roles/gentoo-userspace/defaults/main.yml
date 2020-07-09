@@ -292,6 +292,7 @@ code_workspace:
       - webknjaz/talk-drafts
       - webknjaz/talks
       - webknjaz/twitter-reporter
+      - webknjaz/webknjaz
       - willthames/ansible-review
       - yaml/pyyaml
       forked_as:
