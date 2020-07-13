@@ -1,9 +1,5 @@
 {% raw %}
 -- vi: ft=lua
--- Set up env vars for widgets
-local posix = require("posix")
-posix.setenv("AWW_WEATHER_CITY", "Brno, CZ")
---os.setenv("AWW_WEATHER_API_KEY", "--------")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -19,10 +15,24 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
--- Instanciate a battery widget
-local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
-local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
-local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+-- Instanciate a battery widget and configure it
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")({
+    api_key='--------------------------------',
+    both_units_widget = true,
+    --city='Brno, CZ',
+    coordinates = {49.245904, 16.570329},
+    font_name = 'Carter One',
+    --icons = 'VitalyGorbachev',
+    --icons_extension = '.svg',
+    icons = 'weather-underground-icons',
+    icons_extension = '.png',
+    show_daily_forecast = true,
+    show_hourly_forecast = true,
+    time_format_12h = false,
+    units='metric',
+})
+local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")()
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")()
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
