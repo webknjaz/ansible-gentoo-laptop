@@ -224,6 +224,7 @@ code_workspace:
       - open-craft-guild/python-smsfly
       - patron-it/ansible-opencanary
       - patron-it/opencanary
+      - pradyunsg/sphinx-themes
       - pyca/bcrypt
       - pyca/cryptography
       - PyCQA/astroid
@@ -317,6 +318,7 @@ code_workspace:
         libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
+        pradyunsg/sphinx-themes: webknjaz/sphinx-themes
         pyca/bcrypt: webknjaz/bcrypt
         pyca/cryptography: webknjaz/cryptography
         PyCQA/astroid: webknjaz/astroid
