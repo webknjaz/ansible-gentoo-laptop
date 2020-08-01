@@ -271,6 +271,7 @@ code_workspace:
       - sanitizers/octomachinery
       - sclorg/s2i-python-container
       - sdispater/poetry
+      - sphinx-contrib/towncrier
       - sphinx-doc/sphinx
       - streetturtle/awesome-wm-widgets
       - takluyver/flit
