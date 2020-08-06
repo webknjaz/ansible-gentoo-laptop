@@ -358,6 +358,29 @@ code_workspace:
         travis-ci/travis-yml: webknjaz/travis-yml
         willthames/ansible-review: webknjaz/ansible-review
         yaml/pyyaml: webknjaz/pyyaml
+    - name: sourcehut
+      fqdn: git.sr.ht
+      ssh_host_keys:
+      # Entries under the comment can be generated via:
+      # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 git.sr.ht
+      #
+      # SourceHut's SSH key fingerprints:
+      # MD5:09:5e:61:71:63:a3:d8:d5:9b:fa:cd:ff:28:5b:84:ac (RSA)
+      # MD5:4b:f7:10:2a:0a:9d:9f:5d:c0:b3:87:4f:da:98:03:2e (ECDSA)
+      # MD5:a5:c1:9c:74:36:e3:7c:28:bc:4b:f0:fe:f9:90:72:68 (ED25519)
+      # SHA256:rvz/I0S1T/9If9+/CU0HDTF8AV4MPu5Gkkxsb7vUTH4 (RSA)
+      # SHA256:1nUUjsHH0qwfjI3dYFWlXTjPUP/Un1oo6wfu9YL8tCQ (ECDSA)
+      # SHA256:WXXNZu0YyoE3KBl5qh4GsnF1vR0NeEPYJAiPME+P09g (ED25519)
+      #
+      # Use the following commands to get them:
+      # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 git.sr.ht | ssh-keygen -E SHA256 -l -f -
+      # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 git.sr.ht | ssh-keygen -E MD5 -l -f -
+      # Ref: https://man.sr.ht/git.sr.ht/#ssh-host-keys
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ+l/lvYmaeOAPeijHL8d4794Am0MOvmXPyvHTtrqvgmvCJB8pen/qkQX2S1fgl9VkMGSNxbp7NF7HmKgs5ajTGV9mB5A5zq+161lcp5+f1qmn3Dp1MWKp/AzejWXKW+dwPBd3kkudDBA1fa3uK6g1gK5nLw3qcuv/V4emX9zv3P2ZNlq9XRvBxGY2KzaCyCXVkL48RVTTJJnYbVdRuq8/jQkDRA8lHvGvKI+jqnljmZi2aIrK9OGT2gkCtfyTw2GvNDV6aZ0bEza7nDLU/I+xmByAOO79R1Uk4EYCvSc1WXDZqhiuO2sZRmVxa0pQSBDn1DB3rpvqPYW+UvKB3SOz
+      - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCj6y+cJlqK3BHZRLZuM+KP2zGPrh4H66DacfliU1E2DHAd1GGwF4g1jwu3L8gOZUTIvUptqWTkmglpYhFp4Iy4=
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMZvRd4EtM7R+IHVMWmDkVU3VLQTSwQDSAvW0t2Tkj60
+      slugs: []
+      forked_as: []
     - name: bitbucket
       fqdn: bitbucket.org
       ssh_host_keys:
