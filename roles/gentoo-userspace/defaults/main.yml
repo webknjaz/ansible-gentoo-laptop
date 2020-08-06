@@ -381,6 +381,23 @@ code_workspace:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMZvRd4EtM7R+IHVMWmDkVU3VLQTSwQDSAvW0t2Tkj60
       slugs: []
       forked_as: []
+    - name: pagure
+      fqdn: pagure.io
+      ssh_host_keys:
+      # Entries below the comment can be generated via:
+      # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 pagure.io
+      #
+      # Pagure's SSH key fingerprints:
+      # MD5:90:8e:7f:a3:f7:f1:70:cb:56:77:96:17:44:c4:fc:82 (RSA)
+      # SHA256:Gddkd5H7oQ1RaK8WgXSKl7JZP+FgLyidmxbLercJ/JY (RSA)
+      #
+      # Use the following commands to get them:
+      # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 pagure.io | ssh-keygen -E SHA256 -l -f -
+      # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 pagure.io | ssh-keygen -E MD5 -l -f -
+      # Ref: https://pagure.io/ssh_info
+      - pagure.io,8.43.85.75,2620:52:3:1:dead:beef:cafe:fed5 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC198DWs0SQ3DX0ptu+8Wq6wnZMrXUCufN+wdSCtlyhHUeQ3q5B4Hgto1n2FMj752vToCfNTn9mWO7l2rNTrKeBsELpubl2jECHu4LqxkRVihu5UEzejfjiWNDN2jdXbYFY27GW9zymD7Gq3u+T/Mkp4lIcQKRoJaLobBmcVxrLPEEJMKI4AJY31jgxMTnxi7KcR+U5udQrZ3dzCn2BqUdiN5dMgckr4yNPjhl3emJeVJ/uhAJrEsgjzqxAb60smMO5/1By+yF85Wih4TnFtF4LwYYuxgqiNv72Xy4D/MGxCqkO/nH5eRNfcJ+AJFE7727F7Tnbo4xmAjilvRria/+l
+      slugs: []
+      forked_as: []
     - name: bitbucket
       fqdn: bitbucket.org
       ssh_host_keys:
