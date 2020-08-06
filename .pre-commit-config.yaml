@@ -1,9 +1,11 @@
 ---
 repos:
 - repo: https://github.com/ansible/ansible-lint.git
-  rev: c7b714e
+  rev: v4.3.0a5
   hooks:
   - id: ansible-lint
-    entry: ansible-lint --force-color
+    args:
+    - -x
+    - '106'
     types:
     - yaml
