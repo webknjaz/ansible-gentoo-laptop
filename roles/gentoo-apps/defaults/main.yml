@@ -31,6 +31,7 @@ ebuilds:
 - dpkg
 - dstat
 - ebtables
+- eix  # fast portage tree search
 - emojione-color-font
 - enchant
 - eselect-fontconfig
