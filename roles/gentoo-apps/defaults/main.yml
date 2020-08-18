@@ -84,6 +84,7 @@ ebuilds:
 - luaposix
 - luarocks
 - luasocket
+- lvm2
 - materia-theme
 - mesa-progs
 - neovim
