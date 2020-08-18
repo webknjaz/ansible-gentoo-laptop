@@ -50,6 +50,7 @@ ebuilds:
 - fzf
 - genkernel
 - gentoo-sources
+- gentoolkit  # euse and co.
 - gentoo-zsh-completions
 - git
 - gnome-color-manager
