@@ -34,6 +34,7 @@ ebuilds:
 - eix  # fast portage tree search
 - emojione-color-font
 - enchant
+- eselect
 - eselect-fontconfig
 - exfat-utils
 - fira-code
