@@ -104,6 +104,7 @@ ebuilds:
 - pulseaudio
 - python:3.6
 - python:3.7
+- python:3.8
 - pam_u2f
 - pam_yubico
 - qemu
