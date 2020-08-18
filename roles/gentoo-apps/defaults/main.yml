@@ -51,6 +51,7 @@ ebuilds:
 - genkernel
 - gentoo-sources
 - gentoolkit  # euse and co.
+- grub
 - gentoo-zsh-completions
 - git
 - gnome-color-manager
