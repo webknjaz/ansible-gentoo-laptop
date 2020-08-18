@@ -269,6 +269,7 @@ code_workspace:
       - sanitizers/diactoros-github-app
       - sanitizers/github-bot-tutorial
       - sanitizers/octomachinery
+      - sanitizers/patchback-github-app
       - sclorg/s2i-python-container
       - sdispater/poetry
       - sphinx-contrib/towncrier
