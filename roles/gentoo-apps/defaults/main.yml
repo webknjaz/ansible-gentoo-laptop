@@ -25,6 +25,7 @@ ebuilds:
 - ccache
 - cndrvcups-common-lb
 - corefonts
+- cryptsetup
 - darktable
 - dnsmasq
 - dpkg
