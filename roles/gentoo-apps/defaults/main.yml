@@ -54,6 +54,8 @@ ebuilds:
 - grub
 # https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
 - sys-kernel/gentoo-kernel-bin
+# https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
+- sys-kernel/installkernel-systemd-boot
 - sys-libs/efivar
 - gentoo-zsh-completions
 - git
