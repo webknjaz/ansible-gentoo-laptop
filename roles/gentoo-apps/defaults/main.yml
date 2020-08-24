@@ -123,6 +123,7 @@ ebuilds:
 - sshfs
 - sssd
 - strace
+- sudo
 - symbola
 - tcpdump
 - tcptraceroute
