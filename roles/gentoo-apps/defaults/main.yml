@@ -58,7 +58,7 @@ ebuilds:
 - sys-kernel/installkernel-systemd-boot
 - sys-libs/efivar
 - gentoo-zsh-completions
-- git
+- dev-vcs/git
 - gnome-color-manager
 - google-chrome
 - gutenprint
