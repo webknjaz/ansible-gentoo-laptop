@@ -159,6 +159,9 @@ ebuilds:
 accept_licenses:
   dev-util/intel-ocl-sdk: Intel-SDP
   media-fonts/corefonts: MSttfEULA
+  media-fonts/font-bh-ttf: bh-luxi
+  media-fonts/font-bh-type1: bh-luxi
+  media-fonts/freefonts: all-rights-reserved free-noncomm freedist
   net-misc/anydesk: AnyDesk-TOS
   net-print/cndrvcups-common-lb: Canon-UFR-II
 
