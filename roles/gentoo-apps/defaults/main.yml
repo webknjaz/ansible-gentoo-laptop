@@ -165,6 +165,7 @@ accept_licenses:
   net-misc/anydesk: AnyDesk-TOS
   net-print/cndrvcups-common-lb: Canon-UFR-II
   sys-kernel/linux-firmware: linux-fw-redistributable no-source-code
+  www-client/google-chrome: google-chrome
 
 ca_certificates:
   RH-legacy-Root-CA:
