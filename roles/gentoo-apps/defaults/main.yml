@@ -164,6 +164,7 @@ accept_licenses:
   media-fonts/freefonts: all-rights-reserved free-noncomm freedist
   net-misc/anydesk: AnyDesk-TOS
   net-print/cndrvcups-common-lb: Canon-UFR-II
+  sys-kernel/linux-firmware: linux-fw-redistributable no-source-code
 
 ca_certificates:
   RH-legacy-Root-CA:
