@@ -56,7 +56,7 @@ ebuilds:
 - freefonts
 - freerdp
 - fuse-exfat
-- fzf
+- app-shells/fzf  # CLI fuzzy finder
 - genkernel
 - gentoo-sources
 - grub
