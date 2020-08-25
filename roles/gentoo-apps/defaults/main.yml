@@ -2,6 +2,18 @@
 vagga_testing: no
 emerge_load_average: 4
 emerge_jobs_number: 9
+essential_ebuilds:
+- app-admin/sudo  # privilege escalation
+- app-admin/eselect  # alternatives management
+- app-portage/eix  # fast portage tree search
+- app-portage/gentoolkit  # euse and co.
+- app-portage/layman  # needed to manage third-party Git overlays
+- dev-vcs/git  # needed to fetch third-party Git overlays
+- sys-fs/cryptsetup  # LUKS
+- sys-process/htop  # processes overview
+- sys-process/lsof  # htop dep
+- sys-fs/lvm2  # LVM management
+- www-client/links  # needed to browse web docs from terminal
 ebuilds:
 - abrt
 - acpi
@@ -25,16 +37,13 @@ ebuilds:
 - ccache
 - cndrvcups-common-lb
 - corefonts
-- cryptsetup
 - darktable
 - dnsmasq
 - dpkg
 - dstat
 - ebtables
-- eix  # fast portage tree search
 - media-fonts/emojione-color-font::jorgicio
 - enchant
-- eselect
 - eselect-fontconfig
 - exfat-utils
 - fira-code
@@ -50,7 +59,6 @@ ebuilds:
 - fzf
 - genkernel
 - gentoo-sources
-- gentoolkit  # euse and co.
 - grub
 # https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
 - sys-kernel/gentoo-kernel-bin
@@ -58,11 +66,9 @@ ebuilds:
 - sys-kernel/installkernel-systemd-boot
 - sys-libs/efivar
 - gentoo-zsh-completions
-- dev-vcs/git
 - gnome-color-manager
 - google-chrome
 - gutenprint
-- htop
 - i3lock-color
 - intel-ocl-sdk
 - iosevka
@@ -74,23 +80,19 @@ ebuilds:
 - kexec-tools
 - keybase
 - kitty
-- layman
 - libfprint
 - libinput-gestures
 - libgnomecups
 - libpod
 - libvirt
 - light
-- links
 - linux-firmware
 #- lxc
 - lxdm
-- lsof
 - luajson
 - luaposix
 - luarocks
 - luasocket
-- lvm2
 - materia-theme
 - mesa-progs
 - neovim
@@ -123,7 +125,6 @@ ebuilds:
 - sshfs
 - sssd
 - strace
-- sudo
 - symbola
 - tcpdump
 - tcptraceroute

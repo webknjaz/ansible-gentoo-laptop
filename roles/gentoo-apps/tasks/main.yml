@@ -54,13 +54,20 @@
 
 - name: Merge ebuilds
   portage:
-    package: "{{ ebuilds }}"
+    package: "{{ ebuilds_list }}"
     state: emerged
     update: yes
     verbose: yes
     newuse: yes
     loadavg: "{{ emerge_load_average }}"
     jobs: "{{ emerge_jobs_number }}"
+  loop:
+  - >-
+    {{ essential_ebuilds }}
+  - >-
+    {{ ebuilds }}
+  loop_control:
+    loop_var: ebuilds_list
   notify:
   - ensure-services-started
   - ensure-services-reloaded
