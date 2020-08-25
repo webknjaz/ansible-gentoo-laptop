@@ -157,6 +157,7 @@ ebuilds:
 
 accept_licenses:
   net-misc/anydesk: AnyDesk-TOS
+  net-print/cndrvcups-common-lb: Canon-UFR-II
 
 ca_certificates:
   RH-legacy-Root-CA:
