@@ -157,6 +157,7 @@ ebuilds:
 - zsh-completions
 
 accept_licenses:
+  dev-util/intel-ocl-sdk: Intel-SDP
   media-fonts/corefonts: MSttfEULA
   net-misc/anydesk: AnyDesk-TOS
   net-print/cndrvcups-common-lb: Canon-UFR-II
