@@ -32,7 +32,7 @@ ebuilds:
 - dstat
 - ebtables
 - eix  # fast portage tree search
-- emojione-color-font
+- media-fonts/emojione-color-font::jorgicio
 - enchant
 - eselect
 - eselect-fontconfig
