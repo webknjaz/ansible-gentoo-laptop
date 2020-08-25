@@ -154,6 +154,10 @@ ebuilds:
 - yubikey-manager
 - zh-kcfonts
 - zsh-completions
+
+accept_licenses:
+  net-misc/anydesk: AnyDesk-TOS
+
 ca_certificates:
   RH-legacy-Root-CA:
     filename: legacy

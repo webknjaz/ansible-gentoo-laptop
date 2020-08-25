@@ -1,5 +1,33 @@
 ---
-# tasks file for gentoo-apps
+- name: Ensure license acceptance dirs structure exists
+  file:
+    dest: /etc/portage/package.license
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Accept package licenses
+  lineinfile:
+    create: yes
+    line: >-
+      {{ license_entry.package }}
+      {{ license_entry.licenses }}
+    path: >-
+      /etc/portage/package.license/{{
+          license_entry.package | replace('/', '--')
+      }}
+    state: present
+  loop: >-
+    {{
+        accept_licenses |
+        dict2items(key_name='package', value_name='licenses')
+    }}
+  loop_control:
+    label: >-
+      Accepting {{ license_entry.licenses }} terms
+      for {{ license_entry.package }}
+    loop_var: license_entry
 
 - name: Create patch dirs structure
   file:
