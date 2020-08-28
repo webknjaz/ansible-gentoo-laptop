@@ -110,6 +110,12 @@
     line: tun
     path: /etc/modules-load.d/tun.conf
 
+- name: Add a wk group
+  group:
+    gid: 1000
+    name: wk
+    state: present
+
 - name: Add wk to docker group
   user:
     append: yes
