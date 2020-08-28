@@ -170,6 +170,7 @@ ebuilds:
 
 accept_licenses:
   app-editors/vscode-bin: MS-vscode
+  app-emulation/virtualbox-bin: PUEL
   dev-util/intel-ocl-sdk: Intel-SDP
   media-fonts/corefonts: MSttfEULA
   media-fonts/font-bh-ttf: bh-luxi
