@@ -14,6 +14,12 @@ use_flags_global_enabled:
 - savedconfig
 - static-libs
 use_flags_global_disabled: []
+accept_keywords_per_package:
+  =app-shells/rust-zshcomp-9999::rust:
+  - >-
+    **
+#  sys-libs/glibc:  # conflicts with sssd: https://bugs.gentoo.org/737180
+#  - -~amd64
 essential_ebuilds:
 - app-admin/sudo  # privilege escalation
 - app-admin/eselect  # alternatives management

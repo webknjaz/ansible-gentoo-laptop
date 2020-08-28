@@ -103,6 +103,28 @@
     euse_cmd.rc != 0 and
     'ERROR: ' in euse_cmd.stdout
 
+- name: Set up per-package accept keywords
+  lineinfile:
+    create: yes
+    line: >-
+      {{ package_keywords_entry.package }}
+      {{ package_keywords_entry.keywords | join(' ') }}
+    path: >-
+      /etc/portage/package.accept_keywords/{{
+        package_keywords_entry.package
+        | replace('/', '--')
+      }}--managed
+    regexp: ^{{ package_keywords_entry.package }}\s+.*$
+    state: present
+  loop: >-
+    {{
+        accept_keywords_per_package |
+        dict2items(key_name='package', value_name='keywords')
+    }}
+  loop_control:
+    loop_var: package_keywords_entry
+  when: package_keywords_entry.keywords | length > 0
+
 - name: Merge ebuilds from the default Gentoo tree
   portage:
     package: >-
