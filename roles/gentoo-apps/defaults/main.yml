@@ -169,6 +169,7 @@ ebuilds:
 - zsh-completions
 
 accept_licenses:
+  app-editors/vscode-bin: MS-vscode
   dev-util/intel-ocl-sdk: Intel-SDP
   media-fonts/corefonts: MSttfEULA
   media-fonts/font-bh-ttf: bh-luxi
