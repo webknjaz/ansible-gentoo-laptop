@@ -1,12 +1,20 @@
 ---
-- name: Ensure license acceptance dirs structure exists
+- name: Ensure portage dirs structure exists
   file:
-    dest: /etc/portage/package.license
+    dest: /etc/portage/package.{{ setting_type }}
     mode: u=rwx,g=rx,o=rx
     owner: root
     group: root
     state: directory
     recurse: yes
+  loop:
+  - accept_keywords
+  - license
+  - mask
+  - unmask
+  - use
+  loop_control:
+    loop_var: setting_type
 - name: Accept package licenses
   lineinfile:
     create: yes
