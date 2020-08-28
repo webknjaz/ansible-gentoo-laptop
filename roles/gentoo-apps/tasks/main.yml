@@ -127,6 +127,7 @@
     name: wk
     shell: /bin/zsh
     state: present
+    uid: 1000
 
 - name: Configure network printer lookup in CUPS
   lineinfile:
