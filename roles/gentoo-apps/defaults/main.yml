@@ -179,7 +179,6 @@ ebuilds:
 - sshfs
 - sssd
 - strace
-- symbola
 - tcpdump
 - tcptraceroute
 - telnet-bsd
