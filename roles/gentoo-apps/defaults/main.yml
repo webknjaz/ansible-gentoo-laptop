@@ -97,7 +97,6 @@ ebuilds:
 - dpkg
 - dstat
 - ebtables
-- media-fonts/emojione-color-font::jorgicio
 - enchant
 - eselect-fontconfig
 - exfat-utils
@@ -133,7 +132,6 @@ ebuilds:
 - jq
 - jre
 - kexec-tools
-- keybase
 - kitty
 - libfprint
 - libinput-gestures
@@ -148,7 +146,6 @@ ebuilds:
 - luaposix
 - luarocks
 - luasocket
-- materia-theme
 - mesa-progs
 - neovim
 - netcat
@@ -175,7 +172,6 @@ ebuilds:
 - rawtherapee
 - redshift
 - rust-bin
-- rust-zshcomp
 - sic
 - sshfs
 - sssd
@@ -192,14 +188,12 @@ ebuilds:
 - tmux
 - traceroute
 - ttf-bitstream-vera
-- twemoji-color-font
 - unicode-emoji
 - unifont
 - usbutils
 - vagrant
 - virtualbox-bin
 - virt-manager
-- visual-studio-code
 - vlc
 - wget2
 - wireshark
@@ -210,6 +204,15 @@ ebuilds:
 - yubikey-manager
 - zh-kcfonts
 - zsh-completions
+ebuilds_from_overlays:
+  app-crypt/keybase-bin: dmchurch  # TODO: use "keybase" once it supports GUI
+  app-editors/vscode-bin: jorgicio
+  app-shells/rust-zshcomp: rust
+  media-fonts/emojione-color-font: jorgicio
+  media-fonts/twemoji-color-font: jorgicio
+  x11-themes/materia-theme: jorgicio
+
+unmask_ebuilds: []
 
 accept_licenses:
   app-editors/vscode-bin: MS-vscode
