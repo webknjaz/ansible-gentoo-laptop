@@ -225,6 +225,11 @@ accept_licenses:
   www-client/google-chrome: google-chrome
   x11-misc/xflux: f.lux
 
+layman_overlays:
+- dmchurch
+- jorgicio
+- rust
+
 ca_certificates:
   RH-legacy-Root-CA:
     filename: legacy

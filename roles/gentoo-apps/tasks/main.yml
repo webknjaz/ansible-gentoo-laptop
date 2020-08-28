@@ -87,6 +87,39 @@
     state: present
   when: ruby_targets | length > 0
 
+- name: Mask third-party overlays
+  lineinfile:
+    create: yes
+    line: >-
+      */*::{{ overlay }}
+    path: >-
+      /etc/portage/package.mask/third-party-overlay--{{ overlay }}
+    state: present
+  loop: >-
+    {{ layman_overlays }}
+  loop_control:
+    loop_var: overlay
+
+- name: Install layman overlays
+  shell: |
+    set -euxo pipefail
+    yes | layman -a {{ overlay }}
+  args:
+    creates: /var/lib/layman/{{ overlay }}
+  loop: >-
+    {{ layman_overlays }}
+  loop_control:
+    loop_var: overlay
+  register: layman_cmd
+  changed_when: layman_cmd.rc == 141
+  failed_when: >-
+    layman_cmd.rc not in [0, 141] and
+    ' was already installed' not in layman_cmd.stdout
+
+- name: Sync layman overlays
+  command: layman -S
+  when: True
+
 - name: Enable global USE-flags
   command: euse -E {{ use_flags_global_enabled | join(' ') }}
   when: use_flags_global_enabled | length > 0
