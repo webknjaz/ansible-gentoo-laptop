@@ -2,6 +2,10 @@
 vagga_testing: no
 emerge_load_average: 4
 emerge_jobs_number: 9
+ruby_targets:
+- 2.5
+- 2.6
+- 2.7
 essential_ebuilds:
 - app-admin/sudo  # privilege escalation
 - app-admin/eselect  # alternatives management

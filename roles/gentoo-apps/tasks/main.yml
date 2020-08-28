@@ -76,6 +76,17 @@
   - ensure-services-started
   - ensure-services-reloaded
 
+- name: Set up Ruby targets
+  lineinfile:
+    create: no
+    line: >-
+      RUBY_TARGETS="ruby{{ ruby_targets | map('replace', '.', '') | join(' ruby')
+      }}"
+    path: /etc/portage/make.conf
+    regexp: ^RUBY_TARGETS="[^"]*"$
+    state: present
+  when: ruby_targets | length > 0
+
 - name: Merge ebuilds from the default Gentoo tree
   portage:
     package: >-
