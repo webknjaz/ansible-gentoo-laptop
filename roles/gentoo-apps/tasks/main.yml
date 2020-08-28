@@ -47,7 +47,7 @@
     recurse: yes
   loop:
   - dev-libs/cyrus-sasl-2.1.26
-  - net-wireless/crda
+  - net-wireless/crda-3.18-r1
 
 - name: Add OpenSSL 1.1 compatibility patches
   copy:
@@ -58,7 +58,7 @@
     group: root
   with_dict:
     dev-libs/cyrus-sasl-2.1.26: cyrus-sasl-2.1.26-openssl-1.1.patch
-    net-wireless/crda: crda-openssl-1.1.patch
+    net-wireless/crda-3.18-r1: crda-openssl-1.1.patch
 
 - name: Merge ebuilds
   portage:
