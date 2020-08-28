@@ -62,22 +62,34 @@
     net-wireless/crda-3.18-r1: crda-openssl-1.1.patch
     sys-auth/sssd-2.2.3: sssd-2.2.3-glibc-2.32-compat.patch
 
-- name: Merge ebuilds
+- name: Merge essential ebuilds
   portage:
-    package: "{{ ebuilds_list }}"
+    package: >-
+      {{ essential_ebuilds }}
     state: emerged
     update: yes
     verbose: yes
     newuse: yes
     loadavg: "{{ emerge_load_average }}"
     jobs: "{{ emerge_jobs_number }}"
-  loop:
-  - >-
-    {{ essential_ebuilds }}
-  - >-
-    {{ ebuilds }}
-  loop_control:
-    loop_var: ebuilds_list
+  notify:
+  - ensure-services-started
+  - ensure-services-reloaded
+
+- name: Merge ebuilds from the default Gentoo tree
+  portage:
+    package: >-
+      {{
+          ebuilds
+          | map('regex_replace', '^(.*)$', '\1::gentoo')
+          | list
+      }}
+    state: emerged
+    update: yes
+    verbose: yes
+    newuse: yes
+    loadavg: "{{ emerge_load_average }}"
+    jobs: "{{ emerge_jobs_number }}"
   notify:
   - ensure-services-started
   - ensure-services-reloaded
