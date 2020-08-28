@@ -213,7 +213,8 @@ ebuilds_from_overlays:
   media-fonts/twemoji-color-font: jorgicio
   x11-themes/materia-theme: jorgicio
 
-unmask_ebuilds: []
+unmask_ebuilds:
+  app-emulation/virtualbox-bin: gentoo
 
 accept_licenses:
   app-editors/vscode-bin: MS-vscode
