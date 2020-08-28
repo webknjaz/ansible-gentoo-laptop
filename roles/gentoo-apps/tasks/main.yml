@@ -48,8 +48,9 @@
   loop:
   - dev-libs/cyrus-sasl-2.1.26
   - net-wireless/crda-3.18-r1
+  - sys-auth/sssd-2.2.3
 
-- name: Add OpenSSL 1.1 compatibility patches
+- name: Add ebuild user patches
   copy:
     src: "{{ item.value }}"
     dest: /etc/portage/patches/{{ item.key }}/
@@ -59,6 +60,7 @@
   with_dict:
     dev-libs/cyrus-sasl-2.1.26: cyrus-sasl-2.1.26-openssl-1.1.patch
     net-wireless/crda-3.18-r1: crda-openssl-1.1.patch
+    sys-auth/sssd-2.2.3: sssd-2.2.3-glibc-2.32-compat.patch
 
 - name: Merge ebuilds
   portage:
