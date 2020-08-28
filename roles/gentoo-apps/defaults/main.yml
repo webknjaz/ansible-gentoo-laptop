@@ -14,6 +14,43 @@ use_flags_global_enabled:
 - savedconfig
 - static-libs
 use_flags_global_disabled: []
+use_flags_per_package_enabled:
+  dev-libs/libdbusmenu:
+  - gtk3
+  dev-libs/nss:
+  - utils
+  net-dns/bind-tools:
+  - gssapi
+  net-misc/spice-gtk:
+  - usbredir
+  sys-auth/sssd:
+  - sudo
+  sys-devel/gcc:
+  - graphite
+  sys-apps/systemd:
+  - cgroup-hybrid  # Solves conflict with app-emulation/docker. Refs:
+  # https://bugs.gentoo.org/691844
+  # https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=9753537cfaf24e80397a0236a169ded2ccc19fdf
+  - cryptsetup
+  - curl
+  - dns-over-tls
+  - gnuefi
+  - http
+  - idn
+  - importd
+  - lzma
+  - nat
+  - pkcs11
+  - qrcode
+  - repart
+  - xkb
+  sys-libs/glibc:
+  - nscd
+  sys-libs/zlib:
+  - minizip
+use_flags_per_package_disabled:
+  app-text/mupdf:
+  - static-libs
 accept_keywords_per_package:
   =app-shells/rust-zshcomp-9999::rust:
   - >-

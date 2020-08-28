@@ -103,6 +103,40 @@
     euse_cmd.rc != 0 and
     'ERROR: ' in euse_cmd.stdout
 
+- name: Enable per-package USE-flags
+  command: >-
+    euse -p "{{ flags_entry.package }}"
+    -E {{ flags_entry.use_flags | join(' ') }}
+  register: euse_cmd
+  failed_when: >-
+    euse_cmd.rc != 0 and
+    'ERROR: ' in euse_cmd.stdout
+  loop: >-
+    {{
+        use_flags_per_package_enabled |
+        dict2items(key_name='package', value_name='use_flags')
+    }}
+  loop_control:
+    loop_var: flags_entry
+  when: flags_entry.use_flags | length > 0
+
+- name: Disable per-package USE-flags
+  command: >-
+    euse -p "{{ flags_entry.package }}"
+    -D {{ flags_entry.use_flags | join(' ') }}
+  register: euse_cmd
+  failed_when: >-
+    euse_cmd.rc != 0 and
+    'ERROR: ' in euse_cmd.stdout
+  loop: >-
+    {{
+        use_flags_per_package_disabled |
+        dict2items(key_name='package', value_name='use_flags')
+    }}
+  loop_control:
+    loop_var: flags_entry
+  when: flags_entry.use_flags | length > 0
+
 - name: Set up per-package accept keywords
   lineinfile:
     create: yes
