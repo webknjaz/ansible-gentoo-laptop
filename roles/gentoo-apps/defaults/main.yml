@@ -104,7 +104,6 @@ ebuilds:
 - enchant
 - eselect-fontconfig
 - fira-code
-- flameshot
 - font-bh-ttf
 - font-bh-type1
 - foomatic-db
@@ -126,6 +125,7 @@ ebuilds:
 - gnome-color-manager
 - google-chrome
 - gutenprint
+- media-gfx/flameshot
 - i3lock-color
 - intel-ocl-sdk
 - iosevka
