@@ -151,7 +151,7 @@ ebuilds:
 - luasocket
 - mesa-progs
 - neovim
-- netcat
+- openbsd-netcat
 - networkmanager
 - networkmanager-openvpn
 - networkmanager-sstp
