@@ -126,7 +126,6 @@ ebuilds:
 - google-chrome
 - gutenprint
 - media-gfx/flameshot
-- i3lock-color
 - intel-ocl-sdk
 - iosevka
 - iperf:3
