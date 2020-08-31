@@ -291,6 +291,7 @@ code_workspace:
       - webknjaz/fortunate-pkg
       - webknjaz/fqcn_conftest_repro
       - webknjaz/gentoo-overlay
+      - webknjaz/intersphinx-untangled
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
       - webknjaz/talk-drafts
