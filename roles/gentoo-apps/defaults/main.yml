@@ -6,6 +6,12 @@ ruby_targets:
 - 2.5
 - 2.6
 - 2.7
+video_card_targets:
+- intel
+- i965
+- iris
+- nvidia
+# - nouveau
 use_flags_global_enabled:
 - kerberos
 - luajit

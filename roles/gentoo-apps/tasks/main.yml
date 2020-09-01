@@ -87,6 +87,16 @@
     state: present
   when: ruby_targets | length > 0
 
+- name: Set up graphics card targets
+  lineinfile:
+    create: no
+    line: >-
+      VIDEO_CARDS="{{ video_card_targets | join(' ') }}"
+    path: /etc/portage/make.conf
+    regexp: ^VIDEO_CARDS="[^"]*"$
+    state: present
+  when: video_card_targets | length > 0
+
 - name: Mask third-party overlays
   lineinfile:
     create: yes
