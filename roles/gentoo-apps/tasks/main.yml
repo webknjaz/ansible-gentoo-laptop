@@ -350,6 +350,8 @@
     groups:
     - docker
     name: wk
+    password: >-
+      {{ user_pass }}
     shell: /bin/zsh
     state: present
     uid: 1000
