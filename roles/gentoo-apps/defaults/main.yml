@@ -2,6 +2,8 @@
 vagga_testing: no
 emerge_load_average: 4
 emerge_jobs_number: 9
+abi_x86_targets:
+- 64
 ruby_targets:
 - 2.5
 - 2.6

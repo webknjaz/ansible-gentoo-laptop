@@ -62,6 +62,16 @@
     net-wireless/crda-3.18-r1: crda-openssl-1.1.patch
     sys-auth/sssd-2.2.3: sssd-2.2.3-glibc-2.32-compat.patch
 
+- name: Set up ABI_X86 targets
+  lineinfile:
+    create: no
+    line: >-
+      ABI_X86="{{ abi_x86_targets | join(' ') }}"
+    path: /etc/portage/make.conf
+    regexp: ^ABI_X86="[^"]*"$
+    state: present
+  when: abi_x86_targets | length > 0
+
 - name: Merge essential ebuilds
   portage:
     package: >-
