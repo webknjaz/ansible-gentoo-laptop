@@ -1,0 +1,51 @@
+Index: src/vboxdrv/r0drv/linux/alloc-r0drv-linux.c
+===================================================================
+--- src.orig/vboxdrv/r0drv/linux/alloc-r0drv-linux.c
++++ src/vboxdrv/r0drv/linux/alloc-r0drv-linux.c
+@@ -153,6 +153,8 @@ RT_EXPORT_SYMBOL(RTR0MemExecDonate);
+ 
+ 
+ #ifdef RTMEMALLOC_EXEC_VM_AREA
++
++
+ /**
+  * Allocate executable kernel memory in the module range.
+  *
+@@ -168,7 +170,12 @@ static PRTMEMHDR rtR0MemAllocExecVmArea(
+     struct vm_struct   *pVmArea;
+     size_t              iPage;
+ 
++# if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 8, 0)
++    pVmArea = __get_vm_area_caller(cbAlloc, VM_ALLOC, MODULES_VADDR, MODULES_END,
++		    		   __builtin_return_address(0));
++#else
+     pVmArea = __get_vm_area(cbAlloc, VM_ALLOC, MODULES_VADDR, MODULES_END);
++#endif
+     if (!pVmArea)
+         return NULL;
+     pVmArea->nr_pages = 0;    /* paranoia? */
+@@ -201,14 +208,21 @@ static PRTMEMHDR rtR0MemAllocExecVmArea(
+ # endif
+         pVmArea->nr_pages = cPages;
+         pVmArea->pages    = papPages;
+-        if (!map_vm_area(pVmArea, PAGE_KERNEL_EXEC,
++# if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 8, 0)
++	unsigned long start = (unsigned long)pVmArea->addr;
++	unsigned long size = get_vm_area_size(pVmArea);
++
++	if (!map_kernel_range(start, size, PAGE_KERNEL_EXEC, papPages))
++#else
++	if (!map_vm_area(pVmArea, PAGE_KERNEL_EXEC,
+ # if LINUX_VERSION_CODE < KERNEL_VERSION(3, 17, 0)
+                          &papPagesIterator
+ # else
+                          papPages
+ # endif
+                          ))
+-        {
++#endif
++	{
+             PRTMEMLNXHDREX pHdrEx = (PRTMEMLNXHDREX)pVmArea->addr;
+             pHdrEx->pVmArea     = pVmArea;
+             pHdrEx->pvDummy     = NULL;
+

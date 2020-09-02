@@ -46,21 +46,33 @@
     state: directory
     recurse: yes
   loop:
+  - app-emulation/virtualbox-modules-6.1.12-r1
   - dev-libs/cyrus-sasl-2.1.26
   - net-wireless/crda-3.18-r1
   - sys-auth/sssd-2.2.3
 
 - name: Add ebuild user patches
   copy:
-    src: "{{ item.value }}"
-    dest: /etc/portage/patches/{{ item.key }}/
+    src: "{{ item.1 }}"
+    dest: /etc/portage/patches/{{ item.0 }}/
     mode: u+rw,g=r,o=r
     owner: root
     group: root
-  with_dict:
-    dev-libs/cyrus-sasl-2.1.26: cyrus-sasl-2.1.26-openssl-1.1.patch
-    net-wireless/crda-3.18-r1: crda-openssl-1.1.patch
-    sys-auth/sssd-2.2.3: sssd-2.2.3-glibc-2.32-compat.patch
+  loop:
+  - - app-emulation/virtualbox-modules-6.1.12-r1
+    - virtualbox-modules-6.1.12-r1-kernel-5.8-fixes_for_mm_struct.patch
+  - - app-emulation/virtualbox-modules-6.1.12-r1
+    - virtualbox-modules-6.1.12-r1-kernel-5.8-fixes_for_changes_in_cpu_tlbstate.patch
+  - - app-emulation/virtualbox-modules-6.1.12-r1
+    - virtualbox-modules-6.1.12-r1-kernel-5.8-fixes_for_module_memory.patch
+  - - app-emulation/virtualbox-modules-6.1.12-r1
+    - virtualbox-modules-6.1.12-r1-kernel-5.8-local_patches.patch
+  - - dev-libs/cyrus-sasl-2.1.26
+    - cyrus-sasl-2.1.26-openssl-1.1.patch
+  - - net-wireless/crda-3.18-r1
+    - crda-openssl-1.1.patch
+  - - sys-auth/sssd-2.2.3
+    - sssd-2.2.3-glibc-2.32-compat.patch
 
 - name: Set up ABI_X86 targets
   lineinfile:
