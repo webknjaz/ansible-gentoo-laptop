@@ -27,6 +27,8 @@ use_flags_per_package_enabled:
   - gtk3
   dev-libs/nss:
   - utils
+  media-libs/libsdl2:
+  - gles2  # dependency of USE-wayland
   net-dns/bind-tools:
   - gssapi
   net-misc/spice-gtk:
