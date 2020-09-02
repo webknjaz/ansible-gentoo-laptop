@@ -87,7 +87,8 @@ essential_ebuilds:
 - www-client/links  # needed to browse web docs from terminal
 ebuilds:
 - abrt
-- acpi
+- sys-power/acpi
+- sys-power/acpid
 - alacritty
 - alsa-utils
 - android-tools
