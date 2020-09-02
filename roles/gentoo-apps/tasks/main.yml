@@ -356,6 +356,17 @@
     state: present
     uid: 1000
 
+- name: Add wk to sudoers
+  lineinfile:
+    create: yes
+    group: root
+    line: wk ALL=(ALL) ALL
+    mode: u=r,g=r,o=
+    owner: root
+    path: /etc/sudoers.d/wk-user
+    regexp: ^wk\s[^=]+=[^=]+$
+    state: present
+
 - name: Configure network printer lookup in CUPS
   lineinfile:
     insertafter: "# Use BrowsePoll to poll a particular CUPS server"
