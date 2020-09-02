@@ -86,6 +86,18 @@
   - ensure-services-started
   - ensure-services-reloaded
 
+- name: Set up Python targets
+  lineinfile:
+    create: no
+    line: >-
+      PYTHON_TARGETS="python{{
+          python_targets | map('replace', '.', '_') | join(' python')
+      }}"
+    path: /etc/portage/make.conf
+    regexp: ^PYTHON_TARGETS="[^"]*"$
+    state: present
+  when: python_targets | length > 0
+
 - name: Set up Ruby targets
   lineinfile:
     create: no
