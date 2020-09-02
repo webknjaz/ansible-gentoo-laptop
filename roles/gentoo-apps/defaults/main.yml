@@ -207,7 +207,7 @@ ebuilds:
 - unifont
 - usbutils
 - vagrant
-- virtualbox-bin
+- app-emulation/virtualbox
 - virt-manager
 - vlc
 - wget2
@@ -227,12 +227,10 @@ ebuilds_from_overlays:
   media-fonts/twemoji-color-font: jorgicio
   x11-themes/materia-theme: jorgicio
 
-unmask_ebuilds:
-  app-emulation/virtualbox-bin: gentoo
+unmask_ebuilds: {}
 
 accept_licenses:
   app-editors/vscode-bin: MS-vscode
-  app-emulation/virtualbox-bin: PUEL
   dev-util/intel-ocl-sdk: Intel-SDP
   media-fonts/corefonts: MSttfEULA
   media-fonts/font-bh-ttf: bh-luxi
