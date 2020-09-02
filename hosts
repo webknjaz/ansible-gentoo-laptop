@@ -1,2 +1,2 @@
 [laptop]
-localhost ansible_connection=local
+localhost ansible_connection=local needs_xorg_config=on
