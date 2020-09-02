@@ -385,6 +385,10 @@ code_workspace:
       forked_as: []
     - name: pagure
       fqdn: pagure.io
+      ssh_pubkey_hostnames:
+      - pagure.io
+      - 8.43.85.75
+      - 2620:52:3:1:dead:beef:cafe:fed5
       ssh_host_keys:
       # Entries below the comment can be generated via:
       # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 pagure.io
@@ -397,7 +401,7 @@ code_workspace:
       # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 pagure.io | ssh-keygen -E SHA256 -l -f -
       # $ ssh-keyscan -t rsa,dsa,ecdsa,ed25519 pagure.io | ssh-keygen -E MD5 -l -f -
       # Ref: https://pagure.io/ssh_info
-      - pagure.io,8.43.85.75,2620:52:3:1:dead:beef:cafe:fed5 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC198DWs0SQ3DX0ptu+8Wq6wnZMrXUCufN+wdSCtlyhHUeQ3q5B4Hgto1n2FMj752vToCfNTn9mWO7l2rNTrKeBsELpubl2jECHu4LqxkRVihu5UEzejfjiWNDN2jdXbYFY27GW9zymD7Gq3u+T/Mkp4lIcQKRoJaLobBmcVxrLPEEJMKI4AJY31jgxMTnxi7KcR+U5udQrZ3dzCn2BqUdiN5dMgckr4yNPjhl3emJeVJ/uhAJrEsgjzqxAb60smMO5/1By+yF85Wih4TnFtF4LwYYuxgqiNv72Xy4D/MGxCqkO/nH5eRNfcJ+AJFE7727F7Tnbo4xmAjilvRria/+l
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC198DWs0SQ3DX0ptu+8Wq6wnZMrXUCufN+wdSCtlyhHUeQ3q5B4Hgto1n2FMj752vToCfNTn9mWO7l2rNTrKeBsELpubl2jECHu4LqxkRVihu5UEzejfjiWNDN2jdXbYFY27GW9zymD7Gq3u+T/Mkp4lIcQKRoJaLobBmcVxrLPEEJMKI4AJY31jgxMTnxi7KcR+U5udQrZ3dzCn2BqUdiN5dMgckr4yNPjhl3emJeVJ/uhAJrEsgjzqxAb60smMO5/1By+yF85Wih4TnFtF4LwYYuxgqiNv72Xy4D/MGxCqkO/nH5eRNfcJ+AJFE7727F7Tnbo4xmAjilvRria/+l
       slugs: []
       forked_as: []
     - name: bitbucket

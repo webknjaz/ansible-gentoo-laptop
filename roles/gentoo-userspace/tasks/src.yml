@@ -7,7 +7,12 @@
   known_hosts:
     state: present
     host: "{{ item.0.fqdn }}"
-    key: "{{ item.0.fqdn }} {{ item.1 }}"
+    key: >-
+      {{
+        [item.0.fqdn]
+        | union(item.0.ssh_pubkey_hostnames | default([]))
+        | join(',')
+      }} {{ item.1 }}
   with_subelements:
   - "{{ code_workspace.repos }}"
   - ssh_host_keys
