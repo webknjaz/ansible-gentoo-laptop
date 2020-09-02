@@ -103,7 +103,7 @@ ebuilds:
 - awesome
 - axel
 - bind-tools
-- bbswitch
+- bbswitch  # FIXME: make host-dependent
 - bundler
 - ccache
 - cndrvcups-common-lb
