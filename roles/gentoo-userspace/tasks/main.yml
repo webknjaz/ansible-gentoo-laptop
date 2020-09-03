@@ -1,6 +1,8 @@
 --- # vim:se ft=ansible:
 - name: Ensure that iBank2 UA Websigner plugin is installed
   import_tasks: ibank2_websigner.yml
+- name: Ensure that SSH is configured
+  import_tasks: ssh.yml
 - name: Ensure that Git is configured
   import_tasks: git.yml
 - name: Ensure that NeoVim is configured

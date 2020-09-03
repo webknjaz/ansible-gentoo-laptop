@@ -1,0 +1,15 @@
+--- # vim:se ft=ansible:
+- name: Create SSH config dir within userspace
+  file:
+    dest: ~/.ssh
+    group: wk
+    mode: u=rwx,g=,o=
+    owner: wk
+    state: directory
+- name: Generate SSH config from template
+  template:
+    dest: ~/.ssh/config
+    group: wk
+    mode: u=rw,g=r,o=
+    owner: wk
+    src: ssh-config.j2

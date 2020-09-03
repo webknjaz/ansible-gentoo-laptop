@@ -158,6 +158,22 @@ oh_my_zsh:
       #lifetime: 4h  # Forever by default
     tty-solarized:
       theme-shade: dark
+ssh_host_configs:
+- '*':
+    SetEnv: TERM=xterm-256color
+# https://docs.github.com/en/github/authenticating-to-github/using-ssh-over-the-https-port
+- github.com:
+    Hostname: ssh.github.com
+    Port: 443
+    User: git
+    IdentityFile: ~/.ssh/id_rsa_encrypted
+- rpi-patron-it:
+    Hostname: vpn-br.patron-it.cz
+    Port: 2222
+    User: pi
+    IdentityFile: ~/.ssh/id_rsa_encrypted
+    ForwardAgent: yes
+
 code_workspace:
   source_dir: ~/src
   repos:
