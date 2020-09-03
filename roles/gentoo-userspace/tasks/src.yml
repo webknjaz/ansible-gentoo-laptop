@@ -61,9 +61,11 @@
   when: item.1 in item.0.forked_as
   register: git_remote
   failed_when: >
-    git_remote.rc != 0 and
-    'fatal: remote fork already exists.' not in git_remote.stderr_lines
+    '[Errno 2] No such file or directory' in git_remote.msg or
+    (git_remote.rc != 0 and
+    'fatal: remote fork already exists.' not in git_remote.stderr_lines)
   changed_when: >
+    '[Errno 2] No such file or directory' not in git_remote.msg and
     git_remote.rc == 0 and
     not git_remote.stderr_lines | count and
     not git_remote.stdout_lines | count
