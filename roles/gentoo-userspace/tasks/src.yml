@@ -18,7 +18,7 @@
   - ssh_host_keys
 - name: Sync source code repos  # noqa 401
   async: >-
-    (ansible_connection == 'local') | ternary(45, omit)
+    {{ (ansible_connection == 'local') | ternary(45, omit) }}
   poll: 0
   git:
     clone: yes
