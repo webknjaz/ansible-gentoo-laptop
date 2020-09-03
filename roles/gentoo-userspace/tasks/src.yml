@@ -50,6 +50,7 @@
      git_sync_cmd_result.msg !=
      'Local modifications exist in repository (force=no).' and
      'Failed to checkout branch' not in git_sync_cmd_result.msg)
+  changed_when: git_sync_cmd_result.changed
 - name: Set up additional repo remotes for forks  # noqa 303
   command: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
   args:
