@@ -42,7 +42,10 @@
   retries: 300
   failed_when: >
     ('rc' in git_sync_cmd_result and git_sync_cmd_result.rc == 128 and
-     'Failed to checkout branch' not in git_sync_cmd_result.msg) or
+      ('Failed to checkout branch' not in git_sync_cmd_result.msg or
+       'Could not read from remote repository.'
+       in git_sync_cmd_result.stderr)
+    ) or
     (git_sync_cmd_result.failed and
      git_sync_cmd_result.msg !=
      'Local modifications exist in repository (force=no).' and
