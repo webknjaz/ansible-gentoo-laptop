@@ -145,7 +145,7 @@ oh_my_zsh:
   - sudo
   - systemd
   - tmux
-  - websearch
+  - web-search
   - yarn
   - screen
   - python
