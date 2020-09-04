@@ -6,6 +6,10 @@
     recursive: yes
     repo: git://github.com/robbyrussell/oh-my-zsh.git
     update: yes
+- name: Copy own oh-my-zsh custom extensions onto machine  # noqa 401
+  copy:
+    dest: ~/.oh-my-zsh/custom/
+    src: oh-my-zsh/
 - name: Get oh-my-zsh custom plugins onto machine  # noqa 401
   git:
     clone: yes
