@@ -17,10 +17,15 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
 -- Instanciate a battery widget and configure it
 local weather_widget = require("awesome-wm-widgets.weather-widget.weather")({
-    api_key='--------------------------------',
+{% endraw %}
+    api_key='{{ awesome.widgets.open_weather_map.api_token }}',
+{% raw %}
     both_units_widget = true,
     --city='Brno, CZ',
-    coordinates = {49.245904, 16.570329},
+    coordinates = {{% endraw %}{{
+        awesome.widgets.open_weather_map.latitude }}, {{
+        awesome.widgets.open_weather_map.longitude
+    }}{% raw %}},
     font_name = 'Carter One',
     --icons = 'VitalyGorbachev',
     --icons_extension = '.svg',
