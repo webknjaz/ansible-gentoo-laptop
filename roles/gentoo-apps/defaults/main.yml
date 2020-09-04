@@ -60,6 +60,8 @@ use_flags_per_package_enabled:
   - nscd
   sys-libs/zlib:
   - minizip
+  x11-misc/redshift:
+  - geoclue
 use_flags_per_package_disabled:
   app-text/mupdf:
   - static-libs
@@ -185,7 +187,7 @@ ebuilds:
 - qrencode
 - quivira
 - rawtherapee
-- redshift
+- x11-misc/redshift
 - rust-bin
 - sic
 - sshfs
