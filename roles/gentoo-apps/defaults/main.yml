@@ -31,6 +31,8 @@ use_flags_per_package_enabled:
   - utils
   media-libs/libsdl2:
   - gles2  # dependency of USE-wayland
+  media-video/vlc:
+  - chromecast
   net-dns/bind-tools:
   - gssapi
   net-misc/spice-gtk:
