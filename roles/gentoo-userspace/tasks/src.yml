@@ -43,8 +43,10 @@
   failed_when: >
     ('rc' in git_sync_cmd_result and git_sync_cmd_result.rc == 128 and
       ('Failed to checkout branch' not in git_sync_cmd_result.msg or
-       'Could not read from remote repository.'
-       in git_sync_cmd_result.stderr)
+       (stderr in git_sync_cmd_result and
+        'Could not read from remote repository.'
+        in git_sync_cmd_result.stderr)
+      )
     ) or
     (git_sync_cmd_result.failed and
      git_sync_cmd_result.msg !=
@@ -61,11 +63,13 @@
   when: item.1 in item.0.forked_as
   register: git_remote
   failed_when: >
-    '[Errno 2] No such file or directory' in git_remote.msg or
+    ('msg' in git_remote and
+     '[Errno 2] No such file or directory' in git_remote.msg) or
     (git_remote.rc != 0 and
     'fatal: remote fork already exists.' not in git_remote.stderr_lines)
   changed_when: >
-    '[Errno 2] No such file or directory' not in git_remote.msg and
+    ('msg' in git_remote and
+     '[Errno 2] No such file or directory' in git_remote.msg) and
     git_remote.rc == 0 and
     not git_remote.stderr_lines | count and
     not git_remote.stdout_lines | count
