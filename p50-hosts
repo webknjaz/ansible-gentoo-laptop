@@ -1,0 +1,3 @@
+[laptop]
+lenovo-p50-eth ansible_host=192.168.1.103
+lenovo-p50-wlan ansible_host=192.168.1.171
