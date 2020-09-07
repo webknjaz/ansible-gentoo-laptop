@@ -1,0 +1,129 @@
+Messages for package x11-wm/awesome-4.3-r1:
+ * You have enabled the gnome USE flag.
+ * Please note that quitting awesome won't kill your gnome session.
+ * To really quit the session, you should bind your quit key
+ * to the following command:
+ *   gnome-session-quit --logout
+ * For more info visit
+ *   https://bugs.gentoo.org/show_bug.cgi?id=447308
+ * If you are having issues with Java application windows being
+ * completely blank, try installing
+ *   x11-misc/wmname
+ * and setting the WM name to LG3D.
+ * For more info visit
+ *   https://bugs.gentoo.org/show_bug.cgi?id=440724
+
+
+* Messages for package app-editors/neovim-0.4.3:
+
+ *   x11-misc/xsel for clipboard support
+ *   x11-misc/xclip for clipboard support
+ *   gui-apps/wl-clipboard for clipboard support
+ *   dev-python/pynvim for Python plugin support
+ *   dev-ruby/neovim-ruby-client for Ruby plugin support
+ *   dev-python/neovim-remote for remote/nvr support
+
+>>> Installing (28 of 30) sys-apps/portage-3.0.5::gentoo
+>>> Emerging (29 of 30) gnome-base/gnome-settings-daemon-3.36.1::gentoo
+>>> Installing (29 of 30) gnome-base/gnome-settings-daemon-3.36.1::gentoo
+>>> Emerging (30 of 30) gnome-base/gnome-control-center-3.36.4::gentoo
+>>> Installing (30 of 30) gnome-base/gnome-control-center-3.36.4::gentoo
+>>> Jobs: 30 of 30 complete                       Load avg: 3.26, 4.05, 4.42
+
+ * Messages for package x11-drivers/nvidia-drivers-450.66:
+
+ *   CONFIG_I2C_NVIDIA_GPU:	should not be set. But it is.
+ * Please check to make sure these options are set correctly.
+ * Failure to do so may cause unexpected problems.
+
+ * Messages for package sys-libs/glibc-2.32-r1:
+
+ * Applying Gentoo Glibc Patchset 2.32-1
+
+ * Messages for package x11-drivers/nvidia-drivers-450.66:
+
+ *   CONFIG_I2C_NVIDIA_GPU:	should not be set. But it is.
+ * Please check to make sure these options are set correctly.
+ * Failure to do so may cause unexpected problems.
+ *   CONFIG_I2C_NVIDIA_GPU:	should not be set. But it is.
+ * Please check to make sure these options are set correctly.
+ * Failure to do so may cause unexpected problems.
+ * You must be in the video group to use the NVIDIA device
+ * For more info, read the docs at
+ * https://www.gentoo.org/doc/en/nvidia-guide.xml#doc_chap3_sect6
+ * 
+ * This ebuild installs a kernel module and X driver. Both must
+ * match explicitly in their version. This means, if you restart
+ * X, you must modprobe -r nvidia before starting it back up
+ * 
+ * To use the NVIDIA GLX, run "eselect opengl set nvidia"
+ * 
+ * To use the NVIDIA CUDA/OpenCL, run "eselect opencl set nvidia"
+ * 
+ * NVIDIA has requested that any bug reports submitted have the
+ * output of nvidia-bug-report.sh included.
+ * 
+ * (Note: Above message is only printed the first time package is
+ * installed. Please look at /usr/share/doc/nvidia-drivers-450.66/README.gentoo*
+ * for future reference)
+ * To enable nvidia sleep services under systemd, run these commands:
+ * 	systemctl enable nvidia-suspend.service
+ * 	systemctl enable nvidia-hibernate.service
+ * 	systemctl enable nvidia-resume.service
+ * Set the NVreg_TemporaryFilePath kernel module parameter to a
+ * suitable path in case the default of /tmp does not work for you
+ * For more information see:
+ * /usr/share/doc/nvidia-drivers-450.66/html/powermanagement.html
+
+ * Messages for package sys-libs/pam-1.4.0_p20200829:
+
+ * Some software with pre-loaded PAM libraries might experience
+ * warnings or failures related to missing symbols and/or versions
+ * after any update. While unfortunate this is a limit of the
+ * implementation of PAM and the software, and it requires you to
+ * restart the software manually after the update.
+ * 
+ * You can get a list of such software running a command like
+ *   lsof / | egrep -i 'del.*libpam\.so'
+ * 
+ * Alternatively, simply reboot your system.
+
+ * Messages for package dev-lang/rust-1.46.0:
+
+ * Rust installs a helper script for calling GDB and LLDB,
+ * for your convenience it is installed under /usr/bin/rust-{gdb,lldb}-1.46.0.
+
+ * Messages for package x11-libs/gtk+-3.24.22:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+ * Messages for package app-crypt/gnupg-2.2.22-r1:
+
+ * See https://wiki.gentoo.org/wiki/GnuPG for documentation on gnupg
+ * 
+ * If you wish to use 'gpg-wks-client --send', you must install an MTA!
+
+ * Messages for package app-emulation/virtualbox-6.1.12a:
+
+ * To launch VirtualBox just type: "virtualbox".
+ * You must be in the vboxusers group to use VirtualBox.
+ * 
+ * The latest user manual is available for download at:
+ * http://download.virtualbox.org/virtualbox/6.1.12/UserManual.pdf
+ * 
+ * For advanced networking setups you should emerge:
+ * net-misc/bridge-utils and sys-apps/usermode-utilities
+ * 
+ * Starting with version 4.0.0, virtualbox has USB-1 support.
+ * For USB-2 support, PXE-boot ability and VRDP support please emerge
+ *   app-emulation/virtualbox-extpack-oracle
+ * package.
+ * Starting with version 5.0.0, virtualbox no longer has the "additions" and
+ * the "extension" USE flag. For installation of the guest additions ISO
+ * image, please emerge
+ *   app-emulation/virtualbox-additions
+ * and for the USB2, USB3, VRDP and PXE boot ROM modules, please emerge
+ *   app-emulation/virtualbox-extpack-oracle
+

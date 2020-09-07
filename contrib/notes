@@ -1,0 +1,24 @@
+https://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/
+
+systemd needs +cgroup-hybrid for docker to work:
+https://bugs.gentoo.org/691844
+https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=9753537cfaf24e80397a0236a169ded2ccc19fdf
+
+
+https://gitlab.com/keychron/k2/-/tree/master/Issues
+https://github.com/Kurgol/keychron/blob/master/k2.md
+
+
+===
+This breaks monospaced inputs in Chrome:
+[38]  56-twemoji-color.conf *
+
+The fix is
+$ sudo eselect fontconfig disable 56-twemoji-color.conf
+===
+
+
+P1 Gen 2:
+-------------
+
+$ euse -p sys-apps/systemd -E gnuefi cryptsetup curl dns-over-tls http idn importd lzma nat pkcs11 qrcode repart xkb

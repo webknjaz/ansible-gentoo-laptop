@@ -1,0 +1,371 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set shell=zsh                 " :sh
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+""like:""Plugin 'git://bb.webknjaz.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+
+"Plugin 'tclem/vim-arduino'
+Plugin 'jplaut/vim-arduino-ino'
+
+Plugin 'davidhalter/jedi-vim'
+
+Plugin 'Pydiction'
+
+Plugin 'pearofducks/ansible-vim'
+
+" PHP xdebug
+Plugin 'brookhong/DBGPavim'
+Plugin 'sumpygump/vim-php-debugger'
+Plugin 'joonty/vdebug'
+
+" TypeScript
+Plugin 'Quramy/tsuquyomi'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/vim-js-pretty-template'
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'Quramy/vim-dtsm'
+Plugin 'mhartington/vim-typings'
+
+Plugin 'baverman/vial'
+Plugin 'baverman/vial-http'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" .vimrc File
+" Maintained by: Jeffrey Way
+" jeffrey@jeffrey-way.com
+" http://net.tutsplus.com
+"
+" Compiled with @kote's configs by @webknjaz
+
+" comletion
+let g:pydiction_location = '/Users/ssydore/.vim/bundle/Pydiction/complete-dict'
+let g:pydiction_menu_height = 8
+
+" @kote
+set guioptions-=m
+set guioptions-=T
+set colorcolumn=79
+
+"Forget compatibility with Vi. Who cares.
+set nocompatible
+set spell
+
+"Enable filetypes
+filetype on
+filetype plugin indent on
+filetype plugin on
+filetype indent on
+syntax on
+
+"Enable LaTeX
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
+"Enable the help
+" helptags ~/.vim/doc
+
+"Write the old file out when switching between files.
+set autowrite
+
+"Display current cursor position in lower right corner.
+set ruler
+
+"Want a different map leader than \
+"set mapleader = ",";
+
+"Ever notice a slight lag after typing the leader key + command? This lowers
+"the timeout.
+set timeoutlen=500
+
+"Switch between buffers without saving
+set hidden
+
+"Set the color scheme. Change this to your preference.
+"Here's 100 to choose from: http://www.vim.org/scripts/script.php?script_id=625
+"colorscheme twilight
+"colorscheme sea
+
+" Color scheme
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+"Set font type and size. Depends on the resolution. Larger screens, prefer h20
+set guifont=Menlo:h14
+
+set bs=2
+"Tab stuff
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smarttab
+
+"Show command in bottom right portion of the screen
+set showcmd
+
+"Show lines numbers
+set number
+
+"Prefer relative line numbering?
+"set relativenumber"
+
+"Indent stuff
+set smartindent
+set autoindent
+
+"Always show the status line
+set laststatus=2
+
+"Prefer a slightly higher line height
+set linespace=3
+
+"Better line wrapping
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+
+"Set incremental searching"
+set incsearch
+
+"Highlight searching
+set hlsearch
+
+" case insensitive search
+set ignorecase
+set smartcase
+
+"Hide MacVim toolbar by default
+set go-=T
+
+"Hard-wrap paragraphs of text
+nnoremap <leader>q gqip
+
+"Enable code folding
+set foldenable
+
+" Folding
+set foldmethod=manual
+set foldlevel=99
+set foldnestmax=2
+
+" Python syntax
+let python_highlight_all=1
+setlocal keywordprg=pydoc
+
+" Minibufexpl
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
+" Django templates
+au! BufNewFile,BufRead *.html set filetype=htmldjango
+
+"Hide mouse when typing
+set mousehide
+
+"Shortcut to fold tags with leader (usually \) + ft
+nnoremap <leader>ft Vatzf
+
+" Create dictionary for custom expansions
+set dictionary+=~/.vim/dict.txt
+
+"Opens a vertical split and switches over (\v)
+nnoremap <leader>v <C-w>v<C-w>l
+
+"Split windows below the current window.
+set splitbelow
+
+" session settings
+set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
+
+"Set up an HTML5 template for all new .html files
+"autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
+
+"Load the current buffer in Firefox - Mac specific.
+abbrev ff :! open -a firefox.app %:p<cr>
+
+"Map a change directory to the desktop - Mac specific
+nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
+
+"Shortcut for editing  vimrc file in a new tab
+nmap <leader>ev :tabedit $MYVIMRC<cr>
+
+"Change zen coding plugin expansion key to shift + e
+let g:user_zen_expandabbr_key = '<C-e>'
+
+"Faster shortcut for commenting. Requires T-Comment plugin
+map <leader>c <c-_><c-_>
+
+"Saves time; maps the spacebar to colon
+nmap <space> :
+
+"Automatically change current directory to that of the file in the buffer
+autocmd BufEnter * cd %:p:h
+
+"Map code completion to , + tab
+imap <leader><tab> <C-x><C-o>
+
+" More useful command-line completion
+set wildmenu
+
+"Auto-completion menu
+set wildmode=list:longest
+
+"http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+"Map escape key to jj -- much faster
+imap jj <esc>
+
+"Delete all buffers (via Derek Wyatt)
+nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
+
+"Bubble single lines (kicks butt)
+"http://vimcasts.org/episodes/bubbling-text/
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+"Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
+" Source the vimrc file after saving it. This way, you don't have to reload Vim to see the changes.
+if has("autocmd")
+ augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc source ~/.vimrc
+ augroup END
+endif
+
+" easier window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+"------------------------"
+"NERDTREE PLUGIN SETTINGS
+"------------------------"
+"Shortcut for NERDTreeToggle
+nmap <leader>nt :NERDTreeToggle <CR>
+
+"Show hidden files in NerdTree
+let NERDTreeShowHidden=1
+
+"autopen NERDTree and focus cursor in new document
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+" NERDTree
+nmap <silent> <F2> :NERDTreeToggle<CR>
+imap <silent> <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
+
+"Helpeful abbreviations
+iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+iab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+"Spelling corrects. Just for example. Add yours below.
+iab teh the
+iab Teh The
+
+" Get to home dir easier
+" <leader>hm is easier to type than :cd ~
+nmap <leader>hm :cd ~/ <CR>
+
+" Alphabetically sort CSS properties in file with :SortCSS
+:command! SortCSS :g#\({\n\)\@<=#.,/}/sort
+
+" Shortcut to opening a virtual split to right of current pane
+" Makes more sense than opening to the left
+nmap <leader>bv :bel vsp
+
+" Saves file when Vim window loses focus
+au FocusLost * :wa
+" http://stackoverflow.com/questions/4637575/how-can-i-make-vim-autosave-files-when-it-loses-focus
+" http://stackoverflow.com/questions/8574387/vim-saving-on-focuslost-and-executing-auto-command
+" http://pastebin.com/4mbUWcTc
+" http://stackoverflow.com/questions/23013201/how-to-get-rid-of-error-detected-while-processing-focuslost-auto-commands-in-vim
+autocmd BufLeave,FocusLost * silent! wall
+
+" Backups
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap// " swap files
+set backup " enable backup
+
+" No more stretching for navigating files
+"noremap h ;
+"noremap j h
+"noremap k gj
+"noremap l gk
+"noremap ; l
+
+set showmatch " show matching brackets
+
+" print empty <a> tag
+map! ;h <a href=""></a><ESC>5hi
+"
+" No switch keyboard layout for commands in normal mode.
+
+
+" https://coderwall.com/welcome
+" This makes `w!!` command save file when you've forgotten to open in with sudo
+cmap w!! %!sudo tee > /dev/null %
+
+set mouse=a
+
+let g:dbgPavimPathMap = [['/home/ssydore/src/atlassian/hipchat/web/www','/'],]
+
+let g:vdebug_options = {'ide_key': 'PHPSTORM'}
+let g:vdebug_options = {'break_on_open': 0}
+let g:vdebug_options = {'server': '127.0.0.1'}
+let g:vdebug_options = {'port': '9000'}
