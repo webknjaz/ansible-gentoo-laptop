@@ -13,3 +13,4 @@ systemd_services_safe_restart:
 systemd_services_unsafe_restart:
 - docker
 - lxdm  # LightDM
+- openvpn-client@redhat-brq

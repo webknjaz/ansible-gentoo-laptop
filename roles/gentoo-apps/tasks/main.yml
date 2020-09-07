@@ -410,6 +410,45 @@
   notify:
   - ensure-services-started
 
+- name: Create config dir structure for OpenVPN clients
+  file:
+    dest: /etc/openvpn/client
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Add OpenVPN client configs
+  copy:
+    dest: /etc/openvpn/client/{{ config_file }}
+    group: root
+    mode: u=r,g=,o=
+    owner: root
+    src: >-
+      {{ src_config }}
+  vars:
+    src_config: >-
+      {{
+          lookup(
+            'first_found',
+            [
+                inventory_hostname + '/etc/openvpn/client/' + config_file,
+                'etc/openvpn/client/' + config_file,
+            ],
+          )
+      }}
+  loop:
+  - redhat-brq.conf
+  - rh-username
+  - turris-catch-all.conf
+  loop_control:
+    loop_var: config_file
+  notify:
+  - ensure-services-started
+  - ensure-services-reloaded
+- name: Force all notified handlers to run
+  meta: flush_handlers
+
 - name: Set up X.Org X11 server subsystem
   copy:
     src: etc/X11/xorg.conf
