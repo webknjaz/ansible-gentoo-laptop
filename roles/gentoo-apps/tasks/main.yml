@@ -417,7 +417,7 @@
     mode: u+rw,g=r,o=r
     owner: root
     group: root
-  when: needs_xorg_config | default(false)
+  when: ansible_product_version == 'ThinkPad P50'
 
 - name: >-
     Set up udev rules: make Android devices accessible by plugdev group
