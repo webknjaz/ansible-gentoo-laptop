@@ -1,0 +1,52 @@
+# Refs:
+# * https://mojo.redhat.com/docs/DOC-1102526
+# * https://mojo.redhat.com/docs/DOC-1017803-configure-fedora-with-red-hat-ldapkerberos-and-vpn
+# * https://mojo.redhat.com/docs/DOC-1123600
+# * https://mojo.redhat.com/docs/DOC-977303
+# * https://mojo.redhat.com/search.jspa?q=AMS2.ovpn
+# * https://mojo.redhat.com/search.jspa?q=vpn
+# * https://mojo.redhat.com/docs/DOC-1122097-use-openvpn-from-the-command-line-on-fedora-and-rhel
+# * https://github.com/webknjaz/ansible-gentoo-laptop/issues/2
+#
+
+# NOTE:
+# Because DNSmasq is unable to match subdomains-only, we set just a
+# first-level domain and are forced to list all the subdomains manually.
+# Ref: https://stackoverflow.com/a/37449551/595220
+# Also, using `all-servers` makes it that we get internal or external IP
+# for auth.redhat.com but Kerberos only works for internal IP and so it
+# makes the auth flaky when a public DNS replies faster than an internal one.
+# Side effects: some services are available on extranet in restricted
+# mode but we still want to prefer intranet access and so those domains
+# won't work w/o VPN.
+{% for dns_server in corp_dns_servers | default([]) %}
+server = /{{ corp_domains | join('/') }}/{{ dns_server }}
+{% endfor %}
+
+{% for dns_server in public_dns_servers | default(['8.8.8.8']) %}
+server = {{ dns_server }}
+{% endfor %}
+
+all-servers
+
+# If you want dnsmasq to listen for DHCP and DNS requests only on
+# specified interfaces (and the loopback) give the name of the
+# interface (eg eth0) here.
+# Repeat the line for more than one interface.
+#interface=lo,docker0
+
+# On systems which support it, dnsmasq binds the wildcard address,
+# even when it is listening on only some interfaces. It then discards
+# requests that it shouldn't reply to. This has the advantage of
+# working even when interfaces come and go and change address. If you
+# want dnsmasq to really bind only the interfaces it is listening on,
+# uncomment this option. About the only time you may need this is when
+# running another nameserver on the same machine.
+bind-interfaces
+
+# Disable negative caching
+no-negcache
+
+# DEBUG
+#log-queries
+#cache-size = 0

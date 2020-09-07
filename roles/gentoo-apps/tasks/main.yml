@@ -446,6 +446,29 @@
   notify:
   - ensure-services-started
   - ensure-services-reloaded
+
+- name: Create config dir structure for DNSmasq under NetworkManager
+  file:
+    dest: /etc/NetworkManager/dnsmasq.d
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Set up DNSmasq configs under NetworkManager
+  template:
+    src: networkmanager.dnsmasq.redhat.conf.j2
+    dest: /etc/NetworkManager/dnsmasq.d/redhat.conf
+  notify:
+  - ensure-services-started
+  - ensure-services-reloaded
+- name: Enable DNSmasq in NetworkManager
+  copy:
+    src: etc/NetworkManager/conf.d/dnsmasq.conf
+    dest: /etc/NetworkManager/conf.d/dnsmasq.conf
+  notify:
+  - ensure-services-started
+  - ensure-services-reloaded
 - name: Force all notified handlers to run
   meta: flush_handlers
 
