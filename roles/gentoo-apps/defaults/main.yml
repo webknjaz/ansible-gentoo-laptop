@@ -189,6 +189,7 @@ ebuilds:
 - qrencode
 - quivira
 - rawtherapee
+- x11-misc/i3lock
 - x11-misc/redshift
 - rust-bin
 - sic
