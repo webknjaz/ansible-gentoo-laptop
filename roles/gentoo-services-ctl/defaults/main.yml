@@ -4,6 +4,7 @@ systemd_services_safe_restart:
 - anydesk
 - bluetooth
 - bluetooth-mesh
+- irqbalance
 - NetworkManager
 - cups  # CUPS
 - cups-browsed  # CUPS network printers
