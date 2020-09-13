@@ -148,6 +148,7 @@ ebuilds:
 - iperf:3
 - iptraf-ng
 - irssi
+- sys-apps/irqbalance
 - jq
 - jre
 - kexec-tools
