@@ -38,6 +38,14 @@
   failed_when: "start_srv.failed and 'Service is in unknown state' not in start_srv.msg"
   with_items: "{{ systemd_services_safe_restart + systemd_services_unsafe_restart }}"
 
+- name: Ensure systemd services started
+  listen: ensure-services-started
+  systemd:
+    name: "{{ item }}"
+    state: started
+  register: start_srv
+  with_items: "{{ systemd_services_safe_restart + systemd_services_unsafe_restart }}"
+
 - name: Reload and apply udev rules from configs
   listen: update-udev-rules
   shell: udevadm control --reload-rules && udevadm trigger
