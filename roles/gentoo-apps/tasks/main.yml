@@ -409,6 +409,51 @@
     mode: u=rw,g=,o=
   notify:
   - ensure-services-started
+- name: Connect sssd to nsswitch
+  lineinfile:
+    line: >-
+      {{ nss_entry.name }}:
+      {{ nss_entry.sources | join(' ') }}
+    path: /etc/nsswitch.conf
+    regexp: ^{{ nss_entry.name }}:\s+.*$
+    state: present
+  loop:
+  - name: passwd
+    sources:
+    - sss
+    - files
+  - name: group
+    sources:
+    - sss
+    - files
+  - name: initgroups
+    sources:
+    - sss
+    - files
+  - name: shadow
+    sources:
+    - sss
+    - files
+  - name: gshadow
+    sources:
+    - files
+    - sss
+  - name: services
+    sources:
+    - sss
+    - files
+  - name: netgroup
+    sources:
+    - sss
+    - files
+  - name: automount
+    sources:
+    - sss
+    - files
+  loop_control:
+    label: >-
+      Setting up nss for {{ nss_entry.name }}
+    loop_var: nss_entry
 
 - name: Create config dir structure for OpenVPN clients
   file:
