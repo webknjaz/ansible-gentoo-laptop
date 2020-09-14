@@ -454,6 +454,13 @@
     label: >-
       Setting up nss for {{ nss_entry.name }}
     loop_var: nss_entry
+- name: Point PAM to sssd
+  copy:
+    src: etc/pam.d/system-auth
+    dest: /etc/pam.d/system-auth
+  notify:
+  - ensure-services-started
+  - ensure-services-reloaded
 
 - name: Create config dir structure for OpenVPN clients
   file:

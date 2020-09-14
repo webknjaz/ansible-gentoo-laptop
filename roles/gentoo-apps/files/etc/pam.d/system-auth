@@ -1,0 +1,22 @@
+auth		required	pam_env.so
+auth		required	pam_unix.so try_first_pass likeauth nullok
+auth		optional	pam_permit.so
+auth		sufficient	pam_sss.so forward_pass  # https://wiki.gentoo.org/wiki/Join_FreeIPA#PAM
+# auth		sufficient	pam_sss.so use_first_pass  # https://wiki.gentoo.org/wiki/Centralized_authentication_using_OpenLDAP#Client_PAM_configuration_SSSD_Method
+auth            required        pam_faillock.so preauth silent audit deny=3 unlock_time=600
+auth            sufficient      pam_unix.so nullok try_first_pass
+auth            [default=die]   pam_faillock.so authfail audit deny=3 unlock_time=600
+account		required	pam_unix.so
+account		optional	pam_permit.so
+account		[default=bad success=ok user_unknown=ignore]	pam_sss.so  # https://wiki.gentoo.org/wiki/Join_FreeIPA#PAM / https://wiki.gentoo.org/wiki/Centralized_authentication_using_OpenLDAP#Client_PAM_configuration_SSSD_Method
+account         required        pam_faillock.so
+password	required	pam_passwdqc.so min=8,8,8,8,8 retry=3
+password	required	pam_unix.so try_first_pass use_authtok nullok sha512 shadow
+password	sufficient	pam_sss.so use_authtok  # https://wiki.gentoo.org/wiki/Join_FreeIPA#PAM / https://wiki.gentoo.org/wiki/Centralized_authentication_using_OpenLDAP#Client_PAM_configuration_SSSD_Method
+password	optional	pam_permit.so
+-session        optional        pam_systemd.so
+session		required	pam_limits.so
+session		required	pam_env.so
+session		required	pam_unix.so
+session		optional	pam_sss.so use_authtok  # https://wiki.gentoo.org/wiki/Join_FreeIPA#PAM / https://wiki.gentoo.org/wiki/Centralized_authentication_using_OpenLDAP#Client_PAM_configuration_SSSD_Method
+session		optional	pam_permit.so
