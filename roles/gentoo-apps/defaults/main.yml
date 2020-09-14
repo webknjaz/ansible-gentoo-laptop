@@ -210,6 +210,7 @@ ebuilds:
 - ttf-bitstream-vera
 - unicode-emoji
 - unifont
+- sys-power/upower
 - usbutils
 - vagrant
 - app-emulation/virtualbox
