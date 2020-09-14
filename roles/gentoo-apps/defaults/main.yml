@@ -154,6 +154,9 @@ ebuilds:
 - kexec-tools
 - kitty
 - libfprint
+- sys-auth/fingerprint-gui
+- sys-auth/fprintd
+- sys-auth/pam_fprint
 - libinput-gestures
 - libgnomecups
 - libpod
