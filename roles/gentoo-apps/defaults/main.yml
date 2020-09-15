@@ -193,6 +193,7 @@ ebuilds:
 - x11-misc/i3lock
 - x11-misc/redshift
 - rust-bin
+- app-crypt/seahorse
 - sic
 - sshfs
 - sssd
