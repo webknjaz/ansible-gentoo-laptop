@@ -579,6 +579,8 @@
         | list
     }}
   loop_control:
+    label: >-
+      Policy: {{ policy_file[1].name }}
     loop_var: policy_file
 
 - name: Create a custom trusted CA certificates dir
