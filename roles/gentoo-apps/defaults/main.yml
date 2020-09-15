@@ -312,3 +312,30 @@ corp_domains:
 - token.redhat.com
 - usersys.redhat.com
 - yyz.redhat.com
+
+chrome_managed_policies:
+  redhat:
+    # Refs:
+    # https://support.google.com/chrome/thread/38855209?hl=en
+    # https://support.google.com/chrome/a/answer/7679408#81
+    # https://cloud.google.com/docs/chrome-enterprise/policies/\
+    #   ?policy=AmbientAuthenticationInPrivateModesEnabled
+    #
+    # AmbientAuthenticationInPrivateModesEnabled
+    # ------------------------------------------
+    # 0 = Enable ambient authentication in regular sessions only.
+    # 1 = Enable ambient authentication in incognito and regular
+    #     sessions.
+    # 2 = Enable ambient authentication in guest and regular sessions.
+    # 3 = Enable ambient authentication in regular, incognito and
+    #     guest sessions.
+    AmbientAuthenticationInPrivateModesEnabled: 3
+    AuthNegotiateDelegateWhitelist: >-
+      *.redhat.com
+    AuthServerWhitelist: >-
+      *.redhat.com
+    AuthSchemes: negotiate, ntlm, digest, basic
+    PromotionalTabsEnabled: false
+    MetricsReportingEnabled: false
+    SafeBrowsingExtendedReportingEnabled: false
+    UrlKeyedAnonymizedDataCollectionEnabled: false

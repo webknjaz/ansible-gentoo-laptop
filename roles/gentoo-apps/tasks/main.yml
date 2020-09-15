@@ -558,26 +558,28 @@
     /etc/opt/chrome/policies/managed/: u+rwx,g=rx,o=rx
     /etc/opt/chrome/policies/recommended/: u+rwx,g=rwx,o=rx
 - name: Set up policies with whitelisted Kerberos servers for Google Chrome and Chromium
-  # NOTE:
-  # https://support.google.com/chrome/thread/38855209?hl=en
-  # https://support.google.com/chrome/a/answer/7679408#81
-  # https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AmbientAuthenticationInPrivateModesEnabled
-  # 
-  # AmbientAuthenticationInPrivateModesEnabled
-  # ------------------------------------------
-  # 0 = Enable ambient authentication in regular sessions only.
-  # 1 = Enable ambient authentication in incognito and regular sessions.
-  # 2 = Enable ambient authentication in guest and regular sessions.
-  # 3 = Enable ambient authentication in regular, incognito and guest sessions.
   copy:
-    src: chrome-redhat-policy.json
-    dest: "{{ item }}"
+    content: >-
+      {{ policy_file[1].content | to_nice_json(indent=4) }}
+    dest: >-
+      {{ policy_file[0] }}/{{ policy_file[1].name }}.json
     mode: u+rw,g=r,o=r
     owner: root
     group: root
-  with_items:
-  - /etc/chromium/policies/managed/redhat.json
-  - /etc/opt/chrome/policies/managed/redhat.json
+  loop: >-
+    {{
+        [
+            '/etc/chromium/policies/managed',
+            '/etc/opt/chrome/policies/managed',
+        ]
+        | product(
+            chrome_managed_policies
+            | dict2items(key_name='name', value_name='content'),
+        )
+        | list
+    }}
+  loop_control:
+    loop_var: policy_file
 
 - name: Create a custom trusted CA certificates dir
   file:
