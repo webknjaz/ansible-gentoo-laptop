@@ -558,6 +558,17 @@
     /etc/opt/chrome/policies/managed/: u+rwx,g=rx,o=rx
     /etc/opt/chrome/policies/recommended/: u+rwx,g=rwx,o=rx
 - name: Set up policies with whitelisted Kerberos servers for Google Chrome and Chromium
+  # NOTE:
+  # https://support.google.com/chrome/thread/38855209?hl=en
+  # https://support.google.com/chrome/a/answer/7679408#81
+  # https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AmbientAuthenticationInPrivateModesEnabled
+  # 
+  # AmbientAuthenticationInPrivateModesEnabled
+  # ------------------------------------------
+  # 0 = Enable ambient authentication in regular sessions only.
+  # 1 = Enable ambient authentication in incognito and regular sessions.
+  # 2 = Enable ambient authentication in guest and regular sessions.
+  # 3 = Enable ambient authentication in regular, incognito and guest sessions.
   copy:
     src: chrome-redhat-policy.json
     dest: "{{ item }}"
