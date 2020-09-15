@@ -339,3 +339,20 @@ chrome_managed_policies:
     MetricsReportingEnabled: false
     SafeBrowsingExtendedReportingEnabled: false
     UrlKeyedAnonymizedDataCollectionEnabled: false
+  walkme_extension_update:
+    ExtensionSettings:
+      iffnipbkkgbgeffippbaldmgdpealpdd:
+        installation_mode: normal_installed
+        update_url: >-
+          https://cdn.walkme.com/extension/walkme_extension_update.xml
+    3rdparty:
+      extensions:
+        iffnipbkkgbgeffippbaldmgdpealpdd:
+          wmExtConfig: >-
+            {
+              "u": "https://s3.amazonaws.com/s3.maketutorial.com/extension/customers/RedHat/Default/076167b7/ext_settings.json",
+              "g": "076167b7",
+              "env": "Production",
+              "ct": 10,
+              "ac": "True"
+            }
