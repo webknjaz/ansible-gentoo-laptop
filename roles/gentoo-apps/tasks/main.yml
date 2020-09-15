@@ -563,7 +563,7 @@
       {{ policy_file[1].content | to_nice_json(indent=4) }}
     dest: >-
       {{ policy_file[0] }}/{{ policy_file[1].name }}.json
-    mode: u+rw,g=r,o=r
+    mode: u=rw,g=r,o=r
     owner: root
     group: root
   loop: >-
