@@ -2,5 +2,9 @@
     "AmbientAuthenticationInPrivateModesEnabled": true,
     "AuthNegotiateDelegateWhitelist": "*.redhat.com",
     "AuthSchemes": "negotiate,ntlm,digest,basic",
-    "AuthServerWhitelist": "*.redhat.com"
+    "AuthServerWhitelist": "*.redhat.com",
+    "PromotionalTabsEnabled": false,
+    "MetricsReportingEnabled": false,
+    "SafeBrowsingExtendedReportingEnabled": false,
+    "UrlKeyedAnonymizedDataCollectionEnabled": false
 }
