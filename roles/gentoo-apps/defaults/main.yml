@@ -44,6 +44,8 @@ use_flags_per_package_enabled:
   - sudo
   sys-devel/gcc:
   - graphite
+  sys-apps/fwupd:
+  - uefi
   sys-apps/systemd:
   - cgroup-hybrid  # Solves conflict with app-emulation/docker. Refs:
   # https://bugs.gentoo.org/691844
