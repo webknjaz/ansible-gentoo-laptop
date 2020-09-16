@@ -114,6 +114,7 @@ ebuilds:
 - axel
 - bind-tools
 - bbswitch  # FIXME: make host-dependent
+- sys-apps/bolt
 - bundler
 - ccache
 - cndrvcups-common-lb
