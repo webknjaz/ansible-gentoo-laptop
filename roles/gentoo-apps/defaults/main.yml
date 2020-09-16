@@ -27,6 +27,9 @@ use_flags_global_disabled: []
 use_flags_per_package_enabled:
   dev-libs/libdbusmenu:
   - gtk3
+  dev-libs/libjcat:  # dependency of sys-apps/fwupd
+  - gpg
+  - pkcs7
   dev-libs/nss:
   - utils
   media-libs/libsdl2:
@@ -129,6 +132,7 @@ ebuilds:
 - freefonts
 - freerdp
 - fuse-exfat
+- sys-apps/fwupd
 - app-shells/fzf  # CLI fuzzy finder
 - genkernel
 - gentoo-sources
