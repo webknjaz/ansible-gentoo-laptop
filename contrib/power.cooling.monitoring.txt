@@ -1,0 +1,4 @@
+https://wiki.gentoo.org/wiki/Fan_speed_control
+https://wiki.gentoo.org/wiki/GKrellM
+https://wiki.gentoo.org/wiki/Power_management/Guide
+https://wiki.gentoo.org/wiki/Lm_sensors
