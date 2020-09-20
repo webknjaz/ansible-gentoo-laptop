@@ -96,6 +96,7 @@ essential_ebuilds:
 - www-client/links  # needed to browse web docs from terminal
 ebuilds:
 - abrt
+- x11-misc/arandr
 - sys-power/acpi
 - sys-power/acpid
 - alacritty
