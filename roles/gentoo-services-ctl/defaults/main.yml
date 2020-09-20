@@ -5,6 +5,7 @@ systemd_services_safe_restart:
 - bluetooth
 - bluetooth-mesh
 - irqbalance
+- lm_sensors
 - NetworkManager
 - cups  # CUPS
 - cups-browsed  # CUPS network printers

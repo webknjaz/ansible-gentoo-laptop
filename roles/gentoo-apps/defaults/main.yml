@@ -46,6 +46,9 @@ use_flags_per_package_enabled:
   - graphite
   sys-apps/fwupd:
   - uefi
+  sys-apps/lm-sensors:
+  - contrib
+  - sensord
   sys-apps/systemd:
   - cgroup-hybrid  # Solves conflict with app-emulation/docker. Refs:
   # https://bugs.gentoo.org/691844
@@ -168,6 +171,7 @@ ebuilds:
 - libvirt
 - light
 - linux-firmware
+- sys-apps/lm-sensors
 #- lxc
 - lxdm
 - luajson
