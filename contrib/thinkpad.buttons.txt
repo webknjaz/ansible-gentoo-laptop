@@ -1,0 +1,3 @@
+https://wiki.gentoo.org/wiki/ACPI/ThinkPad-special-buttons
+
+$ acpi_listen

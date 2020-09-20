@@ -1,0 +1,19 @@
+$ id
+uid=1000(wk) gid=1000(wk) groups=1000(wk),7(lp),18(audio),27(video),78(kvm),102(docker),103(plugdev),106(lpadmin),247(systemd-journal),990(vboxusers),993(wireshark)
+
+=====================================
+
+https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Finalizing#Adding_a_user_for_daily_use
+Working as root on a Unix/Linux system is dangerous and should be avoided as much as possible. Therefore it is strongly recommended to add a user for day-to-day use.
+
+The groups the user is member of define what activities the user can perform. The following table lists a number of important groups:
+
+Group	Description
+audio	Be able to access the audio devices.
+cdrom	Be able to directly access optical devices.
+floppy	Be able to directly access floppy devices.
+games	Be able to play games.
+portage	Be able to access portage restricted resources.
+usb	Be able to access USB devices.
+video	Be able to access video capturing hardware and doing hardware acceleration.
+wheel	Be able to use su.
