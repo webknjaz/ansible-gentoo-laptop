@@ -313,6 +313,7 @@ code_workspace:
       - travis-ci/dpl
       - travis-ci/travis-yml
       - webknjaz/ansible.module_utils._text
+      - webknjaz/ansible-galaxy-collection-resolver
       - webknjaz/ansible-gentoo-laptop
       - webknjaz/ansinight
       - webknjaz/ansiwatch-bot
