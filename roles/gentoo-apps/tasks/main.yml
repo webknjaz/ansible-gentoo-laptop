@@ -533,14 +533,22 @@
     group: root
   when: ansible_product_version == 'ThinkPad P50'
 
-- name: >-
-    Set up udev rules: make Android devices accessible by plugdev group
+- name: Set up udev rules
   copy:
-    src: etc/udev/rules.d/51-android.rules
-    dest: /etc/udev/rules.d/51-android.rules
+    src: etc/udev/rules.d/{{ udev_rule.file }}
+    dest: /etc/udev/rules.d/{{ udev_rule.file }}
     mode: u+rw,g=r,o=r
     owner: root
     group: root
+  loop:
+  - label: make Android devices accessible by plugdev group
+    file: 51-android.rules
+  - label: enable support for F1-F12 in Keychron keyboards
+    file: 80-keychron.rules
+  loop_control:
+    label: >-
+      {{ udev_rule.label }}
+    loop_var: udev_rule
   notify:
   - update-udev-rules
 
