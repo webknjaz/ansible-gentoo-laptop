@@ -228,6 +228,7 @@ code_workspace:
       - ansible-community/antsibull
       - ansible-community/sphinx_ansible_theme
       - bcoca/collection
+      - bbangert/routes
       - benjaminp/six
       - bitprophet/alabaster
       - candlepin/candlepin
@@ -346,6 +347,7 @@ code_workspace:
         ansible/molecule: webknjaz/molecule
         ansible-collections/community.general: webknjaz/community.general
         ansible-community/antsibull: webknjaz/antsibull
+        bbangert/routes: webknjaz/routes
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
         cython/cython: webknjaz/cython
