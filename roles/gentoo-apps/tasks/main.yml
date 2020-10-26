@@ -533,10 +533,15 @@
     group: root
   when: ansible_product_version == 'ThinkPad P50'
 
-- name: Set up X11 keyboard layout  # noqa 301
+- name: Set up X11 keyboard layout
   command: >-
     localectl set-x11-keymap
     'us,ua' pc104 qwerty 'grp:caps_toggle,compose:ralt'
+  when: true
+
+- name: Set up Virtual Console keyboard layout
+  command: localectl set-keymap 'us,ua'
+  when: true
 
 - name: Set up udev rules
   copy:
