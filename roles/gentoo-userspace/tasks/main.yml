@@ -7,6 +7,8 @@
   import_tasks: git.yml
 - name: Ensure that NeoVim is configured
   import_tasks: neovim.yml
+- name: Ensure that GTK is configured
+  import_tasks: gtk.yml
 - name: Ensure that kitty is configured
   import_tasks: kitty.yml
 - name: Ensure that Oh My ZSH is configured

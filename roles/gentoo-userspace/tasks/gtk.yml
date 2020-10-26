@@ -1,0 +1,13 @@
+---  # vim:se ft=ansible:
+- name: Create GTK3 config dir within userspace
+  file:
+    dest: ~/.config/gtk-3.0/
+    state: directory
+- name: Add GTK3 config
+  copy:
+    src: gtk3-settings
+    dest: ~/.config/gtk-3.0/settings.ini
+- name: Add GTK2 config
+  copy:
+    src: gtk2-settings
+    dest: ~/.gtkrc-2.0
