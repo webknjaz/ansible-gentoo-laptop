@@ -192,6 +192,7 @@ ebuilds:
 - parcellite
 - pavucontrol
 - pcsc-lite
+- media-video/pipewire
 - powerline-symbols
 - pulseaudio
 - python:3.7
