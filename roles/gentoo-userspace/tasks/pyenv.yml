@@ -1,0 +1,44 @@
+--- # vim:se ft=ansible:
+- name: Install pyenv  # noqa 401
+  git:
+    repo: https://github.com/pyenv/{{ github_slug }}.git
+    dest: >-
+      {{ pyenv_root }}{% if github_slug[:6] == 'pyenv-'
+      %}/plugins/{{ github_slug }}{% endif %}
+  loop:
+  - pyenv
+  - pyenv-doctor
+  - pyenv-installer
+  - pyenv-update
+  - pyenv-virtualenv
+  - pyenv-which-ext
+  loop_control:
+    label: >-
+      {{ github_slug }}
+      {% if github_slug[:6] == 'pyenv-'
+      %}plugin{% else %}(main repo){% endif %}
+    loop_var: github_slug
+- name: Refresh available pyenv Python versions
+  shell: >-
+    eval "$({{ pyenv_executable }} init -)" &&
+    eval "$({{ pyenv_executable }} virtualenv-init -)" &&
+    {{ pyenv_executable }} update
+  when: true
+- name: Install Python from pyenv
+  shell: >-
+    eval "$({{ pyenv_executable }} init -)" &&
+    eval "$({{ pyenv_executable }} virtualenv-init -)" &&
+    {{ pyenv_executable }} install {{ python_version }}
+  args:
+    creates: >-
+      {{ pyenv_root }}/versions/{{ python_version }}/bin/python
+  loop: >-
+    {{ pyenv_versions }}
+  loop_control:
+    loop_var: python_version
+- name: Set shell-global Python versions
+  shell: >-
+    eval "$({{ pyenv_executable }} init -)" &&
+    eval "$({{ pyenv_executable }} virtualenv-init -)" &&
+    {{ pyenv_executable }} global {{ pyenv_versions | join(' ') }}
+  when: true
