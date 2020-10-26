@@ -68,6 +68,9 @@ end
 -- Themes define colours, icons, font and wallpapers.
 {% endraw %}
 beautiful.init(gears.filesystem.get_themes_dir() .. "{{ awesome.theme | default('default') }}/theme.lua")
+
+-- Font family and size
+beautiful.font = "{{ awesome.font | default('DejaVu Sans 11') }}"
 {% raw %}
 
 -- Gap between the windows

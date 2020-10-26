@@ -122,6 +122,7 @@ vundle:
 awesome:
   terminal: kitty --start-as=maximized --single-instance
   theme: zenburn
+  font: DejaVu Sans 11
   widgets:
     open_weather_map:
       latitude: 49.245904
