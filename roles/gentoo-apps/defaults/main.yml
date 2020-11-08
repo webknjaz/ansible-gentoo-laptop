@@ -233,6 +233,7 @@ ebuilds:
 - vagrant
 - app-emulation/virtualbox
 - app-emulation/virtualbox-additions  # ISO images with guest additions
+- app-emulation/virtualbox-extpack-oracle
 - virt-manager
 - vlc
 - wget2
@@ -255,6 +256,7 @@ ebuilds_from_overlays:
 unmask_ebuilds: {}
 
 accept_licenses:
+  app-emulation/virtualbox-extpack-oracle: PUEL
   app-editors/vscode-bin: MS-vscode
   dev-util/intel-ocl-sdk: Intel-SDP
   media-fonts/corefonts: MSttfEULA
