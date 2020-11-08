@@ -270,6 +270,7 @@ code_workspace:
       - lxc/python2-lxc
       - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
+      - neovim/pynvim
       - open-craft-guild/aio-feature-flags
       - open-craft-guild/ansible-fedora-laptop
       - open-craft-guild/prze-merge-2017-kurwa
@@ -279,6 +280,7 @@ code_workspace:
       - pradyunsg/sphinx-themes
       - pyca/bcrypt
       - pyca/cryptography
+      - pyca/pyopenssl
       - PyCQA/astroid
       - PyCQA/baron
       - PyCQA/redbaron
