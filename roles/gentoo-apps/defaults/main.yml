@@ -66,6 +66,8 @@ use_flags_per_package_enabled:
   - qrcode
   - repart
   - xkb
+  sys-apps/util-linux:
+  - tty-helpers
   sys-libs/glibc:
   - nscd
   sys-libs/zlib:
