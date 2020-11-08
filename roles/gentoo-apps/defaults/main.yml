@@ -232,6 +232,7 @@ ebuilds:
 - sys-apps/usermode-utilities
 - vagrant
 - app-emulation/virtualbox
+- app-emulation/virtualbox-additions  # ISO images with guest additions
 - virt-manager
 - vlc
 - wget2
