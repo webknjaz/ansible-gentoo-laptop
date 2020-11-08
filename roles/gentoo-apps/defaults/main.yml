@@ -119,6 +119,7 @@ ebuilds:
 - bind-tools
 - bbswitch  # FIXME: make host-dependent
 - sys-apps/bolt
+- net-misc/bridge-utils
 - bundler
 - ccache
 - cndrvcups-common-lb
@@ -226,6 +227,7 @@ ebuilds:
 - unifont
 - sys-power/upower
 - usbutils
+- sys-apps/usermode-utilities
 - vagrant
 - app-emulation/virtualbox
 - virt-manager
