@@ -383,6 +383,7 @@ code_workspace:
         pradyunsg/sphinx-themes: webknjaz/sphinx-themes
         pyca/bcrypt: webknjaz/bcrypt
         pyca/cryptography: webknjaz/cryptography
+        pyca/pyopenssl: webknjaz/pyopenssl
         PyCQA/astroid: webknjaz/astroid
         PyCQA/baron: webknjaz/baron
         PyCQA/redbaron: webknjaz/redbaron
