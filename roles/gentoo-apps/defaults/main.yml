@@ -182,6 +182,7 @@ ebuilds:
 - luarocks
 - luasocket
 - mesa-progs
+- sys-fs/multipath-tools
 - neovim
 - openbsd-netcat
 - networkmanager
