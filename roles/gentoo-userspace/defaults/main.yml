@@ -270,6 +270,7 @@ code_workspace:
       - lxc/python2-lxc
       - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
+      - mikishapiro/armbuild
       - neovim/pynvim
       - open-craft-guild/aio-feature-flags
       - open-craft-guild/ansible-fedora-laptop
