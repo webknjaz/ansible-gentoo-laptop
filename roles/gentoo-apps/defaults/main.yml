@@ -249,6 +249,7 @@ ebuilds_from_overlays:
   app-crypt/keybase-bin: dmchurch  # TODO: use "keybase" once it supports GUI
   app-editors/vscode-bin: jorgicio
   app-shells/rust-zshcomp: rust
+  app-shells/starship-bin: jorgicio
   media-fonts/emojione-color-font: jorgicio
   media-fonts/twemoji-color-font: jorgicio
   x11-themes/materia-theme: jorgicio
