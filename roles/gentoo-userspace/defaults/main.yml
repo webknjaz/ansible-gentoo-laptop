@@ -241,6 +241,7 @@ code_workspace:
       - ansible/lightbulb
       - ansible/molecule
       - ansible/pylibssh
+      - ansible-collections/collection_template
       - ansible-collections/community.general
       - ansible-community/antsibull
       - ansible-community/sphinx_ansible_theme
