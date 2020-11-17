@@ -243,6 +243,7 @@ code_workspace:
       - ansible/pylibssh
       - ansible-collections/collection_template
       - ansible-collections/community.general
+      - ansible-community/collection-ci-action
       - ansible-community/antsibull
       - ansible-community/sphinx_ansible_theme
       - bcoca/collection
