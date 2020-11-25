@@ -330,6 +330,7 @@ code_workspace:
       - sclorg/s2i-python-container
       - sdispater/poetry
       - sgielen/picl-k3os-image-generator
+      - sivel/ansible-pulp-galaxy-ng
       - sphinx-contrib/towncrier
       - sphinx-doc/sphinx
       - streetturtle/awesome-wm-widgets
