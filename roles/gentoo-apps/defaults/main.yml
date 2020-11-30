@@ -167,6 +167,7 @@ ebuilds:
 - jre
 - kexec-tools
 - kitty
+- sys-cluster/kubectl
 - libfprint
 - libinput-gestures
 - libgnomecups
