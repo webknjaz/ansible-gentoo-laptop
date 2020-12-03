@@ -1,0 +1,8 @@
+--- # vim:se ft=ansible:
+- name: Put the Ansible Core CI secret in place
+  copy:
+    content: >-
+      {{ ansible_core_ci_key.secret }}
+    dest: >-
+      {{ ansible_core_ci_key.path }}
+    mode: u+rw,g=,o=
