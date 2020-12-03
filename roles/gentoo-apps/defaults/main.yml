@@ -323,12 +323,14 @@ corp_domains:
 - brq.redhat.com
 - cee.redhat.com
 - corp.redhat.com
+- dev.redhat.com
 - devel.redhat.com
 - emea.redhat.com
 - engineering.redhat.com
 - ipa.redhat.com
 - paas.redhat.com
 - pnt.redhat.com
+- phx1.redhat.com
 - rdu.redhat.com
 - rdu2.redhat.com
 - rhu.redhat.com
