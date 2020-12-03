@@ -157,6 +157,7 @@ ebuilds:
 - google-chrome
 - gutenprint
 - media-gfx/flameshot
+- app-admin/helm
 - intel-ocl-sdk
 - iosevka
 - iperf:3
