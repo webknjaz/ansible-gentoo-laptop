@@ -318,6 +318,7 @@ code_workspace:
       - pypa/wheel
       - pytest-dev/pytest
       - pytest-dev/pytest-forked
+      - pytest-dev/pytest-mock
       - python/cherry_picker
       - python/core-workflow
       - python/cpython
@@ -416,6 +417,7 @@ code_workspace:
         pypa/warehouse: webknjaz/warehouse
         pytest-dev/pytest: webknjaz/pytest
         pytest-dev/pytest-forked: webknjaz/pytest-forked
+        pytest-dev/pytest-mock: webknjaz/pytest-mock
         python/cherry_picker: webknjaz/cherry_picker
         python/core-workflow: webknjaz/core-workflow
         python/cpython: webknjaz/cpython
