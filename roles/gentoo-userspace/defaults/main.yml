@@ -274,6 +274,7 @@ code_workspace:
       - gliderlabs/herokuish
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
+      - jaraco/skeleton
       - jctanner/ansible-reproducers
       - jctanner/gravity
       - joepvd/tty-solarized
