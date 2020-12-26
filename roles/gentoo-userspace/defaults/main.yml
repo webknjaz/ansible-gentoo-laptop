@@ -392,6 +392,7 @@ code_workspace:
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
+        jaraco/skeleton: webknjaz/jaraco-skeleton
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         jctanner/gravity: webknjaz/gravity
         joepvd/tty-solarized: webknjaz/tty-solarized
