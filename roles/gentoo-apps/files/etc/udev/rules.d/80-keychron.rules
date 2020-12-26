@@ -1,2 +1,11 @@
-SUBSYSTEMS=="input", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="024f", RUN+="echo 0 | tee /sys/module/hid_apple/parameters/fnmode"  # Any Keychron keyboard
-SUBSYSTEMS=="input", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="024f", MODE="0666", GROUP="plugdev", SYMLINK+="keychron-keyboard-%n"
+# NOTE: The rules below match any Keychron keyboard.
+
+DRIVERS=="usb", SUBSYSTEMS=="usb", \
+  ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="024f", \
+  ATTR{manufacturer}=="Keychron K[0-9]", ATTR{product}=="Keychron K[0-9]", \
+  RUN+="echo 2 | tee /sys/module/hid_apple/parameters/fnmode"
+
+DRIVERS=="usb", SUBSYSTEMS=="usb", \
+  ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="024f", \
+  ATTR{manufacturer}=="Keychron K[0-9]", ATTR{product}=="Keychron K[0-9]", \
+  MODE="0666", GROUP="plugdev", SYMLINK+="%E{ID_MODEL}-keyboard-%n"
