@@ -134,6 +134,7 @@ ebuilds:
 - enchant
 - eselect-fontconfig
 - fira-code
+- www-client/firefox-bin
 - font-bh-ttf
 - font-bh-type1
 - foomatic-db
