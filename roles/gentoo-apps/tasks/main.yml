@@ -562,6 +562,24 @@
   notify:
   - update-udev-rules
 
+- name: Prevent autosuspend in systemd-logind on lid close when docked
+  lineinfile:
+    create: no
+    insertafter: "#{{ item.name }}={{ item.commented_state }}"
+    line: >-
+      {{ item.name }}=ignore
+    path: /etc/systemd/logind.conf
+    regexp: ^{{ item.name }}="[^"]*"$
+    state: present
+  loop:
+  - name: HandleLidSwitchDocked
+    commented_state: ignore
+  - name: HandleLidSwitchExternalPower
+    commented_state: suspend
+  notify:
+  - ensure-services-started
+  - ensure-services-reloaded
+
 - name: Create config dir structure for Google Chrome and Chromium
   file:
     dest: "{{ item.key }}"
