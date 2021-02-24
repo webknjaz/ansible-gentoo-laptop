@@ -294,6 +294,7 @@ code_workspace:
       - pradyunsg/sphinx-themes
       - pyca/bcrypt
       - pyca/cryptography
+      - pyca/infra
       - pyca/pyopenssl
       - PyCQA/astroid
       - PyCQA/baron
