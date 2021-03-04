@@ -257,6 +257,7 @@ code_workspace:
       - ansible-community/collection-ci-action
       - ansible-community/antsibull
       - ansible-community/sphinx_ansible_theme
+      - antonbabenko/modulestf-vscode
       - bcoca/collection
       - bbangert/routes
       - benjaminp/six
