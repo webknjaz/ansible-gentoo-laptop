@@ -170,6 +170,7 @@ ebuilds:
 - iptraf-ng
 - irssi
 - sys-apps/irqbalance
+- virtual/jack
 - jq
 - jre
 - kexec-tools
