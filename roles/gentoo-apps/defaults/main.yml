@@ -38,6 +38,8 @@ use_flags_per_package_enabled:
   - chromecast
   net-dns/bind-tools:
   - gssapi
+  net-dns/dnsmasq:
+  - script
   net-misc/spice-gtk:
   - usbredir
   sys-auth/sssd:
