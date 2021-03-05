@@ -126,6 +126,7 @@ ebuilds:
 - net-misc/bridge-utils
 - bundler
 - ccache
+- sys-devel/clang
 - cndrvcups-common-lb
 - corefonts
 - darktable
