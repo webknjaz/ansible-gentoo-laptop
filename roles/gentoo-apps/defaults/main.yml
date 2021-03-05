@@ -81,6 +81,8 @@ accept_keywords_per_package:
   =app-shells/rust-zshcomp-9999::rust:
   - >-
     **
+  dev-vcs/git::gentoo:
+  - ~amd64
 #  sys-libs/glibc:  # conflicts with sssd: https://bugs.gentoo.org/737180
 #  - -~amd64
 essential_ebuilds:
