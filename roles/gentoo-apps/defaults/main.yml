@@ -232,6 +232,7 @@ ebuilds:
 - texlive-latexrecommended
 - thunar
 - thunderbird-bin
+- sys-process/time
 - tmux
 - traceroute
 - ttf-bitstream-vera
