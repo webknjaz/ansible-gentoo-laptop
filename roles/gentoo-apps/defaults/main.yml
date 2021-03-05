@@ -278,6 +278,7 @@ accept_licenses:
   media-fonts/font-bh-ttf: bh-luxi
   media-fonts/font-bh-type1: bh-luxi
   media-fonts/freefonts: all-rights-reserved free-noncomm freedist
+  net-analyzer/nmap: NPSL
   net-misc/anydesk: AnyDesk-TOS
   net-print/cndrvcups-common-lb: Canon-UFR-II
   sys-kernel/linux-firmware: linux-fw-redistributable no-source-code
