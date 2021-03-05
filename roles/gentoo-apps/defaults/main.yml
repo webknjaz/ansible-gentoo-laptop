@@ -129,6 +129,8 @@ ebuilds:
 - sys-devel/clang
 - cndrvcups-common-lb
 - corefonts
+- >-  # Podman works better with crun than runc: https://bugs.gentoo.org/723080
+  app-emulation/crun
 - darktable
 - dnsmasq
 - dpkg
@@ -176,7 +178,8 @@ ebuilds:
 - libfprint
 - libinput-gestures
 - libgnomecups
-- libpod
+- >-  # Used to be "libpod", now: https://wiki.gentoo.org/wiki/Podman
+  app-emulation/podman
 - libvirt
 - light
 - linux-firmware
