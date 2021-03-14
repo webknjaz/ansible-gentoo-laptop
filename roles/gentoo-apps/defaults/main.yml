@@ -32,6 +32,12 @@ use_flags_per_package_enabled:
   - pkcs7
   dev-libs/nss:
   - utils
+  gui-wm/hikari:
+  - gamma  # add gamma control for redshift
+  - layershell  # add support for wayland apps using layer shell
+  - screencopy  # add support for screen grabbing
+  # enable virtual input/output support, needed for remote I/O in VNC:
+  - virtual-io
   media-libs/libsdl2:
   - gles2  # dependency of USE-wayland
   media-video/vlc:
@@ -83,7 +89,11 @@ accept_keywords_per_package:
   =app-shells/rust-zshcomp-9999::rust:
   - >-
     **
+  dev-libs/libucl:
+  - ~amd64
   dev-vcs/git::gentoo:
+  - ~amd64
+  gui-wm/hikari:
   - ~amd64
 #  sys-libs/glibc:  # conflicts with sssd: https://bugs.gentoo.org/737180
 #  - -~amd64
@@ -166,6 +176,7 @@ ebuilds:
 - gutenprint
 - media-gfx/flameshot
 - app-admin/helm
+- gui-wm/hikari
 - intel-ocl-sdk
 - iosevka
 - iperf:3
