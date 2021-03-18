@@ -277,6 +277,7 @@ code_workspace:
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
       - jaraco/skeleton
+      - jazzband/pip-tools
       - jctanner/ansible-reproducers
       - jctanner/gravity
       - joepvd/tty-solarized
