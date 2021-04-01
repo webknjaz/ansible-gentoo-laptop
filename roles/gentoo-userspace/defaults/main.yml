@@ -337,6 +337,8 @@ code_workspace:
       - re-actors/pypi-action
       - RedHatOfficial/RedHatOfficial.github.io
       - rtfd/readthedocs-docker-images
+      - SalaryCalc/salarycalc-ng
+      - SalaryCalc/salarycalc-php
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sanitizers/diactoros-github-app
