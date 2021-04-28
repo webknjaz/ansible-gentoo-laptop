@@ -343,6 +343,7 @@ corp_dns_servers:
 corp_domains:
 - ams2.redhat.com
 - auth.redhat.com
+- bos.redhat.com
 - brq.redhat.com
 - cee.redhat.com
 - corp.redhat.com
