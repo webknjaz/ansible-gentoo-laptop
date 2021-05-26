@@ -184,6 +184,7 @@ oh_my_zsh:
   - ng
   - lol
   - last-working-dir
+  - fzf
   # custom
   - kitty
   custom_plugins:
