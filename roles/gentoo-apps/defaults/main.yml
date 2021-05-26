@@ -130,6 +130,7 @@ ebuilds:
 - anydesk
 - apache-tools
 - app-emulation/docker
+- app-emulation/docker-cli
 - app-misc/screen
 - arc-theme
 - arphicfonts
