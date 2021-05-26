@@ -89,9 +89,15 @@ accept_keywords_per_package:
   =app-shells/rust-zshcomp-9999::rust:
   - >-
     **
+  dev-games/simgear:
+  - ~amd64
   dev-libs/libucl:
   - ~amd64
   dev-vcs/git::gentoo:
+  - ~amd64
+  games-simulation/flightgear:
+  - ~amd64
+  games-simulation/flightgear-data:
   - ~amd64
   gui-wm/hikari:
   - ~amd64
@@ -152,6 +158,7 @@ ebuilds:
 - eselect-fontconfig
 - fira-code
 - www-client/firefox-bin
+- games-simulation/flightgear
 - font-bh-ttf
 - font-bh-type1
 - foomatic-db
