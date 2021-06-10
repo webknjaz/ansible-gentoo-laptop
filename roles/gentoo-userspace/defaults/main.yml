@@ -32,6 +32,7 @@ node_versions:
   - 8
   default: *def_node_ver
 git_options:
+  color.diff.whitespace: red reverse
   commit.gpgsign: true
   commit.template: >-
     ~/src/github/webknjaz/ansible-gentoo-laptop/roles/gentoo-userspace/files/git-commit.template
