@@ -249,6 +249,7 @@ code_workspace:
       - ansible/ansible-lint
       - ansible/ansible-lint-action
       - ansible/ansible-navigator
+      - ansible/ansible-runner
       - ansible/ansibullbot
       - ansible/collection_migration
       - ansible/foreman-test-container
