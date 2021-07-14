@@ -245,6 +245,7 @@ code_workspace:
       - amol-/dukpy
       - ansible/ansible
       - ansible/ansible-examples
+      - ansible/ansible-language-server
       - ansible/ansible-lint
       - ansible/ansible-lint-action
       - ansible/ansibullbot
