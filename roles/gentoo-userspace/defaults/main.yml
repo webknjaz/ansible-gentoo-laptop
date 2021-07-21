@@ -262,6 +262,7 @@ code_workspace:
       - ansible-community/collection-ci-action
       - ansible-community/antsibull
       - ansible-community/sphinx_ansible_theme
+      - ansible-community/vscode-ansible
       - antonbabenko/modulestf-vscode
       - bcoca/collection
       - bbangert/routes
