@@ -261,6 +261,7 @@ code_workspace:
       - ansible-community/ansible-pygments
       - ansible-community/collection-ci-action
       - ansible-community/antsibull
+      - ansible-community/molecule-containers
       - ansible-community/sphinx_ansible_theme
       - ansible-community/vscode-ansible
       - antonbabenko/modulestf-vscode
