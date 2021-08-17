@@ -343,6 +343,7 @@ code_workspace:
       - python-trio/trustme
       - re-actors/manylinux1_x86_64-action
       - re-actors/pypi-action
+      - reverbc/pylint-pytest
       - RedHatOfficial/RedHatOfficial.github.io
       - rtfd/readthedocs-docker-images
       - SalaryCalc/salarycalc-ng
@@ -446,6 +447,7 @@ code_workspace:
         python-trio/trustme: webknjaz/trustme
         RedHatOfficial/RedHatOfficial.github.io: >-
           webknjaz/RedHatOfficial.github.io
+        reverbc/pylint-pytest: webknjaz/pylint-pytest
         sdispater/poetry: webknjaz/poetry
         sphinx-doc/sphinx: webknjaz/sphinx
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
