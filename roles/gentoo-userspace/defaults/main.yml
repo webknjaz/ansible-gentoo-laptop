@@ -258,6 +258,7 @@ code_workspace:
       - ansible/molecule
       - ansible/pylibssh
       - ansible-collections/collection_template
+      - ansible-collections/community.digitalocean
       - ansible-collections/community.general
       - ansible-community/ansible-pygments
       - ansible-community/ansible-test-gh-action
