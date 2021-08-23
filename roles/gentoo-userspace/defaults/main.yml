@@ -260,6 +260,7 @@ code_workspace:
       - ansible-collections/collection_template
       - ansible-collections/community.general
       - ansible-community/ansible-pygments
+      - ansible-community/ansible-test-gh-action
       - ansible-community/antsibull
       - ansible-community/collection-ci-action
       - ansible-community/molecule-containers
