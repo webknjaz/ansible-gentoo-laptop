@@ -276,7 +276,6 @@ ebuilds:
 - wireshark
 - wmname
 - xautolock
-- xflux-gui
 - xorg-x11
 - yubikey-manager
 - zh-kcfonts
