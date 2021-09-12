@@ -386,6 +386,7 @@ code_workspace:
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
       - webknjaz/qr-announcements
+      - webknjaz/release-candidate
       - webknjaz/rpi4b-k3s
       - webknjaz/talk-drafts
       - webknjaz/talks
