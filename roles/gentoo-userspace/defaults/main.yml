@@ -385,6 +385,7 @@ code_workspace:
       - webknjaz/intersphinx-untangled
       - webknjaz/mrgall-ansible
       - webknjaz/pypi-deployment
+      - webknjaz/qr-announcements
       - webknjaz/rpi4b-k3s
       - webknjaz/talk-drafts
       - webknjaz/talks
