@@ -397,6 +397,7 @@ code_workspace:
       - yaml/pyyaml
       forked_as:
         abhinavsingh/proxy.py: webknjaz/proxy.py
+        aio-libs/aiohttp: webknjaz/aiohttp
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
         ansible/ansible-lint: webknjaz/ansible-lint
