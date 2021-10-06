@@ -277,6 +277,7 @@ code_workspace:
       - cherrypy/cheroot
       - cherrypy/cherrypy
       - cherrypy/magicbus
+      - codecov/uploader
       - cython/cython
       - deadsnakes/action
       - dokku/dokku-mariadb
@@ -410,6 +411,7 @@ code_workspace:
         bbangert/routes: webknjaz/routes
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
+        codecov/uploader: webknjaz/codecov-uploader
         cython/cython: webknjaz/cython
         deadsnakes/action: webknjaz/deadsnakes-action
         FreeCAD/FreeCAD: webknjaz/FreeCAD
