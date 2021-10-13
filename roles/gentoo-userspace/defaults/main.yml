@@ -401,6 +401,7 @@ code_workspace:
         aio-libs/aiohttp: webknjaz/aiohttp
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
+        ansible/ansible-language-server: webknjaz/ansible-language-server
         ansible/ansible-lint: webknjaz/ansible-lint
         ansible/ansibullbot: webknjaz/ansibullbot
         ansible/collection_migration: webknjaz/collection_migration
