@@ -407,6 +407,7 @@ code_workspace:
         ansible/collection_migration: webknjaz/collection_migration
         ansible/lightbulb: webknjaz/lightbulb
         ansible/molecule: webknjaz/molecule
+        ansible/vscode-ansible: webknjaz/vscode-ansible
         ansible-collections/community.general: webknjaz/community.general
         ansible-community/antsibull: webknjaz/antsibull
         bbangert/routes: webknjaz/routes
