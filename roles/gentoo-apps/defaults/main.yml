@@ -29,11 +29,15 @@ use_flags_per_package_enabled:
   - virtfs
   dev-libs/libdbusmenu:
   - gtk3
+  dev-games/simgear:
+  - gdal  # Enable support for sci-libs/gdal library
   dev-libs/libjcat:  # dependency of sys-apps/fwupd
   - gpg
   - pkcs7
   dev-libs/nss:
   - utils
+  games-simulation/flightgear:
+  - gdal  # Enable support for sci-libs/gdal library
   gui-wm/hikari:
   - gamma  # add gamma control for redshift
   - layershell  # add support for wayland apps using layer shell
