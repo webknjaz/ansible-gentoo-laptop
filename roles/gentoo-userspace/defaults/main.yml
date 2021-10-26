@@ -267,6 +267,7 @@ code_workspace:
       - ansible-community/antsibull
       - ansible-community/collection-ci-action
       - ansible-community/molecule-containers
+      - ansible-community/molecule-hetznercloud
       - ansible-community/sphinx_ansible_theme
       - ansible-community/vscode-ansible
       - antonbabenko/modulestf-vscode
@@ -412,6 +413,7 @@ code_workspace:
         ansible-collections/community.general: webknjaz/community.general
         ansible-collections/community.hashi_vault: webknjaz/community.hashi_vault
         ansible-community/antsibull: webknjaz/antsibull
+        ansible-community/molecule-hetznercloud: webknjaz/molecule-hetznercloud
         bbangert/routes: webknjaz/routes
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
