@@ -261,6 +261,7 @@ code_workspace:
       - ansible-collections/collection_template
       - ansible-collections/community.digitalocean
       - ansible-collections/community.general
+      - ansible-collections/community.hashi_vault
       - ansible-community/ansible-pygments
       - ansible-community/ansible-test-gh-action
       - ansible-community/antsibull
@@ -409,6 +410,7 @@ code_workspace:
         ansible/molecule: webknjaz/molecule
         ansible/vscode-ansible: webknjaz/vscode-ansible
         ansible-collections/community.general: webknjaz/community.general
+        ansible-collections/community.hashi_vault: webknjaz/community.hashi_vault
         ansible-community/antsibull: webknjaz/antsibull
         bbangert/routes: webknjaz/routes
         benjaminp/six: webknjaz/six
