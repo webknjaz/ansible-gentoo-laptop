@@ -147,6 +147,7 @@ ebuilds:
 - axel
 - bind-tools
 - bbswitch  # FIXME: make host-dependent
+- net-wireless/blueman
 - sys-apps/bolt
 - net-misc/bridge-utils
 - bundler
