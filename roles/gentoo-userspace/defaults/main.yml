@@ -220,6 +220,7 @@ code_workspace:
     - name: github
       fqdn: github.com
       ssh_pubkey_hostnames:
+      - gist.github.com
       - >-
         [ssh.github.com]:443
       ssh_host_keys:
