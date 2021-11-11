@@ -375,6 +375,7 @@ code_workspace:
       - tox-dev/detox
       - tox-dev/gh-action-tox
       - tox-dev/tox
+      - tox-dev/workflow
       - travis-ci/dpl
       - travis-ci/travis-yml
       - webknjaz/.me
@@ -473,6 +474,7 @@ code_workspace:
         takluyver/flit: webknjaz/flit
         tox-dev/detox: webknjaz/detox
         tox-dev/tox: webknjaz/tox
+        tox-dev/workflow: webknjaz/tox-workflow
         travis-ci/dpl: webknjaz/dpl
         travis-ci/travis-yml: webknjaz/travis-yml
         willthames/ansible-review: webknjaz/ansible-review
