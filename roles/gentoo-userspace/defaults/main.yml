@@ -410,7 +410,7 @@ code_workspace:
         ansible/ansible: webknjaz/ansible
         ansible/ansible-language-server: webknjaz/ansible-language-server
         ansible/ansible-lint: webknjaz/ansible-lint
-        ansible/ansible-navigator-demo-ee: webknjaz/ansible-content-ee
+        ansible/ansible-navigator-demo-ee: webknjaz/ansible-creator-ee
         ansible/ansibullbot: webknjaz/ansibullbot
         ansible/collection_migration: webknjaz/collection_migration
         ansible/lightbulb: webknjaz/lightbulb
