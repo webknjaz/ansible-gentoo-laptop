@@ -17,6 +17,7 @@ video_card_targets:
 - i965
 - iris
 use_flags_global_enabled:
+- bluetooth
 - kerberos
 - luajit
 - pulseaudio
