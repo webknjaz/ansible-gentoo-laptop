@@ -19,6 +19,7 @@ video_card_targets:
 use_flags_global_enabled:
 - kerberos
 - luajit
+- pulseaudio
 - python
 - sasl
 - savedconfig
