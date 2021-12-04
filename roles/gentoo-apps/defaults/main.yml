@@ -176,6 +176,7 @@ ebuilds:
 - foomatic-db
 - foomatic-db-engine
 - foomatic-db-ppds
+- sys-auth/fprintd
 - freefonts
 - freerdp
 - fuse-exfat
