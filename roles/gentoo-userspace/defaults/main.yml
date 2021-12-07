@@ -354,6 +354,7 @@ code_workspace:
       - python-trio/trustme
       - re-actors/alls-green
       - re-actors/bindep
+      - re-actors/build-python-dists
       - re-actors/manylinux1_x86_64-action
       - re-actors/pypi-action
       - reverbc/pylint-pytest
