@@ -355,6 +355,7 @@ code_workspace:
       - re-actors/alls-green
       - re-actors/bindep
       - re-actors/build-python-dists
+      - re-actors/checkout-python-sdist
       - re-actors/manylinux1_x86_64-action
       - re-actors/pypi-action
       - reverbc/pylint-pytest
