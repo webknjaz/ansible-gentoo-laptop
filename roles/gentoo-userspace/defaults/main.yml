@@ -289,6 +289,7 @@ code_workspace:
       - deadsnakes/action
       - dokku/dokku-mariadb
       - EuroPython/ep-config
+      - executablebooks/MyST-Parser
       - FreeCAD/FreeCAD
       - gentoo/gentoo
       - github-actions-playground/enroll-me
@@ -431,6 +432,7 @@ code_workspace:
         codecov/uploader: webknjaz/codecov-uploader
         cython/cython: webknjaz/cython
         deadsnakes/action: webknjaz/deadsnakes-action
+        executablebooks/MyST-Parser: webknjaz/MyST-Parser
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
