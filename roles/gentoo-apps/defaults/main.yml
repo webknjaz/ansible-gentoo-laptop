@@ -38,6 +38,8 @@ use_flags_per_package_enabled:
   dev-libs/libjcat:  # dependency of sys-apps/fwupd
   - gpg
   - pkcs7
+  x11-libs/libdrm:
+  - libkms  # provides abstraction to the DRM drivers, needed for Plymouth
   dev-libs/nss:
   - utils
   games-simulation/flightgear:
@@ -241,6 +243,7 @@ ebuilds:
 - pavucontrol
 - pcsc-lite
 - media-video/pipewire
+- sys-boot/plymouth
 - powerline-symbols
 - pulseaudio
 - python:3.7
