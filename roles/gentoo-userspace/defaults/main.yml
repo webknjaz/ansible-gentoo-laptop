@@ -286,6 +286,10 @@ code_workspace:
       - cherrypy/magicbus
       - codecov/uploader
       - cython/cython
+      - daibach142/FGFS_Saitek_Radio
+      - daibach142/FGFS_Saitek_Switch_Panel
+      - daibach142/SaitekRadio
+      - daibach142/SaitekSwitch
       - deadsnakes/action
       - dokku/dokku-mariadb
       - EuroPython/ep-config
@@ -308,6 +312,7 @@ code_workspace:
       - matrixise/europython-config-the-revenant
       - mikishapiro/armbuild
       - neovim/pynvim
+      - niftylettuce/flightgear-saitek-pro-flight-switch-panel-hid-controller
       - open-craft-guild/aio-feature-flags
       - open-craft-guild/ansible-fedora-laptop
       - open-craft-guild/prze-merge-2017-kurwa
