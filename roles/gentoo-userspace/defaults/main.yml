@@ -393,6 +393,7 @@ code_workspace:
       - webknjaz/ansible.module_utils._text
       - webknjaz/ansible-galaxy-collection-resolver
       - webknjaz/ansible-gentoo-laptop
+      - webknjaz/ansible-network-infra
       - webknjaz/ansinight
       - webknjaz/ansiwatch-bot
       - webknjaz/check-in
