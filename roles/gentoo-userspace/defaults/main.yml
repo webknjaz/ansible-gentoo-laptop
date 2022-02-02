@@ -245,6 +245,7 @@ code_workspace:
       - aio-libs/.github
       - aio-libs/aiohttp
       - aio-libs/aiohttp-devtools
+      - aio-libs/async-lru
       - aio-libs/multidict
       - aio-libs/yarl
       - amol-/dukpy
