@@ -1,0 +1,1 @@
+sudo sed -i 's/GROUP="plugdev", //g' /etc/udev/rules.d/{80-keychron,51-android}.rules
