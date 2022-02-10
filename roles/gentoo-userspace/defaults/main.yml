@@ -260,6 +260,8 @@ code_workspace:
       - ansible/ansibullbot
       - ansible/collection_migration
       - ansible/foreman-test-container
+      - ansible/gha-runner-scaler
+      - ansible/gha-wsl2-playground
       - ansible/lightbulb
       - ansible/molecule
       - ansible/pylibssh
