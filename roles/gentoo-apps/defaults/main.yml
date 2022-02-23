@@ -182,6 +182,7 @@ ebuilds:
 - ebtables
 - enchant
 - eselect-fontconfig
+- eselect-python
 - fira-code
 - www-client/firefox-bin
 - games-simulation/flightgear
