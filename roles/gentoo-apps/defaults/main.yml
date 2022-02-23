@@ -104,8 +104,16 @@ use_flags_per_package_enabled:
 use_flags_per_package_disabled:
   app-text/mupdf:
   - static-libs
+  dev-libs/libusb:
+  - static-libs
   net-misc/networkmanager:
   - gnutls  # conflicts with `nss`
+  sys-apps/pciutils:
+  - static-libs
+  sys-fs/cryptsetup:
+  - static-libs
+  sys-fs/lvm2:
+  - static-libs
 accept_keywords_per_package:
   =app-admin/abrt-2.15.0::gentoo:
   - ~amd64
