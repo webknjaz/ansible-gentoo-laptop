@@ -208,6 +208,8 @@ ebuilds:
 - media-gfx/flameshot
 - app-admin/helm
 - gui-wm/hikari
+- x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
+# - x11-libs/libva-vdpau-driver NVIDIA GPU
 - intel-ocl-sdk
 - iosevka
 - iperf:3
@@ -224,6 +226,7 @@ ebuilds:
 - libfprint
 - libinput-gestures
 - libgnomecups
+- x11-libs/libva-intel-driver
 - >-  # Used to be "libpod", now: https://wiki.gentoo.org/wiki/Podman
   app-emulation/podman
 - libvirt
