@@ -63,6 +63,8 @@ use_flags_per_package_enabled:
   - gssapi
   net-dns/dnsmasq:
   - script
+  net-misc/networkmanager:
+  - nss  # conflicts with `gnutls`
   net-misc/spice-gtk:
   - usbredir
   sys-auth/sssd:
@@ -102,6 +104,8 @@ use_flags_per_package_enabled:
 use_flags_per_package_disabled:
   app-text/mupdf:
   - static-libs
+  net-misc/networkmanager:
+  - gnutls  # conflicts with `nss`
 accept_keywords_per_package:
   =app-shells/rust-zshcomp-9999::rust:
   - >-
