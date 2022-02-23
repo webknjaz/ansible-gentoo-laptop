@@ -53,6 +53,8 @@ use_flags_per_package_enabled:
   - screencopy  # add support for screen grabbing
   # enable virtual input/output support, needed for remote I/O in VNC:
   - virtual-io
+  media-libs/freetype:
+  - harfbuzz
   media-libs/libsdl2:
   - gles2  # dependency of USE-wayland
   media-video/vlc:
