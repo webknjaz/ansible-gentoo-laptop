@@ -107,6 +107,10 @@ use_flags_per_package_disabled:
   net-misc/networkmanager:
   - gnutls  # conflicts with `nss`
 accept_keywords_per_package:
+  =app-admin/abrt-2.15.0::gentoo:
+  - ~amd64
+  =app-arch/rpm-4.17.0::gentoo:
+  - ~amd64
   =app-shells/rust-zshcomp-9999::rust:
   - >-
     **
