@@ -222,6 +222,7 @@ ebuilds:
 - irssi
 - sys-apps/irqbalance
 - virtual/jack
+- media-sound/jack2
 - jq
 - jre
 - kexec-tools
