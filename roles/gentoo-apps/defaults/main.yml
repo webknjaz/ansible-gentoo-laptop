@@ -167,6 +167,10 @@ ebuilds:
 - bundler
 - ccache
 - sys-devel/clang
+# pygments is optional, needed by /usr/lib/llvm/13/share/opt-viewer
+- dev-python/pygments
+# PyYAML is optional, needed by /usr/lib/llvm/12/share/clang/run-clang-tidy.py
+- dev-python/pyyaml
 - cndrvcups-common-lb
 - corefonts
 - >-  # Podman works better with crun than runc: https://bugs.gentoo.org/723080
