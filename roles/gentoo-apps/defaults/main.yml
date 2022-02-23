@@ -242,9 +242,9 @@ ebuilds:
 #- lxc
 - lxdm
 - dev-lua/luajson   # Awesome WM theme
-- luaposix
-- luarocks
-- luasocket
+- luaposix  # FIXME: unmask? delete?
+- luarocks  # FIXME: delete?
+- luasocket  # FIXME: delete?
 - mesa-progs
 - sys-fs/multipath-tools
 - neovim
