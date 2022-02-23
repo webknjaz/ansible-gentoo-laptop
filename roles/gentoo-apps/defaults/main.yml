@@ -128,11 +128,21 @@ accept_keywords_per_package:
   - ~amd64
   dev-libs/libucl:
   - ~amd64
+  =dev-libs/satyr-0.38::gentoo:
+  - ~amd64
+  =dev-python/neovim-remote-2.4.0::gentoo:
+  - ~amd64
+  =dev-ruby/msgpack-1.4.4::gentoo:  # needed by dev-ruby/neovim-ruby-client
+  - ~amd64
+  =dev-ruby/neovim-ruby-client-0.8.1-r1::gentoo:
+  - ~amd64
   dev-vcs/git::gentoo:
   - ~amd64
   games-simulation/flightgear:
   - ~amd64
   games-simulation/flightgear-data:
+  - ~amd64
+  =gui-libs/wlroots-0.15.0-r2::gentoo:
   - ~amd64
   gui-wm/hikari:
   - ~amd64
@@ -270,6 +280,8 @@ ebuilds:
 - neovim
 - openbsd-netcat
 - nemu  # Ncurses QEMU TUI
+- dev-python/neovim-remote  # Needed for NeoVim: for remote/nvr support
+- dev-ruby/neovim-ruby-client  # Needed for NeoVim: for Ruby plugin support
 - networkmanager
 - networkmanager-openvpn
 - networkmanager-sstp
@@ -285,6 +297,7 @@ ebuilds:
 - sys-boot/plymouth
 - powerline-symbols
 - pulseaudio
+- dev-python/pynvim  # Needed for NeoVim: for Python plugin support
 - python:3.7
 - python:3.8
 - pam_u2f
@@ -325,11 +338,15 @@ ebuilds:
 - app-emulation/virtualbox-extpack-oracle
 - virt-manager
 - vlc
+- gui-apps/wl-clipboard  # Needed for NeoVim: for clipboard support
 - wget2
 - wireshark
 - wmname
 - xautolock
+- x11-misc/xclip  # Needed for NeoVim: for clipboard support
 - xorg-x11
+- x11-misc/xsel  # Needed for NeoVim: for clipboard support
+- net-misc/x11-ssh-askpass
 - yubikey-manager
 - zh-kcfonts
 - zsh-completions
