@@ -260,6 +260,7 @@ ebuilds:
 - python:3.8
 - pam_u2f
 - pam_yubico
+- sys-auth/rtkit  # Pulseaudio: improve restricted realtime D-Bus capabilities
 - qemu
 - qrencode
 - quivira
