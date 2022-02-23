@@ -114,6 +114,8 @@ use_flags_per_package_disabled:
   - static-libs
   sys-fs/lvm2:
   - static-libs
+  sys-libs/glibc:
+  - crypt
 accept_keywords_per_package:
   =app-admin/abrt-2.15.0::gentoo:
   - ~amd64
