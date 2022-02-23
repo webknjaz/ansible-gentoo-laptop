@@ -241,7 +241,7 @@ ebuilds:
 - sys-apps/lm-sensors
 #- lxc
 - lxdm
-- luajson
+- dev-lua/luajson   # Awesome WM theme
 - luaposix
 - luarocks
 - luasocket
