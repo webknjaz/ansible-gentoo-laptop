@@ -310,6 +310,7 @@ ebuilds:
 - rawtherapee
 - x11-misc/i3lock
 - x11-misc/redshift
+- sys-apps/ripgrep  # `grep` on steroids
 - rust-bin
 - app-crypt/seahorse
 - sic
