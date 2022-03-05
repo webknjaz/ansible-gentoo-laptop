@@ -392,6 +392,7 @@ code_workspace:
       - tox-dev/workflow
       - travis-ci/dpl
       - travis-ci/travis-yml
+      - vshymanskyy/StandWithUkraine
       - webknjaz/.me
       - webknjaz/ansible.module_utils._text
       - webknjaz/ansible-galaxy-collection-resolver
