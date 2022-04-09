@@ -1,3 +1,10 @@
+TODO: apply almost equal Xcompose patch
+
+https://bugs.freedesktop.org/show_bug.cgi?id=85623
+https://gitlab.freedesktop.org/xorg/lib/libx11/-/issues/62
+
+===
+
 https://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/
 
 systemd needs +cgroup-hybrid for docker to work:
