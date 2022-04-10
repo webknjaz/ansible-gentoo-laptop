@@ -1,1 +1,38 @@
 sudo sed -i 's/GROUP="plugdev", //g' /etc/udev/rules.d/{80-keychron,51-android}.rules
+
+sudo curl -o /etc/yum.repos.d/skype-stable.repo https://repo.skype.com/rpm/stable/skype-stable.repo
+sudo dnf install -y skypeforlinux
+
+sudo dnf copr enable luminoso/Signal-Desktop
+sudo dnf install -y signal-desktop
+
+sudo dnf install -y https://zoom.us/client/latest/zoom_x86_64.rpm
+
+# HP Pavilion / Mom's red laptop
+
+sudo curl -o /lib/firmware/brcm/BCM43142A0-0a5c-216d.hcd https://github.com/winterheart/broadcom-bt-firmware/raw/master/brcm/BCM43142A0-0a5c-216d.hcd
+
+# https://linux-hardware.org/index.php?id=usb:0a5c-216c
+
+# https://rpmfusion.org/Configuration
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-appstream-data_enabling-the-rpmfusion-repositories
+sudo dnf group update core
+
+sudo dnf group update multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+# sudo dnf group install sound-and-video
+sudo dnf group update sound-and-video
+
+sudo dnf install rpmfusion-free-release-tainted
+sudo dnf install libdvdcss
+
+sudo dnf install rpmfusion-nonfree-release-tainted
+# Bluetooth firmware??
+sudo dnf install \*-firmware
+
+# https://ibcomputing.com/install-wifi-driver-broadcom-bcm43142-linux/#How_to_install_WiFi_driver_for_Broadcom_BCM43142_WiFi_device_in_Fedora
+sudo dnf update && sudo dnf install kmod-wl
+# BCM43142 is not supported per https://wireless.wiki.kernel.org/en/users/drivers/b43#Supported_devices
+# which is why the priprietary `wl` module is necessary for it to function, `b43` won't work
+# kmod-wl provides "/lib/modules/*/extra/wl/wl.ko" ## /lib/modules/5.16.18-200.fc35.x86_64/extra/wl/wl.ko
