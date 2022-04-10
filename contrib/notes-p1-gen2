@@ -127,3 +127,1356 @@ Messages for package x11-wm/awesome-4.3-r1:
  * and for the USB2, USB3, VRDP and PXE boot ROM modules, please emerge
  *   app-emulation/virtualbox-extpack-oracle
 
+-------------------------------------------------------------------------------
+
+
+ * Messages for package x11-wm/awesome-4.3-r101:
+
+ * You have enabled the gnome USE flag.
+ * Please note that quitting awesome won't kill your gnome session.
+ * To really quit the session, you should bind your quit key
+ * to the following command:
+ *   gnome-session-quit --logout
+ * For more info visit
+ *   https://bugs.gentoo.org/show_bug.cgi?id=447308
+ * If you are having issues with Java application windows being
+ * completely blank, try installing
+ *   x11-misc/wmname
+ * and setting the WM name to LG3D.
+ * For more info visit
+ *   https://bugs.gentoo.org/show_bug.cgi?id=440724
+
+ * Messages for package app-editors/neovim-0.4.4-r101:
+
+ * Install additional packages for optional runtime features:
+ *   x11-misc/xsel for clipboard support
+ *   x11-misc/xclip for clipboard support
+ *   gui-apps/wl-clipboard for clipboard support
+ *   dev-python/pynvim for Python plugin support
+ *   dev-ruby/neovim-ruby-client for Ruby plugin support
+ *   dev-python/neovim-remote for remote/nvr support
+
+-------------------------------------------------------------------------------
+
+
+
+ * Messages for package net-libs/libpsl-0.21.0:
+
+ * "icu" and "idn" USE flags are enabled.
+ * Using "idn".
+
+ * Messages for package media-sound/pulseaudio-13.0-r1:
+
+ * A preallocated buffer-size of 2048 (kB) or higher is recommended for the HD-audio driver!
+ * CONFIG_SND_HDA_PREALLOC_SIZE=0
+
+ * Messages for package sys-libs/timezone-data-2021a-r1:
+
+ * Found a regular file at /etc/localtime.
+ * Some software may expect a symlink instead.
+ * You may convert it to a symlink by removing the file and running:
+ *   emerge --config sys-libs/timezone-data
+
+ * Messages for package acct-user/colord-0:
+
+ * Updating comment for user 'colord' ...
+ *  - Comment: User for running the colord service
+
+ * Messages for package acct-group/sgx-0:
+
+ * Adding group 'sgx' to your system ...
+ *  - Groupid: 405
+
+ * Messages for package acct-group/systemd-oom-0:
+
+ * Adding group 'systemd-oom' to your system ...
+ *  - Groupid: 198
+
+ * Messages for package acct-user/systemd-oom-0:
+
+ * Adding user 'systemd-oom' to your system ...
+ *  - Userid: 198
+ *  - Shell: /sbin/nologin
+ *  - Home: /dev/null
+ *  - Groups: systemd-oom
+ *  - GECOS: added by portage for systemd-oom
+ * Updating comment for user 'systemd-oom' ...
+ *  - Comment: System user; systemd-oom
+
+ * Messages for package acct-user/root-0-r1:
+
+ * Updating groups for user 'root' ...
+ *  - Groups: root
+ * Updating comment for user 'root' ...
+ *  - Comment: System user; root
+
+ * Messages for package acct-user/nobody-0:
+
+ * Updating shell for user 'nobody' ...
+ *  - Shell: /sbin/nologin
+ * Updating comment for user 'nobody' ...
+ *  - Comment: System user; nobody
+
+ * Messages for package acct-user/geoclue-0:
+
+ * Updating comment for user 'geoclue' ...
+ *  - Comment: User for running the GeoClue D-Bus geolocation service
+
+ * Messages for package acct-user/nm-openvpn-0:
+
+ * Updating comment for user 'nm-openvpn' ...
+ *  - Comment: A user for net-vpn/networkmanager-openvpn
+
+ * Messages for package acct-user/sstpc-0:
+
+ * Updating comment for user 'sstpc' ...
+ *  - Comment: User for net-misc/sstp-client
+
+ * Messages for package acct-user/nullmail-0:
+
+ * Updating comment for user 'nullmail' ...
+ *  - Comment: A user for the nullmailer
+
+ * Messages for package app-shells/zsh-completions-0.33.0:
+
+ * 
+ * If you happen to compile your functions, you may need to delete
+ * ~/.zcompdump{,.zwc} and recompile to make the new completions available
+ * to your shell.
+ * 
+
+ * Messages for package dev-lang/rust-bin-1.53.0:
+
+ * Rust installs a helper script for calling GDB now,
+ * for your convenience it is installed under /usr/bin/rust-gdb-bin-1.53.0.
+
+ * Messages for package net-firewall/iptables-1.8.6:
+
+ * Unsetting iptables symlinks before removal
+ * Unsetting arptables symlinks before removal
+
+ * Messages for package net-firewall/iptables-1.8.7:
+
+ * Current iptables implementation is unset, setting to xtables-legacy-multi
+
+ * Messages for package sys-apps/kexec-tools-2.0.22:
+
+ * For systemd support the new config file is
+ *    /etc/kexec.conf
+ * Please adopt it to your needs as there is no autoconfig anymore
+
+ * Messages for package app-text/asciidoc-9.0.5-r1:
+
+ * Install additional packages for optional runtime features:
+ *   media-sound/lilypond and media-gfx/imagemagick for "music" filter support
+ *   dev-texlive/texlive-latex and app-text/dvipng for "latex" filter support
+ *   dev-texlive/texlive-latex and app-text/dvisvgm for "latex" filter support
+ *   media-gfx/graphviz for "graphviz" filter support
+
+ * Messages for package sys-kernel/gentoo-sources-5.10.61:
+
+ * If you are upgrading from a previous kernel, you may be interested
+ * in the following document:
+ *   - General upgrade guide: https://wiki.gentoo.org/wiki/Kernel/Upgrade
+
+ * Messages for package sys-apps/busybox-1.32.1-r1:
+
+ * No saved config to restore - please remove USE=savedconfig or
+ * provide a configuration file in /etc/portage/savedconfig/sys-apps/busybox
+ * Your config file(s) will not be used this time
+ * Could not locate user configfile, so we will save a default one
+ * Your configuration for sys-apps/busybox-1.32.1-r1 has been saved in 
+ * "/etc/portage/savedconfig/sys-apps/busybox-1.32.1-r1" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+
+ * Messages for package dev-libs/light-1.2.2-r2:
+
+ * To use light as a regular user you must be a part of the video group
+
+ * Messages for package virtual/opencl-3-r1:
+
+ * 
+ * In order to take advantage of OpenCL you will need a runtime for your hardware.
+ * Currently included in Gentoo are:
+ * 
+ *  * open:
+ *     - dev-libs/intel-neo - integrated Intel GPUs from Broadwell onwards. 64-bit only;
+ *     - dev-libs/rocm-opencl-runtime - AMD GPUs supported by the amdgpu kernel driver. 64-bit only;
+ *     - media-libs/mesa[opencl] - some older AMD GPUs; see [1]. 32-bit support;
+ * 
+ *  * proprietary:
+ *     - dev-libs/amdgpu-pro-opencl - AMD Polaris GPUs. 32-bit support;
+ *     - dev-util/intel-ocl-sdk - Intel CPUs (*not* GPUs). 64-bit only;
+ *     - x11-drivers/nvidia-drivers[uvm] - Nvidia GPUs; specific package versions
+ *       required for older devices [2]. 32-bit support.
+ * 
+ *  [1] https://dri.freedesktop.org/wiki/GalliumCompute/
+ *  [2] https://www.nvidia.com/en-us/drivers/unix/legacy-gpu/
+ * 
+
+ * Messages for package dev-lang/perl-5.30.3-r1:
+
+ * Removing dead symlink //usr/bin/podselect
+ * Removing dead symlink //usr/share/man/man1/podselect.1.bz2
+
+ * Messages for package dev-lang/perl-5.34.0:
+
+ * UPDATE THE PERL MODULES:
+ * After updating dev-lang/perl the installed Perl modules
+ * have to be re-installed. In most cases, this is done automatically
+ * by the package manager, but subsequent steps are still recommended
+ * to ensure system consistency.
+ * 
+ * You should start with a depclean to remove any unused perl dependencies
+ * that may confuse portage in future. Regular depcleans are also encouraged
+ * as part of your regular update cycle, as that will keep perl upgrades working.
+ * Recommended: emerge --depclean -va
+ * 
+ * You should then call perl-cleaner to clean up any old files and trigger any
+ * remaining rebuilds portage may have missed.
+ * Use: perl-cleaner --all
+
+ * Messages for package dev-lang/ruby-2.6.8:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(23|24|...)
+ * 
+
+ * Messages for package net-firewall/ebtables-2.0.11-r2:
+
+ * Unsetting ebtables symlinks before removal
+
+ * Messages for package net-firewall/ebtables-2.0.11-r3:
+
+ * Current ebtables implementation is unset, setting to ebtables-legacy
+
+ * Messages for package media-fonts/liberation-fonts-2.1.3:
+
+ * The following fontconfig configuration files have been installed:
+ * 
+ *   60-liberation.conf
+ * 
+ * Use `eselect fontconfig` to enable/disable them.
+
+ * Messages for package app-misc/ca-certificates-20210119.3.66:
+
+ * Removing the following broken symlinks:
+ * /etc/ssl/certs/OISTE_WISeKey_Global_Root_GA_CA.pem -> /usr/share/ca-certificates/mozilla/OISTE_WISeKey_Global_Root_GA_CA.crt
+ * /etc/ssl/certs/Global_Chambersign_Root_-_2008.pem -> /usr/share/ca-certificates/mozilla/Global_Chambersign_Root_-_2008.crt
+ * /etc/ssl/certs/Taiwan_GRCA.pem -> /usr/share/ca-certificates/mozilla/Taiwan_GRCA.crt
+ * /etc/ssl/certs/LuxTrust_Global_Root_2.pem -> /usr/share/ca-certificates/mozilla/LuxTrust_Global_Root_2.crt
+ * /etc/ssl/certs/Chambers_of_Commerce_Root_-_2008.pem -> /usr/share/ca-certificates/mozilla/Chambers_of_Commerce_Root_-_2008.crt
+ * /etc/ssl/certs/128805a3.0 -> EE_Certification_Centre_Root_CA.pem
+ * /etc/ssl/certs/Staat_der_Nederlanden_Root_CA_-_G2.pem -> /usr/share/ca-certificates/mozilla/Staat_der_Nederlanden_Root_CA_-_G2.crt
+ * /etc/ssl/certs/c47d9980.0 -> Chambers_of_Commerce_Root_-_2008.pem
+ * /etc/ssl/certs/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem -> /usr/share/ca-certificates/mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.crt
+ * /etc/ssl/certs/GeoTrust_Universal_CA_2.pem -> /usr/share/ca-certificates/mozilla/GeoTrust_Universal_CA_2.crt
+ * /etc/ssl/certs/8867006a.0 -> GeoTrust_Universal_CA_2.pem
+ * /etc/ssl/certs/QuoVadis_Root_CA.pem -> /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA.crt
+ * /etc/ssl/certs/Staat_der_Nederlanden_Root_CA_-_G3.pem -> /usr/share/ca-certificates/mozilla/Staat_der_Nederlanden_Root_CA_-_G3.crt
+ * /etc/ssl/certs/0c4c9b6c.0 -> Global_Chambersign_Root_-_2008.pem
+ * /etc/ssl/certs/080911ac.0 -> QuoVadis_Root_CA.pem
+ * /etc/ssl/certs/9c2e7d30.0 -> Sonera_Class_2_Root_CA.pem
+ * /etc/ssl/certs/5c44d531.0 -> Staat_der_Nederlanden_Root_CA_-_G2.pem
+ * /etc/ssl/certs/5a4d6896.0 -> Staat_der_Nederlanden_Root_CA_-_G3.pem
+ * /etc/ssl/certs/def36a68.0 -> LuxTrust_Global_Root_2.pem
+ * /etc/ssl/certs/Sonera_Class_2_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Sonera_Class_2_Root_CA.crt
+ * /etc/ssl/certs/EE_Certification_Centre_Root_CA.pem -> /usr/share/ca-certificates/mozilla/EE_Certification_Centre_Root_CA.crt
+ * /etc/ssl/certs/6410666e.0 -> Taiwan_GRCA.pem
+ * /etc/ssl/certs/b1b8a7f3.0 -> OISTE_WISeKey_Global_Root_GA_CA.pem
+ * /etc/ssl/certs/Trustis_FPS_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Trustis_FPS_Root_CA.crt
+ * /etc/ssl/certs/d853d49e.0 -> Trustis_FPS_Root_CA.pem
+ * /etc/ssl/certs/c0ff1f52.0 -> Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+
+ * Messages for package app-emulation/docker-20.10.7:
+
+ * 
+ * To use Docker, the Docker daemon must be running as root. To automatically
+ * start the Docker daemon at boot:
+ *   systemctl enable docker.service
+ * 
+ * To use Docker as a non-root user, add yourself to the 'docker' group:
+ *   usermod -aG docker <youruser>
+ * 
+ * Starting with docker 20.10.2, docker has been split into
+ * two packages upstream, so Gentoo has followed suit.
+ * 
+ * app-emulation/docker contains the daemon and
+ * app-emulation/docker-cli contains the docker command.
+ * 
+ * docker currently installs docker-cli using the cli use flag.
+ * 
+ * This use flag is temporary, so you need to take the
+ * following actions:
+ * 
+ * First, disable the cli use flag for app-emulation/docker
+ * 
+ * Then, if you need docker-cli and docker on the same machine,
+ * run the following command:
+ * 
+ * # emerge --noreplace docker-cli
+ * 
+
+ * Messages for package dev-libs/cyrus-sasl-2.1.27-r4:
+
+ * pwcheck and saslauthd home directories have moved to:
+ *   /run/saslauthd, using tmpfiles.d
+
+ * Messages for package dev-libs/boost-1.76.0-r1:
+
+ * Boost.Regex is *extremely* ABI sensitive. If you get errors such as
+ * 
+ *   undefined reference to `boost::re_detail_107600::cpp_regex_traits_implementation
+ *     <char>::transform_primary[abi:cxx11](char const*, char const*) const'
+ * 
+ * Then you need to recompile Boost and all its reverse dependencies
+ * using the same toolchain. In general, *every* change of the C++ toolchain
+ * requires a complete rebuild of the Boost-dependent ecosystem.
+ * 
+ * See for instance https://bugs.gentoo.org/638138
+
+ * Messages for package dev-lua/luarocks-3.7.0:
+
+ * 
+ * To manage rocks for a Lua version other than the current dev-lua/luarocks default (5.1)
+ * you can use the command-line option --lua-version, e.g.
+ * 
+ *     luarocks --lua-version 5.3 install luasocket
+ * 
+ * (use 5.1 for luajit). Note that the relevant Lua version must already be present in the system.
+ * 
+
+ * Messages for package sys-libs/pam-1.5.1_p20210622-r1:
+
+ * Some software with pre-loaded PAM libraries might experience
+ * warnings or failures related to missing symbols and/or versions
+ * after any update. While unfortunate this is a limit of the
+ * implementation of PAM and the software, and it requires you to
+ * restart the software manually after the update.
+ * 
+ * You can get a list of such software running a command like
+ *   lsof / | egrep -i 'del.*libpam\.so'
+ * 
+ * Alternatively, simply reboot your system.
+
+ * Messages for package app-misc/screen-4.8.0-r3:
+
+ * This revision changes the screen socket location to /tmp/screen
+
+ * Messages for package sys-apps/shadow-4.8.1-r4:
+
+ * Running 'grpck' returned errors.  Please run it by hand, and then
+ * run 'grpconv' afterwards!
+
+ * Messages for package dev-vcs/git-2.33.0-r1:
+
+ * Please read /usr/share/bash-completion/completions/git for Git bash command
+ * completion.
+ * Please read /usr/share/git/git-prompt.sh for Git bash prompt
+ * Note that the prompt bash code is now in that separate script
+ * These additional scripts need some dependencies:
+ *   git-quiltimport  : dev-util/quilt
+ *   git-instaweb     : || ( www-servers/lighttpd www-servers/apache www-servers/nginx )
+
+ * Messages for package app-text/ghostscript-gpl-9.53.3-r2:
+
+ * 
+ * Directory symlink(s) may need protection:
+ * 
+ * 	/usr/share/ghostscript/9.53/Resource/CMap
+ * 
+ * Use the UNINSTALL_IGNORE variable to exempt specific symlinks
+ * from the following search (see the make.conf man page).
+ * 
+ * Searching all installed packages for files installed via above symlink(s)...
+ * 
+ * The above directory symlink(s) are all safe to remove. Removing them now...
+ * 
+
+ * Messages for package net-fs/cifs-utils-6.13-r1:
+
+ * setuid use flag was dropped due to multiple security implications
+ * such as CVE-2009-2948, CVE-2011-3585 and CVE-2012-1586
+ * You are free to set setuid flags by yourself
+
+ * Messages for package net-print/cups-2.3.3_p2-r2:
+
+ * Your USB printers will be managed via libusb. In case you run into problems, 
+ * please try disabling USB_PRINTER support in your kernel or blacklisting the
+ * usblp kernel module.
+ * Alternatively, just disable the usb useflag for cups (your printer will still work).
+ * 
+ * For information about installing a printer and general cups setup
+ * take a look at: https://wiki.gentoo.org/wiki/Printing
+
+ * Messages for package net-vpn/openvpn-2.5.2-r2:
+
+ * In order to use OpenVPN with systemd please use the correct systemd service file.
+ * 
+ * server:
+ * 
+ * - Place your server configuration file in /etc/openvpn/server
+ * - Use the openvpn-server@.service like so
+ * systemctl start openvpn-server@{Server-config}
+ * 
+ * client:
+ * 
+ * - Place your client configuration file in /etc/openvpn/client
+ * - Use the openvpn-client@.service like so:
+ * systemctl start openvpn-client@{Client-config}
+
+ * Messages for package sys-apps/pcsc-lite-1.9.0:
+
+ * Starting from version 1.6.5, pcsc-lite will start as user nobody in
+ * the pcscd group, to avoid running as root.
+ * 
+ * This also means you need the newest drivers available so that the
+ * devices get the proper owner.
+ * 
+ * Furthermore, a conf.d file is no longer installed by default, as
+ * the default configuration does not require one. If you need to
+ * pass further options to pcscd, create a file and set the
+ * EXTRA_OPTS variable.
+ * 
+ * Hotplug support is provided by udev rules.
+ * When using OpenRC you additionally need to tell it to hotplug
+ * pcscd by setting this variable in /etc/rc.conf:
+ * 
+ *     rc_hotplug="pcscd"
+
+ * Messages for package sys-devel/llvm-12.0.1:
+
+ * You can find additional opt-viewer utility scripts in:
+ *   /usr/lib/llvm/12/share/opt-viewer
+ * To use these scripts, you will need Python along with the following
+ * packages:
+ *   dev-python/pygments (for opt-viewer)
+ *   dev-python/pyyaml (for all of them)
+
+ * Messages for package sys-libs/ldb-2.2.1-r1:
+
+ * You have sssd installed. It is known to break after ldb upgrades,
+ * so please try to rebuild it before reporting bugs.
+ * See https://bugs.gentoo.org/404281
+
+ * Messages for package dev-python/pyscard-2.0.1:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/wxpython for Gui support
+ *   dev-python/pyro for Support of remote readers with Pyro
+
+ * Messages for package dev-python/ssl-fetch-0.4:
+
+ * This is beta software.
+ * The APIs it installs should be considered unstable
+ * and are subject to change in these early versions.
+ * 
+ * Please file any enhancement requests, or bugs
+ * at https://github.com/dol-sen/ssl-fetch/issues
+
+ * Messages for package sys-boot/grub-2.06:
+
+ * For information on how to configure GRUB2 please refer to the guide:
+ *     https://wiki.gentoo.org/wiki/GRUB2_Quick_Start
+
+ * Messages for package dev-python/lxml-4.6.3-r1:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/beautifulsoup for Support for BeautifulSoup as a parser backend
+ *   dev-python/cssselect for Translates CSS selectors to XPath 1.0 expressions
+
+ * Messages for package dev-python/mako-1.1.4:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/beaker for caching support
+
+ * Messages for package media-fonts/font-bitstream-100dpi-1.0.3-r2:
+
+ * Installed fonts changed. Run 'xset fp rehash' if you are using non-fontconfig applications.
+
+ * Messages for package media-fonts/font-misc-cyrillic-1.0.3-r2:
+
+ * Installed fonts changed. Run 'xset fp rehash' if you are using non-fontconfig applications.
+
+ * Messages for package media-fonts/font-screen-cyrillic-1.0.4-r2:
+
+ * Installed fonts changed. Run 'xset fp rehash' if you are using non-fontconfig applications.
+
+ * Messages for package media-fonts/font-cronyx-cyrillic-1.0.3-r2:
+
+ * Installed fonts changed. Run 'xset fp rehash' if you are using non-fontconfig applications.
+
+ * Messages for package media-fonts/font-bitstream-75dpi-1.0.3-r2:
+
+ * Installed fonts changed. Run 'xset fp rehash' if you are using non-fontconfig applications.
+
+ * Messages for package media-fonts/font-winitzki-cyrillic-1.0.3-r2:
+
+ * Installed fonts changed. Run 'xset fp rehash' if you are using non-fontconfig applications.
+
+ * Messages for package app-admin/sudo-1.9.6_p1-r2:
+
+ * To use the -A (askpass) option, you need to install a compatible
+ * password program from the following list. Starred packages will
+ * automatically register for the use with sudo (but will not force
+ * the -A option):
+ * 
+ *  [*] net-misc/ssh-askpass-fullscreen
+ *      net-misc/x11-ssh-askpass
+ * 
+ * You can override the choice by setting the SUDO_ASKPASS environmnent
+ * variable to the program you want to use.
+
+ * Messages for package app-text/texlive-core-2021-r1:
+
+ * 
+ * If you have configuration files in /etc/texmf to merge,
+ * please update them and run /usr/sbin/texmf-update.
+ * 
+ * If you are migrating from an older TeX distribution
+ * Please make sure you have read:
+ * https://wiki.gentoo.org/wiki/Project:TeX/Tex_Live_Migration_Guide
+ * in order to avoid possible problems
+
+ * Messages for package sys-fs/lvm2-2.02.188-r1:
+
+ * Notice that "use_lvmetad" setting is enabled with USE="udev" in
+ * /etc/lvm/lvm.conf, which will require restart of udev, lvm, and lvmetad
+ * if it was previously disabled.
+
+ * Messages for package sys-kernel/dracut-053-r1:
+
+ * 
+ * If the following test report contains a missing kernel
+ * configuration option, you should reconfigure and rebuild your
+ * kernel before booting image generated with this Dracut version.
+ * 
+ * Install additional packages for optional runtime features:
+ *   sys-fs/btrfs-progs for Scan for Btrfs on block devices
+ *   sys-fs/cryptsetup[-static-libs] for Decrypt devices encrypted with cryptsetup/LUKS
+ *   app-shells/dash for Allows use of dash instead of default bash (on your own risk)
+ *   sys-block/open-iscsi for Support iSCSI
+ *   sys-fs/mdadm for Support MD devices, also known as software RAID devices
+ *   >=sys-boot/plymouth-0.8.5-r5 for Plymouth boot splash
+ *   sys-block/nbd for Support network block devices
+ *   net-fs/nfs-utils for Support NFS
+ *   net-nds/rpcbind for Support NFS
+ *   app-admin/rsyslog for Enable logging with rsyslog
+ *   sys-apps/rng-tools for Enable rngd service to help generating entropy early during boot
+
+ * Messages for package media-video/pipewire-0.3.30-r2:
+
+ * It is recommended to raise RLIMIT_MEMLOCK to 256 for users
+ * using PipeWire. Do it either manually or add yourself
+ * to the 'audio' group:
+ * 
+ *   usermod -aG audio <youruser>
+ * 
+ * JACK emulation is incomplete and not all programs will work. PipeWire's
+ * alternative libraries have been installed to a non-default location.
+ * To use them, put pw-jack <application> before every JACK application.
+ * When using pw-jack, do not run jackd/jackdbus. However, a virtual/jack
+ * provider is still needed to compile the JACK applications themselves.
+ * 
+ * To use PipeWire for audio, the user units must be manually enabled:
+ * 
+ *   systemctl --user enable pipewire.socket pipewire-pulse.socket
+ * 
+ * When switching from PulseAudio, do not forget to disable PulseAudio:
+ * 
+ *   systemctl --user disable pulseaudio.service pulseaudio.socket
+ * 
+ * A reboot is recommended to avoid interferences from still running
+ * PulseAudio daemon.
+ * 
+ * Both, new users and those upgrading, need to enable pipewire-media-session:
+ * 
+ *   systemctl --user enable pipewire-media-session.service
+ * 
+ * NOTE: This is not required when using PipeWire only for screencasting.
+ * 
+ * For latest tips and tricks, troubleshooting information and documentation
+ * in general, please refer to https://wiki.gentoo.org/wiki/PipeWire
+ * 
+ * The following can be installed for optional runtime features:
+ *   sys-auth/rtkit for restricted realtime capabilities vai D-Bus
+ *   net-misc/ofono for better BT headset support (daemon startup required)
+
+ * Messages for package net-fs/samba-4.13.9-r2:
+
+ * For further information and migration steps make sure to read 
+ * https://samba.org/samba/history/samba-4.13.9.html 
+ * https://wiki.samba.org/index.php/Samba4/HOWTO 
+
+ * Messages for package sys-auth/sssd-2.3.1-r2:
+
+ * You must set up sssd.conf (default installed into /etc/sssd)
+ * and (optionally) configuration in /etc/pam.d in order to use SSSD
+ * features. Please see howto in	https://sssd.io/docs/design_pages/smartcard_authentication_require.html
+
+ * Messages for package sys-apps/fwupd-1.5.9-r1:
+
+ * In case you are using openrc as init system
+ * and you're upgrading from <fwupd-1.1.0, you
+ * need to start the fwupd daemon via the openrc
+ * init script that comes with this package.
+
+ * Messages for package x11-libs/gtk+-3.24.29:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+-------------------------------------------------------------------------------
+
+
+
+ * Messages for package x11-libs/gtk+-2.24.33:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your gtkrc.
+
+ * Messages for package net-print/gutenprint-5.3.4-r2:
+
+ * Updating installed printer ppd files
+ * No Gutenprint PPD files to update.
+
+ * Messages for package media-gfx/darktable-3.6.0:
+
+ * 
+ * When updating a major version,
+ * please bear in mind that your edits will be preserved during this process,
+ * but it will not be possible to downgrade any more.
+ * 
+ * It will not be possible to downgrade!
+ * 
+
+ * Messages for package gnome-base/gnome-session-40.1.1:
+
+ * If you use a custom .xinitrc for your X session,
+ * make sure that the commands in the xinitrc.d scripts are run.
+
+ * Messages for package app-emulation/qemu-6.0.0-r2:
+
+ * This version of qemu pins new versions of firmware blobs:
+ * 	sys-firmware/edk2-ovmf-202008
+ * 	sys-firmware/ipxe-1.21.1
+ * 	sys-firmware/seabios-1.14.0-r2
+ * 	sys-firmware/sgabios-0.1_pre10
+ * This might break resume of hibernated guests (started with a different
+ * firmware version) and live migration to/from qemu versions with different
+ * firmware. Please (cold) restart all running guests. For functional
+ * guest migration ensure that all
+ * hosts run at least
+ * 	app-emulation/qemu-5.2.0-r50.
+
+ * Messages for package net-analyzer/wireshark-3.4.7-r1:
+
+ * NOTE: To capture traffic with wireshark as normal user you have to
+ * add yourself to the pcap group. This security measure ensures
+ * that only trusted users are allowed to sniff your traffic.
+
+ * Messages for package xfce-base/thunar-4.16.8:
+
+ * If you were using an older Xfce version and Thunar fails to start
+ * with a message similar to:
+ *   Failed to register: Timeout was reached
+ * you may need to reset your xfce4 session:
+ *   rm ~/.cache/sessions/xfce4-session-*
+ * See https://bugs.gentoo.org/698914.
+
+ * Messages for package app-emulation/virtualbox-6.1.24:
+
+ * To launch VirtualBox just type: "virtualbox".
+ * You must be in the vboxusers group to use VirtualBox.
+ * 
+ * The latest user manual is available for download at:
+ * http://download.virtualbox.org/virtualbox/6.1.24/UserManual.pdf
+ * 
+ * For advanced networking setups you should emerge:
+ * net-misc/bridge-utils and sys-apps/usermode-utilities
+ * 
+ * Starting with version 4.0.0, virtualbox has USB-1 support.
+ * For USB-2 support, PXE-boot ability and VRDP support please emerge
+ *   app-emulation/virtualbox-extpack-oracle
+ * package.
+ * Starting with version 5.0.0, virtualbox no longer has the "additions" and
+ * the "extension" USE flag. For installation of the guest additions ISO
+ * image, please emerge
+ *   app-emulation/virtualbox-additions
+ * and for the USB2, USB3, VRDP and PXE boot ROM modules, please emerge
+ *   app-emulation/virtualbox-extpack-oracle
+
+-------------------------------------------------------------------------------
+
+
+ * Messages for package sys-auth/realtime-base-0.1-r1:
+
+ * We have added realtime scheduling privileges for users in the realtime group.
+ * Please make sure users needing such privileges are in that group.
+
+ * Messages for package www-client/firefox-bin-91.0.2:
+
+ * 
+ * Since firefox-91.0 we no longer install multiple shortcuts for
+ * each supported display protocol.  Instead we will only install
+ * one generic Mozilla Firefox shortcut.
+ * If you still want to be able to select between running Mozilla Firefox
+ * on X11 or Wayland, you have to re-create these shortcuts on your own.
+
+-------------------------------------------------------------------------------
+
+
+ * Messages for package sys-devel/clang-12.0.1:
+
+ * You can find additional utility scripts in:
+ *   /usr/lib/llvm/12/share/clang
+ * Some of them are vim integration scripts (with instructions inside).
+ * The run-clang-tidy.py script requires the following additional package:
+ *   dev-python/pyyaml
+
+
+-------------------------------------------------------------------------------
+
+
+
+ * Messages for package sys-power/upower-0.99.12-r1:
+
+ * Support for Logitech Unifying Receiver battery state readout was
+ * removed in version 0.99.12, these devices have been directly
+ * supported by the Linux kernel since version >=3.2.
+ * 
+ * Support for CSR devices battery state was removed from udev rules
+ * in version 0.99.12. This concerns the following Logitech products
+ * from the mid 2000s:
+ * Mouse/Dual/Keyboard+Mouse Receiver, Freedom Optical, Elite Duo,
+ * MX700/MX1000, Optical TrackMan, Click! Mouse, Presenter.
+
+ * Messages for package dev-lang/ruby-2.7.4:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(23|24|...)
+ * 
+
+ * Messages for package net-fs/samba-4.13.9-r3:
+
+ * For further information and migration steps make sure to read 
+ * https://samba.org/samba/history/samba-4.13.9.html 
+ * https://wiki.samba.org/index.php/Samba4/HOWTO 
+
+ * Messages for package sys-boot/grub-2.06-r1:
+
+ * For information on how to configure GRUB2 please refer to the guide:
+ *     https://wiki.gentoo.org/wiki/GRUB2_Quick_Start
+
+ * Messages for package dev-ruby/rubygems-3.1.6:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(25|26|...)
+ * 
+
+ * Messages for package sys-auth/sssd-2.5.2-r2:
+
+ * You must set up sssd.conf (default installed into /etc/sssd)
+ * and (optionally) configuration in /etc/pam.d in order to use SSSD
+ * features. Please see howto in	https://sssd.io/docs/design_pages/smartcard_authentication_require.html
+ * Install additional packages for optional runtime features:
+ *   app-crypt/adcli for Kerberos keytab renew (see krb5_renew_interval)
+
+ * Messages for package dev-vcs/git-2.33.1:
+
+ * Please read /usr/share/bash-completion/completions/git for Git bash command
+ * completion.
+ * Please read /usr/share/git/git-prompt.sh for Git bash prompt
+ * Note that the prompt bash code is now in that separate script
+ * These additional scripts need some dependencies:
+ *   git-quiltimport  : dev-util/quilt
+ *   git-instaweb     : || ( www-servers/lighttpd www-servers/apache www-servers/nginx )
+
+ * Messages for package dev-ruby/bundler-2.1.4:
+
+ * ERROR: dev-ruby/bundler-2.1.4::gentoo failed (compile phase):
+ *   failed to (re)build documentation
+ * 
+ * Call stack:
+ *     ebuild.sh, line  127:  Called src_compile
+ *   environment, line 2064:  Called ruby-ng_src_compile
+ *   environment, line 1704:  Called _ruby_invoke_environment 'all' 'all_ruby_compile'
+ *   environment, line  603:  Called all_ruby_compile
+ *   environment, line  687:  Called all_fakegem_compile
+ *   environment, line  650:  Called die
+ * The specific snippet of code:
+ *                   rdoc ${RUBY_FAKEGEM_DOC_SOURCES} || die "failed to (re)build documentation";
+ * 
+ * If you need support, post the output of `emerge --info '=dev-ruby/bundler-2.1.4::gentoo'`,
+ * the complete build log and the output of `emerge -pqv '=dev-ruby/bundler-2.1.4::gentoo'`.
+ * The complete build log is located at '/var/tmp/portage/dev-ruby/bundler-2.1.4/temp/build.log'.
+ * The ebuild environment file is located at '/var/tmp/portage/dev-ruby/bundler-2.1.4/temp/environment'.
+ * Working directory: '/var/tmp/portage/dev-ruby/bundler-2.1.4/work/all/bundler-2.1.4'
+ * S: '/var/tmp/portage/dev-ruby/bundler-2.1.4/work/all/bundler-2.1.4'
+
+ * Messages for package sci-libs/gdal-3.3.2-r1:
+
+ * Check available image and data formats after building with
+ * gdalinfo and ogrinfo (using the --formats switch).
+
+ * Regenerating GNU info directory index...
+ * Processed 134 info files.
+
+ * IMPORTANT: 5 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 1 news items need reading for repository 'rust'.
+ * IMPORTANT: 20 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+ * After world updates, it is important to remove obsolete packages with
+ * emerge --depclean. Refer to `man emerge` for more information.
+
+ ------------------
+ * Messages for package media-sound/pulseaudio-15.0-r1:
+
+ * It's recommended to start pulseaudio via its systemd user units:
+ * 
+ *   systemctl --user enable pulseaudio.service pulseaudio.socket
+ * 
+ * The change from autospawn to user units will take effect after restarting.
+ * 
+ * PulseAudio can be enhanced by installing the following:
+ *   sys-auth/rtkit for restricted realtime capabilities via D-Bus
+ ------------------
+
+ * Messages for package media-video/pipewire-0.3.36:
+ * It is recommended to raise RLIMIT_MEMLOCK to 256 for users
+ * using PipeWire. Do it either manually or add yourself
+ * to the 'audio' group:
+ * 
+ *   usermod -aG audio <youruser>
+ * 
+ * JACK emulation is incomplete and not all programs will work. PipeWire's
+ * alternative libraries have been installed to a non-default location.
+ * To use them, put pw-jack <application> before every JACK application.
+ * When using pw-jack, do not run jackd/jackdbus. However, a virtual/jack
+ * provider is still needed to compile the JACK applications themselves.
+ * 
+ * To use PipeWire for audio, the user units must be manually enabled
+ * by running this command as each user you use for desktop activities:
+ * 
+ *   systemctl --user enable --now pipewire.socket pipewire-pulse.socket
+ * 
+ * When switching from PulseAudio, do not forget to disable PulseAudio likewise:
+ * 
+ *   systemctl --user disable --now pulseaudio.service pulseaudio.socket
+ * 
+ * A reboot is recommended to avoid interferences from still running
+ * PulseAudio daemon.
+ * 
+ * Both, new users and those upgrading, need to enable pipewire-media-session
+ * for relevant users:
+ * 
+ *   systemctl --user enable --now pipewire-media-session.service
+ * 
+ * For latest tips and tricks, troubleshooting information and documentation
+ * in general, please refer to https://wiki.gentoo.org/wiki/PipeWire
+ * 
+ * The following can be installed for optional runtime features:
+ *   sys-auth/rtkit for restricted realtime capabilities via D-Bus
+ *   net-misc/ofono for better BT headset support (daemon startup required)
+ ------------------
+ * Package:    dev-ruby/bundler-2.1.4
+ * Repository: gentoo
+ * Maintainer: ruby@gentoo.org
+ * USE:        abi_x86_64 amd64 doc elibc_glibc kernel_linux ruby_targets_ruby26 ruby_targets_ruby27 userland_GNU
+ * FEATURES:   network-sandbox preserve-libs sandbox userpriv usersandbox
+>>> Unpacking source...
+ * Running unpack phase for all ...
+ * Unpacking .gem file... ...
+ [ ok ]
+ * Uncompressing metadata ...
+ [ ok ]
+ * Unpacking data.tar.gz ...
+ [ ok ]
+>>> Source unpacked in /var/tmp/portage/dev-ruby/bundler-2.1.4/work
+>>> Preparing source in /var/tmp/portage/dev-ruby/bundler-2.1.4/work ...
+ * Running prepare phase for all ...
+ * Running prepare phase for all ...
+ * Running source copy phase for ruby26 ...
+ * Running source copy phase for ruby27 ...
+>>> Source prepared.
+>>> Configuring source in /var/tmp/portage/dev-ruby/bundler-2.1.4/work ...
+ * Running configure phase for ruby26 ...
+ * Running configure phase for ruby27 ...
+>>> Source configured.
+>>> Compiling source in /var/tmp/portage/dev-ruby/bundler-2.1.4/work ...
+ * Running compile phase for ruby26 ...
+ * Running compile phase for ruby27 ...
+ * Running compile phase for all ...
+Traceback (most recent call last):
+	3: from <internal:gem_prelude>:2:in `<internal:gem_prelude>'
+	2: from <internal:gem_prelude>:2:in `require'
+	1: from /usr/lib64/ruby/2.5.0/rubygems.rb:17:in `<top (required)>'
+/usr/lib64/ruby/2.5.0/rubygems.rb:17:in `require': cannot load such file -- rubygems/compatibility (LoadError)
+ * ERROR: dev-ruby/bundler-2.1.4::gentoo failed (compile phase):
+ *   failed to (re)build documentation
+ * 
+ * Call stack:
+ *     ebuild.sh, line  127:  Called src_compile
+ *   environment, line 2098:  Called ruby-ng_src_compile
+ *   environment, line 1728:  Called _ruby_invoke_environment 'all' 'all_ruby_compile'
+ *   environment, line  604:  Called all_ruby_compile
+ *   environment, line  688:  Called all_fakegem_compile
+ *   environment, line  651:  Called die
+ * The specific snippet of code:
+ *                   rdoc ${RUBY_FAKEGEM_DOC_SOURCES} || die "failed to (re)build documentation";
+ * 
+ * If you need support, post the output of `emerge --info '=dev-ruby/bundler-2.1.4::gentoo'`,
+ * the complete build log and the output of `emerge -pqv '=dev-ruby/bundler-2.1.4::gentoo'`.
+ * The complete build log is located at '/var/tmp/portage/dev-ruby/bundler-2.1.4/temp/build.log'.
+ * The ebuild environment file is located at '/var/tmp/portage/dev-ruby/bundler-2.1.4/temp/environment'.
+ * Working directory: '/var/tmp/portage/dev-ruby/bundler-2.1.4/work/all/bundler-2.1.4'
+ * S: '/var/tmp/portage/dev-ruby/bundler-2.1.4/work/all/bundler-2.1.4'
+
+ * Messages for package sys-apps/baselayout-2.7-r3:
+
+ * After updating /etc/profile, please run
+ * env-update && . /etc/profile
+ * Please run env-update then log out and back in to
+ * update your path.
+
+ * Messages for package dev-lang/go-1.17.7:
+
+ * After dev-lang/go is updated it is recommended to rebuild
+ * all packages compiled with previous versions of dev-lang/go
+ * due to the static linking nature of go.
+ * If this is not done, the packages compiled with the older
+ * version of the compiler will not be updated until they are
+ * updated individually, which could mean they will have
+ * vulnerabilities.
+ * Run 'emerge @golang-rebuild' to rebuild all 'go' packages
+ * See https://bugs.gentoo.org/752153 for more info
+
+ * Messages for package acct-group/seat-0:
+
+ * Adding group 'seat' to your system ...
+ *  - Groupid: 202
+
+ * Messages for package sys-libs/timezone-data-2021e:
+
+ * Found a regular file at /etc/localtime.
+ * Some software may expect a symlink instead.
+ * You may convert it to a symlink by removing the file and running:
+ *   emerge --config sys-libs/timezone-data
+
+ * Messages for package sys-apps/kexec-tools-2.0.22:
+
+ * For systemd support the new config file is
+ *    /etc/kexec.conf
+ * Please adopt it to your needs as there is no autoconfig anymore
+
+ * Messages for package dev-lang/rust-bin-1.58.1:
+
+ * Rust installs a helper script for calling GDB now,
+ * for your convenience it is installed under /usr/bin/rust-gdb-bin-1.58.1.
+
+ * Messages for package dev-python/ssl-fetch-0.4:
+
+ * This is beta software.
+ * The APIs it installs should be considered unstable
+ * and are subject to change in these early versions.
+ * 
+ * Please file any enhancement requests, or bugs
+ * at https://github.com/dol-sen/ssl-fetch/issues
+
+ * Messages for package dev-libs/boost-1.78.0-r2:
+
+ * Boost.Regex is *extremely* ABI sensitive. If you get errors such as
+ * 
+ *   undefined reference to `boost::re_detail_107800::cpp_regex_traits_implementation
+ *     <char>::transform_primary[abi:cxx11](char const*, char const*) const'
+ * 
+ * Then you need to recompile Boost and all its reverse dependencies
+ * using the same toolchain. In general, *every* change of the C++ toolchain
+ * requires a complete rebuild of the Boost-dependent ecosystem.
+ * 
+ * See for instance https://bugs.gentoo.org/638138
+
+ * Messages for package dev-python/lxml-4.7.1:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/beautifulsoup4 for Support for BeautifulSoup as a parser backend
+ *   dev-python/cssselect for Translates CSS selectors to XPath 1.0 expressions
+
+ * Messages for package app-text/asciidoc-9.1.0:
+
+ * Install additional packages for optional runtime features:
+ *   media-sound/lilypond and media-gfx/imagemagick for "music" filter support
+ *   dev-texlive/texlive-latex and app-text/dvipng for "latex" filter support
+ *   dev-texlive/texlive-latex and app-text/dvisvgm for "latex" filter support
+ *   media-gfx/graphviz for "graphviz" filter support
+
+ * Messages for package dev-lua/luarocks-3.8.0:
+
+ * 
+ * To manage rocks for a Lua version other than the current dev-lua/luarocks default (5.1)
+ * you can use the command-line option --lua-version, e.g.
+ * 
+ *     luarocks --lua-version 5.3 install luasocket
+ * 
+ * (use 5.1 for luajit). Note that the relevant Lua version must already be present in the system.
+ * 
+
+ * Messages for package sys-libs/ldb-2.4.1:
+
+ * You have sssd installed. It is known to break after ldb upgrades,
+ * so please try to rebuild it before reporting bugs.
+ * See https://bugs.gentoo.org/404281
+
+ * Messages for package dev-lang/ruby-2.7.5:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(23|24|...)
+ * 
+
+ * Messages for package dev-lang/ruby-2.6.9:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(23|24|...)
+ * 
+
+ * Messages for package net-fs/cifs-utils-6.13-r1:
+
+ * setuid use flag was dropped due to multiple security implications
+ * such as CVE-2009-2948, CVE-2011-3585 and CVE-2012-1586
+ * You are free to set setuid flags by yourself
+
+ * Messages for package dev-libs/cyrus-sasl-2.1.27-r6:
+
+ * pwcheck and saslauthd home directories have moved to:
+ *   /run/saslauthd, using tmpfiles.d
+
+ * Messages for package dev-python/pyscard-2.0.2:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/wxpython for Gui support
+ *   dev-python/Pyro4 for Support of remote readers with Pyro
+
+ * Messages for package sys-kernel/dracut-055-r4:
+
+ * 
+ * If the following test report contains a missing kernel
+ * configuration option, you should reconfigure and rebuild your
+ * kernel before booting image generated with this Dracut version.
+ * 
+ * Install additional packages for optional runtime features:
+ *   sys-fs/btrfs-progs for Scan for Btrfs on block devices
+ *   app-shells/dash for Allows use of dash instead of default bash (on your own risk)
+ *   sys-block/open-iscsi for Support iSCSI
+ *   sys-fs/mdadm for Support MD devices, also known as software RAID devices
+ *   sys-block/nbd for Support network block devices
+ *   net-fs/nfs-utils for Support NFS
+ *   net-nds/rpcbind for Support NFS
+ *   app-admin/rsyslog for Enable logging with rsyslog
+ *   sys-apps/rng-tools for Enable rngd service to help generating entropy early during boot
+
+ * Messages for package x11-libs/libva-2.13.0-r2:
+
+ * Install additional packages for optional runtime features:
+ *   x11-libs/libva-vdpau-driver for NVIDIA GPU support
+ *   x11-libs/libva-intel-media-driver for Newer Intel GPU supprt
+
+ * Messages for package app-admin/sudo-1.9.8_p2:
+
+ * To use the -A (askpass) option, you need to install a compatible
+ * password program from the following list. Starred packages will
+ * automatically register for the use with sudo (but will not force
+ * the -A option):
+ * 
+ *  [*] net-misc/ssh-askpass-fullscreen
+ *      net-misc/x11-ssh-askpass
+ * 
+ * You can override the choice by setting the SUDO_ASKPASS environmnent
+ * variable to the program you want to use.
+
+ * Messages for package app-editors/neovim-0.5.1:
+
+ * Install additional packages for optional runtime features:
+ *   x11-misc/xsel for clipboard support
+ *   x11-misc/xclip for clipboard support
+ *   gui-apps/wl-clipboard for clipboard support
+ *   dev-python/pynvim for Python plugin support
+ *   dev-ruby/neovim-ruby-client for Ruby plugin support
+ *   dev-python/neovim-remote for remote/nvr support
+
+ * Messages for package sys-devel/llvm-13.0.0:
+
+ * You can find additional opt-viewer utility scripts in:
+ *   /usr/lib/llvm/13/share/opt-viewer
+ * To use these scripts, you will need Python along with the following
+ * packages:
+ *   dev-python/pygments (for opt-viewer)
+ *   dev-python/pyyaml (for all of them)
+
+ * Messages for package sys-devel/clang-13.0.0:
+
+ * You can find additional utility scripts in:
+ *   /usr/lib/llvm/13/share/clang
+ * Some of them are vim integration scripts (with instructions inside).
+ * The run-clang-tidy.py script requires the following additional package:
+ *   dev-python/pyyaml
+
+ * Messages for package app-emulation/virtualbox-6.1.28-r2:
+
+ * To launch VirtualBox just type: "virtualbox".
+ * You must be in the vboxusers group to use VirtualBox.
+ * 
+ * The latest user manual is available for download at:
+ * http://download.virtualbox.org/virtualbox/6.1.28/UserManual.pdf
+ * 
+ * For advanced networking setups you should emerge:
+ * net-misc/bridge-utils and sys-apps/usermode-utilities
+ * 
+ * Starting with version 4.0.0, virtualbox has USB-1 support.
+ * For USB-2 support, PXE-boot ability and VRDP support please emerge
+ *   app-emulation/virtualbox-extpack-oracle
+ * package.
+ * Starting with version 5.0.0, virtualbox no longer has the "additions" and
+ * the "extension" USE flag. For installation of the guest additions ISO
+ * image, please emerge
+ *   app-emulation/virtualbox-additions
+ * and for the USB2, USB3, VRDP and PXE boot ROM modules, please emerge
+ *   app-emulation/virtualbox-extpack-oracle
+
+ * Messages for package app-text/ghostscript-gpl-9.54.0-r1:
+
+ * 
+ * Directory symlink(s) may need protection:
+ * 
+ * 	/usr/share/ghostscript/9.54.0/Resource/CMap
+ * 
+ * Use the UNINSTALL_IGNORE variable to exempt specific symlinks
+ * from the following search (see the make.conf man page).
+ * 
+ * Searching all installed packages for files installed via above symlink(s)...
+ * 
+ * The above directory symlink(s) are all safe to remove. Removing them now...
+ * 
+
+ * Messages for package dev-vcs/git-2.35.1:
+
+ * Please read /usr/share/bash-completion/completions/git for Git bash command
+ * completion.
+ * Please read /usr/share/git/git-prompt.sh for Git bash prompt
+ * Note that the prompt bash code is now in that separate script
+ * These additional scripts need some dependencies:
+ *   git-quiltimport  : dev-util/quilt
+ *   git-instaweb     : || ( www-servers/lighttpd www-servers/apache www-servers/nginx )
+
+ * Messages for package dev-ruby/bundler-2.1.4:
+
+ * ERROR: dev-ruby/bundler-2.1.4::gentoo failed (compile phase):
+ *   failed to (re)build documentation
+ * 
+ * Call stack:
+ *     ebuild.sh, line  127:  Called src_compile
+ *   environment, line 2098:  Called ruby-ng_src_compile
+ *   environment, line 1728:  Called _ruby_invoke_environment 'all' 'all_ruby_compile'
+ *   environment, line  604:  Called all_ruby_compile
+ *   environment, line  688:  Called all_fakegem_compile
+ *   environment, line  651:  Called die
+ * The specific snippet of code:
+ *                   rdoc ${RUBY_FAKEGEM_DOC_SOURCES} || die "failed to (re)build documentation";
+ * 
+ * If you need support, post the output of `emerge --info '=dev-ruby/bundler-2.1.4::gentoo'`,
+ * the complete build log and the output of `emerge -pqv '=dev-ruby/bundler-2.1.4::gentoo'`.
+ * The complete build log is located at '/var/tmp/portage/dev-ruby/bundler-2.1.4/temp/build.log'.
+ * The ebuild environment file is located at '/var/tmp/portage/dev-ruby/bundler-2.1.4/temp/environment'.
+ * Working directory: '/var/tmp/portage/dev-ruby/bundler-2.1.4/work/all/bundler-2.1.4'
+ * S: '/var/tmp/portage/dev-ruby/bundler-2.1.4/work/all/bundler-2.1.4'
+
+ * Regenerating GNU info directory index...
+ * Processed 134 info files.
+
+!!! existing preserved libs:
+>>> package: dev-lang/mujs-1.2.0
+ *  - /usr/lib64/libmujs.so.1.1.3
+ *      used by /usr/bin/mupdf-gl (app-text/mupdf-1.18.0-r4)
+ *      used by /usr/bin/mutool (app-text/mupdf-1.18.0-r4)
+ *      used by /usr/lib64/libmupdf.so.1.18.0 (app-text/mupdf-1.18.0-r4)
+>>> package: dev-libs/icu-70.1-r1
+ *  - /usr/lib64/libicudata.so.69
+ *  - /usr/lib64/libicudata.so.69.1
+ *      used by /usr/lib64/libcdr-0.1.so.1.0.7 (media-libs/libcdr-0.1.7)
+ *  - /usr/lib64/libicui18n.so.69
+ *  - /usr/lib64/libicui18n.so.69.1
+ *      used by /usr/bin/bibtexu (dev-tex/bibtexu-3.71_p20210325)
+ *      used by /usr/bin/upmendex (app-text/texlive-core-2021-r1)
+ *      used by /usr/lib64/darktable/libdarktable.so (media-gfx/darktable-3.6.0)
+ *      used by /usr/lib64/libQt5Core.so.5.15.2 (dev-qt/qtcore-5.15.2-r10)
+ *      used by /usr/lib64/libcdr-0.1.so.1.0.7 (media-libs/libcdr-0.1.7)
+ *      used by /usr/lib64/libjavascriptcoregtk-4.0.so.18.18.8 (net-libs/webkit-gtk-2.32.4)
+ *      used by /usr/lib64/libsamba-util.so.0.0.1 (net-fs/samba-4.13.9-r3)
+ *      used by /usr/lib64/libwebkit2gtk-4.0.so.37.53.5 (net-libs/webkit-gtk-2.32.4)
+ *      used by /usr/sbin/xfs_scrub (sys-fs/xfsprogs-5.10.0-r1)
+ *  - /usr/lib64/libicuuc.so.69
+ *  - /usr/lib64/libicuuc.so.69.1
+ *      used by /usr/bin/WebKitWebDriver (net-libs/webkit-gtk-2.32.4)
+ *      used by /usr/bin/bibtexu (dev-tex/bibtexu-3.71_p20210325)
+ *      used by /usr/bin/upmendex (app-text/texlive-core-2021-r1)
+ *      used by /usr/lib64/darktable/libdarktable.so (media-gfx/darktable-3.6.0)
+ *      used by /usr/lib64/libQt5Core.so.5.15.2 (dev-qt/qtcore-5.15.2-r10)
+ *      used by /usr/lib64/libcdr-0.1.so.1.0.7 (media-libs/libcdr-0.1.7)
+ *      used by /usr/lib64/libjavascriptcoregtk-4.0.so.18.18.8 (net-libs/webkit-gtk-2.32.4)
+ *      used by /usr/lib64/libsamba-util.so.0.0.1 (net-fs/samba-4.13.9-r3)
+ *      used by /usr/lib64/libwebkit2gtk-4.0.so.37.53.5 (net-libs/webkit-gtk-2.32.4)
+ *      used by /usr/libexec/webkit2gtk-4.0/jsc (net-libs/webkit-gtk-2.32.4)
+ *      used by /usr/sbin/xfs_scrub (sys-fs/xfsprogs-5.10.0-r1)
+>>> package: dev-libs/protobuf-3.19.1
+ *  - /usr/lib64/libprotobuf-lite.so.28
+ *  - /usr/lib64/libprotobuf-lite.so.28.0.3
+ *      used by /usr/lib64/vlc/plugins/stream_out/libstream_out_chromecast_plugin.so (media-video/vlc-3.0.16-r7)
+>>> package: sci-libs/gsl-2.7.1-r1
+ *  - /usr/lib64/libgsl.so.25
+ *  - /usr/lib64/libgsl.so.25.1.0
+ *      used by /usr/bin/inkscape (media-gfx/inkscape-1.0.2-r1)
+ *      used by /usr/bin/inkview (media-gfx/inkscape-1.0.2-r1)
+>>> package: sci-libs/proj-8.2.0
+ *  - /usr/lib64/libproj.so.19
+ *  - /usr/lib64/libproj.so.19.2.1
+ *      used by /usr/lib64/libgdal.so.29.0.2 (sci-libs/gdal-3.3.2-r1)
+ *      used by /usr/lib64/libgeotiff.so.5.2.0 (sci-libs/libgeotiff-1.7.0)
+>>> package: sys-libs/liburing-2.1
+ *  - /usr/lib64/liburing.so.1
+ *  - /usr/lib64/liburing.so.1.0.7
+ *      used by /usr/lib64/samba/vfs/io_uring.so (net-fs/samba-4.13.9-r3)
+Use emerge @preserved-rebuild to rebuild packages using these libraries
+
+ * IMPORTANT: 8 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 1 news items need reading for repository 'rust'.
+ * IMPORTANT: 20 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+ * After world updates, it is important to remove obsolete packages with
+ * emerge --depclean. Refer to `man emerge` for more information.
+VCS_INFO_formats:8: VCS_INFO_reposub: function definition file not found      
+
+-------------------------------
+
+
+ * Messages for package dev-lang/go-1.17.8:
+
+ * After dev-lang/go is updated it is recommended to rebuild
+ * all packages compiled with previous versions of dev-lang/go
+ * due to the static linking nature of go.
+ * If this is not done, the packages compiled with the older
+ * version of the compiler will not be updated until they are
+ * updated individually, which could mean they will have
+ * vulnerabilities.
+ * Run 'emerge @golang-rebuild' to rebuild all 'go' packages
+ * See https://bugs.gentoo.org/752153 for more info
+
+ * Messages for package dev-libs/cyrus-sasl-2.1.28-r2:
+
+ * pwcheck and saslauthd home directories have moved to:
+ *   /run/saslauthd, using tmpfiles.d
+
+ * Messages for package sys-libs/ldb-2.4.1-r1:
+
+ * You have sssd installed. It is known to break after ldb upgrades,
+ * so please try to rebuild it before reporting bugs.
+ * See https://bugs.gentoo.org/404281
+
+ * Messages for package app-admin/sudo-1.9.8_p2-r1:
+
+ * To use the -A (askpass) option, you need to install a compatible
+ * password program from the following list. Starred packages will
+ * automatically register for the use with sudo (but will not force
+ * the -A option):
+ * 
+ *  [*] net-misc/ssh-askpass-fullscreen
+ *      net-misc/x11-ssh-askpass
+ * 
+ * You can override the choice by setting the SUDO_ASKPASS environmnent
+ * variable to the program you want to use.
+
+ * Messages for package net-fs/samba-4.15.4-r2:
+
+ * For further information and migration steps make sure to read 
+ * https://samba.org/samba/history/samba-4.15.4.html 
+ * https://wiki.samba.org/index.php/Samba4/HOWTO 
+
+ * Messages for package dev-python/ssl-fetch-0.4-r1:
+
+ * This is beta software.
+ * The APIs it installs should be considered unstable
+ * and are subject to change in these early versions.
+ * 
+ * Please file any enhancement requests, or bugs
+ * at https://github.com/dol-sen/ssl-fetch/issues
+
+ * Messages for package dev-python/lxml-4.8.0-r1:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/beautifulsoup4 for Support for BeautifulSoup as a parser backend
+ *   dev-python/cssselect for Translates CSS selectors to XPath 1.0 expressions
+
+ * Messages for package sys-auth/sssd-2.5.2-r3:
+
+ * You must set up sssd.conf (default installed into /etc/sssd)
+ * and (optionally) configuration in /etc/pam.d in order to use SSSD
+ * features. Please see howto in	https://sssd.io/docs/design_pages/smartcard_authentication_require.html
+ * Install additional packages for optional runtime features:
+ *   app-crypt/adcli for Kerberos keytab renew (see krb5_renew_interval)
+
+ * Messages for package sys-devel/llvm-13.0.1:
+
+ * You can find additional opt-viewer utility scripts in:
+ *   /usr/lib/llvm/13/share/opt-viewer
+ * To use these scripts, you will need Python along with the following
+ * packages:
+ *   dev-python/pygments (for opt-viewer)
+ *   dev-python/pyyaml (for all of them)
+
+ * Messages for package x11-libs/gtk+-3.24.31:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+ * Messages for package mail-client/thunderbird-bin-91.7.0:
+
+ * Optional runtime features:
+ *   net-libs/libotr for encrypted chat support
+
+ * Messages for package gui-libs/gtk-4.6.1:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+ * Messages for package gnome-base/gnome-session-41.3:
+
+ * If you use a custom .xinitrc for your X session,
+ * make sure that the commands in the xinitrc.d scripts are run.
+
+ * Messages for package sys-devel/clang-13.0.1:
+
+ * You can find additional utility scripts in:
+ *   /usr/lib/llvm/13/share/clang
+ * Some of them are vim integration scripts (with instructions inside).
+ * The run-clang-tidy.py script requires the following additional package:
+ *   dev-python/pyyaml
