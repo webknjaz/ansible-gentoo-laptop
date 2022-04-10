@@ -5,6 +5,16 @@ https://gitlab.freedesktop.org/xorg/lib/libx11/-/issues/62
 
 ===
 
+Getting RPi macs:
++++++++++++++++++
+
+cat /tmp/etc/dnsmasq.conf | grep ^dhcp-host= | awk -F'=' '{print$2}' | grep 'rpi4-\w\+$' | awk -F',' '{print $1 " " $3 " -> " $2}'
+ssh root@192.168.1.1 "cat /tmp/etc/dnsmasq.conf | grep ^dhcp-host= | awk -F'=' '{print\$2}' | grep 'rpi4-\w\+\$' | awk -F',' '{print \$1 \" \" \$3 \" -> \" \$2}'"
+wol $(cat /tmp/etc/dnsmasq.conf | grep ^dhcp-host= | awk -F'=' '{print$2}' | grep 'rpi4-\w\+$' | awk -F',' '{print $1}')
+
+===
+
+
 https://blog.oddbit.com/post/2015-07-16-mapping-local-users-to-kerberos-principals-with-sssd/
 
 systemd needs +cgroup-hybrid for docker to work:
