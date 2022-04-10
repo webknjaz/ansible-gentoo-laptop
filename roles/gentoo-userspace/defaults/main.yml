@@ -317,6 +317,7 @@ code_workspace:
       - mikishapiro/armbuild
       - neovim/pynvim
       - niftylettuce/flightgear-saitek-pro-flight-switch-panel-hid-controller
+      - Omikron-Voiceover/omikron.com.ua
       - open-craft-guild/aio-feature-flags
       - open-craft-guild/ansible-fedora-laptop
       - open-craft-guild/prze-merge-2017-kurwa
