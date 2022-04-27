@@ -40,3 +40,12 @@ sudo dnf update && sudo dnf install kmod-wl
 # Portable USB monitor ASUS ZenScreen MB16AC - 15,6"
 # Full HD, Hybrid Signal Solution, USB Typu C, Flicker Free, Blue Light Filter
 sudo dnf install https://github.com/displaylink-rpm/displaylink-rpm/releases/download/v5.5.0/fedora-$(rpm -E %fedora)-displaylink-1.10.1-1.x86_64.rpm
+
+# Firefox GPU acceleration / Web page rendering / GLES
+# https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Web_page_rendering
+sudo dnf install egl-utils
+
+# Firefox GPU acceleration / Video Decoding
+# https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding_on_AMD
+# (src: RPM Fusion)
+sudo dnf install ffmpeg libva libva-utils
