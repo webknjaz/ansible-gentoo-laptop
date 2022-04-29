@@ -295,6 +295,7 @@ ebuilds:
 - pavucontrol
 - pcsc-lite
 - media-video/pipewire
+- media-sound/playerctl
 - sys-boot/plymouth
 - powerline-symbols
 - pulseaudio
