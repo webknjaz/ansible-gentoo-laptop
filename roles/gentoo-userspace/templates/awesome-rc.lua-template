@@ -401,14 +401,15 @@ globalkeys = gears.table.join(
     awful.key({ modkey          }, ";", function () awful.spawn("xbacklight -inc 20") end, {description = "increase screen brightness", group = "custom"}),
     awful.key({ modkey, "Shift" }, ";", function () awful.spawn("xbacklight -dec 20") end, {description = "decrease screen brightness", group = "custom"}),
     awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 20") end, {description = "increase screen brightness", group = "custom"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 20") end, {description = "decrease screen brightness", group = "custom"})
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 20") end, {description = "decrease screen brightness", group = "custom"}),
 
+    -- Multimedia keys (Play/Pause/Next/Previous):
+    awful.key({ }, "XF86AudioPlay", function () awful.spawn("playerctl play-pause") end, {description = "play/pause audio/video", group = "custom"}),
+    awful.key({ }, "XF86AudioPause", function () awful.spawn("playerctl pause") end, {description = "pause audio/video", group = "custom"}),
+    awful.key({ }, "XF86AudioNext", function () awful.spawn("playerctl next") end, {description = "next audio/video", group = "custom"}),
+    awful.key({ }, "XF86AudioPrev", function () awful.spawn("playerctl previous") end, {description = "previous audio/video", group = "custom"})
     -- Ref: https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
     -- XF86TouchpadToggle
-    -- XF86AudioPlay
-    -- XF86AudioPause
-    -- XF86AudioNext
-    -- XF86AudioPrev
     -- playerctl
     -- synclient
     -- xmodmap -pke
