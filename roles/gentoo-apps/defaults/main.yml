@@ -315,6 +315,7 @@ ebuilds:
 - rust-bin
 - app-crypt/seahorse
 - sic
+- net-im/signal-desktop-bin
 - sshfs
 - sssd
 - strace
