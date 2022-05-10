@@ -36,7 +36,7 @@ local weather_widget = require("awesome-wm-widgets.weather-widget.weather")({
     time_format_12h = false,
     units='metric',
 })
-local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")()
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")()
 
 -- {{{ Error handling
@@ -285,7 +285,9 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             weather_widget,
-            volumearc_widget,
+            volume_widget{
+                type='arc',
+            },
             batteryarc_widget,
             mytextclock,
             s.mylayoutbox,
@@ -404,12 +406,12 @@ globalkeys = gears.table.join(
 
     -- Custom key bindings
     -- Volume:
-    awful.key({ modkey }, "[", function () awful.spawn("amixer -D pulse sset Master 5%-") end, {description = "increase volume", group = "custom"}),
-    awful.key({ modkey }, "]", function () awful.spawn("amixer -D pulse sset Master 5%+") end, {description = "decrease volume", group = "custom"}),
-    awful.key({ modkey }, "\\", function () awful.spawn("amixer -D pulse set Master +1 toggle") end, {description = "mute volume", group = "custom"}),
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.spawn("amixer -D pulse sset Master 5%+") end, {description = "increase volume", group = "custom"}),
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.spawn("amixer -D pulse sset Master 5%-") end, {description = "decrease volume", group = "custom"}),
-    awful.key({ }, "XF86AudioMute", function () awful.spawn("amixer -D pulse set Master +1 toggle") end, {description = "mute volume", group = "custom"}),
+    awful.key({ modkey }, "[", function () volume_widget:dec() end, {description = "decrease volume", group = "custom"}),
+    awful.key({ modkey }, "]", function() volume_widget:inc() end, {description = "increase volume", group = "custom"}),
+    awful.key({ modkey }, "\\", function () volume_widget:toggle() end, {description = "mute volume toggle", group = "custom"}),
+    awful.key({ }, "XF86AudioRaiseVolume", function () volume_widget:inc() end, {description = "increase volume", group = "custom"}),
+    awful.key({ }, "XF86AudioLowerVolume", function () volume_widget:dec() end, {description = "decrease volume", group = "custom"}),
+    awful.key({ }, "XF86AudioMute", function () volume_widget:toggle() end, {description = "mute volume toggle", group = "custom"}),
     awful.key({ }, "XF86AudioMicMute", function () awful.spawn.easy_async(TOG_MIC_CMD) end, {description = "mute mic", group = "custom"}),
 
     -- Screen brightness:
