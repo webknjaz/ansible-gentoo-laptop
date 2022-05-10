@@ -73,6 +73,13 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "{{ awesome.theme | default(
 beautiful.font = "{{ awesome.font | default('DejaVu Mono 24') }}"
 {% raw %}
 
+-- Microphone mute toggle command
+local HORIZONTAL_BAR_HEIGHTS = 40
+
+-- Bar height
+beautiful.menu_height = HORIZONTAL_BAR_HEIGHTS
+beautiful.menu_width = 250
+
 -- Gap between the windows
 beautiful.useless_gap = 7
 
@@ -146,6 +153,9 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+menubar.geometry = {
+    height = 44,
+}
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -253,7 +263,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ height = HORIZONTAL_BAR_HEIGHTS, position = "top", screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -603,7 +613,7 @@ client.connect_signal("request::titlebars", function(c)
         end)
     )
 
-    awful.titlebar(c) : setup {
+    awful.titlebar(c, { size = HORIZONTAL_BAR_HEIGHTS }) : setup {
         { -- Left
             awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
