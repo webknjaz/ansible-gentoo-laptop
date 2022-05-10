@@ -37,6 +37,7 @@ local weather_widget = require("awesome-wm-widgets.weather-widget.weather")({
     units='metric',
 })
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+local mpris_widget = require("awesome-wm-widgets.mpris-widget")()
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")()
 
 -- {{{ Error handling
@@ -288,6 +289,7 @@ awful.screen.connect_for_each_screen(function(s)
             volume_widget{
                 type='arc',
             },
+            mpris_widget,
             batteryarc_widget,
             mytextclock,
             s.mylayoutbox,
