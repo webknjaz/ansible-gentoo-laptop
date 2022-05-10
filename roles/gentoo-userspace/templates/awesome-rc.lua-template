@@ -70,7 +70,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "{{ awesome.theme | default('default') }}/theme.lua")
 
 -- Font family and size
-beautiful.font = "{{ awesome.font | default('DejaVu Sans 11') }}"
+beautiful.font = "{{ awesome.font | default('DejaVu Mono 24') }}"
 {% raw %}
 
 -- Gap between the windows
