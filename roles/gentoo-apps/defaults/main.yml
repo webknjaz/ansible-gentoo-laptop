@@ -110,6 +110,10 @@ use_flags_per_package_disabled:
   - gnutls  # conflicts with `nss`
   sys-apps/pciutils:
   - static-libs
+  sys-boot/plymouth:
+  - static-libs  # Appears to stand in a way of Plymouth working
+  # Gentoo Wiki says it won't work with udev; confirmed experimentally:
+  - udev
   sys-fs/cryptsetup:
   - static-libs
   sys-fs/lvm2:
