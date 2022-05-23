@@ -217,6 +217,7 @@ ebuilds:
 - enchant
 - eselect-fontconfig
 - eselect-python
+- sys-apps/ethtool
 - fira-code
 - www-client/firefox-bin
 - games-simulation/flightgear
