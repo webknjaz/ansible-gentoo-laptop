@@ -322,6 +322,7 @@ code_workspace:
       - open-craft-guild/ansible-fedora-laptop
       - open-craft-guild/prze-merge-2017-kurwa
       - open-craft-guild/python-smsfly
+      - openwrt/openwrt
       - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pradyunsg/sphinx-themes
