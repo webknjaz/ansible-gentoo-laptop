@@ -83,6 +83,7 @@ use_flags_per_package_enabled:
   - cryptsetup
   - curl
   - dns-over-tls
+  - fido2  # FIDO 2 support for e.g. YubiKey and Solo v2 USB devices
   - gnuefi
   - http
   - idn
