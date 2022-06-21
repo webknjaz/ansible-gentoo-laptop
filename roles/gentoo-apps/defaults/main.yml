@@ -91,6 +91,7 @@ use_flags_per_package_enabled:
   - lzma
   - nat
   - pkcs11
+  - tpm  # Trusted Platform Module support
   - qrcode
   - repart
   - xkb
