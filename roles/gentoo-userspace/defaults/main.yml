@@ -251,6 +251,7 @@ code_workspace:
       - aio-libs/yarl
       - amol-/dukpy
       - ansible/ansible
+      - ansible/ansible-core-ci
       - ansible/ansible-examples
       - ansible/ansible-language-server
       - ansible/ansible-lint
@@ -427,6 +428,7 @@ code_workspace:
         aio-libs/aiohttp: webknjaz/aiohttp
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
+        ansible/ansible-core-ci: webknjaz/ansible-core-ci
         ansible/ansible-language-server: webknjaz/ansible-language-server
         ansible/ansible-lint: webknjaz/ansible-lint
         ansible/ansible-navigator-demo-ee: webknjaz/ansible-creator-ee
