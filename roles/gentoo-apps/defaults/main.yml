@@ -177,6 +177,7 @@ essential_ebuilds:
 ebuilds:
 - abrt
 - x11-misc/arandr
+- x11-misc/autorandr
 - sys-power/acpi
 - sys-power/acpid
 - alacritty
