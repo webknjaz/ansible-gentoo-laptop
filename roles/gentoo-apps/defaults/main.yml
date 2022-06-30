@@ -325,6 +325,7 @@ ebuilds:
 - sic
 - net-im/signal-desktop-bin
 - sshfs
+- net-misc/sshpass
 - sssd
 - strace
 - tcpdump
