@@ -156,6 +156,8 @@ accept_keywords_per_package:
   - ~amd64
   sys-apps/bat:
   - ~amd64
+  =sys-kernel/dracut-crypt-ssh-1.0.7::gentoo:
+  - ~amd64
 #  sys-libs/glibc:  # conflicts with sssd: https://bugs.gentoo.org/737180
 #  - -~amd64
   x11-terms/kitty-shell-integration:
@@ -218,6 +220,7 @@ ebuilds:
 - darktable
 - dnsmasq
 - dpkg
+- sys-kernel/dracut-crypt-ssh
 - dstat
 - ebtables
 - enchant
