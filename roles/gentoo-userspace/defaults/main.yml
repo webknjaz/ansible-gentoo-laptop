@@ -437,6 +437,7 @@ code_workspace:
         ansible/collection_migration: webknjaz/collection_migration
         ansible/lightbulb: webknjaz/lightbulb
         ansible/molecule: webknjaz/molecule
+        ansible/pylibssh: webknjaz/pylibssh
         ansible/vscode-ansible: webknjaz/vscode-ansible
         ansible-collections/community.general: webknjaz/community.general
         ansible-collections/community.grafana: webknjaz/community.grafana
