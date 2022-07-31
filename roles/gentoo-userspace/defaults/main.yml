@@ -247,6 +247,7 @@ code_workspace:
       - aio-libs/aiohttp
       - aio-libs/aiohttp-devtools
       - aio-libs/async-lru
+      - aio-libs/get-releasenote
       - aio-libs/multidict
       - aio-libs/yarl
       - amol-/dukpy
@@ -427,6 +428,7 @@ code_workspace:
       forked_as:
         abhinavsingh/proxy.py: webknjaz/proxy.py
         aio-libs/aiohttp: webknjaz/aiohttp
+        aio-libs/get-releasenote: webknjaz/get-releasenote
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
         ansible/ansible-core-ci: webknjaz/ansible-core-ci
