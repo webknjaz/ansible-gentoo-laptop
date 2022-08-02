@@ -248,6 +248,7 @@ code_workspace:
       - aio-libs/aiohttp-devtools
       - aio-libs/async-lru
       - aio-libs/create-release
+      - aio-libs/frozenlist
       - aio-libs/get-releasenote
       - aio-libs/multidict
       - aio-libs/yarl
@@ -430,6 +431,7 @@ code_workspace:
         abhinavsingh/proxy.py: webknjaz/proxy.py
         aio-libs/aiohttp: webknjaz/aiohttp
         aio-libs/create-release: webknjaz/create-release
+        aio-libs/frozenlist: webknjaz/frozenlist
         aio-libs/get-releasenote: webknjaz/get-releasenote
         aio-libs/yarl: webknjaz/yarl
         amol-/dukpy: webknjaz/dukpy
