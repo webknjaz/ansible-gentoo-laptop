@@ -270,6 +270,7 @@ code_workspace:
       - ansible/lightbulb
       - ansible/molecule
       - ansible/pylibssh
+      - ansible/spare-tire
       - ansible-collections/collection_template
       - ansible-collections/community.digitalocean
       - ansible-collections/community.general
@@ -446,6 +447,7 @@ code_workspace:
         ansible/lightbulb: webknjaz/lightbulb
         ansible/molecule: webknjaz/molecule
         ansible/pylibssh: webknjaz/pylibssh
+        ansible/spare-tire: webknjaz/ansible--spare-tire
         ansible/vscode-ansible: webknjaz/vscode-ansible
         ansible-collections/community.general: webknjaz/community.general
         ansible-collections/community.grafana: webknjaz/community.grafana
