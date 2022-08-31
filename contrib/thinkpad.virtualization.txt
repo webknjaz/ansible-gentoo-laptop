@@ -1,0 +1,7 @@
+[root@fedora ~]# cat /sys/class/firmware-attributes/thinklmi/attributes/VirtualizationTechnology/current_value
+Disable
+[root@fedora ~]# cat /sys/class/firmware-attributes/thinklmi/attributes/VirtualizationTechnology/possible_values 
+Disable,Enable
+[root@fedora ~]# echo Enable > /sys/class/firmware-attributes/thinklmi/attributes/VirtualizationTechnology/current_value
+[root@fedora ~]# cat /sys/class/firmware-attributes/thinklmi/attributes/VirtualizationTechnology/current_value
+Enable
