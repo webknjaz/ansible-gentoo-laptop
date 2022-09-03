@@ -388,6 +388,7 @@ code_workspace:
       - sanitizers/github-bot-tutorial
       - sanitizers/octomachinery
       - sanitizers/patchback-github-app
+      - SchemaStore/schemastore
       - sclorg/s2i-python-container
       - sdispater/poetry
       - sgielen/picl-k3os-image-generator
@@ -505,6 +506,7 @@ code_workspace:
         RedHatOfficial/RedHatOfficial.github.io: >-
           webknjaz/RedHatOfficial.github.io
         reverbc/pylint-pytest: webknjaz/pylint-pytest
+        SchemaStore/schemastore: webknjaz/schemastore
         sdispater/poetry: webknjaz/poetry
         sphinx-doc/sphinx: webknjaz/sphinx
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
