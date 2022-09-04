@@ -1480,3 +1480,32 @@ VCS_INFO_formats:8: VCS_INFO_reposub: function definition file not found
  * Some of them are vim integration scripts (with instructions inside).
  * The run-clang-tidy.py script requires the following additional package:
  *   dev-python/pyyaml
+
+-------------------------------
+
+
+ * Messages for package sys-kernel/linux-firmware-20220815:
+
+ * No saved config to restore - please remove USE=savedconfig or
+ * provide a configuration file in /etc/portage/savedconfig/sys-kernel/linux-firmware
+ * and ensure the build process has permission to access it.
+ * Your config file(s) will not be used this time.
+ * Your configuration for sys-kernel/linux-firmware-20220815 has been saved in 
+ * "/etc/portage/savedconfig/sys-kernel/linux-firmware-20220815" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+ * USE=savedconfig is active. You must handle file collisions manually.
+ * If you are only interested in particular firmware files, edit the saved
+ * configfile and remove those that you do not want.
+
+ * Messages for package gui-libs/wlroots-0.15.1:
+
+ * You must be in the input group to allow your compositor
+ * to access input devices via libinput.
+
+-------------------------------
+
