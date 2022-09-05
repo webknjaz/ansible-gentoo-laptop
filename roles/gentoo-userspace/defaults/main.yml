@@ -332,6 +332,7 @@ code_workspace:
       - patron-it/ansible-opencanary
       - patron-it/opencanary
       - pradyunsg/sphinx-themes
+      - pre-commit/identify
       - pyca/bcrypt
       - pyca/cryptography
       - pyca/infra
@@ -473,6 +474,7 @@ code_workspace:
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
         pradyunsg/sphinx-themes: webknjaz/sphinx-themes
+        pre-commit/identify: webknjaz/pre-commit--identify
         pyca/bcrypt: webknjaz/bcrypt
         pyca/cryptography: webknjaz/cryptography
         pyca/infra: webknjaz/pyca-infra
