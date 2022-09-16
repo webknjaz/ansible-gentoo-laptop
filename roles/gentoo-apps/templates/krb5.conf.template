@@ -12,8 +12,13 @@ forwardable = true
 rdns = false  
 default_realm = REDHAT.COM  
 default_ccache_name = KEYRING:persistent:%{uid}  
-      
+dns_canonicalize_hostname = false
+
 [realms]  
+    FEDORAPROJECT.ORG = {
+        kdc = https://id.fedoraproject.org/KdcProxy
+        pkinit_anchors = FILE:/etc/pki/ipa/fedoraproject_ipa_ca.crt
+    }
     REDHAT.COM = {
         kdc = kerberos01.core.prod.int.ams2.redhat.com
         kdc = kerberos02.core.prod.int.ams2.redhat.com
@@ -23,6 +28,8 @@ default_ccache_name = KEYRING:persistent:%{uid}
     }   
       
 [domain_realm]      
+.fedoraproject.org = FEDORAPROJECT.ORG
+fedoraproject.org = FEDORAPROJECT.ORG
 redhat.com = REDHAT.COM       
 .redhat.com = REDHAT.COM 
 #

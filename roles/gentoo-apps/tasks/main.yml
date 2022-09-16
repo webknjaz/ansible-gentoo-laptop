@@ -402,6 +402,39 @@
     dest: /etc/krb5.conf
   notify:
   - ensure-services-started
+- name: Create PKI IPA dir structure for FEDORAPROJECT.ORG certificates
+  file:
+    dest: /etc/pki/ipa
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Get IPA certificate for FEDORAPROJECT.ORG
+  get_url:
+    url: https://pagure.io/fedora-packager/raw/b97ff3d8e4636e46a8d9be10d935d73e56e56f1b/f/ipa_ca/fedoraproject_ipa_ca.crt
+    dest: /etc/pki/ipa/
+    checksum: sha256:{{ expected_sha256checksum }}
+  vars:
+    expected_sha256checksum: >-
+      c9d382a0474b09d91fa8a9d3056b8ca35075ab3876fe55a07aaa5f0fa712937a
+  notify:
+  - ensure-services-started
+- name: Verify downloaded FEDORAPROJECT.ORG IPA certificate
+  shell: |
+    set -euxo pipefail
+    openssl x509 -noout \
+      -in '/etc/pki/ipa/fedoraproject_ipa_ca.crt' \
+      -fingerprint \
+      -sha256 | grep 'SHA256 Fingerprint={{ expected_sha256fingerprint }}'
+  vars:
+    expected_sha256fingerprint: >-
+      29:70:18:6F:58:89:AA:08:BA:33:51:D0:3E:27:68:4C:3D:DA:33:87:2C:5C:36:4A:3B:4D:03:A6:17:30:6B:C6
+  register: sha256fingerprint
+  changed_when: false
+  failed_when: >
+    sha256fingerprint.rc != 0 or
+    sha256fingerprint.stdout != (('SHA256 Fingerprint', expected_sha256fingerprint) | join('='))
 - name: Set up sssd
   template:
     src: sssd.conf.template
