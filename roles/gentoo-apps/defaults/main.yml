@@ -483,9 +483,11 @@ chrome_managed_policies:
     # 3 = Enable ambient authentication in regular, incognito and
     #     guest sessions.
     AmbientAuthenticationInPrivateModesEnabled: 3
-    AuthNegotiateDelegateWhitelist: >-
+    AuthNegotiateDelegateWhitelist: >-  # delegation
+      *.fedoraproject.org,
       *.redhat.com
-    AuthServerWhitelist: >-
+    AuthServerWhitelist: >-  # impersonation
+      *.fedoraproject.org,
       *.redhat.com
     AuthSchemes: negotiate, ntlm, digest, basic
     PromotionalTabsEnabled: false
