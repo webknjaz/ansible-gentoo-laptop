@@ -26,3 +26,7 @@
   - ansible_distribution != 'MacOSX'
 - name: Ensure that source code projects are in place
   import_tasks: src.yml
+- name: Ensure that Fedora Project is configured
+  import_tasks: fedoraproject.yml
+  when:
+  - ansible_distribution != 'MacOSX'

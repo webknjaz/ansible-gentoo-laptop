@@ -1,0 +1,5 @@
+--- # vim:se ft=ansible:
+- name: Set up FAS value in the user-local config
+  template:
+    src: .fedora.upn.j2
+    dest: ~/.fedora.upn
