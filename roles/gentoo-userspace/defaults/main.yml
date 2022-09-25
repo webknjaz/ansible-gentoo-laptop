@@ -467,6 +467,7 @@ code_workspace:
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
         jaraco/skeleton: webknjaz/jaraco-skeleton
+        jazzband/pip-tools: webknjaz/pip-tools
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         jctanner/gravity: webknjaz/gravity
         joepvd/tty-solarized: webknjaz/tty-solarized
