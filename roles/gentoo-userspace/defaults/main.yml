@@ -394,6 +394,7 @@ code_workspace:
       - sdispater/poetry
       - sgielen/picl-k3os-image-generator
       - sivel/ansible-pulp-galaxy-ng
+      - spaceship-prompt/spaceship-prompt
       - sphinx-contrib/towncrier
       - sphinx-doc/sphinx
       - streetturtle/awesome-wm-widgets
@@ -511,6 +512,7 @@ code_workspace:
         reverbc/pylint-pytest: webknjaz/pylint-pytest
         SchemaStore/schemastore: webknjaz/schemastore
         sdispater/poetry: webknjaz/poetry
+        spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
         sphinx-doc/sphinx: webknjaz/sphinx
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
         takluyver/flit: webknjaz/flit
