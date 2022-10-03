@@ -295,6 +295,7 @@ code_workspace:
       - cherrypy/cherrypy
       - cherrypy/magicbus
       - codecov/uploader
+      - confluentinc/cp-ansible
       - cython/cython
       - daibach142/FGFS_Saitek_Radio
       - daibach142/FGFS_Saitek_Switch_Panel
@@ -462,6 +463,7 @@ code_workspace:
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
         codecov/uploader: webknjaz/codecov-uploader
+        confluentinc/cp-ansible: webknjaz/cp-ansible
         cython/cython: webknjaz/cython
         deadsnakes/action: webknjaz/deadsnakes-action
         executablebooks/MyST-Parser: webknjaz/MyST-Parser
