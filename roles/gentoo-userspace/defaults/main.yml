@@ -383,6 +383,7 @@ code_workspace:
       - rtfd/readthedocs-docker-images
       - SalaryCalc/salarycalc-ng
       - SalaryCalc/salarycalc-php
+      - samdoran/ansible-collection-macos
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sanitizers/diactoros-github-app
@@ -510,6 +511,8 @@ code_workspace:
         RedHatOfficial/RedHatOfficial.github.io: >-
           webknjaz/RedHatOfficial.github.io
         reverbc/pylint-pytest: webknjaz/pylint-pytest
+        samdoran/ansible-collection-macos: >-
+          webknjaz/ansible-collection-macos
         SchemaStore/schemastore: webknjaz/schemastore
         sdispater/poetry: webknjaz/poetry
         spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
