@@ -322,6 +322,7 @@ code_workspace:
       - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
       - mikishapiro/armbuild
+      - nedbat/coveragepy
       - neovim/pynvim
       - niftylettuce/flightgear-saitek-pro-flight-switch-panel-hid-controller
       - Omikron-Voiceover/omikron.com.ua
@@ -478,6 +479,7 @@ code_workspace:
         libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
+        nedbat/coveragepy: webknjaz/coveragepy
         pradyunsg/sphinx-themes: webknjaz/sphinx-themes
         pre-commit/identify: webknjaz/pre-commit--identify
         pyca/bcrypt: webknjaz/bcrypt
