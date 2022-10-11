@@ -524,7 +524,7 @@ code_workspace:
         sphinx-doc/sphinx: webknjaz/sphinx
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
         takluyver/flit: webknjaz/flit
-        test-summary/action: test-summary-action
+        test-summary/action: webknjaz/test-summary-action
         tox-dev/detox: webknjaz/detox
         tox-dev/tox: webknjaz/tox
         tox-dev/workflow: webknjaz/tox-workflow
