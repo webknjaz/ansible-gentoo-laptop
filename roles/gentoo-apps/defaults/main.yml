@@ -499,6 +499,11 @@ chrome_managed_policies:
     ExtensionSettings:
       gbiekjoijknlhijdjbaadobpkdhmoebb:
         installation_mode: force_installed
+  protect_my_choices:
+    # Ref: https://support.google.com/chrome/a/answer/9047197?hl=en
+    ExtensionSettings:
+      hdgloanjhdcenjgiafkpbehddcnonlic:
+        installation_mode: force_installed
   walkme_extension_update:
     ExtensionSettings:
       iffnipbkkgbgeffippbaldmgdpealpdd:
