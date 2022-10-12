@@ -34,7 +34,7 @@ sudo dnf install \*-firmware
 # https://ibcomputing.com/install-wifi-driver-broadcom-bcm43142-linux/#How_to_install_WiFi_driver_for_Broadcom_BCM43142_WiFi_device_in_Fedora
 sudo dnf update && sudo dnf install kmod-wl
 # BCM43142 is not supported per https://wireless.wiki.kernel.org/en/users/drivers/b43#Supported_devices
-# which is why the priprietary `wl` module is necessary for it to function, `b43` won't work
+# which is why the proprietary `wl` module is necessary for it to function, `b43` won't work
 # kmod-wl provides "/lib/modules/*/extra/wl/wl.ko" ## /lib/modules/5.16.18-200.fc35.x86_64/extra/wl/wl.ko
 
 # Portable USB monitor ASUS ZenScreen MB16AC - 15,6"
