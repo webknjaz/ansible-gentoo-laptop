@@ -52,3 +52,6 @@ sudo dnf install ffmpeg libva libva-utils
 
 # Intel® Wi-Fi 6 AX200 160MHz:
 sudo dnf install iwlax2xx-firmware
+
+# Cut multipathd-related 3-minute delay
+sudo systemctl mask systemd-udev-settle
