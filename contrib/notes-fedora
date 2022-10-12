@@ -49,3 +49,6 @@ sudo dnf install egl-utils
 # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding_on_AMD
 # (src: RPM Fusion)
 sudo dnf install ffmpeg libva libva-utils
+
+# Intel® Wi-Fi 6 AX200 160MHz:
+sudo dnf install iwlax2xx-firmware
