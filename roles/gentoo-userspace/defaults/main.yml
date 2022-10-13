@@ -405,6 +405,7 @@ code_workspace:
       - streetturtle/awesome-wm-widgets
       - takluyver/flit
       - test-summary/action
+      - tiangolo/fastapi
       - tox-dev/detox
       - tox-dev/gh-action-tox
       - tox-dev/tox
@@ -529,6 +530,7 @@ code_workspace:
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
         takluyver/flit: webknjaz/flit
         test-summary/action: webknjaz/test-summary-action
+        tiangolo/fastapi: webknjaz/fastapi
         tox-dev/detox: webknjaz/detox
         tox-dev/tox: webknjaz/tox
         tox-dev/workflow: webknjaz/tox-workflow
