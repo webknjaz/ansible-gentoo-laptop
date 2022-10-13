@@ -374,6 +374,7 @@ code_workspace:
       - python-hyper/h11
       - python-hyper/uritemplate
       - python-trio/snekomatic
+      - python-trio/trio
       - python-trio/trustme
       - re-actors/alls-green
       - re-actors/bindep
@@ -514,6 +515,7 @@ code_workspace:
         python-hyper/h11: webknjaz/h11
         python-hyper/uritemplate: webknjaz/uritemplate
         python-trio/snekomatic: webknjaz/snekomatic
+        python-trio/trio: webknjaz/trio
         python-trio/trustme: webknjaz/trustme
         RedHatOfficial/RedHatOfficial.github.io: >-
           webknjaz/RedHatOfficial.github.io
