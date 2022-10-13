@@ -342,6 +342,7 @@ code_workspace:
       - PyCQA/astroid
       - PyCQA/baron
       - PyCQA/redbaron
+      - pydantic/pydantic
       - pyenv/pyenv
       - PyGithub/PyGithub
       - pypa/auditwheel
@@ -490,6 +491,7 @@ code_workspace:
         PyCQA/astroid: webknjaz/astroid
         PyCQA/baron: webknjaz/baron
         PyCQA/redbaron: webknjaz/redbaron
+        pydantic/pydantic: webknjaz/pydantic
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/browntruck: sanitizers/browntruck
