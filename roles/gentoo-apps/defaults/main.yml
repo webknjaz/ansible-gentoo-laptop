@@ -272,7 +272,7 @@ ebuilds:
 - sys-apps/irqbalance
 - virtual/jack
 - media-sound/jack2
-- jq
+- app-misc/jq
 - jre
 - kexec-tools
 - kitty
