@@ -140,6 +140,8 @@ accept_keywords_per_package:
   - ~amd64
   dev-libs/libucl:
   - ~amd64
+  =dev-libs/libvterm-0.3::gentoo:  # Needed for NeoVim v0.8.0
+  - ~amd64
   =dev-libs/satyr-0.38::gentoo:
   - ~amd64
   =dev-lua/luv-1.44.2.0::gentoo:  # Needed for NeoVim v0.8.0
