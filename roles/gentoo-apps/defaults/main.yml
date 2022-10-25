@@ -297,7 +297,7 @@ ebuilds:
 - luasocket  # FIXME: delete?
 - mesa-progs
 - sys-fs/multipath-tools
-- neovim
+- app-editors/neovim
 - openbsd-netcat
 - nemu  # Ncurses QEMU TUI
 - dev-python/neovim-remote  # Needed for NeoVim: for remote/nvr support
