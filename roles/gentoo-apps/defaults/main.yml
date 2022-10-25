@@ -142,6 +142,8 @@ accept_keywords_per_package:
   - ~amd64
   =dev-libs/satyr-0.38::gentoo:
   - ~amd64
+  =dev-lua/luv-1.44.2.0::gentoo:  # Needed for NeoVim v0.8.0
+  - ~amd64
   =dev-python/neovim-remote-2.4.0::gentoo:
   - ~amd64
   =dev-ruby/msgpack-1.4.4::gentoo:  # needed by dev-ruby/neovim-ruby-client
