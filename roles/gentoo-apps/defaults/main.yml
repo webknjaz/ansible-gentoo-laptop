@@ -131,6 +131,8 @@ accept_keywords_per_package:
   - ~amd64
   =app-arch/rpm-4.17.0::gentoo:
   - ~amd64
+  =app-editors/neovim-0.8.0-r1::gentoo:  # Needed for AstroVim
+  - ~amd64
   =app-shells/rust-zshcomp-9999::rust:
   - >-
     **
