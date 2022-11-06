@@ -302,6 +302,7 @@ code_workspace:
       - daibach142/SaitekRadio
       - daibach142/SaitekSwitch
       - deadsnakes/action
+      - di/pip-api
       - dokku/dokku-mariadb
       - EuroPython/ep-config
       - executablebooks/MyST-Parser
@@ -471,6 +472,7 @@ code_workspace:
         confluentinc/cp-ansible: webknjaz/cp-ansible
         cython/cython: webknjaz/cython
         deadsnakes/action: webknjaz/deadsnakes-action
+        di/pip-api: webknjaz/pip-api
         executablebooks/MyST-Parser: webknjaz/MyST-Parser
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
