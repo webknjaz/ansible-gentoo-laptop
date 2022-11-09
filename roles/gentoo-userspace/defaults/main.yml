@@ -399,6 +399,7 @@ code_workspace:
       - SchemaStore/schemastore
       - sclorg/s2i-python-container
       - sdispater/poetry
+      - sdispater/tomlkit
       - sgielen/picl-k3os-image-generator
       - sivel/ansible-pulp-galaxy-ng
       - spaceship-prompt/spaceship-prompt
@@ -529,6 +530,7 @@ code_workspace:
           webknjaz/ansible-collection-macos
         SchemaStore/schemastore: webknjaz/schemastore
         sdispater/poetry: webknjaz/poetry
+        sdispater/tomlkit: webknjaz/tomlkit
         spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
         sphinx-doc/sphinx: webknjaz/sphinx
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
