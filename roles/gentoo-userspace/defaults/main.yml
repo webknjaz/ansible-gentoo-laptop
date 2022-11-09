@@ -310,6 +310,7 @@ code_workspace:
       - gentoo/gentoo
       - github-actions-playground/enroll-me
       - gliderlabs/herokuish
+      - HypothesisWorks/hypothesis
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
       - jaraco/skeleton
@@ -477,6 +478,7 @@ code_workspace:
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
+        HypothesisWorks/hypothesis: webknjaz/hypothesis
         jaraco/skeleton: webknjaz/jaraco-skeleton
         jazzband/pip-tools: webknjaz/pip-tools
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
