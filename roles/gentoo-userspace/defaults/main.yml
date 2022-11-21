@@ -318,6 +318,7 @@ code_workspace:
       - jctanner/ansible-reproducers
       - jctanner/gravity
       - joepvd/tty-solarized
+      - jorisroovers/gitlint
       - kpi-web-guild/django-girls-blog-serhii73
       - libgit2/pygit2
       - lxc/python2-lxc
@@ -485,6 +486,7 @@ code_workspace:
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         jctanner/gravity: webknjaz/gravity
         joepvd/tty-solarized: webknjaz/tty-solarized
+        jorisroovers/gitlint: webknjaz/gitlint
         libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
