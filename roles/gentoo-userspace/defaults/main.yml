@@ -336,6 +336,7 @@ code_workspace:
       - openwrt/openwrt
       - patron-it/ansible-opencanary
       - patron-it/opencanary
+      - pnpm/pnpm
       - pradyunsg/sphinx-themes
       - pre-commit/identify
       - pyca/bcrypt
@@ -491,6 +492,7 @@ code_workspace:
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
         nedbat/coveragepy: webknjaz/coveragepy
+        pnpm/pnpm: webknjaz/pnpm
         pradyunsg/sphinx-themes: webknjaz/sphinx-themes
         pre-commit/identify: webknjaz/pre-commit--identify
         pyca/bcrypt: webknjaz/bcrypt
