@@ -352,6 +352,7 @@ code_workspace:
       - PyGithub/PyGithub
       - pypa/auditwheel
       - pypa/browntruck
+      - pypa/build
       - pypa/get-pip
       - pypa/gh-action-pypi-publish
       - pypa/manylinux
@@ -508,6 +509,7 @@ code_workspace:
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/browntruck: sanitizers/browntruck
+        pypa/build: webknjaz/build
         pypa/packaging.python.org: webknjaz/packaging.python.org
         pypa/pip: webknjaz/pip
         pypa/pypi-support: webknjaz/pypi-support
