@@ -355,6 +355,7 @@ code_workspace:
       - pypa/build
       - pypa/get-pip
       - pypa/gh-action-pypi-publish
+      - pypa/hatch
       - pypa/manylinux
       - pypa/packaging.python.org
       - pypa/pip
@@ -510,6 +511,7 @@ code_workspace:
         PyGithub/PyGithub: webknjaz/PyGithub
         pypa/browntruck: sanitizers/browntruck
         pypa/build: webknjaz/build
+        pypa/hatch: webknjaz/hatch
         pypa/packaging.python.org: webknjaz/packaging.python.org
         pypa/pip: webknjaz/pip
         pypa/pypi-support: webknjaz/pypi-support
