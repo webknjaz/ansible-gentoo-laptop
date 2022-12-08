@@ -339,6 +339,7 @@ ebuilds:
 - app-crypt/seahorse
 - sic
 - net-im/signal-desktop-bin
+- media-sound/spotify
 - sshfs
 - net-misc/sshpass
 - sssd
@@ -397,6 +398,7 @@ accept_licenses:
   media-fonts/font-bh-ttf: bh-luxi
   media-fonts/font-bh-type1: bh-luxi
   media-fonts/freefonts: all-rights-reserved free-noncomm freedist
+  media-sound/spotify: Spotify
   net-analyzer/nmap: NPSL
   net-misc/anydesk: AnyDesk-TOS
   net-print/cndrvcups-common-lb: Canon-UFR-II
