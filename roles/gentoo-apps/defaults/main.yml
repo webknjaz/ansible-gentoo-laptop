@@ -390,7 +390,7 @@ ebuilds_from_overlays:
 unmask_ebuilds: {}
 
 accept_licenses:
-  app-emulation/virtualbox-extpack-oracle: PUEL
+  app-emulation/virtualbox-extpack-oracle: PUEL PUEL-11
   app-editors/vscode-bin: MS-vscode
   dev-util/intel-ocl-sdk: Intel-SDP
   media-fonts/corefonts: MSttfEULA
