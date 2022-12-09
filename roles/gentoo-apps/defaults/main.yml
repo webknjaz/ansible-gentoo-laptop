@@ -148,9 +148,9 @@ accept_keywords_per_package:
   - ~amd64
   =dev-python/neovim-remote-2.4.0::gentoo:
   - ~amd64
-  =dev-ruby/msgpack-1.4.4::gentoo:  # needed by dev-ruby/neovim-ruby-client
+  dev-ruby/msgpack::gentoo:  # needed by dev-ruby/neovim-ruby-client
   - ~amd64
-  =dev-ruby/neovim-ruby-client-0.8.1-r1::gentoo:
+  dev-ruby/neovim-ruby-client::gentoo:
   - ~amd64
   dev-vcs/git::gentoo:
   - ~amd64
