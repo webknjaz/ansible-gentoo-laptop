@@ -470,6 +470,7 @@ code_workspace:
         ansible-collections/community.general: webknjaz/community.general
         ansible-collections/community.grafana: webknjaz/community.grafana
         ansible-collections/community.hashi_vault: webknjaz/community.hashi_vault
+        ansible-community/ansible-pygments: webknjaz/ansible-pygments
         ansible-community/antsibull: webknjaz/antsibull
         ansible-community/molecule-hetznercloud: webknjaz/molecule-hetznercloud
         bbangert/routes: webknjaz/routes
