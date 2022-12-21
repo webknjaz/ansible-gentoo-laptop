@@ -112,6 +112,8 @@ use_flags_per_package_disabled:
   - static-libs
   net-misc/networkmanager:
   - gnutls  # conflicts with `nss`
+  net-print/hplip:
+  - qt5  # so it doesn't drag in unnecessary deps
   sys-apps/pciutils:
   - static-libs
   sys-boot/plymouth:
@@ -266,6 +268,7 @@ ebuilds:
 - media-gfx/flameshot
 - app-admin/helm
 - gui-wm/hikari
+- net-print/hplip
 - x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
 # - x11-libs/libva-vdpau-driver NVIDIA GPU
 - intel-ocl-sdk
