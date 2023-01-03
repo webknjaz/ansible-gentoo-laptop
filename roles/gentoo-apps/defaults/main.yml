@@ -377,6 +377,7 @@ ebuilds:
 - xautolock
 - x11-misc/xclip  # Needed for NeoVim: for clipboard support
 - xorg-x11  # FIXME: replace with x11-base/xorg-apps + x11-base/xorg-fonts before 2022-11-01
+- app-text/xournalpp
 - x11-misc/xsel  # Needed for NeoVim: for clipboard support
 - net-misc/x11-ssh-askpass
 - yubikey-manager
