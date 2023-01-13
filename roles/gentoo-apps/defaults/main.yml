@@ -216,6 +216,8 @@ ebuilds:
 - net-wireless/blueman
 - sys-apps/bolt
 - net-misc/bridge-utils
+- sys-fs/btrfs-progs
+- sys-fs/btrfsmaintenance
 - bundler
 - ccache
 - sys-devel/clang
