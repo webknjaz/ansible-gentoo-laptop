@@ -1509,3 +1509,1193 @@ VCS_INFO_formats:8: VCS_INFO_reposub: function definition file not found
 
 -------------------------------
 
+
+ * Messages for package acct-group/android-0:
+
+ * Adding group android
+
+ * Messages for package sys-kernel/linux-firmware-20221109:
+
+ * No saved config to restore - please remove USE=savedconfig or
+ * provide a configuration file in /etc/portage/savedconfig/sys-kernel/linux-firmware
+ * and ensure the build process has permission to access it.
+ * Your config file(s) will not be used this time.
+ * Your configuration for sys-kernel/linux-firmware-20221109 has been saved in 
+ * "/etc/portage/savedconfig/sys-kernel/linux-firmware-20221109" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+ * USE=savedconfig is active. You must handle file collisions manually.
+ * If you are only interested in particular firmware files, edit the saved
+ * configfile and remove those that you do not want.
+
+ * Messages for package sys-firmware/edk2-ovmf-bin-202202:
+
+ * This package contains the tianocore edk2 UEFI firmware for 64-bit x86
+ * virtual machines. The firmware is located under
+ * /usr/share/edk2-ovmf/OVMF_CODE.fd
+ * /usr/share/edk2-ovmf/OVMF_VARS.fd
+ * /usr/share/edk2-ovmf/OVMF_CODE.secboot.fd
+ * 
+ * If USE=binary is enabled, we also install an OVMF variables file (coming from
+ * fedora) that contains secureboot default keys
+ * 
+ * /usr/share/edk2-ovmf/OVMF_VARS.secboot.fd
+ * 
+ * If you have compiled this package by hand, you need to either populate all
+ * necessary EFI variables by hand by booting
+ * /usr/share/edk2-ovmf/UefiShell.(iso|img)
+ * or creating OVMF_VARS.secboot.fd by hand:
+ * https://github.com/puiterwijk/qemu-ovmf-secureboot
+ * 
+ * The firmware does not support csm (due to no free csm implementation
+ * available). If you need a firmware with csm support you have to download
+ * one for yourself. Firmware blobs are commonly labeled
+ * OVMF{,_CODE,_VARS}-with-csm.fd
+ * 
+ * In order to use the firmware you can run qemu the following way
+ * 
+ * $ qemu-system-x86_64 		-drive file=/usr/share/edk2-ovmf/OVMF.fd,if=pflash,format=raw,unit=0,readonly=on 		...
+ * 
+ * (Note: Above message is only printed the first time package is
+ * installed. Please look at /usr/share/doc/edk2-ovmf-bin-202202/README.gentoo*
+ * for future reference)
+
+ * Messages for package dev-libs/tree-sitter-0.20.7:
+
+ * Install additional packages for optional runtime features:
+ *   dev-util/tree-sitter-cli for building and testing grammars
+
+ * Messages for package net-analyzer/openbsd-netcat-1.195-r1:
+
+ * SO_REUSEPORT is introduced in linux 3.9. If your running kernel is older
+ * and kernel header is newer, nc will not listen correctly. Matching the header
+ * to the running kernel will do. See bug #490246 for details.
+
+ * Messages for package sys-apps/coreutils-9.1-r1:
+
+ * Make sure you run 'hash -r' in your active shells.
+ * You should also re-source your shell settings for LS_COLORS
+ *   changes, such as: source /etc/profile
+
+ * Messages for package net-print/cups-2.4.2-r6:
+
+ * Your USB printers will be managed via libusb. In case you run into problems, 
+ * please try disabling USB_PRINTER support in your kernel or blacklisting the
+ * usblp kernel module.
+ * Alternatively, just disable the usb useflag for cups (your printer will still work).
+ * 
+ * For information about installing a printer and general cups setup
+ * take a look at: https://wiki.gentoo.org/wiki/Printing
+
+ * Messages for package app-text/asciidoc-9.1.0:
+
+ * Install additional packages for optional runtime features:
+ *   media-sound/lilypond and media-gfx/imagemagick for "music" filter support
+ *   dev-texlive/texlive-latex and app-text/dvipng for "latex" filter support
+ *   dev-texlive/texlive-latex and app-text/dvisvgm for "latex" filter support
+ *   media-gfx/graphviz for "graphviz" filter support
+
+ * Messages for package net-vpn/openvpn-2.5.6:
+
+ * In order to use OpenVPN with systemd please use the correct systemd service file.
+ * 
+ * server:
+ * 
+ * - Place your server configuration file in /etc/openvpn/server
+ * - Use the openvpn-server@.service like so
+ * systemctl start openvpn-server@{Server-config}
+ * 
+ * client:
+ * 
+ * - Place your client configuration file in /etc/openvpn/client
+ * - Use the openvpn-client@.service like so:
+ * systemctl start openvpn-client@{Client-config}
+
+ * Messages for package app-misc/screen-4.9.0:
+
+ * This revision changes the screen socket location to /tmp/screen
+
+ * Messages for package sys-kernel/dracut-057-r2:
+
+ * 
+ * If the following test report contains a missing kernel
+ * configuration option, you should reconfigure and rebuild your
+ * kernel before booting image generated with this Dracut version.
+ * 
+ * Install additional packages for optional runtime features:
+ *   sys-fs/btrfs-progs for Scan for Btrfs on block devices
+ *   app-shells/dash for Allows use of dash instead of default bash (on your own risk)
+ *   sys-block/open-iscsi for Support iSCSI
+ *   sys-fs/mdadm for Support MD devices, also known as software RAID devices
+ *   sys-block/nbd for Support network block devices
+ *   net-fs/nfs-utils for Support NFS
+ *   net-nds/rpcbind for Support NFS
+ *   app-admin/rsyslog for Enable logging with rsyslog
+ *   sys-apps/rng-tools for Enable rngd service to help generating entropy early during boot
+
+ * Messages for package sys-apps/man-pages-6.01:
+
+ * This version of man-pages no longer depends on sys-apps/man-pages-posix!
+ * Please install sys-apps/man-pages-posix yourself if needed.
+
+ * Messages for package sys-devel/llvm-15.0.5:
+
+ * You can find additional opt-viewer utility scripts in:
+ *   /usr/lib/llvm/15/share/opt-viewer
+ * To use these scripts, you will need Python along with the following
+ * packages:
+ *   dev-python/pygments (for opt-viewer)
+ *   dev-python/pyyaml (for all of them)
+
+ * Messages for package dev-lang/rust-bin-1.65.0:
+
+ * Rust installs a helper script for calling GDB now,
+ * for your convenience it is installed under /usr/bin/rust-gdb-bin-1.65.0.
+
+ * Messages for package dev-lang/lua-5.1.5-r200:
+
+ * Install additional packages for optional runtime features:
+ *   app-emacs/lua-mode for Lua support for Emacs
+
+ * Messages for package dev-lua/luarocks-3.9.1:
+
+ * 
+ * To manage rocks for a Lua version other than the current dev-lua/luarocks default (5.1)
+ * you can use the command-line option --lua-version, e.g.
+ * 
+ *     luarocks --lua-version 5.3 install luasocket
+ * 
+ * (use 5.1 for luajit). Note that the relevant Lua version must already be present in the system.
+ * 
+
+ * Messages for package dev-lang/ruby-2.7.7:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(23|24|...)
+ * 
+
+ * Messages for package sys-devel/clang-15.0.5:
+
+ * You can find additional utility scripts in:
+ *   /usr/lib/llvm/15/share/clang
+ * Some of them are vim integration scripts (with instructions inside).
+ * The run-clang-tidy.py script requires the following additional package:
+ *   dev-python/pyyaml
+
+ * Messages for package net-firewall/iptables-1.8.7:
+
+ * Unsetting arptables symlinks before removal
+
+ * Messages for package sys-boot/grub-2.06-r4:
+
+ * For information on how to configure GRUB2 please refer to the guide:
+ *     https://wiki.gentoo.org/wiki/GRUB2_Quick_Start
+ * 
+ * Re-run grub-install to update installed boot code!
+ * 
+
+ * Messages for package x11-wm/awesome-4.3-r102:
+
+ * You have enabled the gnome USE flag.
+ * Please note that quitting awesome won't kill your gnome session.
+ * To really quit the session, you should bind your quit key
+ * to the following command:
+ *   gnome-session-quit --logout
+ * For more info visit
+ *   https://bugs.gentoo.org/show_bug.cgi?id=447308
+ * If you are having issues with Java application windows being
+ * completely blank, try installing
+ *   x11-misc/wmname
+ * and setting the WM name to LG3D.
+ * For more info visit
+ *   https://bugs.gentoo.org/show_bug.cgi?id=440724
+
+ * Messages for package sci-libs/gdal-3.5.3:
+
+ * Check available image and data formats after building with
+ * gdalinfo and ogrinfo (using the --formats switch).
+
+ * Messages for package app-text/ghostscript-gpl-9.56.1-r3:
+
+ * 
+ * Directory symlink(s) may need protection:
+ * 
+ * 	/usr/share/ghostscript/9.56.1/Resource/CMap
+ * 
+ * Use the UNINSTALL_IGNORE variable to exempt specific symlinks
+ * from the following search (see the make.conf man page).
+ * 
+ * Searching all installed packages for files installed via above symlink(s)...
+ * 
+ * The above directory symlink(s) are all safe to remove. Removing them now...
+ * 
+
+ * Messages for package sys-apps/pcsc-lite-1.9.9:
+
+ * Starting from version 1.6.5, pcsc-lite will start as user nobody in
+ * the pcscd group, to avoid running as root.
+ * 
+ * This also means you need the newest drivers available so that the
+ * devices get the proper owner.
+ * 
+ * Furthermore, a conf.d file is no longer installed by default, as
+ * the default configuration does not require one. If you need to
+ * pass further options to pcscd, create a file and set the
+ * EXTRA_OPTS variable.
+ * 
+ * Hotplug support is provided by udev rules.
+ * When using OpenRC you additionally need to tell it to hotplug
+ * pcscd by setting this variable in /etc/rc.conf:
+ * 
+ *     rc_hotplug="pcscd"
+
+ * Messages for package net-libs/webkit-gtk-2.38.2:
+
+ * ERROR: net-libs/webkit-gtk-2.38.2::gentoo failed (compile phase):
+ *   ninja -v -j13 -l4 failed
+ * 
+ * Call stack:
+ *     ebuild.sh, line  122:  Called src_compile
+ *   environment, line 4014:  Called cmake_src_compile
+ *   environment, line 1817:  Called cmake_build
+ *   environment, line 1786:  Called eninja
+ *   environment, line 2243:  Called die
+ * The specific snippet of code:
+ *       "$@" || die "${nonfatal_args[@]}" "${*} failed"
+ * 
+ * If you need support, post the output of `emerge --info '=net-libs/webkit-gtk-2.38.2::gentoo'`,
+ * the complete build log and the output of `emerge -pqv '=net-libs/webkit-gtk-2.38.2::gentoo'`.
+ * The complete build log is located at '/var/tmp/portage/net-libs/webkit-gtk-2.38.2/temp/build.log'.
+ * The ebuild environment file is located at '/var/tmp/portage/net-libs/webkit-gtk-2.38.2/temp/environment'.
+ * Working directory: '/var/tmp/portage/net-libs/webkit-gtk-2.38.2/work/webkitgtk-2.38.2_build'
+ * S: '/var/tmp/portage/net-libs/webkit-gtk-2.38.2/work/webkitgtk-2.38.2'
+
+ * Regenerating GNU info directory index...
+ * Processed 147 info files.
+
+!!! existing preserved libs:
+>>> package: dev-libs/libffi-3.4.4
+ *  - /usr/lib64/libffi.so.7
+ *  - /usr/lib64/libffi.so.7.1.0
+ *      used by /usr/lib/llvm/12/lib64/libLLVM-12.so (sys-devel/llvm-12.0.1)
+ *      used by /usr/lib/llvm/13/lib64/libLLVM-13.so (sys-devel/llvm-13.0.1)
+ *      used by /usr/lib/llvm/14/lib64/libLLVM-14.so (sys-devel/llvm-14.0.6-r2)
+ *      used by /usr/lib64/libruby25.so.2.5.8 (dev-lang/ruby-2.5.8-r1)
+ *      used by /usr/lib64/libruby26.so.2.6.9 (dev-lang/ruby-2.6.9)
+ *      used by /usr/lib64/ruby/gems/2.6.0/extensions/x86_64-linux/2.6.0/ffi-1.14.2/ffi_c.so (dev-ruby/ffi-1.14.2-r1)
+ *      used by /usr/lib64/ruby/gems/2.6.0/gems/ffi-1.14.2/lib/ffi_c.so (dev-ruby/ffi-1.14.2-r1)
+ *      used by /usr/lib64/ruby/gems/2.7.0/extensions/x86_64-linux/2.7.0/ffi-1.14.2/ffi_c.so (dev-ruby/ffi-1.14.2-r1)
+ *      used by /usr/lib64/ruby/gems/2.7.0/gems/ffi-1.14.2/lib/ffi_c.so (dev-ruby/ffi-1.14.2-r1)
+>>> package: dev-libs/libxmlb-0.3.10
+ *  - /usr/lib64/libxmlb.so.1
+ *  - /usr/lib64/libxmlb.so.1.0.0
+ *      used by /usr/bin/fwupdmgr (sys-apps/fwupd-1.7.5)
+ *      used by /usr/bin/fwupdtool (sys-apps/fwupd-1.7.5)
+ *      used by /usr/lib64/fwupd-plugins-5/libfu_plugin_acpi_phat.so (sys-apps/fwupd-1.7.5)
+ *      used by /usr/lib64/fwupd-plugins-5/libfu_plugin_bcm57xx.so (sys-apps/fwupd-1.7.5)
+ *      used by /usr/lib64/fwupd-plugins-5/libfu_plugin_elantp.so (sys-apps/fwupd-1.7.5)
+ *      used by /usr/lib64/fwupd-plugins-5/libfu_plugin_pixart_rf.so (sys-apps/fwupd-1.7.5)
+ *      used by /usr/lib64/fwupd-plugins-5/libfu_plugin_redfish.so (sys-apps/fwupd-1.7.5)
+ *      used by /usr/lib64/libfwupdplugin.so.5.0.0 (sys-apps/fwupd-1.7.5)
+ *      used by /usr/libexec/fwupd/fwupd (sys-apps/fwupd-1.7.5)
+ *      used by /usr/libexec/fwupd/fwupdoffline (sys-apps/fwupd-1.7.5)
+>>> package: dev-libs/protobuf-21.9
+ *  - /usr/lib64/libprotobuf-lite.so.30
+ *  - /usr/lib64/libprotobuf-lite.so.30.0.3
+ *      used by /usr/lib64/vlc/plugins/stream_out/libstream_out_chromecast_plugin.so (media-video/vlc-3.0.17.4-r2)
+Use emerge @preserved-rebuild to rebuild packages using these libraries
+
+-------------------------------
+
+
+ * Messages for package net-misc/dropbear-2022.82:
+
+ * No saved config to restore - please remove USE=savedconfig or
+ * provide a configuration file in /etc/portage/savedconfig/net-misc/dropbear
+ * and ensure the build process has permission to access it.
+ * Your config file(s) will not be used this time.
+ * Your configuration for net-misc/dropbear-2022.82 has been saved in 
+ * "/etc/portage/savedconfig/net-misc/dropbear-2022.82" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+
+ * Messages for package app-containers/docker-20.10.17:
+
+ * 
+ * To use Docker, the Docker daemon must be running as root. To automatically
+ * start the Docker daemon at boot:
+ *   systemctl enable docker.service
+ * 
+ * To use Docker as a non-root user, add yourself to the 'docker' group:
+ *   usermod -aG docker <youruser>
+ * 
+ * Starting with docker 20.10.2, docker has been split into
+ * two packages upstream, so Gentoo has followed suit.
+ * 
+ * app-containers/docker contains the daemon and
+ * app-containers/docker-cli contains the docker command.
+ * 
+ * docker currently installs docker-cli using the cli use flag.
+ * 
+ * This use flag is temporary, so you need to take the
+ * following actions:
+ * 
+ * First, disable the cli use flag for app-containers/docker
+ * 
+ * Then, if you need docker-cli and docker on the same machine,
+ * run the following command:
+ * 
+ * # emerge --noreplace docker-cli
+ * 
+
+ * Messages for package dev-python/pyscard-2.0.5:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/wxpython for Gui support
+ *   dev-python/Pyro4 for Support of remote readers with Pyro
+
+ * Messages for package app-admin/sudo-1.9.12_p1:
+
+ * To use the -A (askpass) option, you need to install a compatible
+ * password program from the following list. Starred packages will
+ * automatically register for the use with sudo (but will not force
+ * the -A option):
+ * 
+ *  [*] net-misc/ssh-askpass-fullscreen
+ *      net-misc/x11-ssh-askpass
+ * 
+ * You can override the choice by setting the SUDO_ASKPASS environmnent
+ * variable to the program you want to use.
+
+ * Messages for package net-im/signal-desktop-bin-6.0.0:
+
+ * For using the tray icon on compatible desktop environments, start Signal with
+ *  '--start-in-tray' or '--use-tray-icon'.
+
+ * Messages for package app-emulation/qemu-7.1.0-r2:
+
+ * This version of qemu pins new versions of firmware blobs:
+ * 	sys-firmware/edk2-ovmf-bin-202202
+ * 	sys-firmware/seabios-bin-1.16.0
+ * 	sys-firmware/ipxe-1.21.1
+ * 	sys-firmware/sgabios-0.1_pre10
+ * This might break resume of hibernated guests (started with a different
+ * firmware version) and live migration to/from qemu versions with different
+ * firmware. Please (cold) restart all running guests. For functional
+ * guest migration ensure that all
+ * hosts run at least
+ * 	app-emulation/qemu-7.1.0.
+
+ * Messages for package media-sound/pulseaudio-daemon-16.1-r3:
+
+ * You have enabled bluetooth USE flag for pulseaudio. Daemon will now handle
+ * bluetooth Headset (HSP HS and HSP AG) and Handsfree (HFP HF) profiles using
+ * native headset backend by default. This can be selectively disabled
+ * via runtime configuration arguments to module-bluetooth-discover
+ * in /etc/pulse/default.pa
+ * To disable HFP HF append enable_native_hfp_hf=false
+ * To disable HSP HS append enable_native_hsp_hs=false
+ * To disable HSP AG append headset=auto or headset=ofono
+ * (note this does NOT require enabling USE ofono)
+ * 
+ * GStreamer-based RTP implementation modile enabled.
+ * To use OPUS payload install media-plugins/gst-plugins-opus
+ * and add enable_opus=1 argument to module-rtp-send
+ * 
+ * Pulseaudio autospawn by client library is no longer enabled when systemd is available.
+ * It's recommended to start pulseaudio via its systemd user units:
+ * 
+ *   systemctl --user enable pulseaudio.service pulseaudio.socket
+ * 
+ * Root user can change system default configuration for all users:
+ * 
+ *   systemctl --global enable pulseaudio.service pulseaudio.socket
+ * 
+ * If you would like to enable autospawn by client library, edit autospawn flag in /etc/pulse/client.conf like this:
+ * 
+ *   autospawn = yes
+ * 
+ * The change from autospawn to user units will take effect after restarting.
+ * 
+
+ * Messages for package mail-client/thunderbird-bin-102.5.1:
+
+ * Optional runtime features:
+ *   net-libs/libotr for encrypted chat support
+
+ * Messages for package gnome-base/gnome-session-43.0:
+
+ * If you use a custom .xinitrc for your X session,
+ * make sure that the commands in the xinitrc.d scripts are run.
+
+ * Messages for package xfce-base/thunar-4.16.11:
+
+ * If you were using an older Xfce version and Thunar fails to start
+ * with a message similar to:
+ *   Failed to register: Timeout was reached
+ * you may need to reset your xfce4 session:
+ *   rm ~/.cache/sessions/xfce4-session-*
+ * See https://bugs.gentoo.org/698914.
+
+-------------------------------
+
+
+
+
+ * Messages for package net-libs/libpsl-0.21.1-r1:
+
+ * "icu" and "idn" USE flags are enabled. Using "idn".
+
+ * Messages for package dev-lang/go-1.19.4:
+
+ * After dev-lang/go is updated it is recommended to rebuild
+ * all packages compiled with previous versions of dev-lang/go
+ * due to the static linking nature of go.
+ * If this is not done, the packages compiled with the older
+ * version of the compiler will not be updated until they are
+ * updated individually, which could mean they will have
+ * vulnerabilities.
+ * Run 'emerge @golang-rebuild' to rebuild all 'go' packages
+ * See https://bugs.gentoo.org/752153 for more info
+
+ * Messages for package sys-kernel/linux-firmware-20221214:
+
+ * No saved config to restore - please remove USE=savedconfig or
+ * provide a configuration file in /etc/portage/savedconfig/sys-kernel/linux-firmware
+ * and ensure the build process has permission to access it.
+ * Your config file(s) will not be used this time.
+ * Your configuration for sys-kernel/linux-firmware-20221214 has been saved in 
+ * "/etc/portage/savedconfig/sys-kernel/linux-firmware-20221214" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+ * USE=savedconfig is active. You must handle file collisions manually.
+ * If you are only interested in particular firmware files, edit the saved
+ * configfile and remove those that you do not want.
+
+ * Messages for package net-analyzer/openbsd-netcat-1.218_p5:
+
+ * SO_REUSEPORT is introduced in linux 3.9. If your running kernel is older
+ * and kernel header is newer, nc will not listen correctly. Matching the header
+ * to the running kernel will do. See bug #490246 for details.
+
+ * Messages for package app-alternatives/bzip2-1:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/bin/bzcat
+ * 	/bin/bunzip2
+ * 	/bin/bzip2
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/bzip2-1' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package app-alternatives/gzip-0:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/bin/zcat
+ * 	/bin/gunzip
+ * 	/bin/gzip
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/gzip-0' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package app-alternatives/sh-0:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/bin/sh
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/sh-0' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package app-shells/zsh-completions-0.34.0:
+
+ * If you happen to compile your functions, you may need to delete
+ * ~/.zcompdump{,.zwc} and recompile to make the new completions available
+ * to your shell.
+
+ * Messages for package dev-lang/rust-bin-1.66.1:
+
+ * Rust installs a helper script for calling GDB now,
+ * for your convenience it is installed under /usr/bin/rust-gdb-bin-1.66.1.
+
+ * Messages for package app-alternatives/awk-4:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/bin/awk
+ * 	/usr/bin/awk
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/awk-4' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package dev-libs/boost-1.81.0-r1:
+
+ * Boost.Regex is *extremely* ABI sensitive. If you get errors such as
+ * 
+ *   undefined reference to `boost::re_detail_108100::cpp_regex_traits_implementation
+ *     <char>::transform_primary[abi:cxx11](char const*, char const*) const'
+ * 
+ * Then you need to recompile Boost and all its reverse dependencies
+ * using the same toolchain. In general, *every* change of the C++ toolchain
+ * requires a complete rebuild of the Boost-dependent ecosystem.
+ * 
+ * See for instance https://bugs.gentoo.org/638138
+
+ * Messages for package app-alternatives/tar-0:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/bin/tar
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/tar-0' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package app-alternatives/lex-0-r1:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/usr/bin/lex
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/lex-0-r1' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package app-alternatives/yacc-1-r2:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/usr/bin/yacc
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/yacc-1-r2' merged despite file collisions.
+ * If necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package app-alternatives/bc-0:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/usr/bin/dc
+ * 	/usr/bin/bc
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/bc-0' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package dev-lang/perl-5.36.0-r1:
+
+ * UPDATE THE PERL MODULES:
+ * After updating dev-lang/perl the installed Perl modules
+ * have to be re-installed. In most cases, this is done automatically
+ * by the package manager, but subsequent steps are still recommended
+ * to ensure system consistency.
+ * 
+ * You should start with a depclean to remove any unused perl dependencies
+ * that may confuse portage in future. Regular depcleans are also encouraged
+ * as part of your regular update cycle, as that will keep perl upgrades working.
+ * Recommended: emerge --depclean -va
+ * 
+ * You should then call perl-cleaner to clean up any old files and trigger any
+ * remaining rebuilds portage may have missed.
+ * Use: perl-cleaner --all
+
+ * Messages for package sys-apps/coreutils-9.1-r2:
+
+ * Make sure you run 'hash -r' in your active shells.
+ * You should also re-source your shell settings for LS_COLORS
+ *   changes, such as: source /etc/profile
+
+ * Messages for package sys-devel/gcc-11.3.1_p20221209:
+
+ * No pre-generated info pages in tarball. Allowing regeneration with texinfo...
+
+ * Messages for package dev-python/lxml-4.9.2:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/beautifulsoup4 for Support for BeautifulSoup as a parser backend
+
+ * Messages for package app-text/asciidoc-10.2.0:
+
+ * Install additional packages for optional runtime features:
+ *   media-sound/lilypond and virtual/imagemagick-tools for music filter support
+ *   dev-util/source-highlight and dev-python/pygments and app-text/highlight for source filter support
+ *   dev-texlive/texlive-latex and app-text/dvipng for latex filter support
+ *   dev-texlive/texlive-latex and app-text/dvisvgm for latex filter support
+ *   media-gfx/graphviz for graphviz filter support
+
+ * Messages for package sys-libs/pam-1.5.2-r3:
+
+ * Some software with pre-loaded PAM libraries might experience
+ * warnings or failures related to missing symbols and/or versions
+ * after any update. While unfortunate this is a limit of the
+ * implementation of PAM and the software, and it requires you to
+ * restart the software manually after the update.
+ * 
+ * You can get a list of such software running a command like
+ *   lsof / | grep -E -i 'del.*libpam\.so'
+ * 
+ * Alternatively, simply reboot your system.
+
+ * Messages for package sys-libs/ldb-2.4.4:
+
+ * You have sssd installed. It is known to break after ldb upgrades,
+ * so please try to rebuild it before reporting bugs.
+ * See https://bugs.gentoo.org/404281
+
+ * Messages for package dev-lang/ruby-3.0.5:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(23|24|...)
+ * 
+
+ * Messages for package dev-ruby/rubygems-3.2.33:
+
+ * 
+ * To switch between available Ruby profiles, execute as root:
+ * 	eselect ruby set ruby(25|26|...)
+ * 
+
+ * Messages for package app-alternatives/cpio-0:
+
+ * This package will overwrite one or more files that may belong to other
+ * packages (see list below). You can use a command such as `portageq
+ * owners / <filename>` to identify the installed package that owns a
+ * file. If portageq reports that only one package owns a file then do
+ * NOT file a bug report. A bug report is only useful if it identifies at
+ * least two or more packages that are known to install the same file(s).
+ * If a collision occurs and you can not explain where the file came from
+ * then you should simply ignore the collision since there is not enough
+ * information to determine if a real problem exists. Please do NOT file
+ * a bug report at https://bugs.gentoo.org/ unless you report exactly
+ * which two packages install the same file(s). See
+ * https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+ * to solve the problem. And once again, please do NOT file a bug report
+ * unless you have completely understood the above message.
+ * 
+ * Detected file collision(s):
+ * 
+ * 	/bin/cpio
+ * 
+ * Searching all installed packages for file collisions...
+ * 
+ * Press Ctrl-C to Stop
+ * 
+ * None of the installed packages claim the file(s).
+ * 
+ * Package 'app-alternatives/cpio-0' merged despite file collisions. If
+ * necessary, refer to your elog messages for the whole content of the
+ * above message.
+
+ * Messages for package net-fs/cifs-utils-6.15-r1:
+
+ * setuid use flag was dropped due to multiple security implications
+ * such as CVE-2009-2948, CVE-2011-3585 and CVE-2012-1586
+ * You are free to set setuid flags by yourself
+
+ * Messages for package perl-core/Encode-3.120.0:
+
+ * Unable to establish //usr/bin/encguess symlink
+ * Unable to establish //usr/share/man/man1/encguess.1.bz2 symlink
+
+ * Messages for package perl-core/CPAN-2.290.0-r1:
+
+ * Removing dead symlink //usr/bin/cpan-mirrors
+ * Removing dead symlink //usr/share/man/man1/cpan-mirrors.1.bz2
+
+ * Messages for package app-misc/ca-certificates-20211016.3.86:
+
+ * Removing the following broken symlinks:
+ * /etc/ssl/certs/349f2832.0 -> EC-ACC.pem
+ * /etc/ssl/certs/4304c5e5.0 -> Network_Solutions_Certificate_Authority.pem
+ * /etc/ssl/certs/03179a64.0 -> Staat_der_Nederlanden_EV_Root_CA.pem
+
+ * Messages for package sys-fs/lvm2-2.03.17-r2:
+
+ * LVM was previously enabled but is now disabled.
+ * Please enable USE=lvm if you need the LVM daemon and
+ * tools like 'lvchange', 'vgchange', etc!
+ * See the 2022-11-19-lvm2-default-USE-flags news item for more details.
+
+ * Messages for package app-misc/screen-4.9.0-r1:
+
+ * This revision changes the screen socket location to /tmp/screen
+
+ * Messages for package sys-kernel/dracut-057-r3:
+
+ * 
+ * If the following test report contains a missing kernel
+ * configuration option, you should reconfigure and rebuild your
+ * kernel before booting image generated with this Dracut version.
+ * 
+ * Install additional packages for optional runtime features:
+ *   app-shells/dash for Allows use of dash instead of default bash (on your own risk)
+ *   sys-block/open-iscsi for Support iSCSI
+ *   sys-fs/lvm2[lvm] for Support Logical Volume Manager
+ *   sys-fs/mdadm for Support MD devices, also known as software RAID devices
+ *   sys-block/nbd for Support network block devices
+ *   net-fs/nfs-utils for Support NFS
+ *   net-nds/rpcbind for Support NFS
+ *   app-admin/rsyslog for Enable logging with rsyslog
+ *   sys-apps/rng-tools for Enable rngd service to help generating entropy early during boot
+
+ * Messages for package app-doc/gnucash-docs-4.12:
+
+ * Install additional packages for optional runtime features:
+ *   dev-java/fop for generating PDF files
+
+ * Messages for package dev-python/ssl-fetch-0.4-r1:
+
+ * This is beta software.
+ * The APIs it installs should be considered unstable
+ * and are subject to change in these early versions.
+ * 
+ * Please file any enhancement requests, or bugs
+ * at https://github.com/dol-sen/ssl-fetch/issues
+
+ * Messages for package dev-vcs/git-2.39.1:
+
+ * Some scripts require additional dependencies:
+ *   dev-util/quilt for git-quiltimport
+ *   www-servers/lighttpd for git-instaweb
+ *   www-servers/apache for git-instaweb
+ *   www-servers/nginx for git-instaweb
+
+ * Messages for package sys-auth/sssd-2.5.2-r3:
+
+ * You must set up sssd.conf (default installed into /etc/sssd)
+ * and (optionally) configuration in /etc/pam.d in order to use SSSD
+ * features. Please see howto in	https://sssd.io/docs/design_pages/smartcard_authentication_require.html
+ * Install additional packages for optional runtime features:
+ *   app-crypt/adcli for Kerberos keytab renew (see krb5_renew_interval)
+
+ * Messages for package app-containers/docker-20.10.22:
+
+ * 
+ * To use Docker, the Docker daemon must be running as root. To automatically
+ * start the Docker daemon at boot:
+ *   systemctl enable docker.service
+ * 
+ * To use Docker as a non-root user, add yourself to the 'docker' group:
+ *   usermod -aG docker <youruser>
+ * 
+ * Starting with docker 20.10.2, docker has been split into
+ * two packages upstream, so Gentoo has followed suit.
+ * 
+ * app-containers/docker contains the daemon and
+ * app-containers/docker-cli contains the docker command.
+ * 
+ * docker currently installs docker-cli using the cli use flag.
+ * 
+ * This use flag is temporary, so you need to take the
+ * following actions:
+ * 
+ * First, disable the cli use flag for app-containers/docker
+ * 
+ * Then, if you need docker-cli and docker on the same machine,
+ * run the following command:
+ * 
+ * # emerge --noreplace docker-cli
+ * 
+
+ * Messages for package sys-devel/llvm-15.0.6-r1:
+
+ * You can find additional opt-viewer utility scripts in:
+ *   /usr/lib/llvm/15/share/opt-viewer
+ * To use these scripts, you will need Python along with the following
+ * packages:
+ *   dev-python/pygments (for opt-viewer)
+ *   dev-python/pyyaml (for all of them)
+
+ * Messages for package net-print/cups-2.4.2-r6:
+
+ * Your USB printers will be managed via libusb. In case you run into problems, 
+ * please try disabling USB_PRINTER support in your kernel or blacklisting the
+ * usblp kernel module.
+ * Alternatively, just disable the usb useflag for cups (your printer will still work).
+ * 
+ * For information about installing a printer and general cups setup
+ * take a look at: https://wiki.gentoo.org/wiki/Printing
+
+ * Messages for package sys-devel/clang-15.0.6-r1:
+
+ * You can find additional utility scripts in:
+ *   /usr/lib/llvm/15/share/clang
+ * Some of them are vim integration scripts (with instructions inside).
+ * The run-clang-tidy.py script requires the following additional package:
+ *   dev-python/pyyaml
+
+ * Messages for package sci-libs/gdal-3.5.3-r1:
+
+ * Check available image and data formats after building with
+ * gdalinfo and ogrinfo (using the --formats switch).
+
+ * Messages for package x11-libs/gtk+-3.24.35:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+ * Messages for package gui-libs/gtk-4.8.2-r1:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+ * Messages for package sys-apps/pcsc-lite-1.9.9:
+
+ * Starting from version 1.6.5, pcsc-lite will start as user nobody in
+ * the pcscd group, to avoid running as root.
+ * 
+ * This also means you need the newest drivers available so that the
+ * devices get the proper owner.
+ * 
+ * Furthermore, a conf.d file is no longer installed by default, as
+ * the default configuration does not require one. If you need to
+ * pass further options to pcscd, create a file and set the
+ * EXTRA_OPTS variable.
+ * 
+ * Hotplug support is provided by udev rules.
+ * When using OpenRC you additionally need to tell it to hotplug
+ * pcscd by setting this variable in /etc/rc.conf:
+ * 
+ *     rc_hotplug="pcscd"
+
+ * Messages for package dev-python/pyscard-2.0.5:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/wxpython for Gui support
+ *   dev-python/Pyro4 for Support of remote readers with Pyro
+
+ * Messages for package app-admin/sudo-1.9.12_p2:
+
+ * To use the -A (askpass) option, you need to install a compatible
+ * password program from the following list. Starred packages will
+ * automatically register for the use with sudo (but will not force
+ * the -A option):
+ * 
+ *  [*] net-misc/ssh-askpass-fullscreen
+ *      net-misc/x11-ssh-askpass
+ * 
+ * You can override the choice by setting the SUDO_ASKPASS environmnent
+ * variable to the program you want to use.
+
+ * Messages for package media-gfx/darktable-4.0.1-r1:
+
+ * 
+ * When updating a major version,
+ * please bear in mind that your edits will be preserved during this process,
+ * but it will not be possible to downgrade any more.
+ * 
+ * It will not be possible to downgrade!
+ * 
+
+ * Messages for package net-im/signal-desktop-bin-6.2.0:
+
+ * For using the tray icon on compatible desktop environments, start Signal with
+ *  '--start-in-tray' or '--use-tray-icon'.
+
+ * Messages for package app-emulation/qemu-7.2.0:
+
+ * This version of qemu pins new versions of firmware blobs:
+ * 	sys-firmware/edk2-ovmf-bin-202202
+ * 	sys-firmware/seabios-bin-1.16.0
+ * 	sys-firmware/ipxe-1.21.1
+ * 	sys-firmware/sgabios-0.1_pre10
+ * This might break resume of hibernated guests (started with a different
+ * firmware version) and live migration to/from qemu versions with different
+ * firmware. Please (cold) restart all running guests. For functional
+ * guest migration ensure that all
+ * hosts run at least
+ * 	app-emulation/qemu-7.2.0.
+
+ * Messages for package mail-client/thunderbird-bin-102.6.1:
+
+ * Optional runtime features:
+ *   net-libs/libotr for encrypted chat support
+
+ * Messages for package app-emulation/virtualbox-7.0.4-r1:
+
+ * To launch VirtualBox just type: "virtualbox".
+ * You must be in the vboxusers group to use VirtualBox.
+ * 
+ * The latest user manual is available for download at:
+ * https://download.virtualbox.org/virtualbox/7.0.4/UserManual.pdf
+ * 
+
+ * Messages for package net-analyzer/wireshark-3.6.10:
+
+ * NOTE: To capture traffic with wireshark as normal user you have to
+ * add yourself to the pcap group. This security measure ensures
+ * that only trusted users are allowed to sniff your traffic.
+
+ * Messages for package media-video/pipewire-0.3.63-r2:
+
+ * It is recommended to raise RLIMIT_MEMLOCK to 256 for users
+ * using PipeWire. Do it either manually or add yourself
+ * to the 'audio' group:
+ * 
+ *   usermod -aG audio <youruser>
+ * 
+ * JACK emulation is incomplete and not all programs will work. PipeWire's
+ * alternative libraries have been installed to a non-default location.
+ * To use them, put pw-jack <application> before every JACK application.
+ * When using pw-jack, do not run jackd/jackdbus. However, a virtual/jack
+ * provider is still needed to compile the JACK applications themselves.
+ * 
+ * When switching from PulseAudio, you may need to disable PulseAudio:
+ * 
+ *   systemctl --user disable pulseaudio.service pulseaudio.socket
+ * 
+ * To use PipeWire, the user units must be manually enabled
+ * by running this command as each user you use for desktop activities:
+ * 
+ *   systemctl --user enable pipewire.socket pipewire-pulse.socket
+ * 
+ * A reboot is recommended to avoid interferences from still running
+ * PulseAudio daemon.
+ * 
+ * Both new users and those upgrading need to enable WirePlumber
+ * for relevant users:
+ * 
+ *   systemctl --user disable pipewire-media-session.service
+ *   systemctl --user --force enable wireplumber.service
+ * 
+ * Root user may replace --user with --global to change system default
+ * configuration for all of the above commands.
+ * 
+ * For latest tips and tricks, troubleshooting information and documentation
+ * in general, please refer to https://wiki.gentoo.org/wiki/PipeWire
+ * 
+
+ * Messages for package app-text/texlive-core-2021-r5:
+
+ * 
+ * If you have configuration files in /etc/texmf to merge,
+ * please update them and run /usr/sbin/texmf-update.
+ * 
+ * If you are migrating from an older TeX distribution
+ * Please make sure you have read:
+ * https://wiki.gentoo.org/wiki/Project:TeX/Tex_Live_Migration_Guide
+ * in order to avoid possible problems
+
+ * Messages for package media-video/wireplumber-0.4.13:
+
+ * pipewire-media-session.service is no longer installed. You must switch
+ * to wireplumber.service user unit before your next logout/reboot:
+ * systemctl --user disable pipewire-media-session.service
+ * systemctl --user --force enable wireplumber.service
+
+ * Messages for package gnome-base/gnome-session-43.0:
+
+ * If you use a custom .xinitrc for your X session,
+ * make sure that the commands in the xinitrc.d scripts are run.
+
+ * Regenerating GNU info directory index...
+ * Processed 157 info files.
+
+!!! existing preserved libs:
+>>> package: gnome-base/gnome-desktop-43-r301
+ *  - /usr/lib64/libgnome-desktop-3.so.19
+ *  - /usr/lib64/libgnome-desktop-3.so.19.3.0
+ *      used by /usr/bin/cheese (media-video/cheese-41.1)
+>>> package: media-libs/tiff-4.5.0
+ *  - /usr/lib64/libtiff.so.5
+ *  - /usr/lib64/libtiff.so.5.8.0
+ *      used by /usr/lib/python3.8/site-packages/PIL/_imaging.cpython-38-x86_64-linux-gnu.so (dev-python/pillow-8.3.2)
+ *      used by /usr/lib/python3.9/site-packages/PIL/_imaging.cpython-39-x86_64-linux-gnu.so (dev-python/pillow-8.3.2)
+>>> package: sci-geosciences/geocode-glib-3.26.4
+ *  - /usr/lib64/libgeocode-glib.so.0
+ *  - /usr/lib64/libgeocode-glib.so.0.0.0
+ *      used by /usr/lib64/libgweather-3.so.16.0.0 (dev-libs/libgweather-40.0)
+Use emerge @preserved-rebuild to rebuild packages using these libraries
+
+
+-------------------------------
