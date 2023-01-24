@@ -210,6 +210,19 @@
     euse -p "{{ flags_entry.package }}"
     -E {{ flags_entry.use_flags | join(' ') }}
   register: euse_cmd
+  changed_when:
+  - euse_cmd.rc == 0
+  - >-
+    flags_entry.use_flags
+    | map(
+      'regex_replace',
+      '^(.*)$',
+      'WARNING: USE flag "\\1" is already enabled for ' + flags_entry.package
+    )
+    | intersect(euse_cmd.stdout_lines)
+    | length
+    !=
+    flags_entry.use_flags | length
   failed_when: >-
     euse_cmd.rc != 0 and
     'ERROR: ' in euse_cmd.stdout
@@ -227,6 +240,21 @@
     euse -p "{{ flags_entry.package }}"
     -D {{ flags_entry.use_flags | join(' ') }}
   register: euse_cmd
+  changed_when:
+  - euse_cmd.rc == 0
+  - >-
+    (
+      flags_entry.use_flags
+      | map(
+        'regex_replace',
+        '^(.*)$',
+        'WARNING: USE flag "\\1" is already disabled for ' + flags_entry.package
+      )
+      | intersect(euse_cmd.stdout_lines)
+      | length
+    )
+    !=
+    (flags_entry.use_flags | length)
   failed_when: >-
     euse_cmd.rc != 0 and
     'ERROR: ' in euse_cmd.stdout
