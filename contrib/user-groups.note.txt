@@ -17,3 +17,8 @@ portage	Be able to access portage restricted resources.
 usb	Be able to access USB devices.
 video	Be able to access video capturing hardware and doing hardware acceleration.
 wheel	Be able to use su.
+
+=====================================
+
+input — suggested by gui-libs/wlroots, required for the compositors to be
+        able to access input devices via libinput (monitors, keybords, mice?)
