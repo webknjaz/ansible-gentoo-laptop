@@ -1194,7 +1194,7 @@ Traceback (most recent call last):
 
  * Install additional packages for optional runtime features:
  *   x11-libs/libva-vdpau-driver for NVIDIA GPU support
- *   x11-libs/libva-intel-media-driver for Newer Intel GPU supprt
+ *   x11-libs/libva-intel-media-driver for Newer Intel GPU support
 
  * Messages for package app-admin/sudo-1.9.8_p2:
 
