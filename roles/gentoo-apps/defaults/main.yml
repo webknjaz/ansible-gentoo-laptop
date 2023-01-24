@@ -20,6 +20,7 @@ use_flags_global_enabled:
 - bluetooth
 - kerberos
 - luajit
+- lvm  # LVM2 partitions and CLI apps
 - pulseaudio
 - python
 - sasl
