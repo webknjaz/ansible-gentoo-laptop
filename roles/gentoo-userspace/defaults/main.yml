@@ -311,6 +311,7 @@ code_workspace:
       - github-actions-playground/enroll-me
       - gliderlabs/herokuish
       - HypothesisWorks/hypothesis
+      - hynek/environ-config
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
       - jaraco/skeleton
@@ -486,6 +487,7 @@ code_workspace:
         gentoo/gentoo: webknjaz/gentoo
         gliderlabs/herokuish: webknjaz/herokuish
         HypothesisWorks/hypothesis: webknjaz/hypothesis
+        hynek/environ-config: webknjaz/environ-config
         jaraco/skeleton: webknjaz/jaraco-skeleton
         jazzband/pip-tools: webknjaz/pip-tools
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
