@@ -191,6 +191,7 @@ essential_ebuilds:
 - www-client/links  # needed to browse web docs from terminal
 ebuilds:
 - abrt
+- app-crypt/adcli  # for Kerberos keytab renew (see krb5_renew_interval) @ sssd
 - x11-misc/arandr
 - x11-misc/autorandr
 - sys-power/acpi
