@@ -362,6 +362,7 @@ ebuilds:
 - sys-process/time
 - tmux
 - traceroute
+- dev-util/tree-sitter-cli
 - ttf-bitstream-vera
 - unicode-emoji
 - unifont
