@@ -265,6 +265,7 @@ code_workspace:
       - ansible/ansibullbot
       - ansible/collection_migration
       - ansible/foreman-test-container
+      - ansible/jinja-docsite
       - ansible/gha-runner-scaler
       - ansible/gha-wsl2-playground
       - ansible/lightbulb
@@ -463,6 +464,7 @@ code_workspace:
         ansible/ansible-navigator-demo-ee: webknjaz/ansible-creator-ee
         ansible/ansibullbot: webknjaz/ansibullbot
         ansible/collection_migration: webknjaz/collection_migration
+        ansible/jinja-docsite: webknjaz/ansible--jinja-docsite
         ansible/lightbulb: webknjaz/lightbulb
         ansible/molecule: webknjaz/molecule
         ansible/pylibssh: webknjaz/pylibssh
