@@ -2699,3 +2699,174 @@ Use emerge @preserved-rebuild to rebuild packages using these libraries
 
 
 -------------------------------
+
+
+
+ * Messages for package sys-kernel/linux-firmware-20230117:
+
+ * No saved config to restore - please remove USE=savedconfig or
+ * provide a configuration file in /etc/portage/savedconfig/sys-kernel/linux-firmware
+ * and ensure the build process has permission to access it.
+ * Your config file(s) will not be used this time.
+ * Your configuration for sys-kernel/linux-firmware-20230117 has been saved in 
+ * "/etc/portage/savedconfig/sys-kernel/linux-firmware-20230117" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+ * USE=savedconfig is active. You must handle file collisions manually.
+ * If you are only interested in particular firmware files, edit the saved
+ * configfile and remove those that you do not want.
+
+ * Messages for package dev-lang/go-1.19.5:
+
+ * After dev-lang/go is updated it is recommended to rebuild
+ * all packages compiled with previous versions of dev-lang/go
+ * due to the static linking nature of go.
+ * If this is not done, the packages compiled with the older
+ * version of the compiler will not be updated until they are
+ * updated individually, which could mean they will have
+ * vulnerabilities.
+ * Run 'emerge @golang-rebuild' to rebuild all 'go' packages
+ * See https://bugs.gentoo.org/752153 for more info
+
+ * Messages for package media-fonts/font-misc-misc-1.1.2-r3:
+
+ * Installed fonts changed. Run 'xset fp rehash' if you are using non-fontconfig applications.
+
+ * Messages for package sys-devel/llvm-15.0.7:
+
+ * You can find additional opt-viewer utility scripts in:
+ *   /usr/lib/llvm/15/share/opt-viewer
+ * To use these scripts, you will need Python along with the following
+ * packages:
+ *   dev-python/pygments (for opt-viewer)
+ *   dev-python/pyyaml (for all of them)
+
+ * Messages for package mail-client/thunderbird-bin-102.7.2:
+
+ * Optional runtime features:
+ *   net-libs/libotr for encrypted chat support
+
+ * Messages for package sys-libs/ldb-2.4.4:
+
+ * You have sssd installed. It is known to break after ldb upgrades,
+ * so please try to rebuild it before reporting bugs.
+ * See https://bugs.gentoo.org/404281
+
+ * Messages for package net-im/signal-desktop-bin-6.3.0:
+
+ * For using the tray icon on compatible desktop environments, start Signal with
+ *  '--start-in-tray' or '--use-tray-icon'.
+
+ * Messages for package media-sound/pulseaudio-daemon-16.1-r6:
+
+ * You have enabled bluetooth USE flag for pulseaudio. Daemon will now handle
+ * bluetooth Headset (HSP HS and HSP AG) and Handsfree (HFP HF) profiles using
+ * native headset backend by default. This can be selectively disabled
+ * via runtime configuration arguments to module-bluetooth-discover
+ * in /etc/pulse/default.pa
+ * To disable HFP HF append enable_native_hfp_hf=false
+ * To disable HSP HS append enable_native_hsp_hs=false
+ * To disable HSP AG append headset=auto or headset=ofono
+ * (note this does NOT require enabling USE ofono)
+ * 
+ * GStreamer-based RTP implementation modile enabled.
+ * To use OPUS payload install media-plugins/gst-plugins-opus
+ * and add enable_opus=1 argument to module-rtp-send
+ * 
+ * Pulseaudio autospawn by client library is no longer enabled when systemd is available.
+ * It's recommended to start pulseaudio via its systemd user units:
+ * 
+ *   systemctl --user enable pulseaudio.service pulseaudio.socket
+ * 
+ * Root user can change system default configuration for all users:
+ * 
+ *   systemctl --global enable pulseaudio.service pulseaudio.socket
+ * 
+ * If you would like to enable autospawn by client library, edit autospawn flag in /etc/pulse/client.conf like this:
+ * 
+ *   autospawn = yes
+ * 
+ * The change from autospawn to user units will take effect after restarting.
+ * 
+
+ * Messages for package xfce-base/thunar-4.18.3:
+
+ * If you were using an older Xfce version and Thunar fails to start
+ * with a message similar to:
+ *   Failed to register: Timeout was reached
+ * you may need to reset your xfce4 session:
+ *   rm ~/.cache/sessions/xfce4-session-*
+ * See https://bugs.gentoo.org/698914.
+
+ * Messages for package media-video/pipewire-0.3.63-r3:
+
+ * It is recommended to raise RLIMIT_MEMLOCK to 256 for users
+ * using PipeWire. Do it either manually or add yourself
+ * to the 'audio' group:
+ * 
+ *   usermod -aG audio <youruser>
+ * 
+ * JACK emulation is incomplete and not all programs will work. PipeWire's
+ * alternative libraries have been installed to a non-default location.
+ * To use them, put pw-jack <application> before every JACK application.
+ * When using pw-jack, do not run jackd/jackdbus. However, a virtual/jack
+ * provider is still needed to compile the JACK applications themselves.
+ * 
+ * When switching from PulseAudio, you may need to disable PulseAudio:
+ * 
+ *   systemctl --user disable pulseaudio.service pulseaudio.socket
+ * 
+ * To use PipeWire, the user units must be manually enabled
+ * by running this command as each user you use for desktop activities:
+ * 
+ *   systemctl --user enable pipewire.socket pipewire-pulse.socket
+ * 
+ * A reboot is recommended to avoid interferences from still running
+ * PulseAudio daemon.
+ * 
+ * Both new users and those upgrading need to enable WirePlumber
+ * for relevant users:
+ * 
+ *   systemctl --user disable pipewire-media-session.service
+ *   systemctl --user --force enable wireplumber.service
+ * 
+ * Root user may replace --user with --global to change system default
+ * configuration for all of the above commands.
+ * 
+ * For latest tips and tricks, troubleshooting information and documentation
+ * in general, please refer to https://wiki.gentoo.org/wiki/PipeWire
+ * 
+
+ * Messages for package sys-devel/clang-15.0.7-r1:
+
+ * You can find additional utility scripts in:
+ *   /usr/lib/llvm/15/share/clang
+ * Some of them are vim integration scripts (with instructions inside).
+ * The run-clang-tidy.py script requires the following additional package:
+ *   dev-python/pyyaml
+>>> Auto-cleaning packages...
+
+>>> No outdated packages were found on your system.
+
+ * Regenerating GNU info directory index...
+ * Processed 148 info files.
+
+ * IMPORTANT: 3 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 1 news items need reading for repository 'rust'.
+ * IMPORTANT: 26 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+ * After world updates, it is important to remove obsolete packages with
+ * emerge --depclean. Refer to `man emerge` for more information.
+
+
+-------------------------------
+
+
