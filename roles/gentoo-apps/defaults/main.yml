@@ -234,6 +234,7 @@ ebuilds:
 - >-  # Podman works better with crun than runc: https://bugs.gentoo.org/723080
   app-emulation/crun
 - darktable
+- sys-devel/distcc  # Needed for network-distributed emerge builds
 - dnsmasq
 - dpkg
 - sys-kernel/dracut-crypt-ssh
