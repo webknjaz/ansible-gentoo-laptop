@@ -30,6 +30,34 @@ use_flags_global_enabled:
 # NOTE: libv4l libraries)
 - v4l
 use_flags_global_disabled: []
+x86_ebuilds:
+- app-arch/zstd  # Steam
+- app-crypt/libmd  # Steam
+- dev-libs/expat  # Steam
+- dev-libs/icu  # Steam
+- dev-libs/libbsd  # Steam
+- dev-libs/libffi  # Steam
+- dev-libs/libxml2  # Steam
+- dev-libs/wayland  # Steam
+- media-libs/libglvnd  # Steam
+- media-libs/mesa  # Steam
+- sys-devel/llvm  # Steam
+- sys-libs/gpm  # Steam
+- sys-libs/ncurses  # Steam
+- sys-libs/zlib  # Steam
+- virtual/opengl  # Steam
+- x11-libs/libdrm  # Steam
+- x11-libs/libpciaccess  # Steam
+- x11-libs/libX11  # Steam
+- x11-libs/libXau  # Steam
+- x11-libs/libXdmcp  # Steam
+- x11-libs/libXext  # Steam
+- x11-libs/libXfixes  # Steam
+- x11-libs/libXrandr  # Steam
+- x11-libs/libXrender  # Steam
+- x11-libs/libXxf86vm  # Steam
+- x11-libs/libxcb  # Steam
+- x11-libs/libxshmfence  # Steam
 use_flags_per_package_enabled:
   app-office/gnucash:
   - doc  # pulls-in app-doc/gnucash-docs
@@ -162,6 +190,14 @@ accept_keywords_per_package:
   games-simulation/flightgear:
   - ~amd64
   games-simulation/flightgear-data:
+  - ~amd64
+  games-util/game-device-udev-rules::gentoo:
+  - ~amd64
+  games-util/steam-client-meta::steam-overlay:
+  - ~amd64
+  games-util/steam-launcher::steam-overlay:
+  - ~amd64
+  games-util/steam-meta::steam-overlay:
   - ~amd64
   =gui-libs/wlroots-0.15.0-r2::gentoo:
   - ~amd64
@@ -396,16 +432,20 @@ ebuilds_from_overlays:
   app-editors/vscode-bin: jorgicio
   app-shells/rust-zshcomp: rust
   app-shells/starship-bin: jorgicio
+  games-util/steam-meta: steam-overlay
   media-fonts/emojione-color-font: jorgicio
   media-fonts/twemoji-color-font: jorgicio
   x11-themes/materia-theme: jorgicio
 
-unmask_ebuilds: {}
+unmask_ebuilds:
+  games-util/steam-client-meta: steam-overlay
+  games-util/steam-launcher: steam-overlay
 
 accept_licenses:
   app-emulation/virtualbox-extpack-oracle: PUEL PUEL-11
   app-editors/vscode-bin: MS-vscode
   dev-util/intel-ocl-sdk: Intel-SDP
+  games-util/steam-launcher: ValveSteamLicense
   media-fonts/corefonts: MSttfEULA
   media-fonts/font-bh-ttf: bh-luxi
   media-fonts/font-bh-type1: bh-luxi
@@ -422,6 +462,7 @@ layman_overlays:
 - dmchurch
 - jorgicio
 - rust
+- steam-overlay
 
 ca_certificates:
   RH-legacy-Root-CA:

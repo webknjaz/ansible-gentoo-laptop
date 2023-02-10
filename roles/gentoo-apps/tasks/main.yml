@@ -37,6 +37,35 @@
       for {{ license_entry.package }}
     loop_var: license_entry
 
+- name: Ensure portage env dir structure exists
+  file:
+    dest: /etc/portage/env
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Make `abi_x86_32.conf` env file
+  copy:
+    content: >-
+      ABI_X86="32"
+    dest: /etc/portage/env/abi_x86_32.conf
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+- name: Set up 32-bit-compatible package atoms
+  lineinfile:
+    create: yes
+    line: >-
+      {{ portage_package_atom }} abi_x86_32.conf
+    path: /etc/portage/package.env
+    regexp: ^{{ portage_package_atom }} [^\s]+$
+    state: present
+  loop: >-
+    {{ x86_ebuilds }}
+  loop_control:
+    loop_var: portage_package_atom
+
 - name: Create patch dirs structure
   file:
     dest: /etc/portage/patches/{{ item }}
