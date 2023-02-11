@@ -21,7 +21,7 @@ use_flags_global_enabled:
 - kerberos
 - luajit
 - lvm  # LVM2 partitions and CLI apps
-- pulseaudio
+- pulseaudio  # Still needed with pipewire
 - python
 - sasl
 - savedconfig
@@ -63,6 +63,9 @@ use_flags_per_package_enabled:
   - doc  # pulls-in app-doc/gnucash-docs
   media-video/pipewire:
   - echo-cancel
+  # NOTE: `sound-server` replaces pulseaudio per
+  # NOTE: `eselect news read 2022-07-29-pipewire-sound-server`.
+  - sound-server
   app-emulation/qemu:
   - virtfs
   dev-libs/libdbusmenu:
@@ -139,6 +142,10 @@ use_flags_per_package_disabled:
   - static-libs
   dev-libs/libusb:
   - static-libs
+  media-sound/pulseaudio:
+  # NOTE: `-daemon` allows pipewire to be a libpulse daemon per
+  # NOTE: `eselect news read 2022-07-29-pipewire-sound-server`.
+  - daemon
   net-misc/networkmanager:
   - gnutls  # conflicts with `nss`
   net-print/hplip:
