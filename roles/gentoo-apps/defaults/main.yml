@@ -277,6 +277,7 @@ ebuilds:
 - >-  # Podman works better with crun than runc: https://bugs.gentoo.org/723080
   app-emulation/crun
 - darktable
+- dev-util/debugedit  # For debug symbols creation w/ FEATURES=installsources
 - sys-devel/distcc  # Needed for network-distributed emerge builds
 - dnsmasq
 - dpkg
