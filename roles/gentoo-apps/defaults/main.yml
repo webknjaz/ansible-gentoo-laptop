@@ -322,7 +322,6 @@ ebuilds:
 - net-print/hplip
 - x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
 # - x11-libs/libva-vdpau-driver NVIDIA GPU
-- intel-ocl-sdk
 - iosevka
 - iperf:3
 - iptraf-ng
