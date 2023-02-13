@@ -171,6 +171,8 @@ accept_keywords_per_package:
   - ~amd64
   app-crypt/adcli:
   - ~amd64
+  =app-crypt/yubioath-desktop-5.1.0-r3::gentoo:
+  - ~amd64
   =app-editors/neovim-0.8.0-r1::gentoo:  # Needed for AstroVim
   - ~amd64
   =app-shells/rust-zshcomp-9999::rust:
@@ -187,6 +189,8 @@ accept_keywords_per_package:
   =dev-lua/luv-1.44.2.0::gentoo:  # Needed for NeoVim v0.8.0
   - ~amd64
   =dev-python/neovim-remote-2.4.0::gentoo:
+  - ~amd64
+  =dev-python/pyotherside-1.5.9::gentoo:  # needed by app-crypt/yubioath-desktop
   - ~amd64
   dev-ruby/msgpack::gentoo:  # needed by dev-ruby/neovim-ruby-client
   - ~amd64
@@ -431,7 +435,9 @@ ebuilds:
 - app-text/xournalpp
 - x11-misc/xsel  # Needed for NeoVim: for clipboard support
 - net-misc/x11-ssh-askpass
+- app-crypt/yubioath-desktop
 - yubikey-manager
+- sys-auth/yubikey-personalization-gui
 - zh-kcfonts
 - zsh-completions
 ebuilds_from_overlays:
