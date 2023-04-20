@@ -332,6 +332,7 @@ code_workspace:
       - jctanner/gravity
       - joepvd/tty-solarized
       - jorisroovers/gitlint
+      - kattni/PyCon2023
       - kpi-web-guild/django-girls-blog-serhii73
       - libgit2/pygit2
       - lxc/python2-lxc
