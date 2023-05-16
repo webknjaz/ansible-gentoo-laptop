@@ -81,12 +81,8 @@ use_flags_per_package_enabled:
   - utils
   games-simulation/flightgear:
   - gdal  # Enable support for sci-libs/gdal library
-  gui-wm/hikari:
-  - gamma  # add gamma control for redshift
-  - layershell  # add support for wayland apps using layer shell
-  - screencopy  # add support for screen grabbing
-  # enable virtual input/output support, needed for remote I/O in VNC:
-  - virtual-io
+  gui-libs/wlroots:
+  - x11-backend  # dependency of hyprland
   media-libs/freetype:
   - harfbuzz
   media-libs/libsdl2:
@@ -180,6 +176,10 @@ accept_keywords_per_package:
     **
   dev-games/simgear:
   - ~amd64
+  dev-libs/libliftoff::gentoo:  # dependency of hyprland
+  - ~amd64
+  dev-libs/hyprland-protocols::gentoo:  # dependency of hyprland
+  - ~amd64
   dev-libs/libucl:
   - ~amd64
   =dev-libs/libvterm-0.3::gentoo:  # Needed for NeoVim v0.8.0
@@ -212,7 +212,9 @@ accept_keywords_per_package:
   - ~amd64
   =gui-libs/wlroots-0.15.0-r2::gentoo:
   - ~amd64
-  gui-wm/hikari:
+  gui-wm/hyprland::gentoo:
+  - ~amd64
+  media-libs/libdisplay-info::gentoo:  # dependency of hyprland
   - ~amd64
   sys-apps/bat:
   - ~amd64
@@ -322,8 +324,8 @@ ebuilds:
 - gutenprint
 - media-gfx/flameshot
 - app-admin/helm
-- gui-wm/hikari
 - net-print/hplip
+- gui-wm/hyprland
 - x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
 # - x11-libs/libva-vdpau-driver NVIDIA GPU
 - iosevka
