@@ -210,6 +210,8 @@ accept_keywords_per_package:
   - ~amd64
   games-util/steam-meta::steam-overlay:
   - ~amd64
+  gui-apps/wofi::gentoo:
+  - ~amd64
   =gui-libs/wlroots-0.15.0-r2::gentoo:
   - ~amd64
   gui-wm/hyprland::gentoo:
@@ -429,6 +431,7 @@ ebuilds:
 - virt-manager
 - vlc
 - gui-apps/wl-clipboard  # Needed for NeoVim: for clipboard support
+- gui-apps/wofi  # Set up for <Win>+R in hyprland
 - wget2
 - wireshark
 - wmname
