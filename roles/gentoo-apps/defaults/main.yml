@@ -29,6 +29,7 @@ use_flags_global_enabled:
 # NOTE: Enable support for video4linux (using linux-headers or userspace
 # NOTE: libv4l libraries)
 - v4l
+- wayland
 use_flags_global_disabled: []
 x86_ebuilds:
 - app-arch/zstd  # Steam
