@@ -219,6 +219,8 @@ accept_keywords_per_package:
   - ~amd64
   media-libs/libdisplay-info::gentoo:  # dependency of hyprland
   - ~amd64
+  media-sound/NoiseTorch::kzd:
+  - ~amd64
   sys-apps/bat:
   - ~amd64
   =sys-kernel/dracut-crypt-ssh-1.0.7::gentoo:
@@ -454,11 +456,13 @@ ebuilds_from_overlays:
   games-util/steam-meta: steam-overlay
   media-fonts/emojione-color-font: jorgicio
   media-fonts/twemoji-color-font: jorgicio
+  media-sound/NoiseTorch: kzd  # Real-time microphone noise suppression on Linux
   x11-themes/materia-theme: jorgicio
 
 unmask_ebuilds:
   games-util/steam-client-meta: steam-overlay
   games-util/steam-launcher: steam-overlay
+  media-sound/NoiseTorch: kzd
 
 accept_licenses:
   app-emulation/virtualbox-extpack-oracle: PUEL PUEL-11
@@ -480,6 +484,7 @@ accept_licenses:
 layman_overlays:
 - dmchurch
 - jorgicio
+- kzd  # contains NoiseTorch
 - rust
 - steam-overlay
 
