@@ -275,6 +275,7 @@ code_workspace:
       - ansible/ansible-runner
       - ansible/ansibullbot
       - ansible/azure-pipelines-test-container
+      - ansible/azure-pipelines-test-vm
       - ansible/collection_migration
       - ansible/foreman-test-container
       - ansible/jinja-docsite
@@ -478,6 +479,7 @@ code_workspace:
         ansible/ansible-navigator-demo-ee: webknjaz/ansible-creator-ee
         ansible/ansibullbot: webknjaz/ansibullbot
         ansible/azure-pipelines-test-container: webknjaz/ansible--azure-pipelines-test-container
+        ansible/azure-pipelines-test-vm: webknjaz/ansible--azure-pipelines-test-vm
         ansible/collection_migration: webknjaz/collection_migration
         ansible/jinja-docsite: webknjaz/ansible--jinja-docsite
         ansible/lightbulb: webknjaz/lightbulb
