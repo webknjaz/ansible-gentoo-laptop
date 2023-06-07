@@ -5,7 +5,7 @@
   tasks:
   - import_role:
       name: gentoo-services-ctl
-  - name: Sync portage/layman trees and index ebuilds
+  - name: Sync portage/overlay trees and index ebuilds
     eix:
       action: sync
   - name: Rebuild the @world

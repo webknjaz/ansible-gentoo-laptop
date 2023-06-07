@@ -232,9 +232,9 @@ accept_keywords_per_package:
 essential_ebuilds:
 - app-admin/sudo  # privilege escalation
 - app-admin/eselect  # alternatives management
+- app-eselect/eselect-repository  # needed to manage third-party Git overlays
 - app-portage/eix  # fast portage tree search
 - app-portage/gentoolkit  # euse and co.
-- app-portage/layman  # needed to manage third-party Git overlays
 - dev-vcs/git  # needed to fetch third-party Git overlays
 - sys-apps/gptfdisk  # gdisk: https://wiki.gentoo.org/wiki/EFI_System_Partition
 - sys-fs/cryptsetup  # LUKS
@@ -481,7 +481,7 @@ accept_licenses:
   www-client/google-chrome: google-chrome
   x11-misc/xflux: f.lux
 
-layman_overlays:
+overlay_repositories:
 - dmchurch
 - jorgicio
 - kzd  # contains NoiseTorch
