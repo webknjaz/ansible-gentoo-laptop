@@ -479,6 +479,7 @@ accept_licenses:
   net-print/cndrvcups-common-lb: Canon-UFR-II
   sys-kernel/linux-firmware: linux-fw-redistributable no-source-code
   www-client/google-chrome: google-chrome
+  media-libs/libva-intel-media-driver: no-source-code
   x11-misc/xflux: f.lux
 
 overlay_repositories:
