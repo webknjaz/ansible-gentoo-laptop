@@ -457,6 +457,7 @@ code_workspace:
       - webknjaz/qr-announcements
       - webknjaz/release-candidate
       - webknjaz/rpi4b-k3s
+      - webknjaz/sphnx-link-by-labels-ext
       - webknjaz/talk-drafts
       - webknjaz/talks
       - webknjaz/twitter-reporter
