@@ -329,6 +329,7 @@ code_workspace:
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
       - jaraco/skeleton
+      - jazzband/.github
       - jazzband/pip-tools
       - jazzband/website
       - jctanner/ansible-reproducers
@@ -510,6 +511,7 @@ code_workspace:
         HypothesisWorks/hypothesis: webknjaz/hypothesis
         hynek/environ-config: webknjaz/environ-config
         jaraco/skeleton: webknjaz/jaraco-skeleton
+        jazzband/.github: webknjaz/jazzband--.github
         jazzband/pip-tools: webknjaz/pip-tools
         jazzband/website: webknjaz/jazzband--website
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
