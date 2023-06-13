@@ -330,6 +330,7 @@ code_workspace:
       - jaraco/rst.linker
       - jaraco/skeleton
       - jazzband/pip-tools
+      - jazzband/website
       - jctanner/ansible-reproducers
       - jctanner/gravity
       - joepvd/tty-solarized
@@ -510,6 +511,7 @@ code_workspace:
         hynek/environ-config: webknjaz/environ-config
         jaraco/skeleton: webknjaz/jaraco-skeleton
         jazzband/pip-tools: webknjaz/pip-tools
+        jazzband/website: webknjaz/jazzband--website
         jctanner/ansible-reproducers: webknjaz/ansible-reproducers
         jctanner/gravity: webknjaz/gravity
         joepvd/tty-solarized: webknjaz/tty-solarized
