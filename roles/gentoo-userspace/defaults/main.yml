@@ -326,6 +326,7 @@ code_workspace:
       - gliderlabs/herokuish
       - HypothesisWorks/hypothesis
       - hynek/environ-config
+      - hyprwm/Hyprland
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
       - jaraco/skeleton
