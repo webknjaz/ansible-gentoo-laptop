@@ -476,6 +476,7 @@ code_workspace:
         aio-libs/create-release: webknjaz/create-release
         aio-libs/frozenlist: webknjaz/frozenlist
         aio-libs/get-releasenote: webknjaz/get-releasenote
+        aio-libs/multidict: webknjaz/multidict
         aio-libs/yarl: webknjaz/yarl
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
