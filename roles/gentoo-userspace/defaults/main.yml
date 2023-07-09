@@ -257,6 +257,7 @@ code_workspace:
       - aio-libs/.github
       - aio-libs/aiohttp
       - aio-libs/aiohttp-devtools
+      - aio-libs/aiomonitor
       - aio-libs/async-lru
       - aio-libs/create-release
       - aio-libs/frozenlist
@@ -471,6 +472,7 @@ code_workspace:
         abhinavsingh/proxy.py: webknjaz/proxy.py
         actions/toolkit: webknjaz/github--actions--toolkit
         aio-libs/aiohttp: webknjaz/aiohttp
+        aio-libs/aiomonitor: webknjaz/aio-libs--aiomonitor
         aio-libs/create-release: webknjaz/create-release
         aio-libs/frozenlist: webknjaz/frozenlist
         aio-libs/get-releasenote: webknjaz/get-releasenote
