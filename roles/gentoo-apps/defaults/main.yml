@@ -416,6 +416,7 @@ ebuilds:
 - texlive-latexrecommended
 - thunar
 - thunderbird-bin
+- app-laptop/thinkfan
 - sys-process/time
 - tmux
 - traceroute
