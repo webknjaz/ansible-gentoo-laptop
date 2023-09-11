@@ -85,9 +85,14 @@ use_flags_per_package_enabled:
   gui-libs/wlroots:
   - x11-backend  # dependency of hyprland
   media-libs/freetype:
+  - brotli  # dependency of media-gfx/blender
   - harfbuzz
   media-libs/libsdl2:
   - gles2  # dependency of USE-wayland
+  media-video/ffmpeg:
+  - opus  # dependency of media-gfx/blender
+  - theora  # dependency of media-gfx/blender
+  - vpx  # dependency of media-gfx/blender
   media-video/vlc:
   - chromecast
   net-dns/bind-tools:
@@ -271,6 +276,7 @@ ebuilds:
 - bind-tools
 - app-admin/bitwarden-desktop-bin
 - bbswitch  # FIXME: make host-dependent
+- media-gfx/blender
 - net-wireless/blueman
 - sys-apps/bolt
 - net-misc/bridge-utils
