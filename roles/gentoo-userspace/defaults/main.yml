@@ -408,7 +408,6 @@ code_workspace:
       - re-actors/build-python-dists
       - re-actors/checkout-python-sdist
       - re-actors/manylinux1_x86_64-action
-      - re-actors/pypi-action
       - reverbc/pylint-pytest
       - RedHatOfficial/RedHatOfficial.github.io
       - rtfd/readthedocs-docker-images
