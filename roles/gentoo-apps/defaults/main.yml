@@ -233,8 +233,6 @@ accept_keywords_per_package:
   - ~amd64
 #  sys-libs/glibc:  # conflicts with sssd: https://bugs.gentoo.org/737180
 #  - -~amd64
-  x11-terms/kitty-shell-integration:
-  - ~amd64
 essential_ebuilds:
 - app-admin/sudo  # privilege escalation
 - app-admin/eselect  # alternatives management
