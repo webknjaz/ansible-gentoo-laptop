@@ -330,7 +330,6 @@ ebuilds:
 - app-shells/gentoo-zsh-completions
 - gnome-color-manager
 - google-chrome
-- gutenprint
 - media-gfx/flameshot
 - app-admin/helm
 - net-print/hplip
