@@ -193,7 +193,7 @@ accept_keywords_per_package:
   - ~amd64
   =dev-lua/luv-1.44.2.0::gentoo:  # Needed for NeoVim v0.8.0
   - ~amd64
-  =dev-python/neovim-remote-2.4.0::gentoo:
+  dev-python/neovim-remote::gentoo:
   - ~amd64
   =dev-python/pyotherside-1.5.9::gentoo:  # needed by app-crypt/yubioath-desktop
   - ~amd64
