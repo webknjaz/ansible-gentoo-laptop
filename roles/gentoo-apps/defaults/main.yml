@@ -143,8 +143,6 @@ use_flags_per_package_disabled:
   - static-libs
   dev-libs/libusb:
   - static-libs
-  media-libs/openimageio:  # dependency of media-gfx/blender
-  - opengl  # Compilation fails otherwise
   media-sound/pulseaudio:
   # NOTE: `-daemon` allows pipewire to be a libpulse daemon per
   # NOTE: `eselect news read 2022-07-29-pipewire-sound-server`.
