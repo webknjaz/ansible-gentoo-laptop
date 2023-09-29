@@ -399,6 +399,7 @@ code_workspace:
       - python/miss-islington
       - python/peps
       - python-attrs/attrs
+      - python-cffi/cffi
       - python-hyper/h11
       - python-hyper/uritemplate
       - python-trio/snekomatic
@@ -560,6 +561,7 @@ code_workspace:
         python/cpython: webknjaz/cpython
         python/peps: webknjaz/peps
         python-attrs/attrs: webknjaz/attrs
+        python-cffi/cffi: webknjaz/python-cffi--cffi
         python-hyper/h11: webknjaz/h11
         python-hyper/uritemplate: webknjaz/uritemplate
         python-trio/snekomatic: webknjaz/snekomatic
