@@ -328,6 +328,7 @@ code_workspace:
       - gliderlabs/herokuish
       - HypothesisWorks/hypothesis
       - hynek/environ-config
+      - hynek/svcs
       - hyprwm/Hyprland
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
@@ -516,6 +517,7 @@ code_workspace:
         gliderlabs/herokuish: webknjaz/herokuish
         HypothesisWorks/hypothesis: webknjaz/hypothesis
         hynek/environ-config: webknjaz/environ-config
+        hynek/svcs: webknjaz/hynek--svcs
         jaraco/skeleton: webknjaz/jaraco-skeleton
         jazzband/.github: webknjaz/jazzband--.github
         jazzband/pip-tools: webknjaz/pip-tools
