@@ -319,6 +319,7 @@ code_workspace:
       - daibach142/SaitekSwitch
       - deadsnakes/action
       - di/pip-api
+      - displaylink-rpm/displaylink-rpm
       - dokku/dokku-mariadb
       - EuroPython/ep-config
       - executablebooks/MyST-Parser
@@ -511,6 +512,7 @@ code_workspace:
         cython/cython: webknjaz/cython
         deadsnakes/action: webknjaz/deadsnakes-action
         di/pip-api: webknjaz/pip-api
+        displaylink-rpm/displaylink-rpm: webknjaz/displaylink-rpm--displaylink-rpm
         executablebooks/MyST-Parser: webknjaz/MyST-Parser
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
