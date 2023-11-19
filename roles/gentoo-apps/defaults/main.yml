@@ -77,6 +77,22 @@ use_flags_per_package_enabled:
   dev-libs/libjcat:  # dependency of sys-apps/fwupd
   - gpg
   - pkcs7
+  dev-libs/libpcre2:
+  - pcre32  # transitive dependency of media-gfx/freecad
+  dev-python/pillow:
+  - webp  # transitive dependency of media-gfx/freecad
+  dev-python/pyside2:
+  - positioning  # dependency of media-gfx/freecad
+  - quick  # dependency of media-gfx/freecad
+  - qml  # dependency of media-gfx/freecad
+  - webchannel  # dependency of media-gfx/freecad
+  - webengine  # dependency of media-gfx/freecad
+  dev-qt/qtquickcontrols2:
+  - widgets  # dependency of dev-python/pyside2[quick] (required by media-gfx/freecad)
+  dev-qt/qtwebchannel:
+  - qml  # dependency of dev-python/pyside2[webengine] (required by media-gfx/freecad)
+  dev-qt/qtwebengine:
+  - widgets  # dependency of media-gfx/freecad
   x11-libs/libdrm:
   - libkms  # provides abstraction to the DRM drivers, needed for Plymouth
   dev-libs/nss:
@@ -90,6 +106,9 @@ use_flags_per_package_enabled:
   - harfbuzz
   media-libs/libsdl2:
   - gles2  # dependency of USE-wayland
+  media-libs/tiff:
+  - lzma  # transitive dependency of media-gfx/freecad
+  - zstd  # transitive dependency of media-gfx/freecad
   media-video/ffmpeg:
   - opus  # dependency of media-gfx/blender
   - theora  # dependency of media-gfx/blender
@@ -106,6 +125,11 @@ use_flags_per_package_enabled:
   - usbredir
   net-nds/openldap:
   - experimental  # dependency of sys-auth/sssd
+  sci-libs/cgnslib:
+  - hdf5  # transitive dependency of media-gfx/freecad
+  sci-libs/opencascade:
+  - json  # dependency of media-gfx/freecad
+  - vtk  # dependency of media-gfx/freecad
   sys-auth/sssd:
   - sudo
   sys-devel/gcc:
@@ -316,6 +340,7 @@ ebuilds:
 - foomatic-db-engine
 - foomatic-db-ppds
 - sys-auth/fprintd
+- media-gfx/freecad
 - freefonts
 - freerdp
 - fuse-exfat
