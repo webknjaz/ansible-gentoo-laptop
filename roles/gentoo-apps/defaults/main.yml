@@ -116,6 +116,7 @@ use_flags_per_package_enabled:
   - contrib
   - sensord
   sys-apps/systemd:
+  - boot  # Used to be called `gnuefi`; pulls-in systemd-boot
   - cgroup-hybrid  # Solves conflict with app-emulation/docker. Refs:
   # https://bugs.gentoo.org/691844
   # https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=9753537cfaf24e80397a0236a169ded2ccc19fdf
@@ -123,7 +124,6 @@ use_flags_per_package_enabled:
   - curl
   - dns-over-tls
   - fido2  # FIDO 2 support for e.g. YubiKey and Solo v2 USB devices
-  - gnuefi
   - http
   - idn
   - importd
