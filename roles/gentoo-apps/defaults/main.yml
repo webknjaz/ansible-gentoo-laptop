@@ -59,6 +59,8 @@ x86_ebuilds:
 - x11-libs/libxcb  # Steam
 - x11-libs/libxshmfence  # Steam
 use_flags_per_package_enabled:
+  media-libs/qhull:
+  - static-libs  # dependency of media-gfx/prusaslicer and media-gfx/superslicer
   app-office/gnucash:
   - doc  # pulls-in app-doc/gnucash-docs
   media-video/pipewire:
@@ -386,6 +388,7 @@ ebuilds:
 - media-sound/playerctl
 - sys-boot/plymouth
 - powerline-symbols
+# - media-gfx/prusaslicer
 - pulseaudio
 - dev-python/pynvim  # Needed for NeoVim: for Python plugin support
 - python:3.7
@@ -410,6 +413,7 @@ ebuilds:
 - net-misc/sshpass
 - sssd
 - strace
+- media-gfx/superslicer
 - tcpdump
 - tcptraceroute
 - telnet-bsd
