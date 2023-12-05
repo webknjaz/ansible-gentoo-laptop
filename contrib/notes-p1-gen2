@@ -2870,3 +2870,56 @@ Use emerge @preserved-rebuild to rebuild packages using these libraries
 -------------------------------
 
 
+
+ * Messages for package net-firewall/nftables-1.0.8-r2:
+
+ * If you wish to enable the firewall rules on boot (on systemd) you
+ * will need to enable the nftables-restore service.
+ *     'systemctl enable nftables-restore.service'
+ * 
+ * If you are creating firewall rules before the next system restart
+ * the nftables-restore service must be manually started in order to
+ * save those rules on shutdown.
+
+ * Messages for package net-firewall/iptables-1.8.9:
+
+ * Unsetting arptables symlinks before removal
+
+ * Messages for package net-firewall/iptables-1.8.9:
+
+ * Current arptables implementation is unset, setting to xtables-legacy-multi
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 9 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 28 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+
+-------------------------------
+
+
+
+ * Messages for package mail-client/thunderbird-bin-115.5.1:
+
+ * Optional programs for extra features:
+ *   net-libs/libotr for encrypted chat support
+
+ * Messages for package www-client/firefox-bin-120.0.1:
+
+ * Optional programs for extra features:
+ *   app-accessibility/speech-dispatcher for speech syntesis (text-to-speech) support
+
+ * Messages for package dev-qt/qtwebengine-5.15.11_p20231120:
+
+ * This version of Qt WebEngine is based on Chromium version 87.0.4280.144,
+ * with additional security fixes from newer versions. Extensive as it is, the
+ * list of backports is impossible to evaluate, but always bound to be behind
+ * Chromium's release schedule.
+ * In addition, various online services may deny service based on an outdated
+ * user agent version (and/or other checks). Google is already known to do so.
+ * 
+ * tldr: Your web browsing experience will be compromised.
