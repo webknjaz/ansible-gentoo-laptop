@@ -411,7 +411,9 @@ code_workspace:
       - re-actors/bindep
       - re-actors/build-python-dists
       - re-actors/checkout-python-sdist
+      - re-actors/download-artifact
       - re-actors/manylinux1_x86_64-action
+      - re-actors/upload-artifact
       - reverbc/pylint-pytest
       - RedHatOfficial/RedHatOfficial.github.io
       - rtfd/readthedocs-docker-images
