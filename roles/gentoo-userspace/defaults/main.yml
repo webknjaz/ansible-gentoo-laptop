@@ -434,6 +434,7 @@ code_workspace:
       - sivel/ansible-pulp-galaxy-ng
       - spaceship-prompt/spaceship-prompt
       - sphinx-contrib/towncrier
+      - sphinx-doc/github-problem-matcher
       - sphinx-doc/sphinx
       - streetturtle/awesome-wm-widgets
       - takluyver/flit
@@ -582,6 +583,7 @@ code_workspace:
         sdispater/poetry: webknjaz/poetry
         sdispater/tomlkit: webknjaz/tomlkit
         spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
+        sphinx-doc/github-problem-matcher: webknjaz/sphinx-doc--github-problem-matcher
         sphinx-doc/sphinx: webknjaz/sphinx
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
         takluyver/flit: webknjaz/flit
