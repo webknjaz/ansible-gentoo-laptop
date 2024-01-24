@@ -208,9 +208,9 @@ accept_keywords_per_package:
   - ~amd64
   app-crypt/kbfs::gentoo:
   - ~amd64
-  app-crypt/keybase-bin::dmchurch:
+  app-crypt/keybase::gentoo:
   - ~amd64
-  app-crypt/keybase-bin::gentoo:
+  app-crypt/keybase-bin::dmchurch:
   - ~amd64
   =app-crypt/yubioath-desktop-5.1.0-r3::gentoo:
   - ~amd64
