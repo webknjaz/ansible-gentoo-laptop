@@ -206,6 +206,8 @@ accept_keywords_per_package:
   - ~amd64
   app-crypt/keybase-bin::dmchurch:
   - ~amd64
+  app-crypt/keybase-bin::gentoo:
+  - ~amd64
   =app-crypt/yubioath-desktop-5.1.0-r3::gentoo:
   - ~amd64
   =app-editors/neovim-0.8.0-r1::gentoo:  # Needed for AstroVim
