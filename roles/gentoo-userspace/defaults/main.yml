@@ -440,6 +440,7 @@ code_workspace:
       - takluyver/flit
       - test-summary/action
       - tiangolo/fastapi
+      - tlsfuzzer/tlsfuzzer
       - tox-dev/detox
       - tox-dev/gh-action-tox
       - tox-dev/tox
@@ -589,6 +590,7 @@ code_workspace:
         takluyver/flit: webknjaz/flit
         test-summary/action: webknjaz/test-summary-action
         tiangolo/fastapi: webknjaz/fastapi
+        tlsfuzzer/tlsfuzzer: webknjaz/tlsfuzzer--tlsfuzzer
         tox-dev/detox: webknjaz/detox
         tox-dev/tox: webknjaz/tox
         tox-dev/workflow: webknjaz/tox-workflow
