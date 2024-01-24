@@ -71,6 +71,8 @@ use_flags_per_package_enabled:
   # NOTE: `sound-server` replaces pulseaudio per
   # NOTE: `eselect news read 2022-07-29-pipewire-sound-server`.
   - sound-server
+  app-crypt/keybase:
+  - fuse
   app-emulation/qemu:
   - virtfs
   dev-libs/libdbusmenu:
