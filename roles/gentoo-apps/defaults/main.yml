@@ -206,6 +206,8 @@ accept_keywords_per_package:
   - ~amd64
   app-crypt/adcli:
   - ~amd64
+  app-crypt/kbfs::gentoo:
+  - ~amd64
   app-crypt/keybase-bin::dmchurch:
   - ~amd64
   app-crypt/keybase-bin::gentoo:
