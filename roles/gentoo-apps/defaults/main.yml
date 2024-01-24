@@ -219,6 +219,8 @@ accept_keywords_per_package:
   =app-shells/rust-zshcomp-9999::rust:
   - >-
     **
+  dev-cpp/tomlplusplus::gentoo:  # dependency of hyprland
+  - ~amd64
   dev-games/simgear:
   - ~amd64
   dev-libs/libliftoff::gentoo:  # dependency of hyprland
