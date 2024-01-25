@@ -2923,3 +2923,80 @@ Use emerge @preserved-rebuild to rebuild packages using these libraries
  * user agent version (and/or other checks). Google is already known to do so.
  * 
  * tldr: Your web browsing experience will be compromised.
+
+
+-------------------------------
+
+
+
+ * Messages for package sys-libs/glibc-2.38-r9:
+
+ * After upgrading glibc, please restart all running processes.
+ * Be sure to include init (telinit u) or systemd (systemctl daemon-reexec).
+ * Alternatively, reboot your system.
+ * (See bug #660556, bug #741116, bug #823756, etc)
+
+ * Messages for package sys-libs/glibc-2.38-r9:
+
+ * After upgrading glibc, please restart all running processes.
+ * Be sure to include init (telinit u) or systemd (systemctl daemon-reexec).
+ * Alternatively, reboot your system.
+ * (See bug #660556, bug #741116, bug #823756, etc)
+
+ * Messages for package dev-lang/rust-bin-1.74.1:
+
+ * Rust installs a helper script for calling GDB now,
+ * for your convenience it is installed under /usr/bin/rust-gdb-bin-1.74.1.
+
+ * Messages for package sys-apps/coreutils-9.4:
+
+ * Make sure you run 'hash -r' in your active shells.
+ * You should also re-source your shell settings for LS_COLORS
+ *   changes, such as: source /etc/profile
+
+ * Messages for package dev-python/lxml-4.9.4:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/beautifulsoup4 for Support for BeautifulSoup as a parser backend
+
+ * Messages for package sys-devel/llvm-17.0.6:
+
+ * You can find additional opt-viewer utility scripts in:
+ *   /usr/lib/llvm/17/share/opt-viewer
+ * To use these scripts, you will need Python along with the following
+ * packages:
+ *   dev-python/pygments (for opt-viewer)
+ *   dev-python/pyyaml (for all of them)
+
+ * Messages for package sys-devel/clang-17.0.6:
+
+ * You can find additional utility scripts in:
+ *   /usr/lib/llvm/17/share/clang
+ * Some of them are vim integration scripts (with instructions inside).
+ * The run-clang-tidy.py script requires the following additional package:
+ *   dev-python/pyyaml
+
+ * Messages for package x11-libs/gtk+-3.24.39:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+ * Messages for package app-text/ghostscript-gpl-10.02.0:
+
+ * 
+ * Directory symlink(s) may need protection:
+ * 
+ * 	/usr/share/ghostscript/10.02.0/Resource/CMap
+ * 
+ * Use the UNINSTALL_IGNORE variable to exempt specific symlinks
+ * from the following search (see the make.conf man page).
+ * 
+ * Searching all installed packages for files installed via above symlink(s)...
+ * 
+ * The above directory symlink(s) are all safe to remove. Removing them now...
+ * 
+
+
+
+
