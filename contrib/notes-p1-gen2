@@ -3000,3 +3000,189 @@ Use emerge @preserved-rebuild to rebuild packages using these libraries
 
 
 
+-------------------------------
+
+
+ * Messages for package sys-firmware/ipxe-1.21.1:
+
+ * Your configuration for sys-firmware/ipxe-1.21.1 has been saved in 
+ * "/etc/portage/savedconfig/sys-firmware/ipxe-1.21.1" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+
+ * Messages for package sys-kernel/linux-firmware-20240115:
+
+ * No saved config to restore - please remove USE=savedconfig or
+ * provide a configuration file in /etc/portage/savedconfig/sys-kernel/linux-firmware
+ * and ensure the build process has permission to access it.
+ * Your config file(s) will not be used this time.
+ * Your configuration for sys-kernel/linux-firmware-20240115 has been saved in 
+ * "/etc/portage/savedconfig/sys-kernel/linux-firmware-20240115" for your editing pleasure.
+ * You can edit these files by hand and remerge this package with
+ * USE=savedconfig to customise the configuration.
+ * You can rename this file/directory to one of the following for
+ * its configuration to apply to multiple versions:
+ * ${PORTAGE_CONFIGROOT}/etc/portage/savedconfig/
+ * [${CTARGET}|${CHOST}|""]/${CATEGORY}/[${PF}|${P}|${PN}]
+ * USE=savedconfig is active. You must handle file collisions manually.
+ * If you are only interested in particular firmware files, edit the saved
+ * configfile and remove those that you do not want.
+
+ * Messages for package sys-kernel/dracut-059-r7:
+
+ * Install additional packages for optional runtime features:
+ *   app-shells/dash for Allows use of dash instead of default bash (on your own risk)
+ *   sys-block/open-iscsi for Support iSCSI
+ *   sys-fs/mdadm for Support MD devices, also known as software RAID devices
+ *   sys-fs/dmraid for Support MD devices, also known as software RAID devices
+ *   sys-block/nbd for Support network block devices
+ *   net-fs/nfs-utils for Support NFS
+ *   net-nds/rpcbind for Support NFS
+ *   app-admin/rsyslog for Enable logging with rsyslog
+ *   sys-fs/squashfs-tools for Support Squashfs
+ *   app-crypt/tpm2-tools for Support TPM 2.0 TSS
+ *   sys-apps/biosdevname for Support BIOS-given device names
+ *   sys-apps/nvme-cli for Support network NVMe
+ *   sys-apps/rng-tools for Enable rngd service to help generating entropy early during boot
+
+ * Messages for package app-misc/screen-4.9.1:
+
+ * This revision changes the screen socket location to /tmp/screen
+
+ * Messages for package net-vpn/openvpn-2.6.8:
+
+ * In order to use OpenVPN with systemd please use the correct systemd service file.
+ * 
+ * server:
+ * 
+ * - Place your server configuration file in /etc/openvpn/server
+ * - Use the openvpn-server@.service like so
+ * systemctl start openvpn-server@{Server-config}
+ * 
+ * client:
+ * 
+ * - Place your client configuration file in /etc/openvpn/client
+ * - Use the openvpn-client@.service like so:
+ * systemctl start openvpn-client@{Client-config}
+
+ * Messages for package sys-apps/less-643-r1:
+
+ * less now colorizes by default. To disable this, set LESSCOLOR=no.
+
+ * Messages for package sys-auth/sssd-2.9.1-r1:
+
+ * You must set up sssd.conf (default installed into /etc/sssd)
+ * and (optionally) configuration in /etc/pam.d in order to use SSSD
+ * features.
+
+ * Messages for package gui-libs/gtk-4.12.4:
+
+ * Please install app-text/evince for print preview functionality.
+ * Alternatively, check "gtk-print-preview-command" documentation and
+ * add it to your settings.ini file.
+
+ * Messages for package sci-libs/gdal-3.7.3:
+
+ * Check available image and data formats after building with
+ * gdalinfo and ogrinfo (using the --formats switch).
+
+ * Messages for package app-admin/sudo-1.9.15_p4:
+
+ * To use the -A (askpass) option, you need to install a compatible
+ * password program from the following list. Starred packages will
+ * automatically register for the use with sudo (but will not force
+ * the -A option):
+ * 
+ *  [*] net-misc/ssh-askpass-fullscreen
+ *      net-misc/x11-ssh-askpass
+ * 
+ * You can override the choice by setting the SUDO_ASKPASS environmnent
+ * variable to the program you want to use.
+
+ * Messages for package net-im/signal-desktop-bin-6.43.2:
+
+ * For using the tray icon on compatible desktop environments, start Signal with
+ *  '--start-in-tray' or '--use-tray-icon'.
+
+ * Messages for package media-gfx/darktable-4.4.2:
+
+ * 
+ * When updating a major version,
+ * please bear in mind that your edits will be preserved during this process,
+ * but it will not be possible to downgrade any more.
+ * 
+ * It will not be possible to downgrade!
+ * 
+
+ * Messages for package mail-client/thunderbird-bin-115.7.0:
+
+ * Optional programs for extra features:
+ *   net-libs/libotr for encrypted chat support
+
+ * Messages for package www-client/firefox-bin-122.0:
+
+ * Optional programs for extra features:
+ *   app-accessibility/speech-dispatcher for speech syntesis (text-to-speech) support
+
+ * Messages for package media-video/pipewire-1.0.0-r1:
+
+ * For latest tips and tricks, troubleshooting information, and documentation
+ * in general, please refer to https://wiki.gentoo.org/wiki/PipeWire
+ * 
+ * The following can be installed for optional runtime features:
+ *   media-plugins/alsa-plugins[pulseaudio] for ALSA plugin to use PulseAudio interface for output
+
+ * Messages for package media-video/wireplumber-0.4.17-r1:
+
+ * pipewire-media-session.service is no longer installed. You must switch
+ * to wireplumber.service user unit before your next logout/reboot:
+ * systemctl --user disable pipewire-media-session.service
+ * systemctl --user --force enable wireplumber.service
+
+ * Messages for package net-libs/webkit-gtk-2.42.4-r410:
+
+ * Install additional packages for optional runtime features:
+ *   media-plugins/gst-plugins-meta for Common Multimedia codecs
+ *   media-plugins/gst-plugins-dash for (MPEG-)DASH support
+ *   media-plugins/gst-plugins-hls for HTTP-Live-Streaming support
+
+ * Messages for package xfce-base/thunar-4.18.10:
+
+ * If you were using an older Xfce version and Thunar fails to start
+ * with a message similar to:
+ *   Failed to register: Timeout was reached
+ * you may need to reset your xfce4 session:
+ *   rm ~/.cache/sessions/xfce4-session-*
+ * See https://bugs.gentoo.org/698914.
+
+ * Messages for package gnome-base/gnome-shell-45.2:
+
+ * Install additional packages for optional runtime features:
+ *   gnome-extra/gnome-browser-connector for Browser extension integration
+
+ * Messages for package media-gfx/freecad-0.20.2-r1:
+
+ * Computational utilities
+ *   sci-libs/openblas for BLAS library
+ *   dev-python/pandas for Statistical computation with Python
+ *   dev-python/scipy for Use scientific computation with Python
+ *   dev-python/sympy for Use symbolic math with Python
+ * Imaging, Plotting and Rendering utilities
+ *   media-gfx/graphviz for Dependency graphs
+ *   media-gfx/povray for PBR Rendering
+ * Import / Export
+ *   dev-python/pycollada for Work with COLLADA documents
+ *   dev-python/pyyaml for YAML importer and emitter
+ *   media-gfx/libredwg for Importing and exporting 2D AutoCAD DWG files
+ * Meshing and FEM
+ *   sci-libs/gmsh for FEM mesh generator
+ *   sci-libs/gts for Triangulating meshes
+ *   sci-visualization/paraview for Visualization
+
+
+
+
