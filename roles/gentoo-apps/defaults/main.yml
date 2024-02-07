@@ -167,6 +167,8 @@ use_flags_per_package_enabled:
   - xkb
   sys-apps/util-linux:
   - tty-helpers
+  sys-kernel/installkernel:
+  - dracut
   sys-libs/glibc:
   - nscd
   sys-libs/zlib:
