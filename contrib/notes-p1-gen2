@@ -3185,4 +3185,143 @@ Use emerge @preserved-rebuild to rebuild packages using these libraries
 
 
 
+-------------------------------
 
+
+
+ * Messages for package dev-libs/tree-sitter-0.20.8-r1:
+
+ * Install additional packages for optional runtime features:
+ *   dev-util/tree-sitter-cli for building and testing grammars
+
+ * Messages for package dev-lang/go-1.21.6:
+
+ * After dev-lang/go is updated it is recommended to rebuild
+ * all packages compiled with previous versions of dev-lang/go
+ * due to the static linking nature of go.
+ * If this is not done, the packages compiled with the older
+ * version of the compiler will not be updated until they are
+ * updated individually, which could mean they will have
+ * vulnerabilities.
+ * Run 'emerge @golang-rebuild' to rebuild all 'go' packages
+ * See https://bugs.gentoo.org/752153 for more info
+
+ * Messages for package sys-kernel/installkernel-24:
+
+ * systemd-boot is installed but the systemd-boot USE flag
+ * is not enabled. Users should enable this flag to install kernels
+ * in a layout that systemd-boot understands and to automatically
+ * update systemd-boot's configuration on each kernel install.
+
+ * Messages for package sys-kernel/dracut-060_pre20240104-r2:
+
+ * Install additional packages for optional runtime features:
+ *   app-shells/dash for Allows use of dash instead of default bash (on your own risk)
+ *   sys-block/open-iscsi for Support iSCSI
+ *   sys-fs/mdadm for Support MD devices, also known as software RAID devices
+ *   sys-fs/dmraid for Support MD devices, also known as software RAID devices
+ *   sys-block/nbd for Support network block devices
+ *   net-fs/nfs-utils for Support NFS
+ *   net-nds/rpcbind for Support NFS
+ *   app-admin/rsyslog for Enable logging with rsyslog
+ *   sys-fs/squashfs-tools for Support Squashfs
+ *   app-crypt/tpm2-tools for Support TPM 2.0 TSS
+ *   sys-apps/biosdevname for Support BIOS-given device names
+ *   sys-apps/rng-tools for Enable rngd service to help generating entropy early during boot
+
+ * Messages for package sys-apps/systemd-254.8-r1:
+
+ * Install additional packages for optional runtime features:
+ *   sys-kernel/installkernel[systemd-boot] for automatically installing the kernels in systemd-boot's native layout and updating the bootloader configuration
+
+ * Messages for package sys-libs/ldb-2.7.2:
+
+ * You have sssd installed. It is known to break after ldb upgrades,
+ * so please try to rebuild it before reporting bugs.
+ * See https://bugs.gentoo.org/404281
+
+ * Messages for package net-libs/nodejs-20.11.0:
+
+ * remember to run: source /etc/profile if you plan to use nodejs
+ * 	in your current shell
+
+ * Messages for package net-print/cups-2.4.7-r2:
+
+ * Your USB printers will be managed via libusb. In case you run into problems, 
+ * please try disabling USB_PRINTER support in your kernel or blacklisting the
+ * usblp kernel module.
+ * Alternatively, just disable the usb useflag for cups (your printer will still work).
+ * 
+ * For information about installing a printer and general cups setup
+ * take a look at: https://wiki.gentoo.org/wiki/Printing
+
+ * Messages for package dev-lang/ispc-1.22.0-r1:
+
+ * Removing auto-x86 build on amd64
+
+ * Messages for package app-admin/sudo-1.9.15_p5:
+
+ * To use the -A (askpass) option, you need to install a compatible
+ * password program from the following list. Starred packages will
+ * automatically register for the use with sudo (but will not force
+ * the -A option):
+ * 
+ *  [*] net-misc/ssh-askpass-fullscreen
+ *      net-misc/x11-ssh-askpass
+ * 
+ * You can override the choice by setting the SUDO_ASKPASS environmnent
+ * variable to the program you want to use.
+
+ * Messages for package sci-libs/gdal-3.8.0:
+
+ * Check available image and data formats after building with
+ * gdalinfo and ogrinfo (using the --formats switch).
+
+ * Messages for package net-im/signal-desktop-bin-6.46.0:
+
+ * For using the tray icon on compatible desktop environments, start Signal with
+ *  '--start-in-tray' or '--use-tray-icon'.
+
+ * Messages for package www-client/firefox-bin-122.0.1:
+
+ * Optional programs for extra features:
+ *   app-accessibility/speech-dispatcher for speech syntesis (text-to-speech) support
+
+ * Messages for package app-emulation/virtualbox-7.0.12-r2:
+
+ * To launch VirtualBox just type: "virtualbox".
+ * You must be in the vboxusers group to use VirtualBox.
+ * 
+ * The latest user manual is available for download at:
+ * https://download.virtualbox.org/virtualbox/7.0.12/UserManual.pdf
+ * 
+
+ * Messages for package dev-qt/qtwebengine-5.15.12_p20240122:
+
+ * This version of Qt WebEngine is based on Chromium version 87.0.4280.144,
+ * with additional security fixes from newer versions. Extensive as it is, the
+ * list of backports is impossible to evaluate, but always bound to be behind
+ * Chromium's release schedule.
+ * In addition, various online services may deny service based on an outdated
+ * user agent version (and/or other checks). Google is already known to do so.
+ * 
+ * tldr: Your web browsing experience will be compromised.
+
+ * Messages for package media-gfx/freecad-0.20.2-r1:
+
+ * Computational utilities
+ *   sci-libs/openblas for BLAS library
+ *   dev-python/pandas for Statistical computation with Python
+ *   dev-python/scipy for Use scientific computation with Python
+ *   dev-python/sympy for Use symbolic math with Python
+ * Imaging, Plotting and Rendering utilities
+ *   media-gfx/graphviz for Dependency graphs
+ *   media-gfx/povray for PBR Rendering
+ * Import / Export
+ *   dev-python/pycollada for Work with COLLADA documents
+ *   dev-python/pyyaml for YAML importer and emitter
+ *   media-gfx/libredwg for Importing and exporting 2D AutoCAD DWG files
+ * Meshing and FEM
+ *   sci-libs/gmsh for FEM mesh generator
+ *   sci-libs/gts for Triangulating meshes
+ *   sci-visualization/paraview for Visualization
