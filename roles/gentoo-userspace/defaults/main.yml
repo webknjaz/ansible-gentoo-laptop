@@ -307,6 +307,7 @@ code_workspace:
       - benjaminp/six
       - bitprophet/alabaster
       - candlepin/candlepin
+      - cherrypy/.github
       - cherrypy/cheroot
       - cherrypy/cherrypy
       - cherrypy/magicbus
@@ -511,6 +512,7 @@ code_workspace:
         bbangert/routes: webknjaz/routes
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
+        cherrypy/.github: webknjaz/cherrypy--.github
         codecov/uploader: webknjaz/codecov-uploader
         confluentinc/cp-ansible: webknjaz/cp-ansible
         cython/cython: webknjaz/cython
