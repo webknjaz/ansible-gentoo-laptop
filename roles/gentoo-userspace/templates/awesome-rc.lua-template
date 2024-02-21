@@ -15,7 +15,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
--- Instanciate a battery widget and configure it
+-- Instantiate a battery widget and configure it
 local weather_widget = require("awesome-wm-widgets.weather-widget.weather")({
 {% endraw %}
     api_key='{{ awesome.widgets.open_weather_map.api_token }}',
