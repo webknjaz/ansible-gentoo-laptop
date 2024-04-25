@@ -387,6 +387,7 @@ code_workspace:
       - pydantic/pydantic
       - pyenv/pyenv
       - PyGithub/PyGithub
+      - pylint-dev/pylint
       - pypa/auditwheel
       - pypa/browntruck
       - pypa/build
@@ -565,6 +566,7 @@ code_workspace:
         pydantic/pydantic: webknjaz/pydantic
         pyenv/pyenv: webknjaz/pyenv
         PyGithub/PyGithub: webknjaz/PyGithub
+        pylint-dev/pylint: webknjaz/pylint-dev--pylint
         pypa/browntruck: sanitizers/browntruck
         pypa/build: webknjaz/build
         pypa/hatch: webknjaz/hatch
