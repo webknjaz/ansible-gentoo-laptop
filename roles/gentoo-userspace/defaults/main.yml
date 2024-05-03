@@ -345,6 +345,7 @@ code_workspace:
       - hynek/environ-config
       - hynek/svcs
       - hyprwm/Hyprland
+      - instructlab/instructlab
       - itkpi/beej-s-guide-to-network
       - jaraco/rst.linker
       - jaraco/skeleton
@@ -540,6 +541,7 @@ code_workspace:
         HypothesisWorks/hypothesis: webknjaz/hypothesis
         hynek/environ-config: webknjaz/environ-config
         hynek/svcs: webknjaz/hynek--svcs
+        instructlab/instructlab: webknjaz/instructlab--instructlab
         jaraco/skeleton: webknjaz/jaraco-skeleton
         jazzband/.github: webknjaz/jazzband--.github
         jazzband/pip-tools: webknjaz/pip-tools
