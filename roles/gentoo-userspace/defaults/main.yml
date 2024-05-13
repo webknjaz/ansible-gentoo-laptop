@@ -267,6 +267,7 @@ code_workspace:
       - ahlinc/invoicer
       - ahlinc/vscode-app
       - aio-libs/.github
+      - aio-libs/aiodocker
       - aio-libs/aiohttp
       - aio-libs/aiohttp-devtools
       - aio-libs/aiomonitor
@@ -494,6 +495,7 @@ code_workspace:
       forked_as:
         abhinavsingh/proxy.py: webknjaz/proxy.py
         actions/toolkit: webknjaz/github--actions--toolkit
+        aio-libs/aiodocker: webknjaz/aio-libs--aiodocker
         aio-libs/aiohttp: webknjaz/aiohttp
         aio-libs/aiomonitor: webknjaz/aio-libs--aiomonitor
         aio-libs/create-release: webknjaz/create-release
