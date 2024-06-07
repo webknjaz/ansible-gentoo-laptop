@@ -121,6 +121,7 @@ use_flags_per_package_enabled:
   - vpx  # dependency of media-gfx/blender
   media-video/vlc:
   - chromecast
+  - matroska
   net-dns/bind-tools:
   - gssapi
   net-dns/dnsmasq:
