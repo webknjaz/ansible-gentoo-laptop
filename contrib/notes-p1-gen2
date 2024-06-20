@@ -3325,3 +3325,154 @@ Use emerge @preserved-rebuild to rebuild packages using these libraries
  *   sci-libs/gmsh for FEM mesh generator
  *   sci-libs/gts for Triangulating meshes
  *   sci-visualization/paraview for Visualization
+
+
+
+-------------------------------
+
+
+
+
+ * Messages for package app-misc/spacenavd-0.8:
+
+ * To start the Spacenav daemon system-wide by default
+ * you should add it to the default runlevel :
+ * `rc-update add spacenavd default` (for openRC)
+ * `systemctl enable spacenavd` (for systemd)
+ * 
+ * To start generating Spacenav X events by default
+ * you should add this command in your user startup
+ * scripts such as .gnomerc or .xinitrc :
+ * `spnavd_ctl x11 start`
+ * 
+ * 
+ * If you want to auto-start the daemon when you plug in
+ * a SpaceNavigator device, activate the related udev rule :
+ * `sudo ln -s /lib/udev/rules.d/99-space-navigator.rules.ignored /etc/udev/rules.d`
+ * You must restart spnavd `/etc/init.d/spacenavd restart` to run
+ * the new version of the daemon or `systemctl restart spacenavd`
+ * if using systemd.
+
+ * Messages for package dev-libs/xerces-c-3.2.4-r2:
+
+ * This package can use iconv or icu for loading messages
+ * and transcoding, but not both. ICU takes precedence.
+
+ * Messages for package net-libs/nodejs-20.6.1:
+
+ * remember to run: source /etc/profile if you plan to use nodejs
+ * 	in your current shell
+
+ * Messages for package dev-python/fs-2.4.16:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/boto for S3 support
+ *   dev-python/paramiko for SFTP support
+ *   dev-python/wxpython for Browser support
+
+ * Messages for package dev-qt/qtwebengine-5.15.11_p20231102:
+
+ * This version of Qt WebEngine is based on Chromium version 87.0.4280.144,
+ * with additional security fixes from newer versions. Extensive as it is, the
+ * list of backports is impossible to evaluate, but always bound to be behind
+ * Chromium's release schedule.
+ * In addition, various online services may deny service based on an outdated
+ * user agent version (and/or other checks). Google is already known to do so.
+ * 
+ * tldr: Your web browsing experience will be compromised.
+
+ * Messages for package media-gfx/freecad-0.20.2-r1:
+
+ * Computational utilities
+ *   sci-libs/openblas for BLAS library
+ *   dev-python/pandas for Statistical computation with Python
+ *   dev-python/scipy for Use scientific computation with Python
+ *   dev-python/sympy for Use symbolic math with Python
+ * Imaging, Plotting and Rendering utilities
+ *   media-gfx/graphviz for Dependency graphs
+ *   media-gfx/povray for PBR Rendering
+ * Import / Export
+ *   dev-python/pycollada for Work with COLLADA documents
+ *   dev-python/pyyaml for YAML importer and emitter
+ *   media-gfx/libredwg for Importing and exporting 2D AutoCAD DWG files
+ * Meshing and FEM
+ *   sci-libs/gmsh for FEM mesh generator
+ *   sci-libs/gts for Triangulating meshes
+ *   sci-visualization/paraview for Visualization
+
+ * Regenerating GNU info directory index...
+ * Processed 151 info files.
+
+!!! existing preserved libs:
+>>> package: sci-libs/opencascade-7.6.3-r2
+ *  - /usr/lib64/opencascade/libTKBO.so.7.7
+ *  - /usr/lib64/opencascade/libTKBO.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKBRep.so.7.7
+ *  - /usr/lib64/opencascade/libTKBRep.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+ *  - /usr/lib64/opencascade/libTKCAF.so.7.7
+ *  - /usr/lib64/opencascade/libTKCAF.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKCDF.so.7.7
+ *  - /usr/lib64/opencascade/libTKCDF.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKG2d.so.7.7
+ *  - /usr/lib64/opencascade/libTKG2d.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKG3d.so.7.7
+ *  - /usr/lib64/opencascade/libTKG3d.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKGeomAlgo.so.7.7
+ *  - /usr/lib64/opencascade/libTKGeomAlgo.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKGeomBase.so.7.7
+ *  - /usr/lib64/opencascade/libTKGeomBase.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKHLR.so.7.7
+ *  - /usr/lib64/opencascade/libTKHLR.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKLCAF.so.7.7
+ *  - /usr/lib64/opencascade/libTKLCAF.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+ *  - /usr/lib64/opencascade/libTKMath.so.7.7
+ *  - /usr/lib64/opencascade/libTKMath.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+ *  - /usr/lib64/opencascade/libTKMesh.so.7.7
+ *  - /usr/lib64/opencascade/libTKMesh.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+ *  - /usr/lib64/opencascade/libTKPrim.so.7.7
+ *  - /usr/lib64/opencascade/libTKPrim.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKSTEP.so.7.7
+ *  - /usr/lib64/opencascade/libTKSTEP.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKSTEP209.so.7.7
+ *  - /usr/lib64/opencascade/libTKSTEP209.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKSTEPAttr.so.7.7
+ *  - /usr/lib64/opencascade/libTKSTEPAttr.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKSTEPBase.so.7.7
+ *  - /usr/lib64/opencascade/libTKSTEPBase.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKService.so.7.7
+ *  - /usr/lib64/opencascade/libTKService.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKShHealing.so.7.7
+ *  - /usr/lib64/opencascade/libTKShHealing.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKTopAlgo.so.7.7
+ *  - /usr/lib64/opencascade/libTKTopAlgo.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+ *  - /usr/lib64/opencascade/libTKV3d.so.7.7
+ *  - /usr/lib64/opencascade/libTKV3d.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKVCAF.so.7.7
+ *  - /usr/lib64/opencascade/libTKVCAF.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKXCAF.so.7.7
+ *  - /usr/lib64/opencascade/libTKXCAF.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+ *  - /usr/lib64/opencascade/libTKXDE.so.7.7
+ *  - /usr/lib64/opencascade/libTKXDE.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKXDESTEP.so.7.7
+ *  - /usr/lib64/opencascade/libTKXDESTEP.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+ *  - /usr/lib64/opencascade/libTKXSBase.so.7.7
+ *  - /usr/lib64/opencascade/libTKXSBase.so.7.7.0
+ *  - /usr/lib64/opencascade/libTKernel.so.7.7
+ *  - /usr/lib64/opencascade/libTKernel.so.7.7.0
+ *      used by /usr/bin/superslicer (media-gfx/superslicer-2.5.59.2-r2)
+Use emerge @preserved-rebuild to rebuild packages using these libraries
+
+ * IMPORTANT: 7 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 28 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
