@@ -409,6 +409,7 @@ code_workspace:
       - pypa/virtualenv
       - pypa/warehouse
       - pypa/wheel
+      - pytest-dev/execnet
       - pytest-dev/pytest
       - pytest-dev/pytest-forked
       - pytest-dev/pytest-mock
@@ -582,6 +583,7 @@ code_workspace:
         pypa/twine: webknjaz/twine
         pypa/virtualenv: webknjaz/virtualenv
         pypa/warehouse: webknjaz/warehouse
+        pytest-dev/execnet: webknjaz/pytest-dev--execnet
         pytest-dev/pytest: webknjaz/pytest
         pytest-dev/pytest-forked: webknjaz/pytest-forked
         pytest-dev/pytest-mock: webknjaz/pytest-mock
