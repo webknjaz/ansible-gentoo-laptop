@@ -480,6 +480,7 @@ code_workspace:
       - webknjaz/cython-coverage-extern-bug-repro-issue3636
       - webknjaz/docker-freecad-cli
       - webknjaz/docker-freecad-cli-dev
+      - webknjaz/ep2024-multilock-toy-template
       - webknjaz/fortunate-pkg
       - webknjaz/fqcn_conftest_repro
       - webknjaz/gentoo-overlay
