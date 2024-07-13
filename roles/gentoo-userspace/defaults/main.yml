@@ -270,6 +270,7 @@ code_workspace:
       - aio-libs/aiodocker
       - aio-libs/aiohttp
       - aio-libs/aiohttp-devtools
+      - aio-libs/aiokafka
       - aio-libs/aiomonitor
       - aio-libs/async-lru
       - aio-libs/create-release
@@ -502,6 +503,7 @@ code_workspace:
         actions/toolkit: webknjaz/github--actions--toolkit
         aio-libs/aiodocker: webknjaz/aio-libs--aiodocker
         aio-libs/aiohttp: webknjaz/aiohttp
+        aio-libs/aiokafka: webknjaz/aio-libs--aiokafka
         aio-libs/aiomonitor: webknjaz/aio-libs--aiomonitor
         aio-libs/create-release: webknjaz/create-release
         aio-libs/frozenlist: webknjaz/frozenlist
