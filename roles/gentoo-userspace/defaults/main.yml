@@ -291,6 +291,7 @@ code_workspace:
       - ansible/ansible-navigator-demo-ee
       - ansible/ansible-runner
       - ansible/ansibullbot
+      - ansible/awx
       - ansible/azure-pipelines-test-container
       - ansible/azure-pipelines-test-vm
       - ansible/collection_migration
@@ -517,6 +518,7 @@ code_workspace:
         ansible/ansible-language-server: webknjaz/ansible-language-server
         ansible/ansible-lint: webknjaz/ansible-lint
         ansible/ansible-navigator-demo-ee: webknjaz/ansible-creator-ee
+        ansible/awx: webknjaz/ansible--awx
         ansible/ansibullbot: webknjaz/ansibullbot
         ansible/azure-pipelines-test-container: webknjaz/ansible--azure-pipelines-test-container
         ansible/azure-pipelines-test-vm: webknjaz/ansible--azure-pipelines-test-vm
