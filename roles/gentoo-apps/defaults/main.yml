@@ -299,77 +299,77 @@ essential_ebuilds:
 - sys-process/lsof  # htop dep
 - www-client/links  # needed to browse web docs from terminal
 ebuilds:
-- abrt
+# - app-admin/abrt  # dropped?
 - app-crypt/adcli  # for Kerberos keytab renew (see krb5_renew_interval) @ sssd
 - x11-misc/arandr
 - x11-misc/autorandr
 - sys-power/acpi
 - sys-power/acpid
-- alacritty
-- alsa-utils
-- android-tools
-- anydesk
-- apache-tools
+- x11-terms/alacritty
+- media-sound/alsa-utils
+- dev-util/android-tools
+- net-misc/anydesk
+- app-admin/apache-tools
 - app-emulation/docker
 - app-emulation/docker-cli
 - app-misc/screen
-- arc-theme
-- arphicfonts
-- artwiz-aleczapka-en
-- asciinema
-- atop
-- awesome
-- axel
+- x11-themes/arc-theme
+- media-fonts/arphicfonts
+- media-fonts/artwiz-aleczapka-en
+- app-misc/asciinema
+- sys-process/atop
+- x11-wm/awesome
+- net-misc/axel
 - sys-apps/bat  # cat(1) clone with syntax highlighting and Git integration
-- bind-tools
+- net-dns/bind-tools
 - app-admin/bitwarden-desktop-bin
-- bbswitch  # FIXME: make host-dependent
+- sys-power/bbswitch  # FIXME: make host-dependent
 - media-gfx/blender
 - net-wireless/blueman
 - sys-apps/bolt
 - net-misc/bridge-utils
 - sys-fs/btrfs-progs
 - sys-fs/btrfsmaintenance
-- bundler
-- ccache
+- dev-ruby/bundler
+- dev-util/ccache
 - sys-devel/clang
 # pygments is optional, needed by /usr/lib/llvm/13/share/opt-viewer
 - dev-python/pygments
 # PyYAML is optional, needed by /usr/lib/llvm/12/share/clang/run-clang-tidy.py
 - dev-python/pyyaml
-- cndrvcups-common-lb
-- corefonts
+- net-print/cndrvcups-common-lb
+- media-fonts/corefonts
 - >-  # Podman works better with crun than runc: https://bugs.gentoo.org/723080
   app-emulation/crun
-- darktable
+- media-gfx/darktable
 - dev-util/debugedit  # For debug symbols creation w/ FEATURES=installsources
 - sys-devel/distcc  # Needed for network-distributed emerge builds
-- dnsmasq
-- dpkg
+- net-dns/dnsmasq
+- app-arch/dpkg
 - sys-kernel/dracut-crypt-ssh
-- dstat
-- ebtables
-- enchant
-- eselect-fontconfig
-- eselect-python
+- sys-apps/dstat
+- net-firewall/ebtables
+- app-text/enchant
+- app-eselect/eselect-fontconfig
+- app-eselect/eselect-python
 - sys-apps/ethtool
-- fira-code
+- media-fonts/fira-code
 - www-client/firefox-bin
 - games-simulation/flightgear
-- font-bh-ttf
-- font-bh-type1
-- foomatic-db
-- foomatic-db-engine
-- foomatic-db-ppds
+- media-fonts/font-bh-ttf
+- media-fonts/font-bh-type1
+- net-print/foomatic-db
+- net-print/foomatic-db-engine
+- net-print/foomatic-db-ppds
 - sys-auth/fprintd
 - media-gfx/freecad
-- freefonts
-- freerdp
-- fuse-exfat
+- media-fonts/freefonts
+- net-misc/freerdp
+- sys-fs/fuse-exfat
 - sys-apps/fwupd
 - app-shells/fzf  # CLI fuzzy finder
-- genkernel
-- gentoo-sources
+- sys-kernel/genkernel
+- sys-kernel/gentoo-sources
 - sys-process/glances
 - app-office/gnucash
 # https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
@@ -378,133 +378,133 @@ ebuilds:
 - sys-kernel/installkernel-systemd-boot
 - sys-libs/efivar
 - app-shells/gentoo-zsh-completions
-- gnome-color-manager
-- google-chrome
+- gnome-extra/gnome-color-manager
+- www-client/google-chrome
 - media-gfx/flameshot
 - app-admin/helm
 - net-print/hplip
 - gui-wm/hyprland
 - x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
-# - x11-libs/libva-vdpau-driver NVIDIA GPU
-- iosevka
-- iperf:3
-- iptraf-ng
-- irssi
+# - x11-libs/libva-vdpau-driver NVIDIA GPU  # dropped?
+- media-fonts/iosevka
+- net-misc/iperf:3
+- net-analyzer/iptraf-ng
+- net-irc/irssi
 - sys-apps/irqbalance
 - virtual/jack
 - media-sound/jack2
 - app-misc/jq
-- jre
-- kexec-tools
-- kitty
+- virtual/jre
+- sys-apps/kexec-tools
+- x11-terms/kitty
 - x11-terms/kitty-shell-integration
 - sys-cluster/kubectl
-- libfprint
-- libinput-gestures
-- libgnomecups
+- sys-auth/libfprint
+- x11-misc/libinput-gestures
+# - libgnomecups  # dropped?
 - x11-libs/libva-intel-driver
 - >-  # Used to be "libpod", now: https://wiki.gentoo.org/wiki/Podman
   app-emulation/podman
-- libvirt
-- light
-- linux-firmware
+- app-emulation/libvirt
+- dev-libs/light
+- sys-kernel/linux-firmware
 - sys-apps/lsd  # `ls` on steroids
 - sys-apps/lm-sensors
-#- lxc
-- lxdm
+#- app-containers/lxc
+- lxde-base/lxdm
 - dev-lua/luajson   # Awesome WM theme
-- luaposix  # FIXME: unmask? delete?
-- luarocks  # FIXME: delete?
-- luasocket  # FIXME: delete?
-- mesa-progs
+# - dev-lua/luaposix  # FIXME: unmask? delete?
+- dev-lua/luarocks  # FIXME: delete?
+- dev-lua/luasocket  # FIXME: delete?
+- x11-apps/mesa-progs
 - sys-fs/multipath-tools
 - app-editors/neovim
-- openbsd-netcat
-- nemu  # Ncurses QEMU TUI
+- net-analyzer/openbsd-netcat
+- app-emulation/nemu  # Ncurses QEMU TUI
 - dev-python/neovim-remote  # Needed for NeoVim: for remote/nvr support
 - dev-ruby/neovim-ruby-client  # Needed for NeoVim: for Ruby plugin support
-- networkmanager
-- networkmanager-openvpn
-- networkmanager-sstp
-- nmap
-- noto
-- noto-emoji
-- ntfs3g
-- pam_krb5
-- parcellite
-- pavucontrol
-- pcsc-lite
+- net-misc/networkmanager
+- net-vpn/networkmanager-openvpn
+# - net-vpn/networkmanager-sstp
+- net-analyzer/nmap
+- media-fonts/noto
+- media-fonts/noto-emoji
+- sys-fs/ntfs3g
+- sys-auth/pam_krb5
+- x11-misc/parcellite
+- media-sound/pavucontrol
+- sys-apps/pcsc-lite
 - media-video/pipewire
 - media-sound/playerctl
 - sys-boot/plymouth
-- powerline-symbols
+- media-fonts/powerline-symbols
 # - media-gfx/prusaslicer
-- pulseaudio
+- media-sound/pulseaudio
 - dev-python/pynvim  # Needed for NeoVim: for Python plugin support
-- python:3.7
-- python:3.8
-- pam_u2f
-- pam_yubico
+- dev-lang/python:3.7
+- dev-lang/python:3.8
+- sys-auth/pam_u2f
+- sys-auth/pam_yubico
 - virtual/perl-Thread-Queue  # Needed for building OpenWRT
 - sys-auth/rtkit  # Pulseaudio: improve restricted realtime D-Bus capabilities
-- qemu
-- qrencode
-- quivira
-- rawtherapee
+- app-emulation/qemu
+- media-gfx/qrencode
+- media-fonts/quivira
+- media-gfx/rawtherapee
 - x11-misc/i3lock
 - x11-misc/redshift
 - sys-apps/ripgrep  # `grep` on steroids
-- rust-bin
+- dev-lang/rust-bin
 - app-crypt/seahorse
-- sic
+- net-irc/sic
 - net-im/signal-desktop-bin
 - media-sound/spotify
-- sshfs
+- net-fs/sshfs
 - net-misc/sshpass
-- sssd
-- strace
+- sys-auth/sssd
+- dev-debug/strace
 - media-gfx/superslicer
-- tcpdump
-- tcptraceroute
-- telnet-bsd
-- termtosvg
-- texlive-langcyrillic
-- texlive-latexrecommended
-- thunar
-- thunderbird-bin
+- net-analyzer/tcpdump
+- net-analyzer/tcptraceroute
+- net-misc/telnet-bsd
+- media-gfx/termtosvg
+- dev-texlive/texlive-langcyrillic
+- dev-texlive/texlive-latexrecommended
+- xfce-base/thunar
+- mail-client/thunderbird-bin
 - app-laptop/thinkfan
 - sys-process/time
-- tmux
-- traceroute
+- app-misc/tmux
+- net-analyzer/traceroute
 - dev-util/tree-sitter-cli
-- ttf-bitstream-vera
-- unicode-emoji
-- unifont
+- media-fonts/ttf-bitstream-vera
+- app-i18n/unicode-emoji
+- media-fonts/unifont
 - sys-power/upower
-- usbutils
+- sys-apps/usbutils
 - sys-apps/usermode-utilities
-- vagrant
+- app-emulation/vagrant
 - app-emulation/virtualbox
 - app-emulation/virtualbox-additions  # ISO images with guest additions
 - app-emulation/virtualbox-extpack-oracle
-- virt-manager
-- vlc
+- app-emulation/virt-manager
+- media-video/vlc
 - gui-apps/wl-clipboard  # Needed for NeoVim: for clipboard support
 - gui-apps/wofi  # Set up for <Win>+R in hyprland
-- wget2
-- wireshark
-- wmname
-- xautolock
+- net-misc/wget2
+- net-analyzer/wireshark
+- x11-misc/wmname
+- x11-misc/xautolock
 - x11-misc/xclip  # Needed for NeoVim: for clipboard support
-- xorg-x11  # FIXME: replace with x11-base/xorg-apps + x11-base/xorg-fonts before 2022-11-01
+- x11-base/xorg-x11  # FIXME: replace with x11-base/xorg-apps + x11-base/xorg-fonts before 2022-11-01
 - app-text/xournalpp
 - x11-misc/xsel  # Needed for NeoVim: for clipboard support
 - net-misc/x11-ssh-askpass
 - app-crypt/yubioath-desktop
-- yubikey-manager
+- app-crypt/yubikey-manager
 - sys-auth/yubikey-personalization-gui
-- zh-kcfonts
-- zsh-completions
+- media-fonts/zh-kcfonts
+- app-shells/zsh-completions
 ebuilds_from_overlays:
   app-crypt/keybase-bin: dmchurch  # TODO: use "keybase" once it supports GUI
   app-editors/vscode-bin: jorgicio
