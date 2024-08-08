@@ -1253,6 +1253,7 @@
       - dist-kernel  # for virtual/dist-kernel
       - lvm  # needed by the same-named dracut module
       - modules-sign  # signing kernel modules
+      - nftables  # Podman requires this in iptables
       - nvenc  # NVIDIA Encoder/Decoder API
       - nvidia  # NVIDIA support in various apps
       - secureboot  # UEFI secure boot support
@@ -1663,6 +1664,7 @@
       - app-admin/eclean-kernel  # kernel leftovers cleanup
       - app-admin/sudo  # privilege escalation
       - app-arch/lz4  # initramfs compression
+      - app-containers/podman  # userspace over privilege escalation
       - app-crypt/efitools
       - app-crypt/sbctl
       - app-crypt/sbsigntools
