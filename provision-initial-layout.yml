@@ -1299,6 +1299,67 @@
       'is already enabled' not in euse_proc.stdout
     register: euse_proc
 
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for dev-libs/cyrus-sasl
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - dev-libs/cyrus-sasl
+      - -E
+      - kerberos  # for sys-auth/sssd
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for net-dns/bind-tools
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - net-dns/bind-tools
+      - -E
+      - gssapi  # for sys-auth/sssd
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for net-nds/openldap
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - net-nds/openldap
+      - -E
+      - experimental  # for sys-auth/sssd
+      - sasl  # for sys-auth/sssd
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
   - name: Set the secure boot signing key path
     set_fact:
       secure_boot_signing_key_path: /root/secureboot/MOK.pem
@@ -1690,6 +1751,7 @@
       - sys-apps/util-linux  # fstrim.timer for doing TRIM/discard on SSD
       - sys-auth/fprintd  # fingerprint reader support
       - sys-auth/rtkit  # realtime pipewire
+      - sys-auth/sssd  # Kerberos integration
       - sys-boot/efibootmgr  # secure boot
       - sys-boot/mokutil  # secure boot
       - sys-boot/plymouth  # splash screen during boot
