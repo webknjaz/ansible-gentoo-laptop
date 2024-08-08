@@ -1699,6 +1699,7 @@
       - sys-kernel/dracut
       - sys-kernel/gentoo-kernel-bin
       - sys-kernel/linux-firmware  # AMDGPU
+      - sys-power/acpid  # power management
       # - sys-power/nvidia-exec::guru  # https://github.com/pedro00dk/nvidia-exec
       - sys-process/htop  # process monitoring
       - x11-apps/mesa-progs  # glxinfo / glxgears
@@ -1864,6 +1865,18 @@
       - systemctl
       - enable
       - lm_sensors
+      chdir: >-
+        {{ gentoo_prefix }}
+
+  - name: Enable acpid on startup
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - acpid
       chdir: >-
         {{ gentoo_prefix }}
 
