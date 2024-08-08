@@ -1684,6 +1684,7 @@
       - sys-apps/fwupd  # laptop firmware updater
       - sys-apps/irqbalance  # Distribute hardware interrupts across CPU cores
       - sys-apps/lm-sensors  # device temperatures, et al.
+      - sys-apps/usbutils  # lsusb
       - sys-apps/util-linux  # fstrim.timer for doing TRIM/discard on SSD
       - sys-auth/fprintd  # fingerprint reader support
       - sys-auth/rtkit  # realtime pipewire
