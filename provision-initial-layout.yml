@@ -1242,7 +1242,6 @@
       - dist-kernel  # for virtual/dist-kernel
       - lvm  # needed by the same-named dracut module
       - modules-sign  # signing kernel modules
-      - nftables  # Podman requires this in iptables
       - nvenc  # NVIDIA Encoder/Decoder API
       - nvidia  # NVIDIA support in various apps
       - secureboot  # UEFI secure boot support
@@ -1291,6 +1290,26 @@
       - -E
       - dracut  # for sys-kernel/gentoo-kernel-bin
       - systemd-boot
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for net-firewall/iptables
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - net-firewall/iptables
+      - -E
+      - nftables  # Podman requires this in iptables
       chdir: >-
         {{ gentoo_prefix }}
     failed_when:
