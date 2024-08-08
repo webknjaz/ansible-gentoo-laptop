@@ -1855,6 +1855,18 @@
       chdir: >-
         {{ gentoo_prefix }}
 
+  - name: Enable lm_sensors on startup
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - lm_sensors
+      chdir: >-
+        {{ gentoo_prefix }}
+
   - name: Clean up kernels except for the latest 3
     # https://wiki.gentoo.org/wiki/Kernel/Removal
     ansible.builtin.command:
