@@ -630,7 +630,7 @@
   when: true
 
 - name: Set up Virtual Console keyboard layout
-  command: localectl set-keymap 'us,ua'
+  command: localectl set-keymap us ua --no-convert
   when: true
 
 - name: Set up udev rules
