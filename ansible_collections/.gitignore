@@ -1,0 +1,9 @@
+# Prevent Git from tracking anything...
+*
+
+# ...except for this file itself...
+!.gitignore
+
+# ...and the local in-repo collection...
+!webknjaz
+!webknjaz/**
