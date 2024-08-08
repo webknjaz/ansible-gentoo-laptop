@@ -75,6 +75,9 @@
 # https://wiki.gentoo.org/wiki/Hyprpaper
 # https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
 # https://github.com/coffeeispower/woomer
+# https://github.com/fwupd/fwupd/wiki/Blocked-executable-in-the-ESP,-ensure-grub-and-shim-are-up-to-date
+# https://askubuntu.com/a/1436957
+# https://github.com/fwupd/fwupd/issues/5121
 #
 # NOTE: A new GPT label must be created when repartitioning disks with LUKS
 # fdisk -> g -> w
@@ -1136,20 +1139,6 @@
       - en_US.UTF-8
       chdir: >-
         {{ gentoo_prefix }}
-
-  - name: Configure fwupd to locate ESP
-    # https://github.com/fwupd/fwupd/wiki/Blocked-executable-in-the-ESP,-ensure-grub-and-shim-are-up-to-date
-    # https://askubuntu.com/a/1436957
-    # https://github.com/fwupd/fwupd/issues/5121
-    ansible.builtin.lineinfile:
-      insertafter: >-
-        ^\[fwupd\]$
-      line: >-
-        EspLocation = /efi
-      path: >-
-        {{ gentoo_prefix }}/etc/fwupd/fwupd.conf
-      regex: >-
-        ^EspLocation\s*=\s*.*
 
   - name: Sync the portage database via `emerge-webrsync`
     ansible.builtin.command:
