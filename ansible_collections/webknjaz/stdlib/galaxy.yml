@@ -1,0 +1,6 @@
+name: stdlib
+namespace: webknjaz
+version: 0.0.0
+readme: ./README.md
+authors:
+- Sviatoslav Sydorenko (https://webknjaz.me)
