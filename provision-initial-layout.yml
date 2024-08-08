@@ -1761,7 +1761,8 @@
       - net-print/cups-browsed
       - net-vpn/networkmanager-openvpn
       - net-vpn/wireguard-tools
-      - net-wireless/bluez  # Bluetooth
+      - net-wireless/blueman  # Bluetooth GUI
+      - net-wireless/bluez  # Bluetooth; not enabling global `bluetooth` USE-flags to avoid compiling more
       - sys-apps/ethtool  # ethernet network interfaces analyzer
       - sys-apps/fwupd  # laptop firmware updater
       - sys-apps/irqbalance  # Distribute hardware interrupts across CPU cores
