@@ -1677,6 +1677,8 @@
       - net-im/signal-desktop-bin  # secure intant messenger
       - net-misc/networkmanager
       - net-misc/openssh
+      - net-print/cups
+      - net-print/cups-browsed
       - net-vpn/networkmanager-openvpn
       - net-vpn/wireguard-tools
       - net-wireless/bluez  # Bluetooth
@@ -1877,6 +1879,30 @@
       - systemctl
       - enable
       - acpid
+      chdir: >-
+        {{ gentoo_prefix }}
+
+  - name: Enable CUPS on startup
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - cups
+      chdir: >-
+        {{ gentoo_prefix }}
+
+  - name: Enable cups-browsed on startup
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - cups-browsed
       chdir: >-
         {{ gentoo_prefix }}
 
