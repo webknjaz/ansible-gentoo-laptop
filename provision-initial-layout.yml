@@ -600,8 +600,8 @@
   - name: Configure crypttab
     ansible.builtin.copy:
       content: |
-        decrypted-luks-0 UUID={{ first_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,discard
-        decrypted-luks-1 UUID={{ second_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,discard
+        decrypted-luks-0 UUID={{ first_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14+15,discard
+        decrypted-luks-1 UUID={{ second_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14+15,discard
       dest: >-
         {{ gentoo_prefix }}/etc/crypttab
 
@@ -2157,6 +2157,7 @@
         going to ask for
 
   - name: Enroll TPM2 to unseal LUKS volumes
+    # https://discussion.fedoraproject.org/t/biometric-at-powerup-to-unlock-luks/83534/3
     ansible.builtin.command:
       argv:
       - chroot
@@ -2164,7 +2165,8 @@
         {{ gentoo_prefix }}
       - systemd-cryptenroll
       - --tpm2-device=auto
-      - --tpm2-pcrs=7+8
+      - >-  # https://community.frame.work/t/guide-setup-tpm2-autodecrypt/39005/9
+        --tpm2-pcrs=1+5+7+8+11+12+14+15
       - --tpm2-with-pin=true
       - --wipe-slot=tpm2
       - >-
