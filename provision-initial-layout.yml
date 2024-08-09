@@ -800,6 +800,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.license/www-client--google-chrome
 
+  - name: Accept www-plugins/chrome-binary-plugins google-chrome license
+    ansible.builtin.copy:
+      content: |
+        www-plugins/chrome-binary-plugins google-chrome
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.license/www-plugins--chrome-binary-plugins
+
   - name: Accept sys-kernel/linux-firmware linux-fw-redistributable license
     ansible.builtin.copy:
       content: |
@@ -1302,6 +1309,27 @@
       'is already enabled' not in euse_proc.stdout
     register: euse_proc
 
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for dev-python/PyQt6
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - dev-python/PyQt6
+      - -E
+      - qml  # for www-client/qutebrowser
+      - webchannel  # for www-client/qutebrowser
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
   - name: Set the secure boot signing key path
     set_fact:
       secure_boot_signing_key_path: /root/secureboot/MOK.pem
@@ -1677,9 +1705,11 @@
       - gui-libs/xdg-desktop-portal-hyprland::guru  # Screenshare
       - gui-wm/hyprland  # tiling compositor for Wayland
       - media-sound/playerctl  # MPRIS
+      - media-video/mpv  # qutebrowser plugins
       - net-im/signal-desktop-bin  # secure intant messenger
       - net-misc/networkmanager
       - net-misc/openssh
+      - net-misc/yt-dlp  # qutebrowser plugins
       - net-print/cups
       - net-print/cups-browsed
       - net-vpn/networkmanager-openvpn
@@ -1715,7 +1745,9 @@
       - x11-terms/kitty  # favorite terminal emulator!
       - www-client/firefox-bin  # browser of choice
       - www-client/google-chrome  # backup browser
+      - www-client/qutebrowser  # hackable browser
       - www-misc/profile-sync-daemon  # https://wiki.gentoo.org/wiki/SSD#Web_browser_profile.28s.29_and_cache_on_tmpfs
+      - www-plugins/chrome-binary-plugins  # qutebrowser plugins
       chdir: >-
         {{ gentoo_prefix }}
 
