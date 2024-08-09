@@ -758,83 +758,6 @@
     loop_control:
       loop_var: mount_cmd
 
-  - name: Ensure group wk exists
-    ansible.builtin.command:
-      argv:
-      - chroot
-      - >-
-        {{ gentoo_prefix }}
-      - groupadd
-      - --gid=1000
-      - wk
-      chdir: >-
-        {{ gentoo_prefix }}
-    failed_when: false
-
-  - name: Ensure user wk exists
-    ansible.builtin.command:
-      argv:
-      - chroot
-      - >-
-        {{ gentoo_prefix }}
-      - useradd
-      - --comment=Sviat
-      - --create-home
-      - --gid=1000
-      - >-  # plugdev is here for NetworkManager, video improves fps under Wayland
-        --groups=plugdev,video
-      - --shell=/usr/bin/zsh
-      - --uid=1000
-      - wk
-      chdir: >-
-        {{ gentoo_prefix }}
-    failed_when: false
-
-  - name: >-
-      SSH into the target machine now and invoke
-      `sudo chroot {{ gentoo_prefix }} passwd wk`
-      and `sudo chroot {{ gentoo_prefix }} passwd wk`
-    ansible.builtin.debug:
-      msg: >-
-        SSH into the target machine now and invoke
-        `sudo chroot {{ gentoo_prefix }} passwd wk`
-        and `sudo chroot {{ gentoo_prefix }} passwd wk`
-
-  - name: Add wk to sudoers
-    lineinfile:
-      create: yes
-      group: root
-      line: wk ALL=(ALL) ALL
-      mode: u=r,g=r,o=
-      owner: root
-      path: >-
-        {{ gentoo_prefix }}/etc/sudoers.d/wk-user
-      regexp: ^wk\s[^=]+=[^=]+$
-      state: present
-
-  - name: Create SSH config folder for wk
-    ansible.builtin.file:
-      owner: 1000
-      group: 1000
-      mode: u=rwx,g=,o
-      path: >-
-        {{ gentoo_prefix }}/home/wk/.ssh
-      state: directory
-  - name: Set up SSH config permissions for wk
-    ansible.builtin.file:
-      owner: 1000
-      group: 1000
-      mode: u=rw,g=,o
-      path: >-
-        {{ gentoo_prefix }}/home/wk/.ssh/authorized_keys
-      state: touch
-  - name: Set up SSH access for wk
-    ansible.builtin.lineinfile:
-      line: >-
-        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKfVXabLvtPE8LhoD1+CjZ0hQHLq24eYo3fqFxGfp9IWNN8pXUQH1VpiSs9qd+YQH2KeiJubXaLG61fm+hRLreNn8HLu1sQEgmeLjl2IREk/yrfEWiPuoboN90KHy187gK515yVQmx1HFqQ9112fpVhnbyU/4D2sx07kpUDIR97OC1NW+XQjlWF0+tRh1xU+EEALQbzSVBLobz0DNlUPzDg2vNLbIcYSGvfiYGyj5Opb/tnK3JNN8EzYxZInBcVE52oLOYM3jPkiVWUuTFp5zq12JCiGXrxiPA4KtB/QjD6CbVHBc+eDMTFqMD26CjAuaSg6O/nCY7CSapESxDuVfd
-      path: >-
-        {{ gentoo_prefix }}/home/wk/.ssh/authorized_keys
-
   - name: Instruct systemd to reload the unit files
     ansible.builtin.command:
       argv:
@@ -1819,6 +1742,83 @@
       - --depclean
       chdir: >-
         {{ gentoo_prefix }}
+
+  - name: Ensure group wk exists
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - groupadd
+      - --gid=1000
+      - wk
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when: false
+
+  - name: Ensure user wk exists
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - useradd
+      - --comment=Sviat
+      - --create-home
+      - --gid=1000
+      - >-  # plugdev is here for NetworkManager, video improves fps under Wayland
+        --groups=plugdev,video
+      - --shell=/usr/bin/zsh
+      - --uid=1000
+      - wk
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when: false
+
+  - name: >-
+      SSH into the target machine now and invoke
+      `sudo chroot {{ gentoo_prefix }} passwd wk`
+      and `sudo chroot {{ gentoo_prefix }} passwd wk`
+    ansible.builtin.debug:
+      msg: >-
+        SSH into the target machine now and invoke
+        `sudo chroot {{ gentoo_prefix }} passwd wk`
+        and `sudo chroot {{ gentoo_prefix }} passwd wk`
+
+  - name: Add wk to sudoers
+    lineinfile:
+      create: yes
+      group: root
+      line: wk ALL=(ALL) ALL
+      mode: u=r,g=r,o=
+      owner: root
+      path: >-
+        {{ gentoo_prefix }}/etc/sudoers.d/wk-user
+      regexp: ^wk\s[^=]+=[^=]+$
+      state: present
+
+  - name: Create SSH config folder for wk
+    ansible.builtin.file:
+      owner: 1000
+      group: 1000
+      mode: u=rwx,g=,o
+      path: >-
+        {{ gentoo_prefix }}/home/wk/.ssh
+      state: directory
+  - name: Set up SSH config permissions for wk
+    ansible.builtin.file:
+      owner: 1000
+      group: 1000
+      mode: u=rw,g=,o
+      path: >-
+        {{ gentoo_prefix }}/home/wk/.ssh/authorized_keys
+      state: touch
+  - name: Set up SSH access for wk
+    ansible.builtin.lineinfile:
+      line: >-
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKfVXabLvtPE8LhoD1+CjZ0hQHLq24eYo3fqFxGfp9IWNN8pXUQH1VpiSs9qd+YQH2KeiJubXaLG61fm+hRLreNn8HLu1sQEgmeLjl2IREk/yrfEWiPuoboN90KHy187gK515yVQmx1HFqQ9112fpVhnbyU/4D2sx07kpUDIR97OC1NW+XQjlWF0+tRh1xU+EEALQbzSVBLobz0DNlUPzDg2vNLbIcYSGvfiYGyj5Opb/tnK3JNN8EzYxZInBcVE52oLOYM3jPkiVWUuTFp5zq12JCiGXrxiPA4KtB/QjD6CbVHBc+eDMTFqMD26CjAuaSg6O/nCY7CSapESxDuVfd
+      path: >-
+        {{ gentoo_prefix }}/home/wk/.ssh/authorized_keys
 
   - name: Configure greetd to invoke tuigreet
     ansible.builtin.copy:
