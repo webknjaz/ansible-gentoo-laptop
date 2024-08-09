@@ -1988,6 +1988,42 @@
       chdir: >-
         {{ gentoo_prefix }}
 
+  - name: Enable nvidia-suspend for hibernation
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - nvidia-suspend
+      chdir: >-
+        {{ gentoo_prefix }}
+
+  - name: Enable nvidia-suspend for hibernation
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - nvidia-hibernate
+      chdir: >-
+        {{ gentoo_prefix }}
+
+  - name: Enable nvidia-suspend for hibernation
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - nvidia-resume
+      chdir: >-
+        {{ gentoo_prefix }}
+
   - name: Clean up kernels except for the latest 3
     # https://wiki.gentoo.org/wiki/Kernel/Removal
     ansible.builtin.command:
