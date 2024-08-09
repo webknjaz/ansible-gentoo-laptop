@@ -120,7 +120,7 @@ vundle:
   #- id: L9
 
   # Git plugin not hosted on GitHub
-  #- id: git://git.wincent.com/command-t.git
+  #- id: https://git.wincent.com/command-t.git
 
   # git repos on your local machine (i.e. when working on your own plugin)
   #- id: file:///home/gmarik/path/to/plugin
@@ -162,12 +162,12 @@ kitty:
   plugins_dir: ~/.config/kitty/plugins
   plugins:
   - name: base16
-    src: git://github.com/kdrag0n/base16-kitty.git
+    src: https://github.com/kdrag0n/base16-kitty.git
     config: colors/base16-darktooth-256.conf
 oh_my_zsh:
   theme: spaceship  # default: robbyrussell; was: ys
   custom_themes:
-    spaceship: git://github.com/denysdovhan/spaceship-prompt.git
+    spaceship: https://github.com/denysdovhan/spaceship-prompt.git
   editor: nvim
   locale: en_US.UTF-8  # uk_UA.UTF-8
   plugins:
@@ -201,9 +201,9 @@ oh_my_zsh:
   # custom
   - kitty
   custom_plugins:
-    zsh-autosuggestions: git://github.com/zsh-users/zsh-autosuggestions.git
-    zsh-syntax-highlighting: git://github.com/zsh-users/zsh-syntax-highlighting.git
-    tty-solarized: git://github.com/joepvd/tty-solarized.git
+    zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions.git
+    zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    tty-solarized: https://github.com/joepvd/tty-solarized.git
   plugin_settings:
     ssh-agent:
       agent-forwarding: on

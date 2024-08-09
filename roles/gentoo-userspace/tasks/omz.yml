@@ -4,7 +4,7 @@
     clone: yes
     dest: ~/.oh-my-zsh
     recursive: yes
-    repo: git://github.com/robbyrussell/oh-my-zsh.git
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
     update: yes
 - name: Copy own oh-my-zsh custom extensions onto machine  # noqa 401
   copy:

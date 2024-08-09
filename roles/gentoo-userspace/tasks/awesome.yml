@@ -12,7 +12,7 @@
     clone: yes
     dest: ~/.config/awesome/awesome-wm-widgets
     recursive: yes
-    repo: git://github.com/streetturtle/awesome-wm-widgets.git
+    repo: https://github.com/streetturtle/awesome-wm-widgets.git
     update: yes
 - name: Install bit32 lua lib
   become: yes
