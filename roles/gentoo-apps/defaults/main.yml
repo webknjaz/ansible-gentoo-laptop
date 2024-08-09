@@ -299,7 +299,6 @@ essential_ebuilds:
 - sys-process/lsof  # htop dep
 - www-client/links  # needed to browse web docs from terminal
 ebuilds:
-# - app-admin/abrt  # dropped?
 - app-crypt/adcli  # for Kerberos keytab renew (see krb5_renew_interval) @ sssd
 - x11-misc/arandr
 - x11-misc/autorandr
@@ -385,7 +384,6 @@ ebuilds:
 - net-print/hplip
 - gui-wm/hyprland
 - x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
-# - x11-libs/libva-vdpau-driver NVIDIA GPU  # dropped?
 - media-fonts/iosevka
 - net-misc/iperf:3
 - net-analyzer/iptraf-ng
@@ -401,7 +399,6 @@ ebuilds:
 - sys-cluster/kubectl
 - sys-auth/libfprint
 - x11-misc/libinput-gestures
-# - libgnomecups  # dropped?
 - x11-libs/libva-intel-driver
 - >-  # Used to be "libpod", now: https://wiki.gentoo.org/wiki/Podman
   app-emulation/podman
