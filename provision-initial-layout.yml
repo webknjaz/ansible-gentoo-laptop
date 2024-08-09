@@ -984,6 +984,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--hyprshot::wayland-desktop--managed
 
+  - name: Unmask gui-apps/yambar::guru
+    lineinfile:
+      create: yes
+      line: >-
+        gui-apps/yambar::guru
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--guru
+      state: present
+
+  - name: Allow gui-apps/yambar::guru ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-apps/yambar::guru ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--yambar::guru--managed
+
   - name: Inspect portage repos config
     ansible.builtin.stat:
       path: >-
@@ -1702,6 +1718,7 @@
       - gui-apps/tuigreet  # login screen TUI
       - gui-apps/wl-clipboard  # Wayland clipboard integration
       - gui-apps/wofi  # application launcher
+      - gui-apps/yambar
       - gui-libs/xdg-desktop-portal-hyprland::guru  # Screenshare
       - gui-wm/hyprland  # tiling compositor for Wayland
       - media-sound/playerctl  # MPRIS
