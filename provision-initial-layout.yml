@@ -1711,6 +1711,7 @@
       - app-misc/brightnessctl::guru  # monitor and keyboard backlights
       - app-portage/eix  # fast portage tree search
       - app-shells/zsh  # the shell of choice
+      - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
       - gui-apps/hyprlock::guru  # session locker
       - gui-apps/hyprpaper::guru  # Wallpaper
