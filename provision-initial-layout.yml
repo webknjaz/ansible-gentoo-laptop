@@ -78,6 +78,10 @@
 # https://github.com/fwupd/fwupd/wiki/Blocked-executable-in-the-ESP,-ensure-grub-and-shim-are-up-to-date
 # https://askubuntu.com/a/1436957
 # https://github.com/fwupd/fwupd/issues/5121
+# https://www.setphaserstostun.org/posts/secure-boot-on-gentoo-with-shim-grub/#gentoo-binary-distribution-kernel
+# https://wiki.gentoo.org/wiki/Project:Distribution_Kernel
+# https://github.com/jlaunonen/gentoo-uefi-secure
+# https://github.com/lateralblast/ansible-lvm-luks
 #
 # NOTE: A new GPT label must be created when repartitioning disks with LUKS
 # fdisk -> g -> w
