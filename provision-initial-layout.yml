@@ -1825,8 +1825,9 @@
       - --create-home
       - --gid=1000
       # https://wiki.gentoo.org/wiki/PipeWire#Audio_Groups
+      # https://wiki.gentoo.org/wiki/Handbook:AMD64/Full/Installation#Adding_a_user_for_daily_use
       - >-  # pipewire is for realtime audio scheduling, plugdev is here for NetworkManager, video improves fps under Wayland
-        --groups=pipewire,plugdev,video
+        --groups=pipewire,plugdev,usb,video,wheel
       - --shell=/usr/bin/zsh
       - --uid=1000
       - wk
