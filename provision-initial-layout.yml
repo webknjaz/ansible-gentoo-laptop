@@ -1721,6 +1721,7 @@
       - gui-apps/yambar
       - gui-libs/xdg-desktop-portal-hyprland::guru  # Screenshare
       - gui-wm/hyprland  # tiling compositor for Wayland
+      - media-sound/pavucontrol  # sound control GUI
       - media-sound/playerctl  # MPRIS
       - media-video/mpv  # qutebrowser plugins
       - net-im/signal-desktop-bin  # secure intant messenger
