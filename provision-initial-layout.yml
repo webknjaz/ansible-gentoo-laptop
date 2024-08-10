@@ -1756,6 +1756,7 @@ media-video/pipewire -E pipewire-alsa sound-server
       - gui-apps/yambar
       - gui-libs/xdg-desktop-portal-hyprland::guru  # Screenshare
       - gui-wm/hyprland  # tiling compositor for Wayland
+      - media-fonts/fontawesome  # for yambar
       - media-sound/pavucontrol  # sound control GUI
       - media-sound/playerctl  # MPRIS
       - media-video/mpv  # qutebrowser plugins
