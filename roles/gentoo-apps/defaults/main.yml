@@ -299,209 +299,209 @@ essential_ebuilds:
 - sys-process/lsof  # htop dep
 - www-client/links  # needed to browse web docs from terminal
 ebuilds:
-- app-crypt/adcli  # for Kerberos keytab renew (see krb5_renew_interval) @ sssd
-- x11-misc/arandr
-- x11-misc/autorandr
-- sys-power/acpi
-- sys-power/acpid
-- x11-terms/alacritty
-- media-sound/alsa-utils
-- dev-util/android-tools
-- net-misc/anydesk
 - app-admin/apache-tools
-- app-emulation/docker
-- app-emulation/docker-cli
-- app-misc/screen
-- x11-themes/arc-theme
-- media-fonts/arphicfonts
-- media-fonts/artwiz-aleczapka-en
-- app-misc/asciinema
-- sys-process/atop
-- x11-wm/awesome
-- net-misc/axel
-- sys-apps/bat  # cat(1) clone with syntax highlighting and Git integration
-- net-dns/bind-tools
 - app-admin/bitwarden-desktop-bin
-- sys-power/bbswitch  # FIXME: make host-dependent
-- media-gfx/blender
-- net-wireless/blueman
-- sys-apps/bolt
-- net-misc/bridge-utils
-- sys-fs/btrfs-progs
-- sys-fs/btrfsmaintenance
-- dev-ruby/bundler
-- dev-util/ccache
-- sys-devel/clang
-# pygments is optional, needed by /usr/lib/llvm/13/share/opt-viewer
-- dev-python/pygments
-# PyYAML is optional, needed by /usr/lib/llvm/12/share/clang/run-clang-tidy.py
-- dev-python/pyyaml
-- net-print/cndrvcups-common-lb
-- media-fonts/corefonts
+- app-admin/helm
+- app-arch/dpkg
+#- app-containers/lxc
+- app-crypt/adcli  # for Kerberos keytab renew (see krb5_renew_interval) @ sssd
+- app-crypt/seahorse
+- app-crypt/yubikey-manager
+- app-crypt/yubioath-desktop
+- app-editors/neovim
 - >-  # Podman works better with crun than runc: https://bugs.gentoo.org/723080
   app-emulation/crun
-- media-gfx/darktable
-- dev-util/debugedit  # For debug symbols creation w/ FEATURES=installsources
-- sys-devel/distcc  # Needed for network-distributed emerge builds
-- net-dns/dnsmasq
-- app-arch/dpkg
-- sys-kernel/dracut-crypt-ssh
-- sys-apps/dstat
-- net-firewall/ebtables
-- app-text/enchant
-- app-eselect/eselect-fontconfig
-- app-eselect/eselect-python
-- sys-apps/ethtool
-- media-fonts/fira-code
-- www-client/firefox-bin
-- games-simulation/flightgear
-- media-fonts/font-bh-ttf
-- media-fonts/font-bh-type1
-- net-print/foomatic-db
-- net-print/foomatic-db-engine
-- net-print/foomatic-db-ppds
-- sys-auth/fprintd
-- media-gfx/freecad
-- media-fonts/freefonts
-- net-misc/freerdp
-- sys-fs/fuse-exfat
-- sys-apps/fwupd
-- app-shells/fzf  # CLI fuzzy finder
-- sys-kernel/genkernel
-- sys-kernel/gentoo-sources
-- sys-process/glances
-- app-office/gnucash
-# https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
-- sys-kernel/gentoo-kernel-bin
-# https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
-- sys-kernel/installkernel-systemd-boot
-- sys-libs/efivar
-- app-shells/gentoo-zsh-completions
-- gnome-extra/gnome-color-manager
-- www-client/google-chrome
-- media-gfx/flameshot
-- app-admin/helm
-- net-print/hplip
-- gui-wm/hyprland
-- x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
-- media-fonts/iosevka
-- net-misc/iperf:3
-- net-analyzer/iptraf-ng
-- net-irc/irssi
-- sys-apps/irqbalance
-- virtual/jack
-- media-sound/jack2
-- app-misc/jq
-- virtual/jre
-- sys-apps/kexec-tools
-- x11-terms/kitty
-- x11-terms/kitty-shell-integration
-- sys-cluster/kubectl
-- sys-auth/libfprint
-- x11-misc/libinput-gestures
-- x11-libs/libva-intel-driver
+- app-emulation/docker
+- app-emulation/docker-cli
+- app-emulation/libvirt
+- app-emulation/nemu  # Ncurses QEMU TUI
 - >-  # Used to be "libpod", now: https://wiki.gentoo.org/wiki/Podman
   app-emulation/podman
-- app-emulation/libvirt
-- dev-libs/light
-- sys-kernel/linux-firmware
-- sys-apps/lsd  # `ls` on steroids
-- sys-apps/lm-sensors
-#- app-containers/lxc
-- lxde-base/lxdm
-- dev-lua/luajson   # Awesome WM theme
-# - dev-lua/luaposix  # FIXME: unmask? delete?
-- dev-lua/luarocks  # FIXME: delete?
-- dev-lua/luasocket  # FIXME: delete?
-- x11-apps/mesa-progs
-- sys-fs/multipath-tools
-- app-editors/neovim
-- net-analyzer/openbsd-netcat
-- app-emulation/nemu  # Ncurses QEMU TUI
-- dev-python/neovim-remote  # Needed for NeoVim: for remote/nvr support
-- dev-ruby/neovim-ruby-client  # Needed for NeoVim: for Ruby plugin support
-- net-misc/networkmanager
-- net-vpn/networkmanager-openvpn
-# - net-vpn/networkmanager-sstp
-- net-analyzer/nmap
-- media-fonts/noto
-- media-fonts/noto-emoji
-- sys-fs/ntfs3g
-- sys-auth/pam_krb5
-- x11-misc/parcellite
-- media-sound/pavucontrol
-- sys-apps/pcsc-lite
-- media-video/pipewire
-- media-sound/playerctl
-- sys-boot/plymouth
-- media-fonts/powerline-symbols
-# - media-gfx/prusaslicer
-- media-sound/pulseaudio
-- dev-python/pynvim  # Needed for NeoVim: for Python plugin support
-- dev-lang/python:3.7
-- dev-lang/python:3.8
-- sys-auth/pam_u2f
-- sys-auth/pam_yubico
-- virtual/perl-Thread-Queue  # Needed for building OpenWRT
-- sys-auth/rtkit  # Pulseaudio: improve restricted realtime D-Bus capabilities
 - app-emulation/qemu
-- media-gfx/qrencode
-- media-fonts/quivira
-- media-gfx/rawtherapee
-- x11-misc/i3lock
-- x11-misc/redshift
-- sys-apps/ripgrep  # `grep` on steroids
-- dev-lang/rust-bin
-- app-crypt/seahorse
-- net-irc/sic
-- net-im/signal-desktop-bin
-- media-sound/spotify
-- net-fs/sshfs
-- net-misc/sshpass
-- sys-auth/sssd
-- dev-debug/strace
-- media-gfx/superslicer
-- net-analyzer/tcpdump
-- net-analyzer/tcptraceroute
-- net-misc/telnet-bsd
-- media-gfx/termtosvg
-- dev-texlive/texlive-langcyrillic
-- dev-texlive/texlive-latexrecommended
-- xfce-base/thunar
-- mail-client/thunderbird-bin
-- app-laptop/thinkfan
-- sys-process/time
-- app-misc/tmux
-- net-analyzer/traceroute
-- dev-util/tree-sitter-cli
-- media-fonts/ttf-bitstream-vera
-- app-i18n/unicode-emoji
-- media-fonts/unifont
-- sys-power/upower
-- sys-apps/usbutils
-- sys-apps/usermode-utilities
 - app-emulation/vagrant
 - app-emulation/virtualbox
 - app-emulation/virtualbox-additions  # ISO images with guest additions
 - app-emulation/virtualbox-extpack-oracle
 - app-emulation/virt-manager
-- media-video/vlc
+- app-eselect/eselect-fontconfig
+- app-eselect/eselect-python
+- app-i18n/unicode-emoji
+- app-laptop/thinkfan
+- app-misc/asciinema
+- app-misc/jq
+- app-misc/screen
+- app-misc/tmux
+- app-office/gnucash
+- app-shells/fzf  # CLI fuzzy finder
+- app-shells/gentoo-zsh-completions
+- app-shells/zsh-completions
+- app-text/enchant
+- app-text/xournalpp
+- dev-debug/strace
+- dev-lang/python:3.7
+- dev-lang/python:3.8
+- dev-lang/rust-bin
+- dev-lua/luajson   # Awesome WM theme
+# - dev-lua/luaposix  # FIXME: unmask? delete?
+- dev-lua/luarocks  # FIXME: delete?
+- dev-lua/luasocket  # FIXME: delete?
+- dev-libs/light
+- dev-python/neovim-remote  # Needed for NeoVim: for remote/nvr support
+# pygments is optional, needed by /usr/lib/llvm/13/share/opt-viewer
+- dev-python/pygments
+- dev-python/pynvim  # Needed for NeoVim: for Python plugin support
+# PyYAML is optional, needed by /usr/lib/llvm/12/share/clang/run-clang-tidy.py
+- dev-python/pyyaml
+- dev-ruby/bundler
+- dev-ruby/neovim-ruby-client  # Needed for NeoVim: for Ruby plugin support
+- dev-texlive/texlive-langcyrillic
+- dev-texlive/texlive-latexrecommended
+- dev-util/android-tools
+- dev-util/ccache
+- dev-util/debugedit  # For debug symbols creation w/ FEATURES=installsources
+- dev-util/tree-sitter-cli
+- games-simulation/flightgear
+- gnome-extra/gnome-color-manager
 - gui-apps/wl-clipboard  # Needed for NeoVim: for clipboard support
 - gui-apps/wofi  # Set up for <Win>+R in hyprland
-- net-misc/wget2
+- gui-wm/hyprland
+- lxde-base/lxdm
+- mail-client/thunderbird-bin
+- media-fonts/arphicfonts
+- media-fonts/artwiz-aleczapka-en
+- media-fonts/corefonts
+- media-fonts/fira-code
+- media-fonts/font-bh-ttf
+- media-fonts/font-bh-type1
+- media-fonts/freefonts
+- media-fonts/iosevka
+- media-fonts/noto
+- media-fonts/noto-emoji
+- media-fonts/powerline-symbols
+- media-fonts/quivira
+- media-fonts/ttf-bitstream-vera
+- media-fonts/unifont
+- media-fonts/zh-kcfonts
+- media-gfx/blender
+- media-gfx/darktable
+- media-gfx/flameshot
+- media-gfx/freecad
+# - media-gfx/prusaslicer
+- media-gfx/qrencode
+- media-gfx/rawtherapee
+- media-gfx/superslicer
+- media-gfx/termtosvg
+- media-sound/alsa-utils
+- media-sound/jack2
+- media-sound/pavucontrol
+- media-sound/playerctl
+- media-sound/pulseaudio
+- media-sound/spotify
+- media-video/pipewire
+- media-video/vlc
+- net-analyzer/iptraf-ng
+- net-analyzer/nmap
+- net-analyzer/openbsd-netcat
+- net-analyzer/tcpdump
+- net-analyzer/tcptraceroute
+- net-analyzer/traceroute
 - net-analyzer/wireshark
-- x11-misc/wmname
+- net-dns/bind-tools
+- net-dns/dnsmasq
+- net-firewall/ebtables
+- net-fs/sshfs
+- net-im/signal-desktop-bin
+- net-irc/irssi
+- net-irc/sic
+- net-misc/anydesk
+- net-misc/axel
+- net-misc/bridge-utils
+- net-misc/freerdp
+- net-misc/iperf:3
+- net-misc/networkmanager
+- net-misc/sshpass
+- net-misc/telnet-bsd
+- net-misc/wget2
+- net-misc/x11-ssh-askpass
+- net-print/cndrvcups-common-lb
+- net-print/foomatic-db
+- net-print/foomatic-db-engine
+- net-print/foomatic-db-ppds
+- net-print/hplip
+- net-vpn/networkmanager-openvpn
+# - net-vpn/networkmanager-sstp
+- net-wireless/blueman
+- sys-apps/bat  # cat(1) clone with syntax highlighting and Git integration
+- sys-apps/bolt
+- sys-apps/dstat
+- sys-apps/ethtool
+- sys-apps/fwupd
+- sys-apps/irqbalance
+- sys-apps/kexec-tools
+- sys-apps/lm-sensors
+- sys-apps/lsd  # `ls` on steroids
+- sys-apps/pcsc-lite
+- sys-apps/ripgrep  # `grep` on steroids
+- sys-apps/usbutils
+- sys-apps/usermode-utilities
+- sys-auth/fprintd
+- sys-auth/libfprint
+- sys-auth/pam_krb5
+- sys-auth/pam_u2f
+- sys-auth/pam_yubico
+- sys-auth/rtkit  # Pulseaudio: improve restricted realtime D-Bus capabilities
+- sys-auth/sssd
+- sys-auth/yubikey-personalization-gui
+- sys-boot/plymouth
+- sys-cluster/kubectl
+- sys-devel/clang
+- sys-devel/distcc  # Needed for network-distributed emerge builds
+- sys-fs/btrfs-progs
+- sys-fs/btrfsmaintenance
+- sys-fs/fuse-exfat
+- sys-fs/multipath-tools
+- sys-fs/ntfs3g
+- sys-kernel/dracut-crypt-ssh
+- sys-kernel/genkernel
+# https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
+- sys-kernel/gentoo-kernel-bin
+- sys-kernel/gentoo-sources
+# https://blogs.gentoo.org/mgorny/2019/12/19/a-distribution-kernel-for-gentoo/:
+- sys-kernel/installkernel-systemd-boot
+- sys-kernel/linux-firmware
+- sys-libs/efivar
+- sys-power/acpi
+- sys-power/acpid
+- sys-power/bbswitch  # FIXME: make host-dependent
+- sys-power/upower
+- sys-process/atop
+- sys-process/glances
+- sys-process/time
+- virtual/jack
+- virtual/jre
+- virtual/perl-Thread-Queue  # Needed for building OpenWRT
+- www-client/firefox-bin
+- www-client/google-chrome
+- x11-apps/mesa-progs
+- x11-base/xorg-x11  # FIXME: replace with x11-base/xorg-apps + x11-base/xorg-fonts before 2022-11-01
+- x11-libs/libva-intel-driver
+- x11-libs/libva-intel-media-driver  # https://github.com/intel/media-driver
+- x11-misc/arandr
+- x11-misc/autorandr
+- x11-misc/i3lock
+- x11-misc/libinput-gestures
+- x11-misc/parcellite
+- x11-misc/redshift
 - x11-misc/xautolock
 - x11-misc/xclip  # Needed for NeoVim: for clipboard support
-- x11-base/xorg-x11  # FIXME: replace with x11-base/xorg-apps + x11-base/xorg-fonts before 2022-11-01
-- app-text/xournalpp
 - x11-misc/xsel  # Needed for NeoVim: for clipboard support
-- net-misc/x11-ssh-askpass
-- app-crypt/yubioath-desktop
-- app-crypt/yubikey-manager
-- sys-auth/yubikey-personalization-gui
-- media-fonts/zh-kcfonts
-- app-shells/zsh-completions
+- x11-misc/wmname
+- x11-terms/alacritty
+- x11-terms/kitty
+- x11-terms/kitty-shell-integration
+- x11-themes/arc-theme
+- x11-wm/awesome
+- xfce-base/thunar
 ebuilds_from_overlays:
   app-crypt/keybase-bin: dmchurch  # TODO: use "keybase" once it supports GUI
   app-editors/vscode-bin: jorgicio
