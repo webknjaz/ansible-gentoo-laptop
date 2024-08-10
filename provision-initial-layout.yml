@@ -1816,8 +1816,9 @@
       - --comment=Sviat
       - --create-home
       - --gid=1000
-      - >-  # plugdev is here for NetworkManager, video improves fps under Wayland
-        --groups=plugdev,video
+      # https://wiki.gentoo.org/wiki/PipeWire#Audio_Groups
+      - >-  # pipewire is for realtime audio scheduling, plugdev is here for NetworkManager, video improves fps under Wayland
+        --groups=pipewire,plugdev,video
       - --shell=/usr/bin/zsh
       - --uid=1000
       - wk
