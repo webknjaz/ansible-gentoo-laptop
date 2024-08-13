@@ -1,0 +1,44 @@
+#! /usr/bin/env bash
+
+declare expected_outputs=(eDP-1 DP-2 DP-3-3)
+expected_output_count=3
+
+connected_output_count=$(xrandr --listmonitors | head -n1 | awk '{print$2}')
+connected_output_names=$(xrandr --listmonitors | tail -n+2 | awk '{print$4}')
+
+echo connected_output_count=$connected_output_count
+echo connected_output_names=$connected_output_names
+if [ $connected_output_count -eq $expected_output_count ]
+then
+    monitors_match_expectation=true
+else
+    monitors_match_expectation=false
+fi
+echo expectation vs reality \
+  $([[ "${monitors_match_expectation}" == 'true' ]] \
+    && echo 'true' \
+    || echo 'false')
+
+if [[ "${monitors_match_expectation}" != 'true' ]]
+then
+    >&2 echo The amount of the connected displays \
+        "($connected_output_count)" does not match \
+        the expectation "($expected_output_count)"
+    monitors_match_expectation=false
+    expected_outputs=
+fi
+
+for expected_output in ${expected_outputs[@]}
+do
+    >&2 echo Checking $expected_output...
+    if ! echo "$connected_output_names" | grep '\b'"$expected_output"'\b'
+    then
+        >&2 echo Output $expected_output does not have \
+            a display connected
+    fi
+done
+
+if [[ "${monitors_match_expectation}" == 'true' ]]
+then
+    ~/.screenlayout/zenscreen-on-the-bottom-center-n-thinkvision-on-top-center--new-names.sh
+fi

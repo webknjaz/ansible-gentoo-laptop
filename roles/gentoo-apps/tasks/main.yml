@@ -756,3 +756,19 @@
   become: no
   shell: certutil -A -n '{{ item.key }}' -t C -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:$HOME/.pki/nssdb
   with_dict: "{{ ca_certificates }}"
+
+- name: Ensure xinitrc.d dir exists
+  file:
+    dest: /etc/X11/xinit/xinitrc.d/
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Set up display positioning
+  copy:
+    src: etc/X11/xinit/xinitrc.d/95-monitor-positioning
+    dest: /etc/X11/xinit/xinitrc.d/95-monitor-positioning
+    mode: u+rwx,g=rx,o=rx
+    owner: root
+    group: root
