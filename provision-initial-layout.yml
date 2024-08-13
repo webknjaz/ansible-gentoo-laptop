@@ -714,7 +714,7 @@
         tmpfs
         /tmp
         tmpfs
-        noatime,noexec,nodev,nosuid
+        noatime,nodev,nosuid
         0
         0
       path: >-
