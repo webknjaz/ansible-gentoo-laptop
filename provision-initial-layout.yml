@@ -2113,6 +2113,20 @@ media-video/pipewire -E pipewire-alsa sound-server
       chdir: >-
         {{ gentoo_prefix }}
 
+  - name: >-
+      Enable Switcheroo Control Proxy (dual-GPU availability checker)
+      on startup
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - switcheroo-control
+      chdir: >-
+        {{ gentoo_prefix }}
+
   - name: Clean up kernels except for the latest 3
     # https://wiki.gentoo.org/wiki/Kernel/Removal
     ansible.builtin.command:
