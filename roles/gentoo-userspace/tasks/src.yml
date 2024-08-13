@@ -23,7 +23,7 @@
     clone: yes
     dest: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
     recursive: yes
-    repo: "ssh://git@{{ item.0.fqdn }}/{{ item.1 }}.git"
+    repo: git@{{ item.0.fqdn }}:{{ item.1 }}.git
     update: yes
   with_subelements:
   - "{{ code_workspace.repos }}"
@@ -54,7 +54,9 @@
      'Failed to checkout branch' not in git_sync_cmd_result.msg)
   changed_when: git_sync_cmd_result.changed
 - name: Set up additional repo remotes for forks  # noqa 303
-  command: git remote add fork 'ssh://git@{{ item.0.fqdn }}/{{ item.0.forked_as[item.1] }}.git'
+  command: >-
+    git remote add fork
+    'git@{{ item.0.fqdn }}:{{ item.0.forked_as[item.1] }}.git'
   args:
     chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
   with_subelements:
