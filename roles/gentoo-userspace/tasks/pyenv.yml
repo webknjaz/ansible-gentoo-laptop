@@ -48,8 +48,6 @@
     src: zsh-pyenv
     dest: ~/.{{ item }}
     mode: u+rw,g=r,o=r
-    owner: root
-    group: root
   loop:
   - zprofile
   - zshenv
