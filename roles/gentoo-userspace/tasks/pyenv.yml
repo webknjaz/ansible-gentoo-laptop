@@ -42,3 +42,14 @@
     eval "$({{ pyenv_executable }} virtualenv-init -)" &&
     {{ pyenv_executable }} global {{ pyenv_versions | join(' ') }}
   when: true
+
+- name: Populate ~/.zprofile and ~/.zshenv
+  copy:
+    src: zsh-pyenv
+    dest: ~/.{{ item }}
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+  loop:
+  - zprofile
+  - zshenv
