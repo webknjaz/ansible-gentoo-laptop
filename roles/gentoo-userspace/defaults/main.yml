@@ -707,10 +707,6 @@ code_workspace:
       - so2019-037_tcl_tk/std-6-original-tcl
       forked_as: []
 
-ibank_websigner_plugin:
-  url: https://ibank.procreditbank.com.ua/websigner-linux.bin
-  sha256sum: fbeb4b363fae74e360660a50184b688059b21f2c63c38201abf9417b9e44a8ae
-
 usernames:
   fas: webknjaz  # Fedora Account System
 
