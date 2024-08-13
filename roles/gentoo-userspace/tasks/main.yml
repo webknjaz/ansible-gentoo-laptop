@@ -19,6 +19,8 @@
   import_tasks: nvm.yml
 - name: Ensure that Awesome WM is configured
   import_tasks: awesome.yml
+  tags:
+  - awesome-wm
   when:
   #- ansible_distribution == 'Gentoo'
   - ansible_distribution != 'MacOSX'
