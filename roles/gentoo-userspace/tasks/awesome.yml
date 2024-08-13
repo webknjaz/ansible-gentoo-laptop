@@ -29,3 +29,11 @@
   template:
     src: awesome-rc.lua-template
     dest: ~/.config/awesome/rc.lua
+- name: Create Redshift config dir within userspace
+  file:
+    dest: ~/.config/redshift
+    state: directory
+- name: Put Redshift config in place
+  template:
+    src: redshift.conf.j2
+    dest: ~/.config/redshift/redshift.conf
