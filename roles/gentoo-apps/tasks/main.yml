@@ -772,3 +772,23 @@
     mode: u+rwx,g=rx,o=rx
     owner: root
     group: root
+
+- name: Ensure modprobe.d dir exists
+  file:
+    dest: /etc/modprobe.d/
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Set up kernel module configs
+  copy:
+    src: etc/modprobe.d/{{ item }}
+    dest: /etc/modprobe.d/{{ item }}
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+  loop:
+  - hid_apple.conf
+  - snd_usb_audio_scarlett_2i2_gen3.conf
+  - thinkpad.conf
