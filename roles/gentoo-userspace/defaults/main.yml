@@ -12,19 +12,14 @@ pyenv_root: ~/.pyenv
 pyenv_executable: >-
   {{ pyenv_root }}/bin/pyenv
 pyenv_versions:
-- 3.9.0
-- 3.8.6
-- 3.7.9
-- 3.6.12
-- 3.5.10
-# - 3.4.10  # EOL  # unbuildable
-- 2.7.18  # EOL
-# - 2.6.9  # EOL  # unbuildable
-# - 2.5.6  # EOL  # unbuildable
-- pypy3.6-7.3.1
-- pypy3.5-7.0.0
-- pypy2.7-7.3.1
-- 3.10-dev
+- 3.13.0rc1
+- 3.13.0rc1t
+- 3.10.14
+- 3.9.19
+- 3.8.19
+- pypy3.10-7.3.13
+- pypy3.9-7.3.13
+- pypy2.7-7.3.13
 nvm_version: v0.40.0
 node_versions:
   install:
