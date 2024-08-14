@@ -839,6 +839,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--tuigreet::gentoo--managed
 
+  - name: Allow app-crypt/keybase::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        app-crypt/keybase::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/app-crypt--keybase::gentoo--managed
+
   - name: Mask */*::guru
     ansible.builtin.copy:
       content: |
@@ -1736,6 +1743,7 @@ media-video/pipewire -E pipewire-alsa sound-server
       - app-arch/lz4  # initramfs compression
       - app-containers/podman  # userspace over privilege escalation
       - app-crypt/efitools
+      - app-crypt/keybase  # encrypted cloud fs and chat
       - app-crypt/sbctl
       - app-crypt/sbsigntools
       - app-crypt/tpm2-tools  # dracut `systemd-cryptsetup` <- `tpm2-tss` module's dep
