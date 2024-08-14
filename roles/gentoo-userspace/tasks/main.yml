@@ -30,3 +30,17 @@
   import_tasks: fedoraproject.yml
   when:
   - ansible_distribution != 'MacOSX'
+- name: Ensure systemd services are enabled
+  ansible.builtin.command:
+    argv:
+    - systemctl
+    - --user
+    - enable
+    - --now
+    - >-
+      {{ item }}
+  failed_when: false
+  loop:
+  - keybase
+  - pipewire-pulse.socket
+  - wireplumber
