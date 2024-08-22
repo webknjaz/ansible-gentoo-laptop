@@ -726,6 +726,32 @@
     owner: root
     group: root
 
+- name: Ensure userspace config dir for Qutebrowser configuration exists
+  become: no
+  file:
+    dest: $HOME/.config/qutebrowser/
+    mode: u+rwx,g=rx,o=rx
+    state: directory
+    recurse: yes
+- name: Configure userspace Qutebrowser to work with Kerberos
+  become: no
+  lineinfile:
+    create: yes
+    line: >-
+      {{ config_line }}
+    dest: $HOME/.config/qutebrowser/config.py
+    state: present
+  loop:
+  - >-
+    c.qt.args = [
+      "auth-server-allowlist=*.fedoraproject.org,*.redhat.com",
+      "disable-auth-negotiate-cname-lookup=true",
+    ]
+  - >-
+    config.load_autoconfig()
+  loop_control:
+    loop_var: config_line
+
 - name: Create a custom trusted CA certificates dir
   file:
     dest: "{{ item.key }}"
