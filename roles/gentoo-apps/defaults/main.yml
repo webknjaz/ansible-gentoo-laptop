@@ -674,3 +674,33 @@ chrome_managed_policies:
               "ct": 10,
               "ac": "True"
             }
+
+firefox_managed_policies:
+  # https://linuxconfig.org/how-to-customize-firefox-using-the-policies-json-file
+  # https://mozilla.github.io/policy-templates/
+  # https://github.com/mozilla/policy-templates
+  policies:
+    Authentication:
+      NTLM:
+      - >-
+        *.fedoraproject.org,
+      - >-
+        *.redhat.com
+      SPNEGO:
+      - >-
+        *.fedoraproject.org,
+      - >-
+        *.redhat.com
+      Locked: true
+      PrivateBrowsing: true
+    DisableTelemetry: true
+    # Certificates:
+    #   Install:
+    #   -
+    # Extensions:
+    #   Install:
+    #   -
+    #   Uninstall:
+    #   -
+    #   Locked:
+    #   -

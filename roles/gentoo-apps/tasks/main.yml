@@ -709,6 +709,23 @@
       Policy: {{ policy_file[1].name }}
     loop_var: policy_file
 
+- name: Create config dir structure for system-wide Firefox configuration
+  file:
+    dest: /etc/firefox/policies
+    mode: u+rwx,g=rwx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Set up policies with allowlisted Kerberos servers for Firefox
+  copy:
+    content: >-
+      {{ firefox_managed_policies | ansible.builtin.to_nice_json(indent=4) }}
+    dest: /etc/firefox/policies/policies.json
+    mode: u=rw,g=r,o=r
+    owner: root
+    group: root
+
 - name: Create a custom trusted CA certificates dir
   file:
     dest: "{{ item.key }}"
