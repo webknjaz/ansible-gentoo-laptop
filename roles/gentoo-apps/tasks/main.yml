@@ -767,6 +767,28 @@
   loop_control:
     loop_var: cert_filename
 
+- name: Ensure NetworkManager connections directory is in place
+  file:
+    dest: /etc/NetworkManager/system-connections/
+    mode: u+rwx,g=rx,o=rx
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+- name: Copy the NetworkManager connections into system
+  ansible.builtin.copy:
+    src: etc/NetworkManager/system-connections/{{ nm_conn_filename }}
+    dest: /etc/NetworkManager/system-connections/{{ nm_conn_filename }}
+    mode: u+rw,g=,o=
+    owner: root
+    group: root
+  loop: >-
+    {{ networkmanager_connection_profiles }}
+  loop_control:
+    loop_var: nm_conn_filename
+  notify:
+  - nm-load-connections
+
 - name: Ensure xinitrc.d dir exists
   file:
     dest: /etc/X11/xinit/xinitrc.d/

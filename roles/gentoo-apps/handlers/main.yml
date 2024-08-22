@@ -6,3 +6,6 @@
   changed_when: >
     '0 added' not in update_certs.stdout or
     '0 removed' not in update_certs.stdout
+- name: Help NetworkManager load new connection profiles
+  listen: nm-load-connections
+  command: nmcli c r

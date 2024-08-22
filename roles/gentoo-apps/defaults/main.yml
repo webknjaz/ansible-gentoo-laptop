@@ -547,6 +547,21 @@ ca_certificates:
 - 2015-IT-Root-CA.crt
 - 2022-IT-Root-CA.crt
 
+networkmanager_connection_profiles:
+- 1-RHVPN.ovpn
+- AMS2.ovpn
+- BRQ.ovpn
+- GRU2.ovpn
+- LCY.ovpn
+- NRT.ovpn
+- PEK2-ALT.ovpn
+- PEK2.ovpn
+- PNQ2.ovpn
+- RDU2.ovpn
+- SIN2.ovpn
+- SYD.ovpn
+- TLV2.ovpn
+
 user_pass: !vault |
   $ANSIBLE_VAULT;1.1;AES256
   64616537623134383263656436613531396563343161616561666638386339326430363461363562
