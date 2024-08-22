@@ -642,6 +642,7 @@ chrome_managed_policies:
       *.fedoraproject.org,
       *.redhat.com
     AuthSchemes: negotiate, ntlm, digest, basic
+    DisableAuthNegotiateCnameLookup: true
     PromotionalTabsEnabled: false
     MetricsReportingEnabled: false
     SafeBrowsingExtendedReportingEnabled: false
