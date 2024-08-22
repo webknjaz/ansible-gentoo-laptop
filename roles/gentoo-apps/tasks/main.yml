@@ -727,35 +727,45 @@
     mode: u+rwx,g=rx,o=rx
     state: directory
     recurse: yes
-- name: Getting Red Hat Legacy Root CA and IT Root CA
-  get_url:
-    url: https://password.corp.redhat.com/{{ item.value.filename }}.crt
-    dest: /usr/local/share/ca-certificates/{{ item.key }}.crt
-    checksum: sha256:{{ item.value.sha256sum }}
-  with_dict: "{{ ca_certificates }}"
+- name: Copy the RH IT Root CA certificates into system
+  ansible.builtin.copy:
+    src: usr/local/share/ca-certificates/{{ cert_filename }}
+    dest: /usr/local/share/ca-certificates/{{ cert_filename }}
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+  loop: >-
+    {{ ca_certificates }}
+  loop_control:
+    loop_var: cert_filename
   notify:
   - update-ca-trust
-- name: Verify downloaded Red Hat Legacy Root CA and IT Root CA
-  shell: |
-    set -euxo pipefail
-    openssl x509 -noout \
-      -in '/usr/local/share/ca-certificates/{{ item.key }}.crt' \
-      -fingerprint \
-      -sha256 | grep 'SHA256 Fingerprint={{ item.value.sha256fingerprint }}'
-  register: sha256fingerprint
-  changed_when: false
-  failed_when: >
-    sha256fingerprint.rc != 0 or
-    sha256fingerprint.stdout != (('SHA256 Fingerprint', item.value.sha256fingerprint) | join('='))
-  with_dict: "{{ ca_certificates }}"
 - name: Install CA certs into NSS database  # noqa 301  # FIXME
   # TODO: check out https://galaxy.ansible.com/pixelart/nssdb
-  command: certutil -A -n '{{ item.key }}' -t C -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:/etc/pki/nssdb
-  with_dict: "{{ ca_certificates }}"
+  ansible.builtin.command: >-
+    certutil
+    -A
+    -n '{{ cert_filename | ansible.builtin.basename }}'
+    -t C
+    -i '/usr/local/share/ca-certificates/{{ cert_filename }}'
+    -d sql:/etc/pki/nssdb
+  loop: >-
+    {{ ca_certificates }}
+  loop_control:
+    loop_var: cert_filename
 - name: Install CA certs into per-user NSS database, used by Chrome/Firefox  # noqa 301  # FIXME
   become: no
-  shell: certutil -A -n '{{ item.key }}' -t C -i '/usr/local/share/ca-certificates/{{ item.key }}.crt' -d sql:$HOME/.pki/nssdb
-  with_dict: "{{ ca_certificates }}"
+  ansible.builtin.shell: >-
+    certutil
+    -A
+    -n '{{ cert_filename | ansible.builtin.basename }}'
+    -t C
+    -i '/usr/local/share/ca-certificates/{{ cert_filename }}'
+    -d sql:$HOME/.pki/nssdb
+  loop: >-
+    {{ ca_certificates }}
+  loop_control:
+    loop_var: cert_filename
 
 - name: Ensure xinitrc.d dir exists
   file:

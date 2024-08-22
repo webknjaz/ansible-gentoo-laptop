@@ -544,14 +544,8 @@ overlay_repositories:
 - steam-overlay
 
 ca_certificates:
-  RH-legacy-Root-CA:
-    filename: legacy
-    sha256sum: 59aa5919eccaf4cbf77dbc9ede454a65a9116d85d35447af0c2de2f62123042e
-    sha256fingerprint: 14:23:83:73:74:67:0D:8D:13:0B:49:3B:D9:43:D8:CB:68:86:43:FB:0F:B3:72:E3:BE:7D:B7:62:2C:29:AF:E1
-  RH-IT-Root-CA:
-    filename: RH-IT-Root-CA
-    sha256sum: 86479b04ef23e30ba736c83da3f0c9d301beebdc97822521ca500118d3991c79
-    sha256fingerprint: 27:09:47:C8:EB:A9:AE:6F:01:79:9F:13:4E:7D:BE:BE:90:2A:0A:2E:09:E1:B8:FD:06:B5:FC:3A:7D:7E:CE:F3
+- 2015-IT-Root-CA.crt
+- 2022-IT-Root-CA.crt
 
 user_pass: !vault |
   $ANSIBLE_VAULT;1.1;AES256
