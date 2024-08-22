@@ -550,7 +550,7 @@ ca_certificates:
 networkmanager_connection_profiles:
 - 1-RHVPN.ovpn
 - AMS2.ovpn
-- BRQ.ovpn
+- BRQ2.ovpn
 - GRU2.ovpn
 - LCY.ovpn
 - NRT.ovpn
