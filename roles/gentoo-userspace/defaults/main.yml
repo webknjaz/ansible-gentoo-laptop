@@ -425,6 +425,7 @@ code_workspace:
       - python/core-workflow
       - python/cpython
       - python/miss-islington
+      - python/mypy
       - python/peps
       - python-attrs/attrs
       - python-cffi/cffi
