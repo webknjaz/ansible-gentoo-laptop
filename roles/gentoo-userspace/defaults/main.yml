@@ -292,6 +292,7 @@ code_workspace:
       - ansible/collection_migration
       - ansible/default-test-container
       - ansible/distro-test-containers
+      - ansible/django-ansible-base
       - ansible/foreman-test-container
       - ansible/jinja-docsite
       - ansible/gha-runner-scaler
@@ -530,6 +531,7 @@ code_workspace:
         ansible/collection_migration: webknjaz/collection_migration
         ansible/default-test-container: webknjaz/ansible--default-test-container
         ansible/distro-test-containers: webknjaz/ansible--distro-test-containers
+        ansible/django-ansible-base: webknjaz/ansible--django-ansible-base
         ansible/jinja-docsite: webknjaz/ansible--jinja-docsite
         ansible/lightbulb: webknjaz/lightbulb
         ansible/molecule: webknjaz/molecule
