@@ -1018,27 +1018,30 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprutils::guru--managed
 
-  - name: Inspect portage repos config
+  - name: Ensure the main gentoo portage repository is enabled
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - eselect
+      - repository
+      - enable
+      - gentoo
+      chdir: >-
+        {{ gentoo_prefix }}
+
+  - name: Inspect portage binary repos config
     ansible.builtin.stat:
       path: >-
-        {{ gentoo_prefix }}/etc/portage/repos.conf
-    register: repos_conf
-  - name: Initialize portage repos config
-    ansible.builtin.copy:
-      dest: >-
-        {{ gentoo_prefix }}/etc/portage/repos.conf
-      remote_src: true
-      src: >-
-        {{ gentoo_prefix }}/usr/share/portage/config/repos.conf
-    when: not repos_conf.stat.exists
-  - name: Configure the MUNI portage mirror
-    ansible.builtin.lineinfile:
-      line: >-
-        sync-uri = rsync://ftp.fi.muni.cz/pub/linux/gentoo/
+        {{ gentoo_prefix }}/etc/portage/binrepos.conf
+    register: binrepos_conf
+  - name: Initialize portage binary repos config directory
+    ansible.builtin.file:
       path: >-
-        {{ gentoo_prefix }}/etc/portage/repos.conf
-      regex: >-
-        ^sync-uri\s=\s.*
+        {{ gentoo_prefix }}/etc/portage/binrepos.conf
+      state: directory
+    when: not binrepos_conf.stat.exists
 
   - name: Configure the MUNI binary packages host
     ansible.builtin.copy:
