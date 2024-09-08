@@ -1209,6 +1209,7 @@
       - modules-sign  # signing kernel modules
       - nvenc  # NVIDIA Encoder/Decoder API
       - nvidia  # NVIDIA support in various apps
+      - qml  # kde-apps/dolphin
       - secureboot  # UEFI secure boot support
       - tpm  # Trusted Platform Module
       - vdpau  # Video Decode and Presentation API for Unix acceleration interface
