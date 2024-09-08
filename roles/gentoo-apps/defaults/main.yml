@@ -686,14 +686,14 @@ firefox_managed_policies:
     Authentication:
       NTLM:
       - >-
-        *.fedoraproject.org,
+        .fedoraproject.org,
       - >-
-        *.redhat.com
+        .redhat.com
       SPNEGO:
       - >-
-        *.fedoraproject.org,
+        .fedoraproject.org,
       - >-
-        *.redhat.com
+        .redhat.com
       Locked: true
       PrivateBrowsing: true
     DisableTelemetry: true
