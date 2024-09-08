@@ -621,7 +621,7 @@ corp_domains:
 
 chrome_managed_policies:
   redhat:
-    # IMPORTANT: `AuthNegotiateDelegateWhitelist` must remain unset!
+    # IMPORTANT: `AuthNegotiateDelegateAllowlist` must remain unset!
     #
     # Refs:
     # https://support.google.com/chrome/thread/38855209?hl=en
@@ -638,6 +638,9 @@ chrome_managed_policies:
     # 3 = Enable ambient authentication in regular, incognito and
     #     guest sessions.
     AmbientAuthenticationInPrivateModesEnabled: 3
+    AuthServerAllowlist: >-  # delegation
+      *.fedoraproject.org,
+      *.redhat.com
     AuthServerWhitelist: >-  # delegation
       *.fedoraproject.org,
       *.redhat.com
