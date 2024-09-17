@@ -288,6 +288,7 @@ code_workspace:
       - ansible/ansibullbot
       - ansible/awx
       - ansible/awx-plugins
+      - ansible/awx_plugins.interfaces
       - ansible/azure-pipelines-test-container
       - ansible/azure-pipelines-test-vm
       - ansible/collection_migration
@@ -521,6 +522,7 @@ code_workspace:
         ansible/ansibullbot: webknjaz/ansibullbot
         ansible/awx: webknjaz/ansible--awx
         ansible/awx-plugins: webknjaz/ansible--awx-plugins
+        ansible/awx_plugins.interfaces: webknjaz/ansible--awx_plugins.interfaces
         ansible/azure-pipelines-test-container: webknjaz/ansible--azure-pipelines-test-container
         ansible/azure-pipelines-test-vm: webknjaz/ansible--azure-pipelines-test-vm
         ansible/collection_migration: webknjaz/collection_migration
