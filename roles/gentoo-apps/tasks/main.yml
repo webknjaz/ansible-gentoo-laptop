@@ -745,6 +745,7 @@
   - >-
     c.qt.args = [
       "auth-server-allowlist=*.fedoraproject.org,*.redhat.com",
+      "auth-server-whitelist=*.fedoraproject.org,*.redhat.com",
       "disable-auth-negotiate-cname-lookup=true",
     ]
   - >-
