@@ -1,6 +1,7 @@
 [sssd]
 config_file_version = 2
 services = pam
+# services = nss, pam
 domains = redhat.com
 
 [nss]
