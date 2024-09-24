@@ -26,8 +26,7 @@ krb5_store_password_if_offline = true
 access_provider = simple
 # Allow list needs local user names:
 simple_allow_users = wk
-# Greetd-provided login screen fails with "permission denied" if not allow-listed
-simple_allow_groups = greetd, wk
+simple_allow_groups = wk
 
 cache_credentials = true
 override_homedir = /home/%u
