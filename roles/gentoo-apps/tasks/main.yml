@@ -512,22 +512,26 @@
     sources:
     - sss
     - files
+    - systemd
   - name: group
     sources:
     - sss
     - files
-  - name: initgroups
-    sources:
-    - sss
-    - files
+    - >-
+      [SUCCESS=merge]
+    - systemd
   - name: shadow
     sources:
     - sss
     - files
+    - >-
+      [UNAVAIL=return]
+    - systemd
   - name: gshadow
     sources:
-    - files
     - sss
+    - files
+    - systemd
   - name: services
     sources:
     - sss
