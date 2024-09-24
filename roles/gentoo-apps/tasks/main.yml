@@ -483,7 +483,7 @@
     openssl x509 -noout \
       -in '/etc/pki/ipa/fedoraproject_ipa_ca.crt' \
       -fingerprint \
-      -sha256 | grep 'SHA256 Fingerprint={{ expected_sha256fingerprint }}'
+      -sha256 | grep 'sha256 Fingerprint={{ expected_sha256fingerprint }}'
   vars:
     expected_sha256fingerprint: >-
       29:70:18:6F:58:89:AA:08:BA:33:51:D0:3E:27:68:4C:3D:DA:33:87:2C:5C:36:4A:3B:4D:03:A6:17:30:6B:C6
@@ -491,7 +491,7 @@
   changed_when: false
   failed_when: >
     sha256fingerprint.rc != 0 or
-    sha256fingerprint.stdout != (('SHA256 Fingerprint', expected_sha256fingerprint) | join('='))
+    sha256fingerprint.stdout != (('sha256 Fingerprint', expected_sha256fingerprint) | join('='))
 - name: Set up sssd
   template:
     src: sssd.conf.template
