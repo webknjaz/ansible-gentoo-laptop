@@ -438,6 +438,7 @@ code_workspace:
       - python-trio/snekomatic
       - python-trio/trio
       - python-trio/trustme
+      - qutebrowser/qutebrowser
       - re-actors/alls-green
       - re-actors/bindep
       - re-actors/build-python-dists
@@ -640,6 +641,7 @@ code_workspace:
         python-trio/snekomatic: webknjaz/snekomatic
         python-trio/trio: webknjaz/trio
         python-trio/trustme: webknjaz/trustme
+        qutebrowser/qutebrowser: webknjaz/qutebrowser--qutebrowser
         RedHatOfficial/RedHatOfficial.github.io: >-
           webknjaz/RedHatOfficial.github.io
         reverbc/pylint-pytest: webknjaz/pylint-pytest
