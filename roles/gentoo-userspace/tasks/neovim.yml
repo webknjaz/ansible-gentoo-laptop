@@ -1,4 +1,5 @@
 --- # vim:se ft=ansible:
+# TODO: Integrate AstroNvim
 - name: Identify the Vundle installation path
   set_fact:
     vundle_self_path: >-
