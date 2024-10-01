@@ -668,6 +668,8 @@
     mode: u+rw,g=r,o=r
     owner: root
     group: root
+  tags:
+  - awesome-wm
   when: ansible_product_version == 'ThinkPad P50'
 
 - name: Set up X11 keyboard layout
@@ -888,6 +890,8 @@
     group: root
     state: directory
     recurse: yes
+  tags:
+  - awesome-wm
 - name: Set up display positioning
   copy:
     src: etc/X11/xinit/xinitrc.d/95-monitor-positioning
@@ -895,6 +899,8 @@
     mode: u+rwx,g=rx,o=rx
     owner: root
     group: root
+  tags:
+  - awesome-wm
 
 - name: Ensure modprobe.d dir exists
   file:
