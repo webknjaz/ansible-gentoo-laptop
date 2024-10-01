@@ -549,6 +549,49 @@
       Setting up nss for {{ nss_entry.name }}
     loop_var: nss_entry
 - name: Point PAM to sssd
+  # https://helpful.knobs-dials.com/index.php/PAM_notes
+  # https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/deployment_guide/configuration_options-pam_configuration_options#Configuration_Options-PAM_Configuration_Options
+  # https://serverfault.com/a/645625/111608
+  # https://wiki.archlinux.org/title/PAM
+  # https://docs.oracle.com/cd/E19253-01/816-4557/pam-15/index.html
+  # https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/configuration_options-nss_configuration_options#Configuration_Options-NSS_Configuration_Options
+  # https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/configuring_authentication_and_authorization_in_rhel/restricting-domains-for-pam-services-using-sssd_configuring-authentication-and-authorization-in-rhel
+  # https://wiki.gentoo.org/wiki/Join_FreeIPA
+  # https://wiki.archlinux.org/title/Universal_2nd_Factor
+  # https://doc.opensuse.org/documentation/leap/archive/42.3/security/html/book.security/cha.pam.html
+  # https://www.gnu.org.ua/software/pam-modules/manual/pam-modules.html
+  # https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/configuration_options-pam_configuration_options#Configuration_Options-PAM_Configuration_Options
+  # https://www.fi.muni.cz/~kas/pv090/referaty/2020-podzim/ldap.html
+  # https://linux.die.net/man/8/pam_sss
+  # https://community.cloudera.com/t5/Community-Articles/How-PAM-NSS-SSD-work-together-on-Linux-OS/ta-p/247879
+  # https://stackoverflow.com/a/48262613/595220
+  # https://superuser.com/a/1466800/182499
+  # https://ubuntu.com/server/docs/introduction-to-network-user-authentication-with-sssd
+  # https://ubuntu.com/server/docs/how-to-set-up-sssd-with-ldap-and-kerberos
+  # https://ubuntu.com/server/docs/troubleshooting-sssd
+  # https://www.freeipa.org/page/Documentation
+  # https://sssd.io/docs/quick-start.html
+  # https://sssd.io/docs/introduction.html
+  # https://sssd.io/docs/architecture.html
+  # https://sssd.io/docs/files-provider-deprecation.html
+  # https://sssd.io/docs/ad/ad-provider-manual.html
+  # https://sssd.io/docs/ad/ad-ldap-provider.html
+  # https://sssd.io/docs/krb/krb-migration.html
+  # https://sssd.io/design-pages/prompting_configuration.html
+  # https://sssd.io/design-pages/prompting_configuration.html#sssd-conf
+  # https://sssd.io/design-pages/kerberos_principal_mapping_to_proxy_users.html
+  # https://sssd.io/troubleshooting/basics.html
+  # https://sssd.io/troubleshooting/backend.html
+  # https://sssd.io/troubleshooting/errors.html
+  # https://sssd.io/troubleshooting/analyzer.html
+  # https://sssd.io/troubleshooting/fleet-commander.html
+  # https://sssd.io/troubleshooting/sudo.html
+  # https://sssd.io/troubleshooting/ad_provider.html
+  # https://sssd.io/troubleshooting/ldap_provider.html
+  # https://sssd.io/troubleshooting/ipa_provider.html
+  # https://wiki.gentoo.org/wiki/Centralized_authentication_using_OpenLDAP
+  # https://wiki.gentoo.org/wiki/Kerberos_Server#Creating_.2Fetc.2Fkrb5.cfg
+  # https://wiki.gentoo.org/wiki/Kerberos_Windows_Interoperability#Full_Domain_Member_on_a_laptop
   copy:
     src: etc/pam.d/system-auth
     dest: /etc/pam.d/system-auth
