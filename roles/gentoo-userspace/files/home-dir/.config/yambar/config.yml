@@ -1,0 +1,446 @@
+---
+
+awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=48
+awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=56
+
+col-foreground: &col-foreground 66666CFF
+col-active: &col-active DCD7BAff
+
+bar:
+  # height: 26
+  height: 64
+  location: top
+  background: 000000ff
+  font: Arial:style=solid:pixelsize=48
+
+  center:
+  - clock:
+      time-format: >-  # %H:%M %Z
+        %H:%M
+      content:
+      - string:
+          text: 
+          # font: Font Awesome 6 Free:style=solid:pixelsize=24
+      - string:
+          text: ' '
+      - string:
+          text: >-
+            {date}
+          right-margin: 5
+      - string:
+          text: ' '
+      - string:
+          text: ' '
+      - string:
+          text: 
+          # font: Font Awesome 6 Free:style=solid:pixelsize=24
+      - string:
+          text: ' '
+      - string:
+          text: >-
+            {time}
+      - string:
+          text: ' '
+
+  left:
+  - script:
+      path: ~/.config/yambar/scripts/hypractive.sh
+      args: [] 
+      content:
+        map:
+          conditions:
+            workspace == 1:
+            - string:
+                text: " 1 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string: &tag-2-def-inactive
+                text: " 2 "
+                foreground: *col-foreground
+            - string: &tag-3-def-inactive
+                text: " 3 "
+                foreground: *col-foreground
+            - string: &tag-4-def-inactive
+                text: " 4 "
+                foreground: *col-foreground
+            - string: &tag-5-def-inactive
+                text: " 5 "
+                foreground: *col-foreground
+            - string: &tag-6-def-inactive
+                text: " 6 "
+                foreground: *col-foreground
+            - string: &tag-7-def-inactive
+                text: " 7 "
+                foreground: *col-foreground
+            - string: &tag-8-def-inactive
+                text: " 8 "
+                foreground: *col-foreground
+            - string: &tag-9-def-inactive
+                text: " 9 "
+                foreground: *col-foreground
+            - string: &tag-10-def-inactive
+                text: " 10 "
+                foreground: *col-foreground
+            workspace == 2:
+            - string: &tag-1-def-inactive
+                text: " 1 "
+                foreground: *col-foreground
+            - string:
+                text: " 2 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 3:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                text: " 3 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 4:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                text: " 4 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 5:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                text: " 5 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 6:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                text: " 6 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 7:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                text: " 7 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 8:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                text: " 8 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 9:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                text: " 9 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+            - string:
+                <<: *tag-10-def-inactive
+            workspace == 10:
+            - string:
+                <<: *tag-1-def-inactive
+            - string:
+                <<: *tag-2-def-inactive
+            - string:
+                <<: *tag-3-def-inactive
+            - string:
+                <<: *tag-4-def-inactive
+            - string:
+                <<: *tag-5-def-inactive
+            - string:
+                <<: *tag-6-def-inactive
+            - string:
+                <<: *tag-7-def-inactive
+            - string:
+                <<: *tag-8-def-inactive
+            - string:
+                <<: *tag-9-def-inactive
+            - string:
+                text: " 10 "
+                foreground: *col-active
+                deco:
+                  underline:
+                    size: 5
+                    color: ff0000ff
+
+  right:
+  - network:
+      content:
+        map:
+          default:
+            empty: {}
+          conditions:
+            name == enp200s0f4u1:
+              map:
+                conditions:
+                  ~carrier:
+                    empty: {}
+                  carrier:
+                    map:
+                      default:
+                        string:
+                          text: 
+                          font: *awesome
+                          foreground: ffffff66
+                      conditions:
+                        state == up && ipv4 != "":
+                          string:
+                            text: 
+                            font: *awesome
+  - network:
+      poll-interval: 1000
+      content:
+        map:
+          default:
+            empty: {}
+          conditions:
+            name == wlp3s0:
+              map:
+                default:
+                  string:
+                    text: 
+                    font: *awesome
+                    foreground: ffffff66
+                conditions:
+                  state == down:
+                    string:
+                      text: 
+                      font: *awesome
+                      foreground: ff0000ff
+                  state == up:
+                    map:
+                      default:
+                      - string:
+                          text: 
+                          font: *awesome
+                      - string:
+                          text: >-
+                            {ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s
+
+                      conditions:
+                        ipv4 == "":
+                        - string:
+                            text: 
+                            font: *awesome
+                            foreground: ffffff66
+                        - string:
+                            text: >-
+                              {ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s
+                            foreground: ffffff66
+  - backlight:
+      name: amdgpu_bl0
+      content: [ string: {text: , font: *awesome}, string: {text: "{percent}%"}]
+  - battery:
+      name: BAT0
+      poll-interval: 30000
+      anchors:
+        discharging: &discharging
+          list:
+            items:
+            - ramp:
+                tag: capacity
+                items:
+                - string: {text: , foreground: ff0000ff, font: *awesome}
+                - string: {text: , foreground: ffa600ff, font: *awesome}
+                - string: {text: , font: *awesome}
+                - string: {text: , font: *awesome}
+                - string: {text: , font: *awesome}
+                - string: {text: , font: *awesome}
+                - string: {text: , font: *awesome}
+                - string: {text: , font: *awesome}
+                - string: {text: , font: *awesome}
+                - string: {text: , foreground: 00ff00ff, font: *awesome}
+            - string: {text: "{capacity}% {estimate}"}
+      content:
+        map:
+          conditions:
+            state == unknown:
+              <<: *discharging
+            state == discharging:
+              <<: *discharging
+            state == charging:
+            - string: {text: , foreground: 00ff00ff, font: *awesome}
+            - string: {text: "{capacity}% {estimate}"}
+            state == full:
+            - string: {text: , foreground: 00ff00ff, font: *awesome}
+            - string: {text: "{capacity}% full"}
+            state == "not charging":
+            - ramp:
+                tag: capacity
+                items:
+                - string: {text:  , foreground: ff0000ff, font: *awesome}
+                - string: {text:  , foreground: ffa600ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text:  , foreground: 00ff00ff, font: *awesome}
+            - string: {text: "{capacity}%"}
+  - label:
+      content:
+        string:
+          on-click: systemctl poweroff
+          text: 
+          font: *awesome
+
+...

@@ -1,0 +1,27 @@
+---  # vim:se ft=ansible:
+- name: Create WM config dirs within userspace
+  file:
+    dest: >-
+      ~/.config/{{ config_subdir }}/
+    state: directory
+  loop:
+  - hypr
+  - yambar
+  - yambar/scripts
+  loop_control:
+    loop_var: config_subdir
+- name: Add Hyprland configs
+  copy:
+    src: home-dir/.config/{{ config_subpath }}
+    dest: >-
+      ~/.config/{{ config_subpath }}
+  loop:
+  - hypr/hypridle.conf
+  - hypr/hyprland.conf
+  - hypr/hyprlock.conf
+  - yambar/config.yml
+  - yambar/scripts/hypractive.sh
+- name: Ensure the hypractive script is executable
+  file:
+    dest: ~/.config/yambar/scripts/hypractive.sh
+    mode: u+rwx,g+rx,o+rx

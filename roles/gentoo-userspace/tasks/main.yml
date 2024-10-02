@@ -24,6 +24,12 @@
   when:
   #- ansible_distribution == 'Gentoo'
   - ansible_distribution != 'MacOSX'
+- name: Ensure that Hyprland is configured
+  import_tasks: hyprland.yml
+  tags:
+  - hyprland
+  when:
+  - ansible_distribution != 'MacOSX'
 - name: Ensure that source code projects are in place
   import_tasks: src.yml
 - name: Ensure that Fedora Project is configured
