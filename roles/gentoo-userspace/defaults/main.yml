@@ -271,6 +271,7 @@ code_workspace:
       - aio-libs/frozenlist
       - aio-libs/get-releasenote
       - aio-libs/multidict
+      - aio-libs/propcache
       - aio-libs/yarl
       - amol-/dukpy
       - ansible/ansible
@@ -519,6 +520,7 @@ code_workspace:
         aio-libs/frozenlist: webknjaz/frozenlist
         aio-libs/get-releasenote: webknjaz/get-releasenote
         aio-libs/multidict: webknjaz/multidict
+        aio-libs/propcache: webknjaz/aio-libs--propcache
         aio-libs/yarl: webknjaz/yarl
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
