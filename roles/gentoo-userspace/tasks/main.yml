@@ -50,3 +50,5 @@
   - keybase
   - pipewire-pulse.socket
   - wireplumber
+  when:
+  - ansible_distribution != 'MacOSX'
