@@ -21,6 +21,8 @@
   - hypr/hyprlock.conf
   - yambar/config.yml
   - yambar/scripts/hypractive.sh
+  loop_control:
+    loop_var: config_subpath
 - name: Ensure the hypractive script is executable
   file:
     dest: ~/.config/yambar/scripts/hypractive.sh
