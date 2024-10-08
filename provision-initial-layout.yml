@@ -839,6 +839,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--tuigreet::gentoo--managed
 
+  - name: Allow app-crypt/kbfs::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        app-crypt/kbfs::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/app-crypt--kbfs::gentoo--managed
+
   - name: Allow app-crypt/keybase::gentoo ~amd64
     ansible.builtin.copy:
       content: |
