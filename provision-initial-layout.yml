@@ -1861,6 +1861,7 @@
       - sys-kernel/linux-firmware  # AMDGPU
       - sys-power/acpid  # power management
       # - sys-power/nvidia-exec::guru  # https://github.com/pedro00dk/nvidia-exec
+      - sys-process/glances  # fancy process monitoring
       - sys-process/htop  # process monitoring
       - x11-apps/mesa-progs  # glxinfo / glxgears
       - x11-drivers/nvidia-drivers
