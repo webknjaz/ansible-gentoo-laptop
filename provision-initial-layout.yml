@@ -1844,6 +1844,7 @@
       - sys-apps/irqbalance  # Distribute hardware interrupts across CPU cores
       - sys-apps/lm-sensors  # device temperatures, et al.
       - sys-apps/ripgrep  # rg
+      - sys-apps/ripgrep-all  # for structured content
       - sys-apps/usbutils  # lsusb
       - sys-apps/util-linux  # fstrim.timer for doing TRIM/discard on SSD
       - sys-auth/fprintd  # fingerprint reader support
