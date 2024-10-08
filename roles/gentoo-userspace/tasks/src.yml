@@ -76,3 +76,36 @@
     git_remote.rc == 0 and
     not git_remote.stderr_lines | count and
     not git_remote.stdout_lines | count
+- name: Compute pre-existing checked out forks with remotes
+  set_fact:
+    forked_remotes_to_be_updated: >-
+      {{
+        git_remote.results
+        | selectattr('rc', 'defined')
+        | selectattr('rc', 'eq', 3)
+        | selectattr('stderr', 'defined')
+        | selectattr(
+          'stderr', 'match', '(error|fatal): remote fork already exists\.'
+        )
+        | map(attribute='item')
+      }}
+- name: Update existing remotes for forks  # noqa 303
+  command: >-
+    git remote set-url fork
+    'git@{{ item.0.fqdn }}:{{ item.0.forked_as[item.1] }}.git'
+  args:
+    chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
+  loop: >-
+    {{ forked_remotes_to_be_updated }}
+#- name: Extend forked??? repos with pull-requests fetch  # noqa 303
+#  command: >-
+#    git config --local --get-regexp remote.origin.fetch '\+refs/pull/\*/head:'  # FIXME: test
+#    git config --add remote.origin.fetch '+refs/pull/*/head:refs/pull/origin/*'
+#  args:
+#    chdir: >-
+#      {{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}
+#  with_subelements:
+#  - "{{ code_workspace.repos }}"
+#  - slugs
+#  when: item.1 in item.0.forked_as
+#  register: git_remote
