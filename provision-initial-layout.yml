@@ -1379,9 +1379,8 @@
       - euse
       - -p
       - media-video/pipewire
-media-video/pipewire -E pipewire-alsa sound-server
       - -E
-      - pipewire-alsa  # https://www.reddit.com/r/Gentoo/comments/1cd894n/comment/l1aeido/
+      - pipewire-alsa  # https://www.reddit.com/r/Gentoo/comments/1cd894n/comment/l1aeido/ / https://wiki.gentoo.org/wiki/Qutebrowser#No_sound_with_Pipewire
       - screencast  # screen share support
       - sound-server  # https://wiki.gentoo.org/wiki/PipeWire#USE_flags
       chdir: >-
