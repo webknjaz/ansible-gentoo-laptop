@@ -1803,6 +1803,7 @@
       # - app-editors/neovide  # NeoVim GUI  # <- does not compile
       - app-editors/neovim  # favorite editor!
       - app-misc/brightnessctl::guru  # monitor and keyboard backlights
+      - app-misc/tmate  # tmux-based remote access over SSH
       - app-misc/tmux  # terminal multiplexer
       - app-portage/eix  # fast portage tree search
       - app-shells/fzf  # fuzzy finder for interactive text completion / search
