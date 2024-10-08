@@ -1370,6 +1370,27 @@
     register: euse_proc
 
   # Enabling custom USE-flags prevents binary build from being selected
+  - name: Disable bindist USE-flag for dev-qt/qtwebengine
+    # https://wiki.gentoo.org/wiki/Qutebrowser#Proprietary_Codecs
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - dev-qt/qtwebengine
+      - -D
+      - bindist  # for www-client/qutebrowser
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already disabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
   - name: Set USE-flags for media-video/pipewire
     ansible.builtin.command:
       argv:
