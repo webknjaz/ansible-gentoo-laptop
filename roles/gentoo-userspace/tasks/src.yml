@@ -67,7 +67,8 @@
   failed_when: >
     ('msg' in git_remote and
      '[Errno 2] No such file or directory' in git_remote.msg) or
-    (git_remote.rc != 0 and
+    (git_remote.rc == 3 and
+    'error: remote fork already exists.' not in git_remote.stderr_lines and
     'fatal: remote fork already exists.' not in git_remote.stderr_lines)
   changed_when: >
     ('msg' in git_remote and
