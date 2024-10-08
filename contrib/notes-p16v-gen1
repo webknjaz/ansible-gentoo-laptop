@@ -1,0 +1,37 @@
+
+>>> Installing (6 of 6) sys-process/glances-4.0.6::gentoo
+ * Install additional packages for optional runtime features:
+ *   dev-python/zeroconf for Autodiscover mode
+ *   dev-python/docker for Docker monitoring support
+ *   dev-python/pygal for SVG graph support
+ *   dev-python/netifaces for IP plugin
+ *   dev-python/pymdstat for RAID monitoring
+ *   dev-python/pymdstat for RAID support
+ *   dev-python/pysnmp for SNMP support
+ *   net-wireless/python-wifi for WIFI plugin
+
+>>> Recording sys-process/glances in "world" favorites file...
+
+>>> Completed (6 of 6) sys-process/glances-4.0.6::gentoo
+
+ * Messages for package sys-apps/ripgrep-all-0.10.6:
+
+ * Install additional packages for optional runtime features:
+ *   virtual/pandoc for pandoc support
+
+ * Messages for package sys-process/glances-4.0.6:
+
+ * Install additional packages for optional runtime features:
+ *   dev-python/zeroconf for Autodiscover mode
+ *   dev-python/docker for Docker monitoring support
+ *   dev-python/pygal for SVG graph support
+ *   dev-python/netifaces for IP plugin
+ *   dev-python/pymdstat for RAID monitoring
+ *   dev-python/pymdstat for RAID support
+ *   dev-python/pysnmp for SNMP support
+ *   net-wireless/python-wifi for WIFI plugin
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 22 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
