@@ -1804,6 +1804,7 @@
       - app-editors/neovim  # favorite editor!
       - app-misc/brightnessctl::guru  # monitor and keyboard backlights
       - app-portage/eix  # fast portage tree search
+      - app-shells/fzf  # fuzzy finder for interactive text completion / search
       - app-shells/zsh  # the shell of choice
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
