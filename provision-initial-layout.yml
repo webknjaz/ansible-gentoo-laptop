@@ -1927,6 +1927,9 @@
       - gui-wm/hyprland  # tiling compositor for Wayland
       - kde-apps/dolphin  # file manager from KDE land, suggested by Hyprland
       - media-fonts/fontawesome  # for yambar
+      - media-fonts/liberation-fonts  # Gentoo-recommended fonts
+      - media-fonts/noto  # Gentoo-recommended fonts
+      - media-fonts/ubuntu-font-family  # Gentoo-recommended fonts
       - media-gfx/freecad  # 3D CAD software
       - media-libs/gst-plugins-bad  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
       - media-libs/gst-plugins-base  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
