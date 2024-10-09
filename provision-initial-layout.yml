@@ -1505,7 +1505,7 @@
     register: euse_proc
 
   # Enabling custom USE-flags prevents binary build from being selected
-  - name: Disable bindist USE-flag for media-video/vlc
+  - name: Disable vaapi USE-flag for media-video/vlc
     # https://wiki.gentoo.org/wiki/Qutebrowser#Proprietary_Codecs
     ansible.builtin.command:
       argv:
@@ -1516,7 +1516,7 @@
       - -p
       - media-video/vlc
       - -D
-      - vulkan  # triggers conflicts with media-video/ffmpeg versions
+      - vaapi  # triggers conflicts with media-video/ffmpeg versions
       chdir: >-
         {{ gentoo_prefix }}
     failed_when:
@@ -1526,7 +1526,7 @@
     register: euse_proc
 
   # Enabling custom USE-flags prevents binary build from being selected
-  - name: Disable bindist USE-flag for media-video/ffmpeg
+  - name: Disable vaapi USE-flag for media-video/ffmpeg
     # https://wiki.gentoo.org/wiki/Qutebrowser#Proprietary_Codecs
     ansible.builtin.command:
       argv:
@@ -1537,7 +1537,7 @@
       - -p
       - media-video/ffmpeg
       - -D
-      - vulkan  # triggers conflicts with media-libs/nv-codec-headers versions
+      - vaapi  # triggers conflicts with media-libs/nv-codec-headers versions
       chdir: >-
         {{ gentoo_prefix }}
     failed_when:
