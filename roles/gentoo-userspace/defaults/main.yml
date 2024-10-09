@@ -352,6 +352,7 @@ code_workspace:
       - executablebooks/MyST-Parser
       - FreeCAD/FreeCAD
       - gentoo/gentoo
+      - gentoo/gentoolkit
       - github-actions-playground/enroll-me
       - gliderlabs/herokuish
       - HypothesisWorks/hypothesis
@@ -584,6 +585,7 @@ code_workspace:
         executablebooks/MyST-Parser: webknjaz/MyST-Parser
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
+        gentoo/gentoolkit: webknjaz/gentoo--gentoolkit
         gliderlabs/herokuish: webknjaz/herokuish
         HypothesisWorks/hypothesis: webknjaz/hypothesis
         hynek/environ-config: webknjaz/environ-config
