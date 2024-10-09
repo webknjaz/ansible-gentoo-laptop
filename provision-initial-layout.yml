@@ -1222,6 +1222,7 @@
       - qml  # kde-apps/dolphin
       - secureboot  # UEFI secure boot support
       - tpm  # Trusted Platform Module
+      - vaapi  # system-wide VAAPI support for hardware video acceleration
       - vdpau  # Video Decode and Presentation API for Unix acceleration interface
       - wayland  # choosing this over X
       chdir: >-
@@ -1979,6 +1980,7 @@
       - media-plugins/gst-plugins-libav  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
       - media-sound/pavucontrol  # sound control GUI
       - media-sound/playerctl  # MPRIS
+      - media-video/libva-utils  # VAAPI inspection
       - media-video/mpv  # qutebrowser plugins
       - net-im/signal-desktop-bin  # secure intant messenger
       - net-misc/networkmanager
