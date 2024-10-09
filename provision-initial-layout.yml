@@ -1808,6 +1808,7 @@
       - app-portage/eix  # fast portage tree search
       - app-shells/fzf  # fuzzy finder for interactive text completion / search
       - app-shells/zsh  # the shell of choice
+      - dev-debug/gdb  # GNU debugger
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
       - gui-apps/hyprlock::guru  # session locker
