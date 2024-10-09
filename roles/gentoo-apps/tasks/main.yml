@@ -921,3 +921,43 @@
   - hid_apple.conf
   - snd_usb_audio_scarlett_2i2_gen3.conf
   - thinkpad.conf
+
+- name: Ensure a system-local XDG applications directory exists
+  file:
+    dest: "{{ item.key }}"
+    mode: "{{ item.value }}"
+    owner: root
+    group: root
+    state: directory
+    recurse: yes
+  with_dict:
+    /usr/local/share/applications/: u+rwx,g=rx,o=rx
+- name: Ensure a userspace XDG applications directory exists
+  become: no
+  file:
+    dest: $HOME/.local/share/applications/
+    mode: u+rwx,g=rx,o=rx
+    state: directory
+    recurse: yes
+
+- name: Ensure a Wayland-ready Google Chrome desktop entry exists system-wide
+  ansible.builtin.copy:
+    src: usr/local/share/applications/{{ desktop_filename }}.desktop
+    dest: /usr/local/share/applications/{{ desktop_filename }}.desktop
+    mode: u+rw,g=r,o=r
+    owner: root
+    group: root
+  loop:
+  - google-chrome
+  loop_control:
+    loop_var: desktop_filename
+- name: Ensure a Wayland-ready Google Chrome desktop entry exists in userspace
+  become: no
+  ansible.builtin.copy:
+    src: usr/local/share/applications/{{ desktop_filename }}.desktop
+    dest: $HOME/.local/share/applications/{{ desktop_filename }}.desktop
+    mode: u+rw,g=r,o=r
+  loop:
+  - google-chrome
+  loop_control:
+    loop_var: desktop_filename
