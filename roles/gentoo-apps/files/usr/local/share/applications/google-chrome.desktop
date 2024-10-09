@@ -106,7 +106,7 @@ Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
 # NOTE: `--use-gl=desktop` seems to disable most of the GPU stuff
-Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --gtk-version=4 %U
+Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-unsafe-webgpu --enable-zero-copy --gtk-version=4 %U
 StartupNotify=true
 Terminal=false
 Icon=google-chrome
@@ -168,7 +168,7 @@ Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
 # NOTE: `--use-gl=desktop` seems to disable most of the GPU stuff
-Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --gtk-version=4
+Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-unsafe-webgpu --enable-zero-copy --gtk-version=4
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
@@ -221,4 +221,4 @@ Name[vi]=Cửa sổ ẩn danh mới
 Name[zh_CN]=新建隐身窗口
 Name[zh_TW]=新增無痕式視窗
 # NOTE: `--use-gl=desktop` seems to disable most of the GPU stuff
-Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --gtk-version=4 --incognito
+Exec=/usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-unsafe-webgpu --enable-zero-copy --gtk-version=4 --incognito
