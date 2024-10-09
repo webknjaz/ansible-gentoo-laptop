@@ -1377,6 +1377,111 @@
     register: euse_proc
 
   # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for dev-python/pyside6
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - dev-python/pyside6
+      - -E
+      - quick  # for media-gfx/freecad
+      - webengine  # for media-gfx/freecad
+      - webchannel  # for media-gfx/freecad
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for sci-libs/opencascade
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - sci-libs/opencascade
+      - -E
+      - json  # for media-gfx/freecad
+      - vtk  # for media-gfx/freecad
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for sci-libs/cgnslib
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - sci-libs/cgnslib
+      - -E
+      - hdf5  # for media-gfx/freecad
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for media-libs/tiff
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - media-libs/tiff
+      - -E
+      - lzma  # for media-gfx/freecad
+      - zstd  # for media-gfx/freecad
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Disable qt5 USE-flag for sci-libs/vtk
+    # https://wiki.gentoo.org/wiki/Qutebrowser#Proprietary_Codecs
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - sci-libs/vtk
+      - -D
+      - qt5  # for media-gfx/freecad
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already disabled' not in euse_proc.stdout
+    register: euse_proc
+
+  # Enabling custom USE-flags prevents binary build from being selected
   - name: Disable bindist USE-flag for dev-qt/qtwebengine
     # https://wiki.gentoo.org/wiki/Qutebrowser#Proprietary_Codecs
     ansible.builtin.command:
@@ -1822,6 +1927,7 @@
       - gui-wm/hyprland  # tiling compositor for Wayland
       - kde-apps/dolphin  # file manager from KDE land, suggested by Hyprland
       - media-fonts/fontawesome  # for yambar
+      - media-gfx/freecad  # 3D CAD software
       - media-libs/gst-plugins-bad  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
       - media-libs/gst-plugins-base  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
       - media-libs/gst-plugins-good  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
