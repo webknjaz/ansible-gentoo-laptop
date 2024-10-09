@@ -1224,6 +1224,7 @@
       - tpm  # Trusted Platform Module
       - vaapi  # system-wide VAAPI support for hardware video acceleration
       - vdpau  # Video Decode and Presentation API for Unix acceleration interface
+      - vulkan  # Vulkan graphics API
       - wayland  # choosing this over X
       chdir: >-
         {{ gentoo_prefix }}
