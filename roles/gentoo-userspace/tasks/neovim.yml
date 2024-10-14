@@ -1,5 +1,13 @@
 --- # vim:se ft=ansible:
 # TODO: Integrate AstroNvim
+- name: Ensure AstroNvim user config dir exists within userspace
+  file:
+    dest: ~/.config/astronvim/lua/user
+    state: directory
+- name: Ensure AstroNvim user config is in place
+  copy:
+    src: home-dir/.config/astronvim/lua/user/init.lua
+    dest: ~/.config/astronvim/lua/user/init.lua
 - name: Identify the Vundle installation path
   set_fact:
     vundle_self_path: >-
