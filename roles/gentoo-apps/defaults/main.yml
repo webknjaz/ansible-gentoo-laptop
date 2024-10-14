@@ -620,6 +620,7 @@ corp_domains:
 - yyz.redhat.com
 
 chrome_managed_policies:
+  # TODO: implement https://chromeenterprise.google/policies/#DefaultSearchProviderSearchURL
   redhat:
     # IMPORTANT: `AuthNegotiateDelegateAllowlist` must remain unset!
     #
