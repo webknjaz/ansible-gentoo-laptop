@@ -1247,6 +1247,7 @@
       - -E
       - boot  # systemd-boot
       - fido2  # FIDO2 hardware keys support
+      - qrcode  # printing a QR code in console error output
       chdir: >-
         {{ gentoo_prefix }}
     failed_when:
