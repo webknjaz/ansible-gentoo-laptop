@@ -719,19 +719,6 @@
         0
       path: >-
         {{ gentoo_prefix }}/etc/fstab
-  - name: Add a tmpfs @ /var/tmp mount point to fstab in chroot
-    # TODO: consider using zram
-    # noatime,noexec,nodev,nosuid,rootcontext=system_u:object_r:var_run_t:s0
-    ansible.builtin.lineinfile:
-      line: >-
-        tmpfs
-        /var/tmp
-        tmpfs
-        noatime,nodev,nosuid
-        0
-        0
-      path: >-
-        {{ gentoo_prefix }}/etc/fstab
 
   - name: Mount virtual filesystems into chroot
     ansible.builtin.command: >-
@@ -757,8 +744,6 @@
     #   --types tmpfs --options nosid,nodev,noexec,rootcontext=system_u:object_r:var_run_t:s0 shm /dev/shm
     - >-
       --types tmpfs --options nosuid,nodev,noexec,rootcontext=system_u:object_r:var_run_t:s0 tmpfs {{ gentoo_prefix }}/tmp
-    - >-
-      --types tmpfs --options nosuid,nodev,rootcontext=system_u:object_r:var_run_t:s0 tmpfs {{ gentoo_prefix }}/var/tmp
     loop_control:
       loop_var: mount_cmd
 
