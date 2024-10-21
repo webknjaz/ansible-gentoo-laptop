@@ -294,6 +294,7 @@ code_workspace:
       - ansible/azure-pipelines-test-vm
       - ansible/collection_migration
       - ansible/default-test-container
+      - ansible/dispatcher
       - ansible/distro-test-containers
       - ansible/django-ansible-base
       - ansible/foreman-test-container
@@ -539,6 +540,7 @@ code_workspace:
         ansible/azure-pipelines-test-vm: webknjaz/ansible--azure-pipelines-test-vm
         ansible/collection_migration: webknjaz/collection_migration
         ansible/default-test-container: webknjaz/ansible--default-test-container
+        ansible/dispatcher: webknjaz/ansible--dispatcher
         ansible/distro-test-containers: webknjaz/ansible--distro-test-containers
         ansible/django-ansible-base: webknjaz/ansible--django-ansible-base
         ansible/jinja-docsite: webknjaz/ansible--jinja-docsite
