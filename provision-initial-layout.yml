@@ -810,6 +810,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.license/x11-drivers--nvidia-drivers
 
+  - name: Accept media-fonts/kochi-substitute free-noncomm license
+    ansible.builtin.copy:
+      content: |
+        media-fonts/kochi-substitute free-noncomm
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.license/media-fonts--kochi-substitute
+
   - name: Allow sys-boot/mokutil::gentoo ~amd64
     ansible.builtin.copy:
       content: |
@@ -2037,10 +2044,23 @@
       - gui-libs/xdg-desktop-portal-hyprland::guru  # Screenshare
       - gui-wm/hyprland  # tiling compositor for Wayland
       - kde-apps/dolphin  # file manager from KDE land, suggested by Hyprland
+      - media-fonts/arphicfonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      - media-fonts/font-isas-misc  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
       - media-fonts/fontawesome  # for yambar
+      - media-fonts/ipamonafont  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      - media-fonts/ja-ipafonts  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      - media-fonts/kochi-substitute  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       - media-fonts/liberation-fonts  # Gentoo-recommended fonts
+      - media-fonts/monafont  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      - media-fonts/mplus-outline-fonts  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       - media-fonts/noto  # Gentoo-recommended fonts
+      - media-fonts/noto-cjk  # Chinese/Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese / https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      - media-fonts/opendesktop-fonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      - media-fonts/sazanami  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       - media-fonts/ubuntu-font-family  # Gentoo-recommended fonts
+      - media-fonts/vlgothic  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      - media-fonts/wqy-zenhei  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      - media-fonts/zh-kcfonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
       - media-gfx/freecad  # 3D CAD software
       - media-gfx/prusaslicer  # software for turning 3D models into G-code
       - media-libs/gst-plugins-bad  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
