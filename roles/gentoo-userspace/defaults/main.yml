@@ -434,6 +434,7 @@ code_workspace:
       - python/miss-islington
       - python/mypy
       - python/peps
+      - python/typeshed
       - python-attrs/attrs
       - python-cffi/cffi
       - python-hyper/h11
@@ -640,6 +641,7 @@ code_workspace:
         python/core-workflow: webknjaz/core-workflow
         python/cpython: webknjaz/cpython
         python/peps: webknjaz/peps
+        python/typeshed: webknjaz/python--typeshed
         python-attrs/attrs: webknjaz/attrs
         python-cffi/cffi: webknjaz/python-cffi--cffi
         python-hyper/h11: webknjaz/h11
