@@ -2062,6 +2062,7 @@
       - media-fonts/mplus-outline-fonts  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       - media-fonts/noto  # Gentoo-recommended fonts
       - media-fonts/noto-cjk  # Chinese/Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese / https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      - media-fonts/noto-emoji  # Emoji fallback  # https://wiki.gentoo.org/wiki/Fonts
       - media-fonts/opendesktop-fonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
       - media-fonts/sazanami  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       - media-fonts/ubuntu-font-family  # Gentoo-recommended fonts
