@@ -2110,6 +2110,7 @@
       - sys-firmware/sof-firmware
       - sys-fs/cryptsetup  # LUKS
       - sys-fs/lvm2  # LVM management
+      - sys-fs/xfsprogs  # XFS resize et al. / https://wiki.gentoo.org/wiki/XFS#Expanding_a_filesystem
       - sys-kernel/dracut
       - sys-kernel/gentoo-kernel-bin
       - sys-kernel/linux-firmware  # AMDGPU
