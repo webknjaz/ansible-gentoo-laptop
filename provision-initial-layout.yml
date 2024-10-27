@@ -1214,6 +1214,7 @@
       - cryptsetup  # LUKS disk encryption
       - dist-kernel  # for virtual/dist-kernel
       - kerberos  # needed for qutebrowser's seamless auth
+      - gssapi  # needed for Kerberos support
       - lvm  # needed by the same-named dracut module
       - modules-sign  # signing kernel modules
       - nvenc  # NVIDIA Encoder/Decoder API
