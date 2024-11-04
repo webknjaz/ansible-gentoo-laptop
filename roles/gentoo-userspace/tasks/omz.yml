@@ -9,7 +9,7 @@
 - name: Copy own oh-my-zsh custom extensions onto machine  # noqa 401
   copy:
     dest: ~/.oh-my-zsh/custom/
-    src: oh-my-zsh/
+    src: home-dir/.oh-my-zsh/custom/
 - name: Get oh-my-zsh custom plugins onto machine  # noqa 401
   git:
     clone: yes
