@@ -1684,6 +1684,26 @@
       'is already enabled' not in euse_proc.stdout
     register: euse_proc
 
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for net-misc/remmina
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - net-misc/remmina
+      - -E
+      - vnc
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
   - name: Set the secure boot signing key path
     set_fact:
       secure_boot_signing_key_path: /root/secureboot/MOK.pem
@@ -2099,6 +2119,7 @@
       - net-im/signal-desktop-bin  # secure intant messenger
       - net-misc/networkmanager
       - net-misc/openssh
+      - net-misc/remmina  # VNC client / for connecting to remote macOS hosts
       - net-misc/yt-dlp  # qutebrowser plugins
       - net-print/cups
       - net-print/cups-browsed
