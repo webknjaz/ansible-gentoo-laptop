@@ -2107,6 +2107,7 @@
       - net-wireless/blueman  # Bluetooth GUI
       - net-wireless/bluez  # Bluetooth; not enabling global `bluetooth` USE-flags to avoid compiling more
       - sys-apps/bat  # fancy cat clone in Rust
+      - sys-apps/bolt  # boltctl
       - sys-apps/ethtool  # ethernet network interfaces analyzer
       - sys-apps/fwupd  # laptop firmware updater
       - sys-apps/irqbalance  # Distribute hardware interrupts across CPU cores
