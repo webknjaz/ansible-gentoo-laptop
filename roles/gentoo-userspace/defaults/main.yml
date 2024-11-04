@@ -195,8 +195,10 @@ oh_my_zsh:
   # custom
   - kitty
   - wk
+  - zsh-pipx
   custom_plugins:
     zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions.git
+    zsh-pipx: https://github.com/thuandt/zsh-pipx.git
     zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting.git
     tty-solarized: https://github.com/joepvd/tty-solarized.git
   plugin_settings:
