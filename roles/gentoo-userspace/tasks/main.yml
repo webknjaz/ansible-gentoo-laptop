@@ -47,6 +47,7 @@
       {{ item }}
   failed_when: false
   loop:
+  - kbfs  # Keybase filesystem
   - keybase
   - pipewire-pulse.socket
   - wireplumber
