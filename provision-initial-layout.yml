@@ -852,6 +852,34 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/app-crypt--keybase::gentoo--managed
 
+  - name: Allow gui-wm/hyprland::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-wm/hyprland::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-wm--hyprland::gentoo--managed
+
+  - name: Allow gui-libs/aquamarine::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-libs/aquamarine::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--aquamarine::gentoo--managed
+
+  - name: Allow gui-libs/hyprutils::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-libs/hyprutils::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprutils::gentoo--managed
+
+  - name: Allow dev-libs/hyprland-protocols::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        dev-libs/hyprland-protocols::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-libs--hyprland-protocols::gentoo--managed
+
   - name: Allow dev-util/hyprwayland-scanner::gentoo ~amd64
     ansible.builtin.copy:
       content: |
