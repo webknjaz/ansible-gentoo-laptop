@@ -1238,6 +1238,7 @@
       - kerberos  # needed for qutebrowser's seamless auth
       - gssapi  # needed for Kerberos support
       - lvm  # needed by the same-named dracut module
+      - minizip  # for dev-qt/qtwebengine
       - modules-sign  # signing kernel modules
       - nvenc  # NVIDIA Encoder/Decoder API
       - nvidia  # NVIDIA support in various apps
