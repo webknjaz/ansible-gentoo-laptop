@@ -626,6 +626,7 @@ code_workspace:
         pylint-dev/pylint: webknjaz/pylint-dev--pylint
         pypa/browntruck: sanitizers/browntruck
         pypa/build: webknjaz/build
+        pypa/gh-action-pypi-publish: webknjaz/pypa--gh-action-pypi-publish
         pypa/hatch: webknjaz/hatch
         pypa/packaging.python.org: webknjaz/packaging.python.org
         pypa/pip: webknjaz/pip
