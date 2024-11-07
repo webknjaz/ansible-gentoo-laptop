@@ -331,6 +331,7 @@ code_workspace:
       - ansible-community/sphinx_ansible_theme
       - ansible-community/vscode-ansible
       - antonbabenko/modulestf-vscode
+      - avocado-framework/avocado
       - bcoca/collection
       - bbangert/routes
       - benjaminp/six
@@ -577,6 +578,7 @@ code_workspace:
         ansible-community/ansible-pygments: webknjaz/ansible-pygments
         ansible-community/antsibull: webknjaz/antsibull
         ansible-community/molecule-hetznercloud: webknjaz/molecule-hetznercloud
+        avocado-framework/avocado: webknjaz/avocado-framework--avocado
         bbangert/routes: webknjaz/routes
         benjaminp/six: webknjaz/six
         bitprophet/alabaster: webknjaz/alabaster
