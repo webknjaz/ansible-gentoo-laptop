@@ -378,6 +378,7 @@ code_workspace:
       - jorisroovers/gitlint
       - kattni/PyCon2023
       - kpi-web-guild/django-girls-blog-serhii73
+      - lektor/lektor
       - libgit2/pygit2
       - lxc/python2-lxc
       - lxc/python3-lxc
@@ -609,6 +610,7 @@ code_workspace:
         jctanner/gravity: webknjaz/gravity
         joepvd/tty-solarized: webknjaz/tty-solarized
         jorisroovers/gitlint: webknjaz/gitlint
+        lektor/lektor: webknjaz/lektor--lektor
         libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
