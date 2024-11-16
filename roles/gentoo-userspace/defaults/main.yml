@@ -497,6 +497,7 @@ code_workspace:
       - webknjaz/ansible-network-infra
       - webknjaz/ansinight
       - webknjaz/ansiwatch-bot
+      - webknjaz/astronvim-userspace-config
       - webknjaz/check-in
       - webknjaz/cython-coverage-extern-bug-repro-issue3636
       - webknjaz/docker-freecad-cli
