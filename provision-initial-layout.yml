@@ -2119,6 +2119,7 @@
       - app-shells/zsh  # the shell of choice
       - dev-debug/gdb  # GNU debugger
       - dev-python/pipx  # install and run isolated Python apps in userspace
+      - dev-python/pynvim  # Python support in NeoVim
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
       - gui-apps/hyprlock::guru  # session locker
