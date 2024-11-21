@@ -222,7 +222,8 @@ ssh_host_configs:
     Port: 2222
     User: pi
     IdentityFile: ~/.ssh/id_rsa_encrypted
-    ForwardAgent: yes
+    ForwardAgent: >-  # str
+      yes
 
 code_workspace:
   source_dir: ~/src
