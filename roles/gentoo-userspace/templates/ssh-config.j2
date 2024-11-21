@@ -1,9 +1,9 @@
 {% for ssh_host_config in ssh_host_configs %}
 {% for host, config_entries in ssh_host_config.items() %}
 Host {{ host }}
-    {% for config_key, config_value in config_entries.items() %}
+{% for config_key, config_value in config_entries.items() %}
     {{ config_key }} {{ config_value }}
-    {% endfor %}
+{% endfor %}
 {% endfor %}
 
 {% endfor %}
