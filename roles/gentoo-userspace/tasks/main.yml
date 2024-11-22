@@ -15,6 +15,8 @@
   import_tasks: omz.yml
 - name: Ensure that userspace Pythons are set up with pyenv
   import_tasks: pyenv.yml
+- name: Ensure that Pip is configured
+  import_tasks: pip.yml
 - name: Ensure that NodeJS is configured with nvm
   import_tasks: nvm.yml
 - name: Ensure that Awesome WM is configured

@@ -39,6 +39,11 @@ git_options:
   user.email: wk@sydorenko.org.ua
   user.name: Sviatoslav Sydorenko
   user.signingkey: 9345E8FEA89CA455
+pip_options:
+  global.require-virtualenv: >-  # --require-virtualenv
+    true
+  global.user: >-  # --no-user
+    false
 vundle:
   self_plugin: VundleVim/Vundle.vim
   bundle_path: ~/.config/nvim/bundle

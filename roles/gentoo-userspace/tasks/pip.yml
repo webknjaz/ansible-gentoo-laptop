@@ -1,0 +1,17 @@
+--- # vim:se ft=ansible:
+- name: Set up user's pip config
+  ansible.builtin.command:
+    argv:
+    - >-
+      {{ ansible_python.executable }}
+    - >-
+      -Im
+    - >-
+      pip
+    - config
+    - set
+    - >-
+      {{ item.key }}
+    - >-
+      {{ item.value }}
+  with_dict: "{{ pip_options }}"
