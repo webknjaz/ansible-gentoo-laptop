@@ -2118,6 +2118,7 @@
       - app-shells/fzf  # fuzzy finder for interactive text completion / search
       - app-shells/zsh  # the shell of choice
       - dev-debug/gdb  # GNU debugger
+      - dev-debug/strace  # spying on syscalls
       - dev-python/pipx  # install and run isolated Python apps in userspace
       - dev-python/pynvim  # Python support in NeoVim
       - gnome-extra/nm-applet  # NetworkManager UI
