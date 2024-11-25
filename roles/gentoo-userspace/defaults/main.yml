@@ -491,6 +491,7 @@ code_workspace:
       - tlsfuzzer/tlsfuzzer
       - tox-dev/detox
       - tox-dev/gh-action-tox
+      - tox-dev/sphinx-autodoc-typehints
       - tox-dev/tox
       - tox-dev/workflow
       - travis-ci/dpl
@@ -684,6 +685,8 @@ code_workspace:
         tiangolo/fastapi: webknjaz/fastapi
         tlsfuzzer/tlsfuzzer: webknjaz/tlsfuzzer--tlsfuzzer
         tox-dev/detox: webknjaz/detox
+        tox-dev/sphinx-autodoc-typehints: >-
+          webknjaz/tox-dev--sphinx-autodoc-typehints
         tox-dev/tox: webknjaz/tox
         tox-dev/workflow: webknjaz/tox-workflow
         travis-ci/dpl: webknjaz/dpl
