@@ -1275,6 +1275,7 @@
       - lvm  # needed by the same-named dracut module
       - minizip  # for dev-qt/qtwebengine
       - modules-sign  # signing kernel modules
+      - nftables  # for net-firewall/iptables
       - nvenc  # NVIDIA Encoder/Decoder API
       - nvidia  # NVIDIA support in various apps
       - qml  # kde-apps/dolphin
