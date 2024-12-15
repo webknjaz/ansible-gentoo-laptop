@@ -1020,6 +1020,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/media-fonts--monaspace::guru--managed
 
+  - name: Unmask media-fonts/nerdfonts::guru
+    lineinfile:
+      create: yes
+      line: >-
+        media-fonts/nerdfonts::guru
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--guru
+      state: present
+
+  - name: Allow media-fonts/nerdfonts::guru ~amd64
+    ansible.builtin.copy:
+      content: |
+        media-fonts/nerdfonts::guru ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/media-fonts--nerdfonts::guru--managed
+
   - name: Allow dev-cpp/sdbus-c++::gentoo ~amd64
     # required by gui-libs/xdg-desktop-portal-hyprland
     ansible.builtin.copy:
@@ -1807,6 +1823,48 @@
       'is already enabled' not in euse_proc.stdout
     register: euse_proc
 
+  # Enabling custom USE-flags prevents binary build from being selected
+  - name: Set USE-flags for media-fonts/nerdfonts::guru
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - euse
+      - -p
+      - media-fonts/nerdfonts::guru
+      - -E
+      - dejavusansmono
+      - droidsansmono
+      - firacode
+      - firamono
+      - hack
+      - intelonemono
+      - iosevka
+      - iosevkaterm
+      - iosevkatermslab
+      # - jetbrainsmono  # NOTE: ruscists. never enable.
+      - liberationmono
+      # - martianmono  # NOTE: ruscists. never enable.
+      - monaspace  # GitHub Next
+      - nerdfontssymbolsonly
+      - noto
+      - opendyslexic
+      - robotomono
+      - sourcecodepro
+      - spacemono
+      - terminus
+      - ubuntu
+      - ubuntumono
+      - ubuntusans
+      chdir: >-
+        {{ gentoo_prefix }}
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
   - name: Set the secure boot signing key path
     set_fact:
       secure_boot_signing_key_path: /root/secureboot/MOK.pem
@@ -2201,6 +2259,7 @@
       - media-fonts/liberation-fonts  # Gentoo-recommended fonts
       - media-fonts/monafont  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       # - media-fonts/monaspace::guru  # Monaspace font by GitHub Next  # <- file size does not match
+      - media-fonts/nerdfonts::guru  # Patched fonts with dev icons for use in terminal, known as media-fonts/nerd-fonts on other overlays
       - media-fonts/mplus-outline-fonts  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       - media-fonts/noto  # Gentoo-recommended fonts
       - media-fonts/noto-cjk  # Chinese/Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese / https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
