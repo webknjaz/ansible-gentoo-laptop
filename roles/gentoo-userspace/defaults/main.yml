@@ -497,6 +497,7 @@ code_workspace:
       - travis-ci/dpl
       - travis-ci/travis-yml
       - vshymanskyy/StandWithUkraine
+      - webknjaz/.github
       - webknjaz/.me
       - webknjaz/ansible.module_utils._text
       - webknjaz/ansible-galaxy-collection-resolver
