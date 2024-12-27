@@ -338,6 +338,7 @@ code_workspace:
       - ansible-community/sphinx_ansible_theme
       - ansible-community/vscode-ansible
       - antonbabenko/modulestf-vscode
+      - antonbabenko/pre-commit-terraform
       - avocado-framework/avocado
       - bcoca/collection
       - bbangert/routes
@@ -591,6 +592,7 @@ code_workspace:
         ansible-community/ansible-pygments: webknjaz/ansible-pygments
         ansible-community/antsibull: webknjaz/antsibull
         ansible-community/molecule-hetznercloud: webknjaz/molecule-hetznercloud
+        antonbabenko/pre-commit-terraform: webknjaz/antonbabenko--pre-commit-terraform
         avocado-framework/avocado: webknjaz/avocado-framework--avocado
         bbangert/routes: webknjaz/routes
         benjaminp/six: webknjaz/six
