@@ -481,6 +481,7 @@ code_workspace:
       - sdispater/tomlkit
       - sgielen/picl-k3os-image-generator
       - sivel/ansible-pulp-galaxy-ng
+      - spaceship-prompt/.github
       - spaceship-prompt/spaceship-prompt
       - sphinx-contrib/towncrier
       - sphinx-doc/github-problem-matcher
@@ -680,6 +681,7 @@ code_workspace:
         SchemaStore/schemastore: webknjaz/schemastore
         sdispater/poetry: webknjaz/poetry
         sdispater/tomlkit: webknjaz/tomlkit
+        spaceship-prompt/.github: webknjaz/spaceship-prompt--.github
         spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
         sphinx-doc/github-problem-matcher: webknjaz/sphinx-doc--github-problem-matcher
         sphinx-doc/sphinx: webknjaz/sphinx
