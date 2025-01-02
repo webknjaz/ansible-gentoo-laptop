@@ -873,6 +873,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-libs--hyprgraphics::gentoo--managed
 
+  - name: Allow dev-libs/hyprlang::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        dev-libs/hyprlang::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-libs--hyprlang::gentoo--managed
+
   - name: Allow gui-libs/hyprutils::gentoo ~amd64
     ansible.builtin.copy:
       content: |
