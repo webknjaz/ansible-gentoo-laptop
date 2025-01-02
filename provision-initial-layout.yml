@@ -1457,7 +1457,7 @@
     register: euse_proc
 
   # Enabling custom USE-flags prevents binary build from being selected
-  - name: Set USE-flags for dev-python/PyQt6
+  - name: Set USE-flags for dev-python/pyqt6
     ansible.builtin.command:
       argv:
       - chroot
@@ -1465,7 +1465,7 @@
         {{ gentoo_prefix }}
       - euse
       - -p
-      - dev-python/PyQt6
+      - dev-python/pyqt6
       - -E
       - qml  # for www-client/qutebrowser
       - webchannel  # for www-client/qutebrowser
