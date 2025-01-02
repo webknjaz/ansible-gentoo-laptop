@@ -1510,6 +1510,7 @@
       - -E
       - designer  # for media-gfx/freecad
       - quick  # for media-gfx/freecad
+      - uitools  # for media-gfx/freecad
       - webengine  # for media-gfx/freecad
       - webchannel  # for media-gfx/freecad
       chdir: >-
