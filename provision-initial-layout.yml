@@ -130,6 +130,9 @@
 # https://github.com/hyprland-community/awesome-hyprland
 # https://wiki.archlinux.org/title/Desktop_entries
 # https://wiki.gentoo.org/wiki/Hyprland#xdg-desktop-portal-hyprland
+# https://wiki.gentoo.org/wiki/NetworkManager#Dnsmasq
+# https://wiki.ubuntu.com/DebuggingNetworkManager
+# https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/introduction-to-networkmanager-debugging_configuring-and-managing-networking#introduction-to-networkmanager-reapply-method_introduction-to-networkmanager-debugging
 #
 # NOTE: A new GPT label must be created when repartitioning disks with LUKS
 # fdisk -> g -> w
