@@ -866,12 +866,12 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--aquamarine::gentoo--managed
 
-  - name: Allow gui-libs/hyprgraphics::gentoo ~amd64
+  - name: Allow dev-libs/hyprgraphics::gentoo ~amd64
     ansible.builtin.copy:
       content: |
-        gui-libs/hyprgraphics::gentoo ~amd64
+        dev-libs/hyprgraphics::gentoo ~amd64
       dest: >-
-        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprgraphics::gentoo--managed
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-libs--hyprgraphics::gentoo--managed
 
   - name: Allow gui-libs/hyprutils::gentoo ~amd64
     ansible.builtin.copy:
