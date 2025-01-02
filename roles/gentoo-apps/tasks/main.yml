@@ -792,13 +792,14 @@
     state: present
   loop:
   - >-
+    config.load_autoconfig()
+    # must be called before changing `c.qt` attributes
+  - >-
     c.qt.args = [
       "auth-server-allowlist=*.fedoraproject.org,*.redhat.com",
       "auth-server-whitelist=*.fedoraproject.org,*.redhat.com",
       "disable-auth-negotiate-cname-lookup=true",
     ]
-  - >-
-    config.load_autoconfig()
   loop_control:
     loop_var: config_line
 
