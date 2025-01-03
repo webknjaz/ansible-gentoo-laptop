@@ -2292,6 +2292,8 @@
       - app-admin/eclean-kernel  # kernel leftovers cleanup
       - app-admin/sudo  # privilege escalation
       - app-arch/lz4  # initramfs compression
+      - app-containers/docker  # daemon
+      - app-containers/docker-cli  # client, needs to run with `sudo`/rootless
       - app-containers/podman  # userspace over privilege escalation
       - app-crypt/efitools
       - app-crypt/keybase  # encrypted cloud fs and chat
@@ -2662,6 +2664,18 @@
       - systemctl
       - enable
       - acpid
+      chdir: >-
+        {{ gentoo_prefix }}
+
+  - name: Enable docker on startup
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - enable
+      - docker
       chdir: >-
         {{ gentoo_prefix }}
 
