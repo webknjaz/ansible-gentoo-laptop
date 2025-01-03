@@ -2293,6 +2293,7 @@
       - app-admin/sudo  # privilege escalation
       - app-arch/lz4  # initramfs compression
       - app-containers/docker  # daemon
+      - app-containers/docker-buildx  # `docker buildx` command
       - app-containers/docker-cli  # client, needs to run with `sudo`/rootless
       - app-containers/podman  # userspace over privilege escalation
       - app-crypt/efitools
