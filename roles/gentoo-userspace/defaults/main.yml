@@ -391,6 +391,7 @@ code_workspace:
       - lxc/python3-lxc
       - matrixise/europython-config-the-revenant
       - mikishapiro/armbuild
+      - msabramo/requests-unixsocket
       - nedbat/coveragepy
       - neovim/pynvim
       - niftylettuce/flightgear-saitek-pro-flight-switch-panel-hid-controller
@@ -627,6 +628,7 @@ code_workspace:
         libgit2/pygit2: webknjaz/pygit2
         lxc/python2-lxc: webknjaz/python2-lxc
         lxc/python3-lxc: webknjaz/python3-lxc
+        msabramo/requests-unixsocket: webknjaz/msabramo--requests-unixsocket
         nedbat/coveragepy: webknjaz/coveragepy
         platformio/platformio-core: webknjaz/platformio-core
         pnpm/pnpm: webknjaz/pnpm
