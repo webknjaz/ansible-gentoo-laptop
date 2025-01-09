@@ -840,7 +840,7 @@
     certutil
     -A
     -n '{{ cert_filename | ansible.builtin.basename }}'
-    -t C
+    -t CT,CT,
     -i '/usr/local/share/ca-certificates/{{ cert_filename }}'
     -d sql:/etc/pki/nssdb
   loop: >-
@@ -853,7 +853,7 @@
     certutil
     -A
     -n '{{ cert_filename | ansible.builtin.basename }}'
-    -t C
+    -t CT,CT,
     -i '/usr/local/share/ca-certificates/{{ cert_filename }}'
     -d sql:$HOME/.pki/nssdb
   loop: >-
