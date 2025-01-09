@@ -703,6 +703,13 @@ firefox_managed_policies:
       - /usr/local/share/ca-certificates/2015-IT-Root-CA.crt
       - /usr/local/share/ca-certificates/2022-IT-Root-CA.crt
     DisableTelemetry: true
+    # EnableTrackingProtection:
+    #   Value: true | false
+    #   Locked: true | false
+    #   Cryptomining: true | false
+    #   Fingerprinting: true | false
+    #   Exceptions:
+    #   - https://example.com
     # Extensions:
     #   Install:
     #   -
@@ -710,3 +717,48 @@ firefox_managed_policies:
     #   -
     #   Locked:
     #   -
+    # RequestedLocales: uk,uk-UA,en-CZ,en-US,cs-CZ
+    # SanitizeOnShutdown: {
+    #   Cache: true | false
+    #   Cookies: true | false
+    #   History: true | false
+    #   Sessions: true | false
+    #   SiteSettings: true | false
+    #   Locked: true | false
+    # SearchEngines:
+    #   Add:
+    #   - Name: Example1
+    #     URLTemplate: https://www.example.org/q={searchTerms}
+    #     Method: GET | POST
+    #     IconURL: https://www.example.org/favicon.ico
+    #     Alias: example
+    #     Description: Description
+    #     PostData: name=value&q={searchTerms}
+    #     SuggestURLTemplate: https://www.example.org/suggestions/q={searchTerms}
+    #   Default: NAME_OF_SEARCH_ENGINE
+    #   PreventInstalls: true | false
+    #   Remove:
+    #   - NAME_OF_SEARCH_ENGINE
+    # SearchSuggestEnabled: true | false
+    # SecurityDevices:
+    #   NAME_OF_DEVICE: PATH_TO_LIBRARY_FOR_DEVICE
+    # ShowHomeButton: true | false
+    # SupportMenu:
+    #   Title: Support Menu
+    #   URL: http://example.com/support
+    #   AccessKey: S
+    # TranslateEnabled: true | false
+    # UserMessaging:
+    #   ExtensionRecommendations: true | false,
+    #   FeatureRecommendations: true | false,
+    #   UrlbarInterventions: true | false,
+    #   SkipOnboarding: true | false,
+    #   MoreFromMozilla: true | false,
+    #   FirefoxLabs: true | false,
+    #   Locked: true | false
+    # UseSystemPrintDialog: true | false
+    # WebsiteFilter:
+    #   Block:
+    #   - <all_urls>
+    #   Exceptions:
+    #   - http://example.org/*
