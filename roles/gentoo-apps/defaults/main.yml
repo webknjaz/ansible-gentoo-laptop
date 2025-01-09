@@ -697,10 +697,12 @@ firefox_managed_policies:
         .redhat.com
       Locked: true
       PrivateBrowsing: true
+    Certificates:
+      ImportEnterpriseRoots: true  # does not actually work under GNU/Linux
+      Install:
+      - /usr/local/share/ca-certificates/2015-IT-Root-CA.crt
+      - /usr/local/share/ca-certificates/2022-IT-Root-CA.crt
     DisableTelemetry: true
-    # Certificates:
-    #   Install:
-    #   -
     # Extensions:
     #   Install:
     #   -
