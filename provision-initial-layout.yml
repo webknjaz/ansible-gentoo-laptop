@@ -868,6 +868,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.license/media-sound--spotify
 
+  - name: Accept net-im/slack all-rights-reserved license
+    ansible.builtin.copy:
+      content: |
+        net-im/slack all-rights-reserved
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.license/net-im--slack
+
   - name: Accept media-fonts/kochi-substitute free-noncomm license
     ansible.builtin.copy:
       content: |
@@ -909,6 +916,13 @@
         app-crypt/keybase::gentoo ~amd64
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/app-crypt--keybase::gentoo--managed
+
+  - name: Allow net-im/slack::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        net-im/slack::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/net-im--slack::gentoo--managed
 
   - name: Allow gui-wm/hyprland::gentoo ~amd64
     ansible.builtin.copy:
@@ -2387,6 +2401,7 @@
       - media-video/mpv  # qutebrowser plugins
       - net-analyzer/wireshark  # spying on own network traffic
       - net-im/signal-desktop-bin  # secure intant messenger
+      - net-im/slack  # corporate IM
       - net-misc/networkmanager
       - net-misc/openssh
       - net-misc/remmina  # VNC client / for connecting to remote macOS hosts
