@@ -861,6 +861,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.license/x11-drivers--nvidia-drivers
 
+  - name: Accept media-sound/spotify Spotify license
+    ansible.builtin.copy:
+      content: |
+        media-sound/spotify Spotify
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.license/media-sound--spotify
+
   - name: Accept media-fonts/kochi-substitute free-noncomm license
     ansible.builtin.copy:
       content: |
@@ -2375,6 +2382,7 @@
       - media-plugins/gst-plugins-libav  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
       - media-sound/pavucontrol  # sound control GUI
       - media-sound/playerctl  # MPRIS
+      - media-sound/spotify  # streaming
       - media-video/libva-utils  # VAAPI inspection
       - media-video/mpv  # qutebrowser plugins
       - net-analyzer/wireshark  # spying on own network traffic
