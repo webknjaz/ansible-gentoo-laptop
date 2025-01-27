@@ -487,6 +487,7 @@ code_workspace:
       - sphinx-contrib/towncrier
       - sphinx-doc/github-problem-matcher
       - sphinx-doc/sphinx
+      - stixif/OpenWRT_glinet-gl-mt6000
       - streetturtle/awesome-wm-widgets
       - takluyver/flit
       - test-summary/action
@@ -687,6 +688,7 @@ code_workspace:
         spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
         sphinx-doc/github-problem-matcher: webknjaz/sphinx-doc--github-problem-matcher
         sphinx-doc/sphinx: webknjaz/sphinx
+        stixif/OpenWRT_glinet-gl-mt6000: webknjaz/stixif--OpenWRT_glinet-gl-mt6000
         streetturtle/awesome-wm-widgets: webknjaz/awesome-wm-widgets
         takluyver/flit: webknjaz/flit
         test-summary/action: webknjaz/test-summary-action
