@@ -407,6 +407,7 @@ code_workspace:
       - pnpm/pnpm
       - pradyunsg/sphinx-themes
       - pre-commit/identify
+      - psf/black
       - pyca/bcrypt
       - pyca/cryptography
       - pyca/infra
@@ -636,6 +637,7 @@ code_workspace:
         pnpm/pnpm: webknjaz/pnpm
         pradyunsg/sphinx-themes: webknjaz/sphinx-themes
         pre-commit/identify: webknjaz/pre-commit--identify
+        psf/black: webknjaz/psf--black
         pyca/bcrypt: webknjaz/bcrypt
         pyca/cryptography: webknjaz/cryptography
         pyca/infra: webknjaz/pyca-infra
