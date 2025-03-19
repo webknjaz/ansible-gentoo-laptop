@@ -833,6 +833,12 @@
         {{ gentoo_prefix }}/etc/portage/package.unmask
       state: directory
 
+  - name: Create config folder for USE flags
+    ansible.builtin.file:
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.use
+      state: directory
+
   - name: Accept www-client/google-chrome google-chrome license
     ansible.builtin.copy:
       content: |
@@ -1204,6 +1210,15 @@
         gui-libs/hyprutils::guru ~amd64
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprutils::guru--managed
+
+  - name: Set up QEMU user targets
+    ansible.builtin.copy:
+      content: |
+        app-emulation/qemu::gentoo QEMU_USER_TARGETS: aarch64 ppc64le s390x x86_64
+      dest: >-
+        {{
+          gentoo_prefix
+        }}/etc/portage/package.use/00-USE_EXPAND--app-emulation--qemu::gentoo--managed
 
   - name: Ensure the main gentoo portage repository is enabled
     ansible.builtin.command:
@@ -2345,6 +2360,7 @@
       - app-crypt/tpm2-tss  # TCG Trusted Platform Module 2.0 Software Stack
       # - app-editors/neovide  # NeoVim GUI  # <- does not compile
       - app-editors/neovim  # favorite editor!
+      - app-emulation/qemu  # non-native CPU architectures
       - app-misc/brightnessctl::guru  # monitor and keyboard backlights
       - app-misc/tmate  # tmux-based remote access over SSH
       - app-misc/tmux  # terminal multiplexer
