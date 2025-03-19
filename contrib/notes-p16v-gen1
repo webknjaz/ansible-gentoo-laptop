@@ -88,3 +88,74 @@
  *   sci-libs/gmsh for FEM mesh generator
  *   sci-libs/gts for Triangulating meshes
  *   sci-visualization/paraview for Visualization
+
+
+ ------
+
+ 
+
+ * Messages for package sys-firmware/edk2-bin-202202:
+
+ * This package contains the tianocore edk2 UEFI firmware for 64-bit x86
+ * virtual machines. The firmware is located under
+ * /usr/share/edk2-ovmf/OVMF_CODE.fd
+ * /usr/share/edk2-ovmf/OVMF_VARS.fd
+ * /usr/share/edk2-ovmf/OVMF_CODE.secboot.fd
+ * 
+ * If USE=binary is enabled, we also install an OVMF variables file (coming from
+ * fedora) that contains secureboot default keys
+ * 
+ * /usr/share/edk2-ovmf/OVMF_VARS.secboot.fd
+ * 
+ * If you have compiled this package by hand, you need to either populate all
+ * necessary EFI variables by hand by booting
+ * /usr/share/edk2-ovmf/UefiShell.(iso|img)
+ * or creating OVMF_VARS.secboot.fd by hand:
+ * https://github.com/puiterwijk/qemu-ovmf-secureboot
+ * 
+ * The firmware does not support csm (due to no free csm implementation
+ * available). If you need a firmware with csm support you have to download
+ * one for yourself. Firmware blobs are commonly labeled
+ * OVMF{,_CODE,_VARS}-with-csm.fd
+ * 
+ * In order to use the firmware you can run qemu the following way
+ * 
+ * $ qemu-system-x86_64 \
+ * -drive file=/usr/share/edk2-ovmf/OVMF.fd,if=pflash,format=raw,unit=0,readonly=on \
+ * ...
+ * 
+ * (Note: Above message is only printed the first time package is
+ * installed. Please look at /usr/share/doc/edk2-bin-202202/README.gentoo*
+ * for future reference)
+
+ * Messages for package app-emulation/qemu-9.1.2:
+
+ * If you don't have kvm compiled into the kernel, make sure you have the
+ * kernel module loaded before running kvm. The easiest way to ensure that the
+ * kernel module is loaded is to load it on boot.
+ * For AMD CPUs the module is called 'kvm-amd'.
+ * For Intel CPUs the module is called 'kvm-intel'.
+ * Please review /etc/conf.d/modules for how to load these.
+ * 
+ * Make sure your user is in the 'kvm' group. Just run
+ * $ gpasswd -a <USER> kvm
+ * then have <USER> re-login.
+ * 
+ * For brand new installs, the default permissions on /dev/kvm might not let
+ * you access it.  You can tell udev to reset ownership/perms:
+ * $ udevadm trigger -c add /dev/kvm
+ * 
+ * If you want to register binfmt handlers for qemu user targets:
+ * For openrc:
+ * # rc-update add qemu-binfmt
+ * For systemd:
+ * # ln -s /usr/share/qemu/binfmt.d/qemu.conf /etc/binfmt.d/qemu.conf
+ * 
+ * (Note: Above message is only printed the first time package is
+ * installed. Please look at /usr/share/doc/qemu-9.1.2/README.gentoo*
+ * for future reference)
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
