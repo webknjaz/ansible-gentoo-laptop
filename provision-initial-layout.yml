@@ -1211,6 +1211,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprutils::guru--managed
 
+  - name: Allow media-gfx/blender-bin::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        media-gfx/blender-bin::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/media-gfx--blender-bin::gentoo--managed
+
   - name: Set up QEMU user targets
     ansible.builtin.copy:
       content: |
@@ -2403,6 +2410,7 @@
       - media-fonts/vlgothic  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
       - media-fonts/wqy-zenhei  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
       - media-fonts/zh-kcfonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      - media-gfx/blender-bin  # 3D modeling software
       - media-gfx/freecad  # 3D CAD software
       - media-gfx/prusaslicer  # software for turning 3D models into G-code
       - media-libs/gst-plugins-bad  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
