@@ -1597,6 +1597,7 @@
       - media-gfx/freecad
       - -E
       - addonmgr  # Addon Manager
+      - assembly  # Assembly Workbench
       chdir: >-
         {{ gentoo_prefix }}
     failed_when:
