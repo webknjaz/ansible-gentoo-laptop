@@ -1227,6 +1227,14 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/media-gfx--freecad::gentoo--managed
 
+  - name: Allow sci-libs/ondselsolver::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        # Used in the Assembly Workbench of FreeCAD
+        sci-libs/ondselsolver::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/sci-libs--ondselsolver::gentoo--managed
+
   - name: Set up QEMU user targets
     ansible.builtin.copy:
       content: |
