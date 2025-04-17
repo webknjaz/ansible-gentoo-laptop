@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify
+GenericName=Music Player
+Icon=spotify-client
+TryExec=spotify
+# NOTE: `--gtk-version=4` is not enabled because it conflicts with GTK 2/3
+Exec=spotify --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=Vulkan --use-vulkan --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-unsafe-webgpu --enable-zero-copy --in-process-gpu --disable-features=UseChromeOSDirectVideoDecoder %U
+Terminal=false
+MimeType=x-scheme-handler/spotify;
+Categories=Audio;Music;Player;AudioVideo;
+StartupWMClass=spotify

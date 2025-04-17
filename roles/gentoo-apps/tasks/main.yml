@@ -941,7 +941,9 @@
     state: directory
     recurse: yes
 
-- name: Ensure a Wayland-ready Google Chrome desktop entry exists system-wide
+- name: >-
+    Ensure a Wayland-ready {{ desktop_filename }} desktop entry
+    exists system-wide
   ansible.builtin.copy:
     src: usr/local/share/applications/{{ desktop_filename }}.desktop
     dest: /usr/local/share/applications/{{ desktop_filename }}.desktop
@@ -950,9 +952,12 @@
     group: root
   loop:
   - google-chrome
+  - spotify
   loop_control:
     loop_var: desktop_filename
-- name: Ensure a Wayland-ready Google Chrome desktop entry exists in userspace
+- name: >-
+    Ensure a Wayland-ready {{ desktop_filename }} desktop entry
+    exists in userspace
   become: no
   ansible.builtin.copy:
     src: usr/local/share/applications/{{ desktop_filename }}.desktop
@@ -960,5 +965,6 @@
     mode: u+rw,g=r,o=r
   loop:
   - google-chrome
+  - spotify
   loop_control:
     loop_var: desktop_filename
