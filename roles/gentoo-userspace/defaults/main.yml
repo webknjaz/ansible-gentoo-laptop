@@ -286,6 +286,7 @@ code_workspace:
       - amol-/dukpy
       - ansible/ansible
       - ansible/ansible-azp-tools
+      - ansible/ansible-builder
       - ansible/ansible-core-ci
       - ansible/ansible-documentation
       - ansible/ansible-examples
@@ -550,6 +551,7 @@ code_workspace:
         aio-libs/yarl: webknjaz/yarl
         amol-/dukpy: webknjaz/dukpy
         ansible/ansible: webknjaz/ansible
+        ansible/ansible-builder: webknjaz/ansible--ansible-builder
         ansible/ansible-core-ci: webknjaz/ansible-core-ci
         ansible/ansible-documentation: webknjaz/ansible--ansible-documentation
         ansible/ansible-language-server: webknjaz/ansible-language-server
