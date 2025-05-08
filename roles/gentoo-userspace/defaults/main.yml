@@ -536,6 +536,7 @@ code_workspace:
       - webknjaz/webknjaz
       - willthames/ansible-review
       - yaml/pyyaml
+      - zizmorcore/workflow
       forked_as:
         abhinavsingh/proxy.py: webknjaz/proxy.py
         actions/toolkit: webknjaz/github--actions--toolkit
@@ -710,6 +711,7 @@ code_workspace:
         travis-ci/travis-yml: webknjaz/travis-yml
         willthames/ansible-review: webknjaz/ansible-review
         yaml/pyyaml: webknjaz/pyyaml
+        zizmorcore/workflow: webknjaz/zizmorcore--workflow
     - name: sourcehut
       fqdn: git.sr.ht
       ssh_host_keys:
