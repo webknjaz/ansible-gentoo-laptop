@@ -1238,7 +1238,7 @@
   - name: Set up QEMU user targets
     ansible.builtin.copy:
       content: |
-        app-emulation/qemu::gentoo QEMU_USER_TARGETS: aarch64 ppc64le s390x x86_64
+        app-emulation/qemu::gentoo QEMU_USER_TARGETS: aarch64 arm ppc64le s390x x86_64
       dest: >-
         {{
           gentoo_prefix
