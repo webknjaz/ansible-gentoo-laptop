@@ -2461,6 +2461,7 @@
       - media-sound/spotify  # streaming
       - media-video/libva-utils  # VAAPI inspection
       - media-video/mpv  # qutebrowser plugins
+      - net-analyzer/nmap  # port knocker
       - net-analyzer/traceroute  # network path discovery
       - net-analyzer/wireshark  # spying on own network traffic
       - net-im/signal-desktop-bin  # secure intant messenger
