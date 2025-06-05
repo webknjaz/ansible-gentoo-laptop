@@ -443,6 +443,7 @@ code_workspace:
       - pytest-dev/execnet
       - pytest-dev/pytest
       - pytest-dev/pytest-asyncio
+      - pytest-dev/pytest-cov
       - pytest-dev/pytest-forked
       - pytest-dev/pytest-mock
       - python/cherry_picker
@@ -669,6 +670,7 @@ code_workspace:
         pytest-dev/execnet: webknjaz/pytest-dev--execnet
         pytest-dev/pytest: webknjaz/pytest
         pytest-dev/pytest-asyncio: webknjaz/pytest-dev--pytest-asyncio
+        pytest-dev/pytest-cov: webknjaz/pytest-dev--pytest-cov
         pytest-dev/pytest-forked: webknjaz/pytest-forked
         pytest-dev/pytest-mock: webknjaz/pytest-mock
         python/cherry_picker: webknjaz/cherry_picker
