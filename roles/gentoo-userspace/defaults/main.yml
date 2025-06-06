@@ -494,6 +494,7 @@ code_workspace:
       - sphinx-contrib/towncrier
       - sphinx-doc/github-problem-matcher
       - sphinx-doc/sphinx
+      - stdlib-workflows/.github
       - stdlib-workflows/packaging
       - stixif/OpenWRT_glinet-gl-mt6000
       - streetturtle/awesome-wm-widgets
