@@ -368,6 +368,7 @@ code_workspace:
       - FreeCAD/FreeCAD
       - gentoo/gentoo
       - gentoo/gentoolkit
+      - git-skeletons/.github
       - github-actions-playground/enroll-me
       - gliderlabs/herokuish
       - HypothesisWorks/hypothesis
