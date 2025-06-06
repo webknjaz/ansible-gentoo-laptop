@@ -462,6 +462,7 @@ code_workspace:
       - python-trio/trio
       - python-trio/trustme
       - qutebrowser/qutebrowser
+      - re-actors/.github
       - re-actors/alls-green
       - re-actors/bindep
       - re-actors/build-python-dists
