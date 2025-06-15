@@ -1218,12 +1218,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/media-gfx--blender-bin::gentoo--managed
 
-  - name: Allow =media-gfx/freecad-1.0.0-r3::gentoo ~amd64
+  - name: Allow =media-gfx/freecad-1.0.0-r5::gentoo ~amd64
     ansible.builtin.copy:
       content: |
         # 1.0.0-r3 is the first version to re-introduce the `assembly` USE-flag
         # Ref: https://github.com/gentoo/gentoo/commit/e0a107e8
-        =media-gfx/freecad-1.0.0-r3::gentoo ~amd64
+        # 1.0.0-r5 is the first version to introduce the Python 3.13 target
+        =media-gfx/freecad-1.0.0-r5::gentoo ~amd64
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/media-gfx--freecad::gentoo--managed
 
