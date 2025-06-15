@@ -477,6 +477,7 @@ code_workspace:
       - SalaryCalc/salarycalc-ng
       - SalaryCalc/salarycalc-php
       - samdoran/ansible-collection-macos
+      - sanitizers/.github
       - sanitizers/chronographer-github-app
       - sanitizers/ci-mediator-github-app
       - sanitizers/diactoros-github-app
