@@ -2417,6 +2417,7 @@
       - dev-debug/strace  # spying on syscalls
       - dev-python/pipx  # install and run isolated Python apps in userspace
       - dev-python/pynvim  # Python support in NeoVim
+      - dev-util/ccache  # fast compiler cache
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
       - gui-apps/hyprlock::guru  # session locker
