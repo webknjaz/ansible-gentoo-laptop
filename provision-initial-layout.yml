@@ -860,10 +860,10 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.license/sys-kernel--linux-firmware
 
-  - name: Accept x11-drivers/nvidia-drivers NVIDIA-r2 license
+  - name: Accept x11-drivers/nvidia-drivers NVIDIA-2023 NVIDIA-r2 licenses
     ansible.builtin.copy:
       content: |
-        x11-drivers/nvidia-drivers NVIDIA-r2
+        x11-drivers/nvidia-drivers NVIDIA-2023 NVIDIA-r2
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.license/x11-drivers--nvidia-drivers
 
