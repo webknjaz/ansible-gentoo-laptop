@@ -1,3 +1,5 @@
+ANSIBLE_TEST_PREFER_PODMAN=1
+
 COMPUTED_PIPX_BIN_DIR=$(\
     pipx environment | \
     grep PIPX_BIN_DIR= | \
