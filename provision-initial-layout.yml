@@ -2471,6 +2471,7 @@
       - net-misc/networkmanager
       - net-misc/openssh
       - net-misc/remmina  # VNC client / for connecting to remote macOS hosts
+      - net-misc/sshpass  # intercept SSH password prompts under Ansible
       - net-misc/telnet-bsd  # Telnet client; useful with pudb
       - net-misc/yt-dlp  # qutebrowser plugins
       - net-print/cups
