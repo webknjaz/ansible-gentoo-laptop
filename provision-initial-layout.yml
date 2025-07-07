@@ -1616,6 +1616,7 @@
       - -E
       - addonmgr  # Addon Manager
       - assembly  # Assembly Workbench
+      - cam  # CAM Workbench
       chdir: >-
         {{ gentoo_prefix }}
     failed_when:
