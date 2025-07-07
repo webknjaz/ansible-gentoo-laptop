@@ -511,6 +511,7 @@ code_workspace:
       - travis-ci/dpl
       - travis-ci/travis-yml
       - vshymanskyy/StandWithUkraine
+      - wabbitguy/Kobra_Max_PRUSA_Profiles
       - webknjaz/.github
       - webknjaz/.me
       - webknjaz/ansible.module_utils._text
