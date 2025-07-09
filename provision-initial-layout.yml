@@ -867,13 +867,6 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.license/x11-drivers--nvidia-drivers
 
-  - name: Accept dev-util/claude-code all-rights-reserved license
-    ansible.builtin.copy:
-      content: |
-        dev-util/claude-code all-rights-reserved
-      dest: >-
-        {{ gentoo_prefix }}/etc/portage/package.license/dev-util--claude-code
-
   - name: Accept media-sound/spotify Spotify license
     ansible.builtin.copy:
       content: |
@@ -2426,7 +2419,6 @@
       - dev-python/pipx  # install and run isolated Python apps in userspace
       - dev-python/pynvim  # Python support in NeoVim
       - dev-util/ccache  # fast compiler cache
-      - dev-util/claude-code  # an agentic coding tool by Anthropic
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
       - gui-apps/hyprlock::guru  # session locker
