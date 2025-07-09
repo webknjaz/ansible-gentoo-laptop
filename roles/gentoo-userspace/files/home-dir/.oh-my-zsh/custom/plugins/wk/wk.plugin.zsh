@@ -10,3 +10,5 @@ if [[ -n "${COMPUTED_PIPX_BIN_DIR}" ]]
 then
     export PATH="${PATH}":"${COMPUTED_PIPX_BIN_DIR}"
 fi
+
+alias claude="${HOME}/.claude/local/claude"
