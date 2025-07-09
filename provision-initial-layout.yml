@@ -2407,6 +2407,7 @@
       - app-crypt/tpm2-tss  # TCG Trusted Platform Module 2.0 Software Stack
       # - app-editors/neovide  # NeoVim GUI  # <- does not compile
       - app-editors/neovim  # favorite editor!
+      - app-editors/zed  # collaborative code editor in Rust
       - app-emulation/qemu  # non-native CPU architectures
       - app-misc/brightnessctl::guru  # monitor and keyboard backlights
       - app-misc/tmate  # tmux-based remote access over SSH
