@@ -21,8 +21,6 @@ proxy_lib_name = files
 
 auth_provider = krb5
 krb5_realm = IPA.REDHAT.COM
-# krb5_server = kerberos.corp.redhat.com
-# krb5_backup_server = kerberos01.core.prod.int.ams2.redhat.com
 krb5_store_password_if_offline = true
 
 access_provider = simple
