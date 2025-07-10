@@ -10,7 +10,8 @@ ticket_lifetime = 24h
 renew_lifetime = 7d
 forwardable = true
 rdns = false
-default_realm = REDHAT.COM
+udp_preference_limit = 0
+default_realm = IPA.REDHAT.COM
 default_ccache_name = KEYRING:persistent:%{uid}
 dns_canonicalize_hostname = false
 
@@ -19,19 +20,15 @@ dns_canonicalize_hostname = false
         kdc = https://id.fedoraproject.org/KdcProxy
         pkinit_anchors = FILE:/etc/pki/ipa/fedoraproject_ipa_ca.crt
     }
-    REDHAT.COM = {
-        kdc = kerberos01.core.prod.int.ams2.redhat.com
-        kdc = kerberos02.core.prod.int.ams2.redhat.com
-        kdc = kerberos01.core.prod.int.phx2.redhat.com
-        master_kdc = kerberos.corp.redhat.com
-        admin_server = kerberos.corp.redhat.com
+    IPA.REDHAT.COM = {
+       default_domain = ipa.redhat.com
+       dns_lookup_kdc = true
+       dns_lookup_realm = true
     }
 
 [domain_realm]
 .fedoraproject.org = FEDORAPROJECT.ORG
 fedoraproject.org = FEDORAPROJECT.ORG
-redhat.com = REDHAT.COM
-.redhat.com = REDHAT.COM
 #
 #[libdefaults]
 #   default_realm = EXAMPLE.CO.UK

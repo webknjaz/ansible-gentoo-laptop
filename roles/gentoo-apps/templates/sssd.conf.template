@@ -2,25 +2,27 @@
 config_file_version = 2
 services = pam
 # services = nss, pam
-domains = redhat.com
+domains = ipa.redhat.com
 
 [nss]
 
 [pam]
 
-[domain/redhat.com]
+[domain/ipa.redhat.com]
 # "ldap" does not work with "krb5_map_user"
 # id_provider = ldap
 # ldap_search_base = dc=redhat,dc=com
+
+dns_discovery_domain = ipa.redhat.com
 
 # "proxy" is necessary for "krb5_map_user" to work:
 id_provider = proxy
 proxy_lib_name = files
 
 auth_provider = krb5
-krb5_realm = REDHAT.COM
-krb5_server = kerberos.corp.redhat.com
-krb5_backup_server = kerberos01.core.prod.int.ams2.redhat.com
+krb5_realm = IPA.REDHAT.COM
+# krb5_server = kerberos.corp.redhat.com
+# krb5_backup_server = kerberos01.core.prod.int.ams2.redhat.com
 krb5_store_password_if_offline = true
 
 access_provider = simple
