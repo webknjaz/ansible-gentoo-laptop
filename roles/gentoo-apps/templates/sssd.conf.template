@@ -7,6 +7,8 @@ domains = ipa.redhat.com
 [nss]
 
 [pam]
+offline_credentials_expiration = 0
+reconnection_retries = 3
 
 [domain/ipa.redhat.com]
 # "ldap" does not work with "krb5_map_user"
