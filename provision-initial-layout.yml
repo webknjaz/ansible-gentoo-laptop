@@ -2521,6 +2521,7 @@
       - sys-process/btop  # a monitor of resources
       - sys-process/glances  # fancy process monitoring
       - sys-process/htop  # process monitoring
+      - sys-process/lsof  # lists files open by processes
       - sys-process/usbtop  # shows an estimated instantaneous bandwidth on USB buses and devices
       - x11-apps/mesa-progs  # glxinfo / glxgears
       - x11-drivers/nvidia-drivers
