@@ -341,6 +341,7 @@ code_workspace:
       - ansible-community/vscode-ansible
       - antonbabenko/modulestf-vscode
       - antonbabenko/pre-commit-terraform
+      - ANYCUBIC-3D/AnycubicSlicer_Prusa
       - avocado-framework/avocado
       - bcoca/collection
       - bbangert/routes
