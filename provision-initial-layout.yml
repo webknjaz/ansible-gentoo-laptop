@@ -1244,6 +1244,14 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-util--pixi::gentoo--managed
 
+  - name: Allow dev-util/github-cli::gentoo ~amd64
+    ansible.builtin.copy:
+      content: |
+        # Used in the Assembly Workbench of FreeCAD
+        dev-util/github-cli::gentoo ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-util--github-cli::gentoo--managed
+
   - name: Set up QEMU user targets
     ansible.builtin.copy:
       content: |
@@ -2428,6 +2436,7 @@
       - dev-python/pipx  # install and run isolated Python apps in userspace
       - dev-python/pynvim  # Python support in NeoVim
       - dev-util/ccache  # fast compiler cache
+      - dev-util/github-cli  # GH CLI
       - dev-util/pixi  # dev env with package manager wrapping conda and uv
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
