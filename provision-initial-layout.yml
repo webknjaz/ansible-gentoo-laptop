@@ -2495,6 +2495,7 @@
       - sys-apps/bolt  # boltctl
       - sys-apps/ethtool  # ethernet network interfaces analyzer
       - sys-apps/fwupd  # laptop firmware updater
+      - sys-apps/inxi  # hardware and system information
       - sys-apps/irqbalance  # Distribute hardware interrupts across CPU cores
       - sys-apps/lm-sensors  # device temperatures, et al.
       - sys-apps/ripgrep  # rg
