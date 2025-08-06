@@ -11,4 +11,6 @@ then
     export PATH="${PATH}":"${COMPUTED_PIPX_BIN_DIR}"
 fi
 
+export PATH="${HOME}/bin":"${PATH}"
+
 alias claude="${HOME}/.claude/local/claude"
