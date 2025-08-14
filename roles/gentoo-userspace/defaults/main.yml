@@ -454,6 +454,7 @@ code_workspace:
       - python/miss-islington
       - python/mypy
       - python/peps
+      - python/release-tools
       - python/typeshed
       - python-attrs/attrs
       - python-cffi/cffi
@@ -683,6 +684,7 @@ code_workspace:
         python/cherry_picker: webknjaz/cherry_picker
         python/core-workflow: webknjaz/core-workflow
         python/cpython: webknjaz/cpython
+        python/release-tools: webknjaz/python--release-tools
         python/peps: webknjaz/peps
         python/typeshed: webknjaz/python--typeshed
         python-attrs/attrs: webknjaz/attrs
