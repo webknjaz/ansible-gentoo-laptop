@@ -13,4 +13,6 @@ fi
 
 export PATH="${HOME}/bin":"${PATH}"
 
+export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
+
 alias claude="${HOME}/.claude/local/claude"
