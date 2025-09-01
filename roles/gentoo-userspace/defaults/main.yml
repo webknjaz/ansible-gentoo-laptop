@@ -338,6 +338,7 @@ code_workspace:
       - ansible-community/molecule-containers
       - ansible-community/molecule-hetznercloud
       - ansible-community/sphinx_ansible_theme
+      - ansible-community/tox-ansible-test
       - ansible-community/vscode-ansible
       - antonbabenko/modulestf-vscode
       - antonbabenko/pre-commit-terraform
@@ -611,6 +612,7 @@ code_workspace:
         ansible-community/ansible-pygments: webknjaz/ansible-pygments
         ansible-community/antsibull: webknjaz/antsibull
         ansible-community/molecule-hetznercloud: webknjaz/molecule-hetznercloud
+        ansible-community/tox-ansible-test: webknjaz/ansible-community--tox-ansible-test
         antonbabenko/pre-commit-terraform: webknjaz/antonbabenko--pre-commit-terraform
         avocado-framework/avocado: webknjaz/avocado-framework--avocado
         bbangert/routes: webknjaz/routes
