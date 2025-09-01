@@ -172,7 +172,6 @@ oh_my_zsh:
   plugins:
   - git
   - pyenv
-  - ssh-agent
   - gpg-agent
   - nvm
   - common-aliases
@@ -215,6 +214,7 @@ oh_my_zsh:
       theme-shade: dark
 ssh_host_configs:
 - '*':
+    IdentityAgent: ~/.bitwarden-ssh-agent.sock
     SetEnv: TERM=xterm-256color
 # https://docs.github.com/en/github/authenticating-to-github/using-ssh-over-the-https-port
 - github.com:
