@@ -707,7 +707,7 @@ code_workspace:
         sdispater/tomlkit: webknjaz/tomlkit
         spaceship-prompt/.github: webknjaz/spaceship-prompt--.github
         spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
-        sphinx-contrib/towncrier: sphinx-contrib--sphinxcontrib-towncrier
+        sphinx-contrib/towncrier: webknjaz/sphinx-contrib--sphinxcontrib-towncrier
         sphinx-doc/github-problem-matcher: webknjaz/sphinx-doc--github-problem-matcher
         sphinx-doc/sphinx: webknjaz/sphinx
         stixif/OpenWRT_glinet-gl-mt6000: webknjaz/stixif--OpenWRT_glinet-gl-mt6000
