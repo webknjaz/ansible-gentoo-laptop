@@ -208,7 +208,7 @@ oh_my_zsh:
   plugin_settings:
     ssh-agent:
       agent-forwarding: on
-      identities: id_rsa_encrypted  # id_rsa
+      #identities: id_rsa_encrypted  # id_rsa
       #lifetime: 4h  # Forever by default
     tty-solarized:
       theme-shade: dark
@@ -221,12 +221,14 @@ ssh_host_configs:
     Hostname: ssh.github.com
     Port: 443
     User: git
-    IdentityFile: ~/.ssh/id_rsa_encrypted
+    IdentitiesOnly: >-  # str
+      yes
+    # IdentityFile: ~/.ssh/id_rsa_encrypted
 - rpi-patron-it:
     Hostname: vpn-br.patron-it.cz
     Port: 2222
     User: pi
-    IdentityFile: ~/.ssh/id_rsa_encrypted
+    # IdentityFile: ~/.ssh/id_rsa_encrypted
     ForwardAgent: >-  # str
       yes
 
