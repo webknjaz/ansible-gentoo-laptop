@@ -364,6 +364,7 @@ code_workspace:
       - daibach142/SaitekRadio
       - daibach142/SaitekSwitch
       - deadsnakes/action
+      - di/id
       - di/pip-api
       - displaylink-rpm/displaylink-rpm
       - dokku/dokku-mariadb
@@ -626,6 +627,7 @@ code_workspace:
         confluentinc/cp-ansible: webknjaz/cp-ansible
         cython/cython: webknjaz/cython
         deadsnakes/action: webknjaz/deadsnakes-action
+        di/id: webknjaz/di--id
         di/pip-api: webknjaz/pip-api
         displaylink-rpm/displaylink-rpm: webknjaz/displaylink-rpm--displaylink-rpm
         executablebooks/MyST-Parser: webknjaz/MyST-Parser
