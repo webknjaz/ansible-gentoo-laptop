@@ -1007,6 +1007,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.mask/third-party-overlay--wayland-desktop
 
+  - name: Unmask media-sound/spotifyd::guru
+    lineinfile:
+      create: yes
+      line: >-
+        media-sound/spotifyd::guru
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--guru
+      state: present
+
+  - name: Allow media-sound/spotifyd::guru ~amd64
+    ansible.builtin.copy:
+      content: |
+        media-sound/spotifyd::guru ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/media-sound--spotifyd::guru--managed
+
   - name: Unmask gui-apps/hypridle::guru
     lineinfile:
       create: yes

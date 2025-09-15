@@ -52,6 +52,7 @@
   - kbfs  # Keybase filesystem
   - keybase
   - pipewire-pulse.socket
+  - spotifyd
   - wireplumber
   when:
   - ansible_distribution != 'MacOSX'
