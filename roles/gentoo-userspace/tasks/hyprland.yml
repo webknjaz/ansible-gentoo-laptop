@@ -6,6 +6,7 @@
     state: directory
   loop:
   - hypr
+  - spotifyd
   - yambar
   - yambar/scripts
   loop_control:
@@ -19,6 +20,7 @@
   - hypr/hypridle.conf
   - hypr/hyprland.conf
   - hypr/hyprlock.conf
+  - spotifyd/spotifyd.conf
   - yambar/config.yml
   - yambar/scripts/hypractive.sh
   loop_control:
