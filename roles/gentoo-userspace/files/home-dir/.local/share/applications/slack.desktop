@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Slack
+StartupWMClass=Slack
+Comment=Slack Desktop
+GenericName=Slack Client for Linux
+# NOTE: `--in-process-gpu` produces a lot of errors in logs and the UI does not show up
+Exec=/usr/bin/slack -s %U --enable-features=WebRTCPipeWireCapturer --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=Vulkan --use-vulkan --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-unsafe-webgpu --enable-zero-copy --disable-features=UseChromeOSDirectVideoDecoder --gtk-version=4
+Icon=slack
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;InstantMessaging;
+MimeType=x-scheme-handler/slack;

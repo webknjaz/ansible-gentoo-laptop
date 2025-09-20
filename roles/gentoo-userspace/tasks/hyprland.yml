@@ -48,6 +48,7 @@
   loop:
   - google-chrome
   - org.freecad.FreeCAD
+  - slack
   - spotify
   loop_control:
     loop_var: desktop_entry
