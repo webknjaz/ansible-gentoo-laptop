@@ -2711,6 +2711,20 @@
       chdir: >-
         {{ gentoo_prefix }}
 
+  - name: Disable systemd-networkd on startup
+    ansible.builtin.command:
+      argv:
+      - chroot
+      - >-
+        {{ gentoo_prefix }}
+      - systemctl
+      - disable
+      - systemd-networkd.service
+      - systemd-networkd.socket
+      - systemd-networkd-wait-online.service
+      chdir: >-
+        {{ gentoo_prefix }}
+
   - name: Enable SSHD on startup
     ansible.builtin.command:
       argv:
