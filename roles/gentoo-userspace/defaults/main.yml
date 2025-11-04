@@ -497,6 +497,7 @@ code_workspace:
       - sdispater/poetry
       - sdispater/tomlkit
       - sgielen/picl-k3os-image-generator
+      - sirosen/flake8-typing-as-t
       - sivel/ansible-pulp-galaxy-ng
       - spaceship-prompt/.github
       - spaceship-prompt/spaceship-prompt
@@ -711,6 +712,7 @@ code_workspace:
         SchemaStore/schemastore: webknjaz/schemastore
         sdispater/poetry: webknjaz/poetry
         sdispater/tomlkit: webknjaz/tomlkit
+        sirosen/flake8-typing-as-t: webknjaz/sirosen--flake8-typing-as-t
         spaceship-prompt/.github: webknjaz/spaceship-prompt--.github
         spaceship-prompt/spaceship-prompt: webknjaz/spaceship-prompt
         sphinx-contrib/towncrier: webknjaz/sphinx-contrib--sphinxcontrib-towncrier
