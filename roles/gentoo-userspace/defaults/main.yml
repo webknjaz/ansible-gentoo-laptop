@@ -314,6 +314,7 @@ code_workspace:
       - ansible/distro-test-containers
       - ansible/django-ansible-base
       - ansible/foreman-test-container
+      - ansible/gh-action-record-test-results
       - ansible/jinja-docsite
       - ansible/gha-runner-scaler
       - ansible/gha-wsl2-playground
