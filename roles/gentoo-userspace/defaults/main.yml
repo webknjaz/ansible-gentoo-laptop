@@ -731,7 +731,7 @@ code_workspace:
         tox-dev/sphinx-autodoc-typehints: >-
           webknjaz/tox-dev--sphinx-autodoc-typehints
         tox-dev/tox: webknjaz/tox
-        tox-dev/workflow: webknjaz/tox-workflow
+        tox-dev/workflow: webknjaz/tox-dev--workflow
         travis-ci/dpl: webknjaz/dpl
         travis-ci/travis-yml: webknjaz/travis-yml
         willthames/ansible-review: webknjaz/ansible-review
