@@ -48,6 +48,8 @@
   loop:
   - google-chrome
   - org.freecad.FreeCAD
+  - PrusaGcodeviewer
+  - PrusaSlicer
   - slack
   - spotify
   loop_control:
