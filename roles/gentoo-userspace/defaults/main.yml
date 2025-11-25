@@ -376,6 +376,7 @@ code_workspace:
       - FreeCAD/FreeCAD
       - gentoo/gentoo
       - gentoo/gentoolkit
+      - gentoo/guru
       - git-skeletons/.github
       - github-actions-playground/enroll-me
       - gliderlabs/herokuish
@@ -639,6 +640,7 @@ code_workspace:
         FreeCAD/FreeCAD: webknjaz/FreeCAD
         gentoo/gentoo: webknjaz/gentoo
         gentoo/gentoolkit: webknjaz/gentoo--gentoolkit
+        gentoo/guru: webknjaz/gentoo--guru
         gliderlabs/herokuish: webknjaz/herokuish
         HypothesisWorks/hypothesis: webknjaz/hypothesis
         hynek/environ-config: webknjaz/environ-config
