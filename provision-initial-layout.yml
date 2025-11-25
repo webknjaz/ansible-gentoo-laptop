@@ -2437,6 +2437,7 @@
       - app-crypt/sbsigntools
       - app-crypt/tpm2-tools  # dracut `systemd-cryptsetup` <- `tpm2-tss` module's dep
       - app-crypt/tpm2-tss  # TCG Trusted Platform Module 2.0 Software Stack
+      - app-editors/helix  # A post-modern modal text editor
       # - app-editors/neovide  # NeoVim GUI  # <- does not compile
       - app-editors/neovim  # favorite editor!
       - app-editors/zed  # collaborative code editor in Rust
