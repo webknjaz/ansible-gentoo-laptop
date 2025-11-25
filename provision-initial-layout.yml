@@ -2455,6 +2455,7 @@
       - dev-util/ccache  # fast compiler cache
       - dev-util/github-cli  # GH CLI
       - dev-util/pixi  # dev env with package manager wrapping conda and uv
+      - dev-util/pkgcheck  # A linter for contributing to gentoo/gentoo
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::guru  # idle
       - gui-apps/hyprlock::guru  # session locker
