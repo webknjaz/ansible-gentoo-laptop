@@ -318,6 +318,7 @@ code_workspace:
       - ansible/jinja-docsite
       - ansible/gha-runner-scaler
       - ansible/gha-wsl2-playground
+      - ansible/handbook
       - ansible/lightbulb
       - ansible/molecule
       - !vault |
@@ -592,6 +593,7 @@ code_workspace:
         ansible/distro-test-containers: webknjaz/ansible--distro-test-containers
         ansible/django-ansible-base: webknjaz/ansible--django-ansible-base
         ansible/jinja-docsite: webknjaz/ansible--jinja-docsite
+        ansible/handbook: webknjaz--handbook
         ansible/lightbulb: webknjaz/lightbulb
         ansible/molecule: webknjaz/molecule
 
