@@ -2508,6 +2508,7 @@
       - net-analyzer/wireshark  # spying on own network traffic
       - net-im/signal-desktop-bin  # secure intant messenger
       - net-im/slack  # corporate IM
+      - net-misc/dropbear  # `dropbearconvert` / `dropbearkey` for OpenWRT compat
       - net-misc/networkmanager
       - net-misc/openssh
       - net-misc/remmina  # VNC client / for connecting to remote macOS hosts
