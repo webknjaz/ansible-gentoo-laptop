@@ -483,6 +483,7 @@ code_workspace:
       - re-actors/manylinux1_x86_64-action
       - re-actors/upload-artifact
       - reverbc/pylint-pytest
+      - Red-Hat-Information-Security/Incident-Response
       - RedHatOfficial/RedHatOfficial.github.io
       - rtfd/readthedocs-docker-images
       - SalaryCalc/salarycalc-ng
