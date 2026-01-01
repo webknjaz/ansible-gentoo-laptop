@@ -362,6 +362,7 @@ code_workspace:
       - codecov/codecov-cli
       - codecov/uploader
       - confluentinc/cp-ansible
+      - coredevices/hardware  # Pebble Index and Watches
       - cython/cython
       - daibach142/FGFS_Saitek_Radio
       - daibach142/FGFS_Saitek_Switch_Panel
@@ -634,6 +635,7 @@ code_workspace:
         codecov/codecov-cli: webknjaz/codecov--codecov-cli
         codecov/uploader: webknjaz/codecov-uploader
         confluentinc/cp-ansible: webknjaz/cp-ansible
+        coredevices/hardware: webknjaz/coredevices--hardware
         cython/cython: webknjaz/cython
         deadsnakes/action: webknjaz/deadsnakes-action
         di/id: webknjaz/di--id
