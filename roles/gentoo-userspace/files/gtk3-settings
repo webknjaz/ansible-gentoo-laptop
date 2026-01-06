@@ -4,4 +4,5 @@ gtk-can-change-accels = 1
 gtk-cursor-theme-name = Adwaita
 gtk-font-name = Dejavu Sans 18
 gtk-icon-theme-name = elementary
+gtk-enable-animations = false
 gtk-theme-name = Arc

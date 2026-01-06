@@ -23,6 +23,8 @@
   - spotifyd/spotifyd.conf
   - yambar/config.yml
   - yambar/scripts/hypractive.sh
+  - >-  # https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion
+    kdeglobals
   loop_control:
     loop_var: config_subpath
 - name: Ensure the hypractive script is executable

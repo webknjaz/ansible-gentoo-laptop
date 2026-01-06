@@ -1,6 +1,7 @@
 gtk-application-prefer-dark-theme = true
 gtk-can-change-accels = 1
 gtk-cursor-theme-name = Adwaita
+gtk-enable-animations = false
 gtk-font-name = Dejavu Sans 18
 gtk-icon-theme-name = elementary
 gtk-theme-name = Arc

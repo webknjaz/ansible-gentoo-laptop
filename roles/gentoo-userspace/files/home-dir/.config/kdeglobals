@@ -1,0 +1,3 @@
+[KDE]
+# Animation speed Instant should trigger `prefers-reduced-motion` in CSS
+AnimationDurationFactor=0
