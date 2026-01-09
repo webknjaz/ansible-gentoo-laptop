@@ -122,9 +122,8 @@
 # https://systemd.io/INHIBITOR_LOCKS/
 # https://man.archlinux.org/man/systemd-inhibit.1.en
 # https://forums.gentoo.org/viewtopic-t-1045730-start-0.html
-# https://codeberg.org/dnkl/yambar/src/branch/master/examples/configurations/laptop.conf
-# https://codeberg.org/dnkl/yambar/src/branch/master/examples/configurations/river-tags.conf
-# https://codeberg.org/dnkl/yambar
+# https://wiki.hypr.land/Useful-Utilities/Status-Bars/#ashell
+# https://malpenzibo.github.io/ashell/
 # https://wiki.gentoo.org/wiki/List_of_software_for_Wayland#Multiple_display_configuration
 # https://github.com/hyprwm/hyprlock
 # https://github.com/hyprland-community/awesome-hyprland
@@ -1204,21 +1203,21 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--hyprshot::wayland-desktop--managed
 
-  - name: Unmask gui-apps/yambar::guru
+  - name: Unmask gui-apps/ashell::guru
     lineinfile:
       create: yes
       line: >-
-        gui-apps/yambar::guru
+        gui-apps/ashell::guru
       path: >-
         {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--guru
       state: present
 
-  - name: Allow gui-apps/yambar::guru ~amd64
+  - name: Allow gui-apps/ashell::guru ~amd64
     ansible.builtin.copy:
       content: |
-        gui-apps/yambar::guru ~amd64
+        gui-apps/ashell::guru ~amd64
       dest: >-
-        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--yambar::guru--managed
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--ashell::guru--managed
 
   - name: Allow gui-libs/hyprutils::guru ~amd64
     ansible.builtin.copy:
@@ -2466,7 +2465,6 @@
       - gui-apps/tuigreet  # login screen TUI
       - gui-apps/wl-clipboard  # Wayland clipboard integration
       - gui-apps/wofi  # application launcher
-      - gui-apps/yambar
       - gui-libs/xdg-desktop-portal-hyprland::guru  # Screenshare
       - gui-wm/hyprland  # tiling compositor for Wayland
       - kde-apps/dolphin  # file manager from KDE land, suggested by Hyprland
@@ -2504,6 +2502,7 @@
       - media-video/libva-utils  # VAAPI inspection
       - media-video/mpv  # qutebrowser plugins
       - net-analyzer/net-snmp  # SNMP support; provides `snmpwalk`; could be pulled in by global USE-flag `snmp`
+      - gui-apps/ashell  # status bar for Hyprland
       - net-analyzer/nmap  # port knocker
       - net-analyzer/traceroute  # network path discovery
       - net-analyzer/wireshark  # spying on own network traffic
