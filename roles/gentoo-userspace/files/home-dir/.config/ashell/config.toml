@@ -1,0 +1,102 @@
+# enable_esc_key = true  # would intercept the keyboard fully while menu's open
+
+# log_level = "warn,ashell=info,ashell::services::network=debug"
+
+# outputs = { Targets = ["DP-1", "eDP-1"] }
+# outputs = { Targets = ["eDP-1"] }
+# outputs = "Active"
+outputs = "All"
+
+# position = "Bottom"
+position = "Top"
+
+[appearance]
+scale_factor = 1.5  # default: 1.0
+
+# [clock]
+# format = "%D %r"
+
+[keyboard_layout.labels]
+"English (US)" = "🇺🇸"
+"Ukrainian" = "🇺🇦"
+
+[media_player]
+# max_title_length = 50  # default: 100
+
+[modules]
+left = [ 
+  "Workspaces",
+]
+center = [
+  "WindowTitle",
+]
+right = [
+  [
+    "SystemInfo",
+    "MediaPlayer",
+    "Tray",
+  ],
+  [
+    "KeyboardLayout",
+    "KeyboardSubmap",
+  ],
+  [
+    "Clock",
+    "Privacy",
+    "Settings",
+  ],
+]
+
+[settings]
+
+[system_info]
+indicators = [
+  "DownloadSpeed",
+  "UploadSpeed",
+  "IpAddress",
+  "Cpu",
+  "Memory",
+  # "MemorySwap",
+  # { Disk = "/home" },
+  "Temperature",
+]
+
+[system_info.cpu]
+warn_threshold = 60
+alert_threshold = 80
+
+[system_info.memory]
+warn_threshold = 70
+alert_threshold = 85
+
+[system_info.disk]
+warn_threshold = 80
+alert_threshold = 90
+
+[system_info.temperature]
+warn_threshold = 60
+alert_threshold = 80
+sensor = "acpitz temp1"
+
+[workspaces]
+# disable_special_workspaces = false
+# enable_virtual_desktops = true  # needs an external plugin
+enable_workspace_filling = true  # depends on `visibility_mode`
+# max_workspaces = None  # needs `enable_workspace_filling`
+visibility_mode = "All"
+# workspace_names = [
+#   "一",
+#   "二",
+#   "三",
+#   "四",
+#   "五",
+#   "六",
+#   "七",
+#   "八",
+#   "九",
+#   "十",
+# ]
+
+[window_title]
+mode = "Title"
+# truncate_title_after_length = 75  # default: 150

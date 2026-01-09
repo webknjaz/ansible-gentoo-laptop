@@ -5,6 +5,7 @@
       ~/.config/{{ config_subdir }}/
     state: directory
   loop:
+  - ashell
   - hypr
   - spotifyd
   - yambar
@@ -17,6 +18,7 @@
     dest: >-
       ~/.config/{{ config_subpath }}
   loop:
+  - ashell/config.toml
   - hypr/hypridle.conf
   - hypr/hyprland.conf
   - hypr/hyprlock.conf
