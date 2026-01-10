@@ -453,6 +453,20 @@
   notify:
   - ensure-services-started
 
+- name: Spoof the Bluetooth adapter device ID to look like Mac
+  lineinfile:
+    insertafter: >-
+      #DeviceID = bluetooth:1234:5678:abcd
+    line: >-
+      DeviceID = bluetooth:004C:0000:0000  #
+      pretend we're a Mac /
+      https://github.com/kavishdevar/librepods/tree/main/linux#hearing-aid
+    path: /etc/bluetooth/main.conf
+    regexp: ^DeviceID\s=\sbluetooth:004C:0000:0000
+    state: present
+  notify:
+  - ensure-services-started
+
 - name: Set up Kerberos
   template:
     src: krb5.conf.template
