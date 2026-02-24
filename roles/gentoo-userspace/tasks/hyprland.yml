@@ -50,6 +50,7 @@
     dest: >-
       ~/.local/share/applications/{{ desktop_entry }}.desktop
   loop:
+  - bitwarden
   - google-chrome
   - org.freecad.FreeCAD
   - PrusaGcodeviewer

@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Bitwarden
+# NOTE: `--in-process-gpu` produces a lot of errors in logs and the UI does not show up
+Exec=/opt/Bitwarden/bitwarden %U --enable-features=UseOzonePlatform --enable-features=VaapiVideoEncoder --enable-features=Vulkan --use-vulkan --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --ozone-platform=wayland --ignore-gpu-blocklist --enable-gpu-rasterization --enable-unsafe-webgpu --enable-zero-copy --disable-features=UseChromeOSDirectVideoDecoder --gtk-version=4
+Terminal=false
+Type=Application
+Icon=bitwarden
+StartupWMClass=Bitwarden
+GenericName=Password Manager
+Comment=A secure and free password manager for all of your devices.
+MimeType=x-scheme-handler/bitwarden;
+Categories=Utility;
