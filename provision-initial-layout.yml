@@ -999,6 +999,13 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.mask/third-party-overlay--guru
 
+  - name: Mask */*::hyproverlay
+    ansible.builtin.copy:
+      content: |
+        */*::hyproverlay
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.mask/third-party-overlay--hyproverlay
+
   - name: Mask */*::wayland-desktop
     ansible.builtin.copy:
       content: |
@@ -1226,6 +1233,134 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprutils::guru--managed
 
+  - name: Unmask dev-libs/hyprlang::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        dev-libs/hyprlang::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow dev-libs/hyprlang::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        dev-libs/hyprlang::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-libs--hyprlang::hyproverlay--managed
+
+  - name: Unmask dev-util/hyprwayland-scanner::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        dev-util/hyprwayland-scanner::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow dev-util/hyprwayland-scanner::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        dev-util/hyprwayland-scanner::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-util--hyprwayland-scanner::hyproverlay--managed
+
+  - name: Unmask gui-libs/aquamarine::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        gui-libs/aquamarine::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-libs/aquamarine::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-libs/aquamarine::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--aquamarine::hyproverlay--managed
+
+  - name: Unmask gui-libs/hyprcursor::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        gui-libs/hyprcursor::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-libs/hyprcursor::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-libs/hyprcursor::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprcursor::hyproverlay--managed
+
+  - name: Unmask dev-libs/hyprgraphics::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        dev-libs/hyprgraphics::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow dev-libs/hyprgraphics::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        dev-libs/hyprgraphics::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-libs--hyprgraphics::hyproverlay--managed
+
+  - name: Unmask dev-libs/hyprland-protocols::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        dev-libs/hyprland-protocols::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-libs/hyprland-protocols::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        dev-libs/hyprland-protocols::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-libs--hyprland-protocols::hyproverlay--managed
+
+  - name: Unmask gui-libs/hyprutils::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        gui-libs/hyprutils::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-libs/hyprutils::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-libs/hyprutils::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprutils::hyproverlay--managed
+
+  - name: Unmask gui-wm/hyprland::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        gui-wm/hyprland::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-wm/hyprland::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-wm/hyprland::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-wm--hyprland::hyproverlay--managed
+
   - name: Allow media-gfx/blender-bin::gentoo ~amd64
     ansible.builtin.copy:
       content: |
@@ -1437,6 +1572,7 @@
       - repository
       - enable
       - guru
+      - hyproverlay  # Hyprland stuff
       - wayland-desktop
       chdir: >-
         {{ gentoo_prefix }}
@@ -2466,7 +2602,7 @@
       - gui-apps/wl-clipboard  # Wayland clipboard integration
       - gui-apps/wofi  # application launcher
       - gui-libs/xdg-desktop-portal-hyprland::guru  # Screenshare
-      - gui-wm/hyprland  # tiling compositor for Wayland
+      - gui-wm/hyprland::hyproverlay  # tiling compositor for Wayland
       - kde-apps/dolphin  # file manager from KDE land, suggested by Hyprland
       - media-fonts/arphicfonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
       - media-fonts/font-isas-misc  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
