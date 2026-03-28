@@ -1297,6 +1297,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprcursor::hyproverlay--managed
 
+  - name: Unmask gui-libs/hyprland-guiutils::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        gui-libs/hyprland-guiutils::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-libs/hyprland-guiutils::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-libs/hyprland-guiutils::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprland-guiutils::hyproverlay--managed
+
   - name: Unmask gui-libs/hyprwire::hyproverlay
     lineinfile:
       create: yes
