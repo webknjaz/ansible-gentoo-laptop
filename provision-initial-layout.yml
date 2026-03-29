@@ -1345,6 +1345,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprwire::hyproverlay--managed
 
+  - name: Unmask gui-libs/xdg-desktop-portal-hyprland::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        gui-libs/xdg-desktop-portal-hyprland::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-libs/xdg-desktop-portal-hyprland::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-libs/xdg-desktop-portal-hyprland::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--xdg-desktop-portal-hyprland::hyproverlay--managed
+
   - name: Unmask dev-libs/hyprgraphics::hyproverlay
     lineinfile:
       create: yes
