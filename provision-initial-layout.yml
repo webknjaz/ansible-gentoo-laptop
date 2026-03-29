@@ -1233,6 +1233,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-libs--hyprutils::guru--managed
 
+  - name: Unmask dev-cpp/glaze::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        dev-cpp/glaze::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow dev-libs/hyprlang::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        dev-cpp/glaze::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/dev-cpp--glaze::hyproverlay--managed
+
   - name: Unmask dev-libs/hyprlang::hyproverlay
     lineinfile:
       create: yes
