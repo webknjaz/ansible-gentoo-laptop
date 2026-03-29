@@ -1313,6 +1313,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--hyprlock::hyproverlay--managed
 
+  - name: Unmask gui-apps/hyprpaper::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        gui-apps/hyprpaper::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow gui-apps/hyprpaper::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        gui-apps/hyprpaper::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-apps--hyprpaper::hyproverlay--managed
+
   - name: Unmask gui-libs/aquamarine::hyproverlay
     lineinfile:
       create: yes
@@ -2692,7 +2708,7 @@
       - gnome-extra/nm-applet  # NetworkManager UI
       - gui-apps/hypridle::hyproverlay  # idle
       - gui-apps/hyprlock::hyproverlay  # session locker
-      - gui-apps/hyprpaper::guru  # Wallpaper
+      - gui-apps/hyprpaper::hyproverlay  # Wallpaper
       - gui-apps/hyprshot::wayland-desktop  # screenshoter
       - gui-apps/tuigreet  # login screen TUI
       - gui-apps/wl-clipboard  # Wayland clipboard integration
