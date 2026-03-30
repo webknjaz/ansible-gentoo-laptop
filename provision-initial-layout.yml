@@ -1521,6 +1521,22 @@
       dest: >-
         {{ gentoo_prefix }}/etc/portage/package.accept_keywords/gui-wm--hyprland::hyproverlay--managed
 
+  - name: Unmask sys-auth/hyprpolkitagent::hyproverlay
+    lineinfile:
+      create: yes
+      line: >-
+        sys-auth/hyprpolkitagent::hyproverlay
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/package.unmask/third-party-overlay--hyproverlay
+      state: present
+
+  - name: Allow sys-auth/hyprpolkitagent::hyproverlay ~amd64
+    ansible.builtin.copy:
+      content: |
+        sys-auth/hyprpolkitagent::hyproverlay ~amd64
+      dest: >-
+        {{ gentoo_prefix }}/etc/portage/package.accept_keywords/sys-auth--hyprpolkitagent::hyproverlay--managed
+
   - name: Allow media-gfx/blender-bin::gentoo ~amd64
     ansible.builtin.copy:
       content: |
@@ -2831,6 +2847,7 @@
       - sys-apps/usbutils  # lsusb
       - sys-apps/util-linux  # fstrim.timer for doing TRIM/discard on SSD
       - sys-auth/fprintd  # fingerprint reader support
+      - sys-auth/hyprpolkitagent::hyproverlay  # polkit agent
       - sys-auth/rtkit  # realtime pipewire
       - sys-auth/sssd  # Kerberos integration
       - sys-boot/efibootmgr  # secure boot
