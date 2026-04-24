@@ -563,6 +563,7 @@ code_workspace:
       forked_as:
         abhinavsingh/proxy.py: webknjaz/proxy.py
         actions/toolkit: webknjaz/github--actions--toolkit
+        aio-libs/.github: webknjaz/aio-libs--.github
         aio-libs/aio-libs.org: webknjaz/aio-libs--aio-libs.org
         aio-libs/aiodocker: webknjaz/aio-libs--aiodocker
         aio-libs/aiohttp: webknjaz/aiohttp
