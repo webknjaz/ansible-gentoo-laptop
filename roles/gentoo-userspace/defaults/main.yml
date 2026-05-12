@@ -519,15 +519,34 @@ code_workspace:
       - test-summary/action
       - tiangolo/fastapi
       - tlsfuzzer/tlsfuzzer
+      - tox-dev/cookiecutter-tox-plugin
       - tox-dev/detox
+      - tox-dev/docker-images
       - tox-dev/gh-action-tox
+      - tox-dev/integration-test
       - tox-dev/sphinx-autodoc-typehints
       - tox-dev/tox
+      - tox-dev/tox-bindep
       - tox-dev/tox-build
+      - tox-dev/tox-conda
+      - tox-dev/tox-docker
+      - tox-dev/tox-external-wheels
+      - tox-dev/tox-extra
+      - tox-dev/tox-fmt-common
+      - tox-dev/tox-gh
+      - tox-dev/tox-ini-fmt
       - tox-dev/tox-lock
+      - tox-dev/tox-pipenv
       - tox-dev/tox-pre-commit
+      - tox-dev/tox-pyenv
+      - tox-dev/tox-report
       - tox-dev/tox-sphinx
+      - tox-dev/tox-tags
+      - tox-dev/tox-toml-fmt
       - tox-dev/tox-towncrier
+      - tox-dev/tox-travis
+      - tox-dev/tox-uv
+      - tox-dev/tox-venv
       - tox-dev/workflow
       - travis-ci/dpl
       - travis-ci/travis-yml
