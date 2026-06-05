@@ -1853,9 +1853,16 @@
       - -p
       - sys-apps/systemd
       - -E
-      - boot  # systemd-boot
-      - fido2  # FIDO2 hardware keys support
+      - boot  # Used to be called `gnuefi`; pulls-in systemd-boot
+      - curl
+      - fido2  # FIDO 2 support for e.g. YubiKey and Solo v2 USB devices
+      - idn
+      - importd
+      - lzma
+      - pkcs11
       - qrcode  # printing a QR code in console error output
+      - tpm  # Trusted Platform Module support
+      - xkb
       chdir: >-
         {{ gentoo_prefix }}
     failed_when:
