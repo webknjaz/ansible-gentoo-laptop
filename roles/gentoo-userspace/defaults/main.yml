@@ -382,6 +382,7 @@ code_workspace:
       - gentoo/guru
       - git-skeletons/.github
       - github-actions-playground/enroll-me
+      - github-early-access/actions-locked-dependencies
       - gliderlabs/herokuish
       - HypothesisWorks/hypothesis
       - hynek/environ-config
