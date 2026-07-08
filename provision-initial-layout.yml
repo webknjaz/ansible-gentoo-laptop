@@ -2899,6 +2899,7 @@
       - sys-auth/fprintd  # fingerprint reader support
       - sys-auth/hyprpolkitagent::hyproverlay  # polkit agent
       - sys-auth/rtkit  # realtime pipewire
+      - sys-apps/smartmontools  # smartctl
       - sys-auth/sssd  # Kerberos integration
       - sys-boot/efibootmgr  # secure boot
       - sys-boot/mokutil  # secure boot
