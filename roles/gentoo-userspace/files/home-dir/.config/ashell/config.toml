@@ -29,14 +29,12 @@ left = [
 ]
 center = [
   "WindowTitle",
+  "MediaPlayer",
 ]
 right = [
+  "SystemInfo",
   [
-    "SystemInfo",
-    "MediaPlayer",
     "Tray",
-  ],
-  [
     "KeyboardLayout",
     "KeyboardSubmap",
   ],
