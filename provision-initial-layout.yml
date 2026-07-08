@@ -2905,6 +2905,7 @@
       - sys-boot/mokutil  # secure boot
       - sys-boot/plymouth  # splash screen during boot
       - sys-boot/shim  # secure boot
+      - sys-devel/mold  # A Modern Linker
       # - sys-firmware/nvidia-firmware  # for nouveau
       - sys-firmware/sof-firmware
       - sys-fs/cryptsetup  # LUKS
