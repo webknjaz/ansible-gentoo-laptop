@@ -2863,6 +2863,7 @@
       - media-sound/spotify  # streaming
       - media-video/libva-utils  # VAAPI inspection
       - media-video/mpv  # qutebrowser plugins
+      - media-video/vlc  # video player
       - net-analyzer/net-snmp  # SNMP support; provides `snmpwalk`; could be pulled in by global USE-flag `snmp`
       - gui-apps/ashell  # status bar for Hyprland
       - net-analyzer/nmap  # port knocker
