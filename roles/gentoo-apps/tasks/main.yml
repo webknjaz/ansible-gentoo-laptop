@@ -297,26 +297,23 @@
   when: flags_entry.use_flags | length > 0
 
 - name: Set up per-package accept keywords
-  lineinfile:
-    create: yes
-    line: >-
-      {{ package_keywords_entry.package }}
-      {{ package_keywords_entry.keywords | join(' ') }}
-    path: >-
-      /etc/portage/package.accept_keywords/{{
-        package_keywords_entry.package
-        | replace('/', '--')
-      }}--managed
-    regexp: ^{{ package_keywords_entry.package }}\s+.*$
-    state: present
+  include_role:
+    name: webknjaz.gentoo.portage_package_accept_keywords
   loop: >-
-    {{
-        accept_keywords_per_package |
-        dict2items(key_name='package', value_name='keywords')
-    }}
+    {{ system_packages_registry }}
   loop_control:
-    loop_var: package_keywords_entry
-  when: package_keywords_entry.keywords | length > 0
+    loop_var: package_entry
+  vars:
+    package_name: >-
+      {{ package_entry.name }}
+    package_keywords: >-
+      {{ package_entry.accept_keywords }}
+  when:
+  - >-
+    'accept_keywords' in package_entry
+  - >-
+    'list' in package_entry.accept_keywords
+  - package_entry.accept_keywords.list | length > 0
 
 - name: Merge ebuilds from the default Gentoo tree
   portage:

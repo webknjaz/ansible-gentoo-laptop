@@ -1,0 +1,16 @@
+---
+
+- name: >-
+    Set up per-package accept keywords
+    (allow {{ package_name }} {{ package_keywords.list | join(' ') }})
+  ansible.builtin.copy:
+    content: |-
+      {{ package_keywords.get('header_comment', '') -}}
+
+      {{ package_name }} {{ package_keywords.list | join(' ') }}
+    dest: >-
+      {{ gentoo_prefix }}/etc/portage/package.accept_keywords/{{
+        package_name | replace('/', '--')
+      }}--managed
+
+...

@@ -204,84 +204,182 @@ use_flags_per_package_disabled:
   - static-libs
   sys-libs/glibc:
   - crypt
-accept_keywords_per_package:
-  =app-admin/abrt-2.15.0::gentoo:
-  - ~amd64
-  app-admin/bitwarden-desktop-bin::gentoo:
-  - ~amd64
-  =app-arch/rpm-4.17.0::gentoo:
-  - ~amd64
-  app-crypt/adcli:
-  - ~amd64
-  app-crypt/kbfs::gentoo:
-  - ~amd64
-  app-crypt/keybase::gentoo:
-  - ~amd64
-  app-crypt/keybase-bin::dmchurch:
-  - ~amd64
-  =app-crypt/yubioath-desktop-5.1.0-r3::gentoo:
-  - ~amd64
-  =app-editors/neovim-0.8.0-r1::gentoo:  # Needed for AstroVim
-  - ~amd64
-  =app-shells/rust-zshcomp-9999::rust:
-  - >-
-    **
-  dev-cpp/tomlplusplus::gentoo:  # dependency of hyprland
-  - ~amd64
-  dev-games/simgear:
-  - ~amd64
-  dev-libs/libliftoff::gentoo:  # dependency of hyprland
-  - ~amd64
-  dev-libs/hyprland-protocols::gentoo:  # dependency of hyprland
-  - ~amd64
-  dev-libs/libucl:
-  - ~amd64
-  =dev-libs/libvterm-0.3::gentoo:  # Needed for NeoVim v0.8.0
-  - ~amd64
-  =dev-libs/satyr-0.38::gentoo:
-  - ~amd64
-  =dev-lua/luv-1.44.2.0::gentoo:  # Needed for NeoVim v0.8.0
-  - ~amd64
-  dev-python/neovim-remote::gentoo:
-  - ~amd64
-  =dev-python/pyotherside-1.5.9::gentoo:  # needed by app-crypt/yubioath-desktop
-  - ~amd64
-  dev-ruby/msgpack::gentoo:  # needed by dev-ruby/neovim-ruby-client
-  - ~amd64
-  dev-ruby/neovim-ruby-client::gentoo:
-  - ~amd64
-  dev-vcs/git::gentoo:
-  - ~amd64
-  games-simulation/flightgear:
-  - ~amd64
-  games-simulation/flightgear-data:
-  - ~amd64
-  games-util/game-device-udev-rules::gentoo:
-  - ~amd64
-  games-util/steam-client-meta::steam-overlay:
-  - ~amd64
-  games-util/steam-launcher::steam-overlay:
-  - ~amd64
-  games-util/steam-meta::steam-overlay:
-  - ~amd64
-  gui-apps/wofi::gentoo:
-  - ~amd64
-  =gui-libs/wlroots-0.15.0-r2::gentoo:
-  - ~amd64
-  gui-wm/hyprland::gentoo:
-  - ~amd64
-  media-libs/libdisplay-info::gentoo:  # dependency of hyprland
-  - ~amd64
-  media-sound/NoiseTorch::kzd:
-  - ~amd64
-  sys-apps/bat:
-  - ~amd64
-  =sys-kernel/dracut-crypt-ssh-1.0.7::gentoo:
-  - ~amd64
-#  sys-libs/glibc:  # conflicts with sssd: https://bugs.gentoo.org/737180
-#  - -~amd64
-  x11-libs/libdrm::gentoo:  # dependency of hyprland
-  - ~amd64
+system_packages_registry:
+- name: =app-admin/abrt-2.15.0::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: app-admin/bitwarden-desktop-bin
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =app-arch/rpm-4.17.0::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: app-crypt/adcli
+  accept_keywords:
+    list:
+    - ~amd64
+- name: app-crypt/kbfs::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: app-crypt/keybase::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: app-crypt/keybase-bin::dmchurch
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =app-crypt/yubioath-desktop-5.1.0-r3::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =app-editors/neovim-0.8.0-r1::gentoo
+  accept_keywords:
+    header_comment: |-
+      # Needed for AstroVim
+    list:
+    - ~amd64
+- name: =app-shells/rust-zshcomp-9999::rust
+  accept_keywords:
+    list:
+    - >-
+      **
+- name: dev-cpp/tomlplusplus::gentoo
+  accept_keywords:
+    header_comment: |-
+      # dependency of hyprland
+    list:
+    - ~amd64
+- name: dev-games/simgear
+  accept_keywords:
+    list:
+    - ~amd64
+- name: dev-libs/libliftoff::gentoo
+  accept_keywords:
+    header_comment: |-
+      # dependency of hyprland
+    list:
+    - ~amd64
+- name: dev-libs/hyprland-protocols::gentoo
+  accept_keywords:
+    header_comment: |-
+      # dependency of hyprland
+    list:
+    - ~amd64
+- name: dev-libs/libucl
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =dev-libs/libvterm-0.3::gentoo
+  accept_keywords:
+    header_comment: |-
+      # Needed for NeoVim v0.8.0
+    list:
+    - ~amd64
+- name: =dev-libs/satyr-0.38::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =dev-lua/luv-1.44.2.0::gentoo
+  accept_keywords:
+    header_comment: |-
+      # Needed for NeoVim v0.8.0
+    list:
+    - ~amd64
+- name: dev-python/neovim-remote::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =dev-python/pyotherside-1.5.9::gentoo
+  accept_keywords:
+    header_comment: |-
+      # needed by app-crypt/yubioath-desktop
+    list:
+    - ~amd64
+- name: dev-ruby/msgpack::gentoo
+  accept_keywords:
+    header_comment: |-
+      # needed by dev-ruby/neovim-ruby-client
+    list:
+    - ~amd64
+- name: dev-ruby/neovim-ruby-client::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: dev-vcs/git::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: games-simulation/flightgear
+  accept_keywords:
+    list:
+    - ~amd64
+- name: games-simulation/flightgear-data
+  accept_keywords:
+    list:
+    - ~amd64
+- name: games-util/game-device-udev-rules::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: games-util/steam-client-meta::steam-overlay
+  accept_keywords:
+    list:
+    - ~amd64
+- name: games-util/steam-launcher::steam-overlay
+  accept_keywords:
+    list:
+    - ~amd64
+- name: games-util/steam-meta::steam-overlay
+  accept_keywords:
+    list:
+    - ~amd64
+- name: gui-apps/wofi::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =gui-libs/wlroots-0.15.0-r2::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: gui-wm/hyprland::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+- name: media-libs/libdisplay-info::gentoo
+  accept_keywords:
+    header_comment: |-
+      # dependency of hyprland
+    list:
+    - ~amd64
+- name: media-sound/NoiseTorch::kzd
+  accept_keywords:
+    list:
+    - ~amd64
+- name: sys-apps/bat
+  accept_keywords:
+    list:
+    - ~amd64
+- name: =sys-kernel/dracut-crypt-ssh-1.0.7::gentoo
+  accept_keywords:
+    list:
+    - ~amd64
+# - name: sys-libs/glibc
+#   accept_keywords:
+#     header_comment: |-
+#       # conflicts with sssd: https://bugs.gentoo.org/737180
+#     list:
+#     - ~amd64
+- name: x11-libs/libdrm::gentoo
+  accept_keywords:
+    header_comment: |-
+      # dependency of hyprland
+    list:
+    - ~amd64
 essential_ebuilds:
 - app-admin/sudo  # privilege escalation
 - app-admin/eselect  # alternatives management
