@@ -1,0 +1,32 @@
+---
+
+- name: Create config folder for USE flags
+  ansible.builtin.file:
+    path: >-
+      {{ gentoo_prefix }}/etc/portage/package.use
+    state: directory
+
+- name: >-
+    Set up per-package USE flags
+    ({{ package_name }} {{ enabled_use_flags }} {{ disabled_use_flags }})
+  ansible.builtin.copy:
+    content: |
+      {{ package_use_flags.get('header_comment', '') }}
+
+      {{ package_name }} {{ enabled_use_flags }} {{ disabled_use_flags }}
+    dest: >-
+      {{ gentoo_prefix }}/etc/portage/package.use/{{
+        package_name | replace('/', '--')
+      }}--managed
+  vars:
+    disabled_use_flags: >-
+      {{
+        ['-']
+        | ansible.builtin.zip(package_use_flags.get('disabled', []))
+        | map('join')
+        | join(' ')
+      }}
+    enabled_use_flags: >-
+      {{ package_use_flags.get('enabled', []) | join(' ') }}
+
+...
