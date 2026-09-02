@@ -11,7 +11,7 @@
     (allow {{ package_name }} {{ package_keywords.list | join(' ') }})
   ansible.builtin.copy:
     content: |-
-      {{ package_keywords.get('header_comment', '') -}}
+      {{ package_keywords.get('header_comment', '') }}
 
       {{ package_name }} {{ package_keywords.list | join(' ') }}
     dest: >-
