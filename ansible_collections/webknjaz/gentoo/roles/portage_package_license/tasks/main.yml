@@ -1,0 +1,20 @@
+---
+
+- name: Create config folder for accepted licenses
+  ansible.builtin.file:
+    path: >-
+      {{ gentoo_prefix }}/etc/portage/package.license
+    state: directory
+
+- name: >-
+    Accept per-package licenses
+    (allow {{ package_name }} {{ package_licenses | join(' ') }})
+  ansible.builtin.copy:
+    content: >-
+      {{ package_name }} {{ package_licenses | join(' ') }}
+    dest: >-
+      {{ gentoo_prefix }}/etc/portage/package.license/{{
+        package_name | replace('/', '--')
+      }}--managed
+
+...
