@@ -1,0 +1,106 @@
+# NOTE: A new GPT label must be created when repartitioning disks with LUKS
+# fdisk -> g -> w
+---
+
+- name: Partition NVMe disks for EFI and LUKS
+  hosts: laptop
+  gather_facts: true
+  become: yes
+
+  vars:
+    efi_partition_end: 2GiB
+
+  tasks:
+  - name: Detect NVME drives
+    set_fact:
+      nvme_devices: >-
+        {{
+          ansible_devices
+          | dict2items
+          | rejectattr('value.removable', 'eq', '1')
+          | rejectattr('value.rotational', 'eq', '1')
+          | selectattr('key', 'match', 'nvme[0-9]+n[0-9]+')
+          | sort(attribute='value.sectors')
+        }}
+  - name: Set individual NVME drive variables
+    set_fact:
+      nvme_small_disk: >-
+        {{ (nvme_devices | first).key }}
+      nvme_large_disk: >-
+        {{ (nvme_devices | last).key }}
+
+  - name: Set the LUKS device path vars
+    set_fact:
+      large_nvme_disk_luks_dev: >-
+        /dev/{{ nvme_large_disk }}p2
+      small_nvme_disk_luks_dev: >-
+        /dev/{{ nvme_small_disk }}p1
+
+  - name: Ensure LUKS devices sealed if they exist
+    community.crypto.luks_device:
+      device: >-
+        {{ device_path }}
+      name: >-
+        decrypted-luks-{{ luks_container_index }}
+      state: closed
+    failed_when: false
+    loop:
+    - >-
+      {{ large_nvme_disk_luks_dev }}
+    - >-
+      {{ small_nvme_disk_luks_dev }}
+    loop_control:
+      loop_var: device_path
+      index_var: luks_container_index
+
+  - name: Refresh the facts gathered from the host
+    ansible.builtin.gather_facts:
+
+  - name: Create an EFI partition
+    community.general.parted:
+      device: >-
+        {{ device_path }}
+      flags:
+      - esp
+      fs_type: fat32
+      label: gpt
+      name: unencrypted-efi
+      number: 1
+      part_end: >-
+        {{ efi_partition_end }}
+      state: present
+      # state: absent
+      unit: GiB
+    vars:
+      device_path: /dev/{{ nvme_large_disk }}
+
+  - name: Create a LUKS partition on the large NVMe disk
+    community.general.parted:
+      device: >-
+        {{ device_path }}
+      label: gpt
+      name: luks-on-large-nvme
+      number: 2
+      part_start: >-
+        {{ efi_partition_end }}
+      part_end: 100%
+      state: present
+      # state: absent
+      unit: GiB
+    vars:
+      device_path: /dev/{{ nvme_large_disk }}
+
+  - name: Create a LUKS partition on the small NVMe disk
+    community.general.parted:
+      device: >-
+        {{ device_path }}
+      label: gpt
+      name: luks-on-small-nvme
+      number: 1
+      part_start: 0%
+      part_end: 100%
+      state: present
+      # state: absent
+      unit: GiB
+    vars:
+      device_path: /dev/{{ nvme_small_disk }}
