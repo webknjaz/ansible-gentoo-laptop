@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-import typing as t
-
 from ansible.errors import AnsibleError
 from ansible.plugins.connection.ssh import (
     Connection as _BuiltinSSHConnectionPlugin,
@@ -13,7 +11,7 @@ from ansible.plugins.connection.ssh import (
 
 DOCUMENTATION = """
     name: chroot_over_ssh
-    short_description: connect via SSH client binary
+    short_description: Execute commands in an SSH-accessible chroot
     description:
         - This connection plugin allows Ansible to communicate to the target machines through normal SSH command line.
         - Ansible does not expose a channel to allow communication between the user and the SSH process to accept
@@ -379,7 +377,7 @@ DOCUMENTATION = """
 
 class Connection(_BuiltinSSHConnectionPlugin):
 
-    def __init__(self, *args: t.Any, **kwargs: t.Any) -> None:
+    def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, **kwargs)
 
         self._chroot_dir_path = self.get_option('chroot_dir_path')
@@ -394,7 +392,7 @@ class Connection(_BuiltinSSHConnectionPlugin):
             sudoable: bool = True,
     ) -> tuple[int, bytes, bytes]:
         return super().exec_command(
-            f'sudo chroot {self._chroot_dir_path !s} {cmd !s}',
+            f'chroot {self._chroot_dir_path !s} {cmd !s}',
             in_data=in_data,
             sudoable=sudoable,
         )
