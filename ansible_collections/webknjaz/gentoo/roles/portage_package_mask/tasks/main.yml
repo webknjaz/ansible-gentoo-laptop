@@ -1,0 +1,18 @@
+---
+
+- name: Create config folder for masked ebuilds
+  ansible.builtin.file:
+    path: >-
+      {{ gentoo_prefix }}/etc/portage/package.mask
+    state: directory
+
+- name: Mask {{ package_name }}
+  ansible.builtin.copy:
+    content: >-
+      {{ package_name }}
+    dest: >-
+      {{ gentoo_prefix }}/etc/portage/package.mask/{{
+        package_name | replace('/', '--')
+      }}--managed
+
+...
