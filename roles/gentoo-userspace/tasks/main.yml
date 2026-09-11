@@ -19,13 +19,13 @@
   import_tasks: pip.yml
 - name: Ensure that NodeJS is configured with nvm
   import_tasks: nvm.yml
-- name: Ensure that Awesome WM is configured
-  import_tasks: awesome.yml
-  tags:
-  - awesome-wm
-  when:
-  #- ansible_distribution == 'Gentoo'
-  - ansible_distribution != 'MacOSX'
+# - name: Ensure that Awesome WM is configured
+#   import_tasks: awesome.yml
+#   tags:
+#   - awesome-wm
+#   when:
+#   #- ansible_distribution == 'Gentoo'
+#   - ansible_distribution != 'MacOSX'
 - name: Ensure that Hyprland is configured
   import_tasks: hyprland.yml
   tags:
