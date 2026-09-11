@@ -17,7 +17,7 @@
     recursive: yes
     repo: "{{ item.value }}"
     update: yes
-  with_dict: "{{ oh_my_zsh.custom_plugins }}"
+  with_dict: "{{ oh_my_zsh.custom_plugins | default({}) }}"
 - name: Get oh-my-zsh custom themes onto machine  # noqa 401
   git:
     clone: yes
@@ -25,13 +25,13 @@
     recursive: yes
     repo: "{{ item.value }}"
     update: yes
-  with_dict: "{{ oh_my_zsh.custom_themes }}"
+  with_dict: "{{ oh_my_zsh.custom_themes | default({}) }}"
 - name: Symlink oh-my-zsh custom themes
   file:
     src: ~/.oh-my-zsh/custom/themes/{{ item.key }}/{{ item.key }}.zsh-theme
     dest: ~/.oh-my-zsh/custom/themes/{{ item.key }}.zsh-theme
     state: link
-  with_dict: "{{ oh_my_zsh.custom_themes }}"
+  with_dict: "{{ oh_my_zsh.custom_themes | default({}) }}"
 - name: Put oh-my-zsh enabled .zshrc config in place
   template:
     src: zshrc.zsh-template
