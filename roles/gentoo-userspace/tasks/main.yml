@@ -49,6 +49,10 @@
       {{ item }}
   failed_when: false
   loop:
+  - ashell
+  - hypridle
+  - hyprpaper
+  - hyprpolkitagent
   - kbfs  # Keybase filesystem
   - keybase
   - pipewire-pulse.socket
