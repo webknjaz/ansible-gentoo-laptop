@@ -1,17 +1,34 @@
 --- # vim:se ft=ansible:
+
+- name: Ensure there's a user-level pip config directory
+  ansible.builtin.file:
+    mode: >-
+      u=rwx,g=rx,o=rx
+    path: >-
+      ~/.config/pip/
+    state: directory
+
 - name: Set up user's pip config
-  ansible.builtin.command:
-    argv:
-    - >-
-      {{ ansible_python.executable }}
-    - >-
-      -Im
-    - >-
-      pip
-    - config
-    - set
-    - >-
-      {{ item.key }}
-    - >-
-      {{ item.value }}
-  with_dict: "{{ pip_options }}"
+  community.general.ini_file:
+    path: >-
+      ~/.config/pip/pip.conf
+    mode: >-
+      u=rw,g=r,o=r
+    option: >-
+      {{ config_option }}
+    section: >-
+      {{ config_section }}
+    value: >-
+      {{ pip_option.value }}
+    state: present
+  loop: >-
+    {{
+       pip_options | dict2items(key_name='name', value_name='value')
+    }}
+  loop_control:
+    loop_var: pip_option
+  vars:
+    config_section: >-
+      {{ pip_option.name.split('.') | first }}
+    config_option: >-
+      {{ pip_option.name.split('.') | last }}
