@@ -17,8 +17,8 @@
   import_tasks: pyenv.yml
 - name: Ensure that Pip is configured
   import_tasks: pip.yml
-- name: Ensure that NodeJS is configured with nvm
-  import_tasks: nvm.yml
+# - name: Ensure that NodeJS is configured with nvm
+#   import_tasks: nvm.yml
 # - name: Ensure that Awesome WM is configured
 #   import_tasks: awesome.yml
 #   tags:
