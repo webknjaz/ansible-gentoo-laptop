@@ -11,15 +11,15 @@ ansible_core_ci_key:
 pyenv_root: ~/.pyenv
 pyenv_executable: >-
   {{ pyenv_root }}/bin/pyenv
-pyenv_versions:
-- 3.13.0rc1
-- 3.13.0rc1t
-- 3.10.14
-- 3.9.19
-- 3.8.19
-- pypy3.10-7.3.13
-- pypy3.9-7.3.13
-- pypy2.7-7.3.13
+pyenv_versions: []
+# - 3.13.0rc1
+# - 3.13.0rc1t
+# - 3.10.14
+# - 3.9.19
+# - 3.8.19
+# - pypy3.10-7.3.13
+# - pypy3.9-7.3.13
+# - pypy2.7-7.3.13
 nvm_version: v0.40.0
 node_versions:
   install:
