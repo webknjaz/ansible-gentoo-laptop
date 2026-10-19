@@ -1,4 +1,13 @@
 --- # vim:se ft=ansible:
+- name: Compute Git SSH opts for remote src layout provisioning
+  # FIXME: might need to also set a `GIT_SSH_COMMAND` direct manual `git` calls
+  # Ref: https://stackoverflow.com/a/38474220/595220
+  set_fact:
+    git_ssh_opts_ssh_config_dev_null: >-
+      {%- if ansible_connection == 'local' -%}
+      {%- else -%}
+      -F/dev/null
+      {%- endif -%}
 - name: Create experiments dir
   file:
     dest: "{{ code_workspace.source_dir }}/experiments"
@@ -16,14 +25,26 @@
   with_subelements:
   - "{{ code_workspace.repos }}"
   - ssh_host_keys
+
+- name: Hint to set SSH agent in non-blocking mode
+  ansible.builtin.pause:
+    prompt: Set Bitwarden SSH agent setting to `Never`
+  when: ansible_connection != 'local'
 - name: Sync source code repos  # noqa 401
-  async: 45
+  async: >-
+    {%- if ansible_connection == 'local' -%}
+    45
+    {%- else -%}
+    300
+    {%- endif -%}
   poll: 0
   git:
     clone: yes
     dest: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
     recursive: yes
     repo: git@{{ item.0.fqdn }}:{{ item.1 }}.git
+    ssh_opts: >-
+      {{ git_ssh_opts_ssh_config_dev_null }}
     update: yes
   with_subelements:
   - "{{ code_workspace.repos }}"
@@ -53,29 +74,47 @@
      'Local modifications exist in repository (force=no).' and
      'Failed to checkout branch' not in git_sync_cmd_result.msg)
   changed_when: git_sync_cmd_result.changed
-- name: Set up additional repo remotes for forks  # noqa 303
+- debug:
+    var: git_sync_cmd_results
+- name: Hint to reset SSH agent in regular operating mode
+  ansible.builtin.pause:
+    prompt: >-
+      Revert Bitwarden SSH agent setting to
+      `Remember until vault is locked`
+  when: ansible_connection != 'local'
+# - name: Set up additional repo remotes for forks  # noqa 303
+- name: >-
+    [debug] Set up additional repo remotes for forks
+    ("{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}")
   command: >-
     git remote add fork
     'git@{{ item.0.fqdn }}:{{ item.0.forked_as[item.1] }}.git'
   args:
     chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
-  with_subelements:
-  - "{{ code_workspace.repos }}"
-  - slugs
+  loop: >-
+    {{
+      code_workspace.repos
+      | subelements('slugs')
+    }}
   when: item.1 in item.0.forked_as
   register: git_remote
   failed_when: >
     ('msg' in git_remote and
      '[Errno 2] No such file or directory' in git_remote.msg) or
+    'rc' not in git_remote or
     (git_remote.rc == 3 and
     'error: remote fork already exists.' not in git_remote.stderr_lines and
     'fatal: remote fork already exists.' not in git_remote.stderr_lines)
-  changed_when: >
-    ('msg' in git_remote and
-     '[Errno 2] No such file or directory' in git_remote.msg) and
-    git_remote.rc == 0 and
-    not git_remote.stderr_lines | count and
-    not git_remote.stdout_lines | count
+  changed_when:
+  - >-
+    'msg' in git_remote
+  - >-
+    '[Errno 2] No such file or directory' in git_remote.msg
+  - >-
+    'rc' in git_remote
+  - git_remote.rc == 0
+  - not git_remote.stderr_lines | count
+  - not git_remote.stdout_lines | count
 - name: Compute pre-existing checked out forks with remotes
   set_fact:
     forked_remotes_to_be_updated: >-
