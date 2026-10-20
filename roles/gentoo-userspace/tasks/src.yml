@@ -30,6 +30,9 @@
   ansible.builtin.pause:
     prompt: Set Bitwarden SSH agent setting to `Never`
   when: ansible_connection != 'local'
+  tags:
+  - git-repo-checkouts-structure
+  - never
 - name: Sync source code repos  # noqa 401
   async: >-
     {%- if ansible_connection == 'local' -%}
@@ -50,6 +53,9 @@
   - "{{ code_workspace.repos }}"
   - slugs
   register: git_sync_cmd_async_jobs
+  tags:
+  - git-repo-checkouts-structure
+  - never
 - name: Wait for syncing the source code repos to finish
   async_status:
     jid: >
@@ -74,14 +80,23 @@
      'Local modifications exist in repository (force=no).' and
      'Failed to checkout branch' not in git_sync_cmd_result.msg)
   changed_when: git_sync_cmd_result.changed
+  tags:
+  - git-repo-checkouts-structure
+  - never
 - debug:
     var: git_sync_cmd_results
+  tags:
+  - git-repo-checkouts-structure
+  - never
 - name: Hint to reset SSH agent in regular operating mode
   ansible.builtin.pause:
     prompt: >-
       Revert Bitwarden SSH agent setting to
       `Remember until vault is locked`
   when: ansible_connection != 'local'
+  tags:
+  - git-repo-checkouts-structure
+  - never
 # - name: Set up additional repo remotes for forks  # noqa 303
 - name: >-
     [debug] Set up additional repo remotes for forks
@@ -115,6 +130,9 @@
   - git_remote.rc == 0
   - not git_remote.stderr_lines | count
   - not git_remote.stdout_lines | count
+  tags:
+  - git-repo-checkouts-structure
+  - never
 - name: Compute pre-existing checked out forks with remotes
   set_fact:
     forked_remotes_to_be_updated: >-
@@ -136,6 +154,9 @@
     chdir: "{{ code_workspace.source_dir }}/{{ item.0.name }}/{{ item.1 }}"
   loop: >-
     {{ forked_remotes_to_be_updated }}
+  tags:
+  - git-repo-checkouts-structure
+  - never
 #- name: Extend forked??? repos with pull-requests fetch  # noqa 303
 #  command: >-
 #    git config --local --get-regexp remote.origin.fetch '\+refs/pull/\*/head:'  # FIXME: test
@@ -148,3 +169,6 @@
 #  - slugs
 #  when: item.1 in item.0.forked_as
 #  register: git_remote
+#  tags:
+#  - git-repo-checkouts-structure
+#  - never
