@@ -146,6 +146,9 @@
         )
         | map(attribute='item')
       }}
+  tags:
+  - git-repo-checkouts-structure
+  - never
 - name: Update existing remotes for forks  # noqa 303
   command: >-
     git remote set-url fork
