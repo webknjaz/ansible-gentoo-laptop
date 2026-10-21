@@ -1,0 +1,21 @@
+#! /usr/bin/bash -x
+
+sudo \
+  systemd-inhibit \
+    --what=shutdown:sleep:idle:handle-power-key:handle-suspend-key:handle-hibernate-key:handle-lid-switch \
+    emerge \
+      @world \
+      --ask \
+      --verbose \
+      --update \
+      --deep \
+      --newuse \
+      --keep-going \
+      --verbose-conflicts \
+      --autounmask-backtrack=y \
+      --backtrack=30 \
+      --with-bdeps=y \
+      --binpkg-changed-deps=n \
+      --binpkg-respect-use=n \
+      --keep-going \
+      "${@}"

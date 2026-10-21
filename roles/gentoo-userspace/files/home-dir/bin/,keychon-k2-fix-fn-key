@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+set -x
+
+sudo rmmod hid_apple && sudo modprobe hid_apple fnmode=2

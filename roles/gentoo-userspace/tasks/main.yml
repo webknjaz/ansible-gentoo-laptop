@@ -11,6 +11,8 @@
   import_tasks: gtk.yml
 - name: Ensure that kitty is configured
   import_tasks: kitty.yml
+- name: Ensure that comma-bin scripts are in-place
+  import_tasks: comma-bin.yml
 - name: Ensure that Oh My ZSH is configured
   import_tasks: omz.yml
 - name: Ensure that userspace Pythons are set up with pyenv

@@ -1,0 +1,2 @@
+#! /usr/bin/env bash
+sudo systemd-inhibit --what=sleep:handle-power-key:handle-suspend-key:handle-hibernate-key:handle-lid-switch sleep infinity

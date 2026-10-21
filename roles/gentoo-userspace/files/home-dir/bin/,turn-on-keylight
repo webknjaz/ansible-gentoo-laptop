@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+while ! keylight --serial=A2UTB426105LVZ on; do sleep 1; done

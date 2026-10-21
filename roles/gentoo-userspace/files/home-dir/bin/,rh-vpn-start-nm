@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+
+nmcli connection up '2.5 Gbps wired via Type-C Adapter (DHCP)' && {
+  nmcli connection down '1 Gbps wired via dock (DHCP)'
+  nmcli connection down webknjaz
+}
+nmcli connection up --ask '1 - Red Hat Global VPN'
+
+sleep 2
+klist

@@ -1,0 +1,35 @@
+---  # vim:se ft=ansible:
+#
+# Ref: https://rhodesmill.org/brandon/2009/commands-with-comma/
+
+- name: >-
+    Create a ~/bin dir userspace for command-executables
+    starting with a comma in the name
+  file:
+    dest: ~/bin
+    state: directory
+
+- name: Install ,{{ cmd }}
+  copy:
+    dest: >-
+      ~/bin/,{{ cmd }}
+    mode: u+rwx,g+rx,o+rx
+    src: >-
+      home-dir/bin/,{{ cmd }}
+  loop:
+  - airpods-max-autoconnect-recover
+  - git-filter-repo
+  - git-sync-all-repos
+  - inhibit-sleep
+  - keychon-k2-fix-fn-key
+  - reset-dpms
+  - rh-claude
+  - rh-vpn-start
+  - rh-vpn-start-nm
+  - turn-off-keylight
+  - turn-on-keylight
+  - update-the-world
+  loop_control:
+    loop_var: cmd
+
+...

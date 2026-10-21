@@ -1,0 +1,24 @@
+#! /usr/bin/env bash
+
+
+trap 'bw lock' EXIT INT QUIT TERM
+
+NM_CONNECTION_NAME=redhat-brq
+BW_TOKEN_NAME='Red Hat — @ssydoren — TOTP token'
+
+MASTER_PASS="$(x11-ssh-askpass 'Please, enter the BW pass: ')"
+
+(
+  BW_SESSION="$(bw unlock "${MASTER_PASS}" --raw)"
+  export BW_SESSION
+
+  echo "$(bw get password "${BW_TOKEN_NAME}")$(bw get totp "${BW_TOKEN_NAME}")" \
+
+  bw lock
+) | nmcli connection up id "${NM_CONNECTION_NAME}" --ask
+
+sleep 3
+
+echo "${MASTER_PASS}" | kinit -p ssydoren
+
+unset MASTER_PASS

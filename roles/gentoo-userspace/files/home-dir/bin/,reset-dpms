@@ -1,0 +1,2 @@
+#! /usr/bin/env bash
+hyprctl dispatch dpms off && sleep 13 && hyprctl dispatch dpms on

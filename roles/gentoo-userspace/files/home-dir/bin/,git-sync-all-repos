@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+echo \
+  Testing authentificating against GitHub using SSH... If this is stuck, \
+  open Bitwarden and unblock the SSH agent for the process to proceed.
+
+set -x
+
+ssh -qT git@github.com  # Make Bitwarden issue a prompt before mass-SSHing
+
+cd ~/src/github/webknjaz/ansible-gentoo-laptop
+
+ansible-playbook configure-userspace.yml \
+  -e ansible_python_interpreter="$(pyenv which python)" \
+  --start-at='Sync source code repos'

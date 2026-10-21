@@ -1,0 +1,78 @@
+#! /usr/bin/env bash
+
+
+function await_profile() {
+  local expected_profile_name=${1}
+
+  >&2 echo Awaiting "${expected_profile_name}"...
+
+  while [[ \
+    "$(\
+      pactl list cards \
+        | awk -v RS='' '/bluez/' \
+        | awk -F': ' '/Active Profile/ { print $2 }' \
+    )" != "${expected_profile_name}" \
+  ]]
+  do
+    sleep .1
+  done
+}
+
+
+CARD_NAME=$(\
+  pactl list cards \
+    | awk -v RS='' '/bluez/' \
+    | awk -F': ' '/Name/ { print $2 }' \
+)
+>&2 echo Bluetooth card name: ${CARD_NAME}
+
+await_profile a2dp-sink
+
+>&2 echo Setting a2dp-sink-sbc_xq...
+pactl set-card-profile ${CARD_NAME} a2dp-sink-sbc_xq 
+
+await_profile a2dp-sink-sbc_xq 
+
+>&2 echo Setting a2dp-sink...
+pactl set-card-profile ${CARD_NAME} a2dp-sink
+
+await_profile a2dp-sink
+
+>&2 echo Resetting bluetooth headphones profile complete...
+
+exit 0
+####
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez list-codecs
+[{"name":"4","description":"AAC"},{"name":"1","description":"SBC"},{"name":"2","description":"SBC-XQ"}]
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez            
+You have to specify at least an object path and a message name
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez get-codec
+"4"
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez get-codec
+"4"
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez switch-codec '"aac"'
+
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez switch-codec '"sbc"'
+
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez get-codec           
+"4"
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez switch-codec '"SBC"'
+
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez get-codec           
+"4"
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez switch-codec '"1"'  
+
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez get-codec         
+"1"
+
+$ pactl send-message /card/bluez_card.90_62_3F_9C_1E_66/bluez switch-codec '"4"'
