@@ -727,9 +727,13 @@
         - ~amd64
       install_stage: gui_dev_env_tools
     - name: dev-util/pkgcheck  # A linter for contributing to gentoo/gentoo
-      install_stage: gui_dev_env_tools
+      # Conflicts with app-editors/neovim through tree-sitter, Python 3.14
+      # and dev-util/pkgdev
+      # install_stage: gui_dev_env_tools
     - name: dev-util/pkgdev  # Gentoo dev tools
-      install_stage: gui_dev_env_tools
+      # Conflicts with app-editors/neovim through tree-sitter, Python 3.14
+      # and dev-util/pkgcheck
+      # install_stage: gui_dev_env_tools
 
     - name: gui-apps/ashell::guru  # status bar for Hyprland
       accept_keywords:
