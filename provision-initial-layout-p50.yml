@@ -799,7 +799,9 @@
         - ~amd64  # managed -- differentiate??
         - >-  # unstable
           **
-      install_stage: gui_window_management_and_desktop_env
+      # Don't install during initial system provisioning as it tends to
+      # crash on compilation:
+      # install_stage: gui_window_management_and_desktop_env
       unmask: yes
     - name: media-sound/pavucontrol  # sound control GUI
       install_stage: gui_window_management_and_desktop_env
