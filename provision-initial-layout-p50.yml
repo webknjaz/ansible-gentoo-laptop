@@ -1,0 +1,2756 @@
+# FIXME: the personal laptop does not really need all this
+# FIXME: kerberos/ldap/gssapi/sss(d) trickery so we should not force it
+# FIXME: in and maybe it'll make the install easier
+# FIXME: sudo euse -R kerberos gssapi
+#
+# https://gentoo.duxsco.de/
+# https://gentoo.duxsco.de/bootup_setup/
+# https://gentoo.duxsco.de/unified_kernel_image/
+# https://wiki.archlinux.org/title/EFI_system_partition#Mount_the_partition
+# https://cryptsetup-team.pages.debian.net/cryptsetup/README.keyctl.html doesn't work
+# https://unix.stackexchange.com/a/752355/27133
+# https://wiki.archlinux.org/title/Dm-crypt/System_configuration#Using_systemd-cryptsetup-generator
+# https://wiki.archlinux.org/title/Dm-crypt/System_configuration#crypttab
+# https://man.archlinux.org/man/crypttab.5
+# https://wiki.archlinux.org/title/Dm-crypt/System_configuration#Mounting_at_boot_time
+# https://wiki.archlinux.org/title/Dm-crypt/System_configuration#Mounting_on_demand
+# https://man.archlinux.org/man/systemd-cryptsetup.8
+# https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#Avoiding_having_to_enter_the_passphrase_twice
+# https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#With_suspend-to-disk_support
+# https://uapi-group.org/specifications/specs/discoverable_partitions_specification/
+# https://swsnr.de/arch-linux-with-luks-and-almost-no-configuration/
+# https://swsnr.de/simple-secure-boot-in-fedora/
+# https://swsnr.de/unlock-luks-rootfs-with-tpm2-key/
+# https://wiki.gentoo.org/wiki/Full_Disk_Encryption_From_Scratch
+# https://wiki.archlinux.org/title/Dracut
+# https://wiki.archlinux.org/title/Dm-crypt/System_configuration
+# https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD)
+# http://jpetazzo.github.io/2024/02/23/archlinux-luks-tpm-secureboot-install/
+# https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+# https://wiki.archlinux.org/title/Trusted_Platform_Module#systemd-cryptenroll
+# https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel#Secure_Boot
+# https://wiki.gentoo.org/wiki/Systemd/systemd-boot
+# https://wiki.gentoo.org/wiki/NetworkManager
+# https://wiki.archlinux.org/title/Laptop/Lenovo
+# https://wiki.gentoo.org/wiki/Lenovo_ThinkPad_P16v_1st_Generation_(Intel)
+# https://wiki.gentoo.org/wiki/Lenovo_ThinkPad_Z16_(Gen_1)
+# https://wiki.archlinux.org/title/Lenovo_ThinkPad_P16s_(AMD)_Gen_2
+# https://linux-hardware.org/?id=cpu:amd-25-116-1-ryzen-9-pro-7940hs-w-radeon-780m-graphics
+# https://wiki.gentoo.org/wiki/Suspend_and_hibernate
+# https://wiki.archlinux.org/title/Dm-crypt/System_configuration
+# https://wiki.gentoo.org/wiki/Systemd
+# https://www.freedesktop.org/software/systemd/man/latest/crypttab.html
+# https://wiki.gentoo.org/wiki/WireGuard
+# https://wiki.gentoo.org/wiki/Trusted_Platform_Module
+# https://wiki.gentoo.org/wiki/AMDGPU
+# https://wiki.gentoo.org/wiki/Plymouth
+# https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers
+# https://wiki.gentoo.org/wiki/NVIDIA/Optimus
+# https://wiki.gentoo.org/wiki/NVIDIA/Bumblebee
+# https://wiki.gentoo.org/wiki/NVIDIA/Optimus/xorg.conf
+# https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers#Open_source_kernel_modules
+# https://github.com/NVIDIA/open-gpu-kernel-modules
+# https://github.com/dracut-ng/dracut-ng/wiki
+# https://wiki.gentoo.org/wiki/Systemd/systemd-boot#Secure_Boot
+# https://uapi-group.org/specifications/specs/boot_loader_specification/
+# https://wiki.gentoo.org/wiki/Efivarfs
+# https://wiki.archlinux.org/title/Systemd-boot
+# https://wiki.gentoo.org/wiki/Installkernel
+# https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel
+# https://wiki.gentoo.org/wiki/Rootfs_encryption
+# https://github.com/jhatler/gentoo-precision-7540/commit/71f1320ffc85666114003a2446112f41d7403d30
+# https://wiki.gentoo.org/wiki/Dracut
+# https://wiki.gentoo.org/wiki/Signed_kernel_module_support
+# https://wiki.gentoo.org/wiki/Shim
+# https://wiki.gentoo.org/wiki/Zram
+# https://wiki.gentoo.org/wiki/Zswap
+# https://matt-w.net/blog/luks-arch-secureboot/
+# https://wiki.gentoo.org/wiki/LVM#Dracut
+# https://wiki.gentoo.org/wiki/Secure_Boot
+# https://wiki.gentoo.org/wiki/Security_Handbook/Boot_Path_Security
+# https://wiki.archlinux.org/title/Systemd-cryptenroll
+# https://wiki.gentoo.org/wiki/NetworkManager
+# https://discourse.nixos.org/t/gtkgreet-or-regreeter-with-greetd-with-hyprland/29202
+# https://gist.github.com/noghartt/8388f7d8543e3eb1777cb6ed4a3d7807
+# https://github.com/Foxboron/sbctl
+# https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6
+# https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot
+# https://wiki.archlinux.org/title/Systemd-boot#Signing_for_Secure_Boot
+# https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Using_a_signed_boot_loader
+# https://amedeos.github.io/gentoo/2020/12/26/install-gentoo-with-uefi-luks-btrfs-and-systemd.html
+# https://wiki.gentoo.org/wiki/SSD
+# https://wiki.gentoo.org/wiki/Hyprpaper
+# https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/
+# https://wiki.hyprland.org/Configuring/Variables/
+# https://wiki.hyprland.org/Configuring/Monitors/
+# https://wiki.hyprland.org/Configuring/Tearing/
+# https://wiki.hyprland.org/Nvidia/
+# https://wiki.hyprland.org/hyprland-wiki/pages/Nvidia/
+# https://wiki.hyprland.org/Configuring/Uncommon-tips--tricks/
+# https://wiki.hyprland.org/Configuring/XWayland/
+# https://wiki.hyprland.org/Configuring/Environment-variables/
+# https://wiki.hyprland.org/Configuring/Multi-GPU/
+# https://wiki.gentoo.org/wiki/Recommended_applications#File_managerso
+# https://www.reddit.com/r/hyprland/comments/17nvgw1/what_set_of_apps_do_you_use_with_hyprland_for/
+# https://wiki.archlinux.org/title/Hyprland
+# https://www.lorenzobettini.it/2024/02/hyprland-and-kde-applications/
+# https://wiki.gentoo.org/wiki/Recommended_applications#3D
+# https://github.com/coffeeispower/woomer
+# https://github.com/fwupd/fwupd/wiki/Blocked-executable-in-the-ESP,-ensure-grub-and-shim-are-up-to-date
+# https://askubuntu.com/a/1436957
+# https://github.com/fwupd/fwupd/issues/5121
+# https://www.setphaserstostun.org/posts/secure-boot-on-gentoo-with-shim-grub/#gentoo-binary-distribution-kernel
+# https://wiki.gentoo.org/wiki/Project:Distribution_Kernel
+# https://github.com/jlaunonen/gentoo-uefi-secure
+# https://github.com/lateralblast/ansible-lvm-luks
+# https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_P16v_Gen_1_AMD/ThinkPad_P16v_Gen_1_AMD_Spec.pdf
+# https://wiki.gentoo.org/wiki/Lenovo_ThinkPad_P16v_1st_Generation_(AMD)
+# https://www.reddit.com/r/linux/comments/1c63fgz/latest_update_of_chrome_on_wayland/
+# https://wiki.gentoo.org/wiki/Chrome#Using_Wayland_backend
+# https://wiki.archlinux.org/title/Chromium#Native_Wayland_support
+# https://bbs.archlinux.org/viewtopic.php?id=288181
+# https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/powermanagement.html
+# https://gist.github.com/bmcbm/375f14eaa17f88756b4bdbbebbcfd029
+# https://forums.gentoo.org/viewtopic-p-8840967.html?sid=9bd8b468db1268652c937a36fcaf9011
+# https://forums.gentoo.org/viewtopic-p-8811468.html?sid=4314228234fb7b9ff69dc764ebfc01f5
+# https://wiki.archlinux.org/title/Wayland#Electron
+# https://github.com/JaKooLit/Hyprland-Dots
+# https://swayos.github.io
+# https://www.reddit.com/r/swaywm/comments/16u89ep/pure_wayland_gui_file_manager/
+# https://wiki.hyprland.org/Useful-Utilities/File-Managers/
+# https://wiki.gentoo.org/wiki/File_managers
+# https://wiki.hyprland.org/Useful-Utilities/Must-have/
+# https://wiki.hyprland.org/Useful-Utilities/
+# https://wiki.hyprland.org/Hypr-Ecosystem/xdg-desktop-portal-hyprland/
+# https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock/
+# https://wiki.hyprland.org/Hypr-Ecosystem/hypridle/
+# https://systemd.io/INHIBITOR_LOCKS/
+# https://man.archlinux.org/man/systemd-inhibit.1.en
+# https://forums.gentoo.org/viewtopic-t-1045730-start-0.html
+# https://wiki.hypr.land/Useful-Utilities/Status-Bars/#ashell
+# https://malpenzibo.github.io/ashell/
+# https://wiki.gentoo.org/wiki/List_of_software_for_Wayland#Multiple_display_configuration
+# https://github.com/hyprwm/hyprlock
+# https://github.com/hyprland-community/awesome-hyprland
+# https://wiki.archlinux.org/title/Desktop_entries
+# https://wiki.gentoo.org/wiki/Hyprland#xdg-desktop-portal-hyprland
+# https://wiki.gentoo.org/wiki/NetworkManager#Dnsmasq
+# https://wiki.ubuntu.com/DebuggingNetworkManager
+# https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/introduction-to-networkmanager-debugging_configuring-and-managing-networking#introduction-to-networkmanager-reapply-method_introduction-to-networkmanager-debugging
+#
+# NOTE: A new GPT label must be created when repartitioning disks with LUKS
+# fdisk -> g -> w
+# NOTE: There's an experimental `partition-disks.yml` playbook now.
+---
+
+- name: Initialize Gentoo Linux layout
+  hosts: laptop
+  gather_facts: true
+  become: yes
+
+  vars:
+    os_group:
+      id: 1000
+      name: wk
+    os_user:
+      comment: Sviat
+      id: 1000
+      name: wk
+
+    system_packages_install_stage_order:
+    - id: hardware_stuff_with_kernel_boot
+      label: hardware stuff
+    - id: network_stack_tools
+      label: network stack tools
+    - id: gui_fonts
+      label: system-wide fonts
+    - id: quality_of_life_utils
+      label: quality-of-life utils
+    - id: gui_base_user_utils
+      label: base user utils
+    - id: gui_dev_env_tools
+      label: dev env software
+    - id: gui_window_management_and_desktop_env
+      label: WM and DE stuff
+    - id: gui_userspace_apps
+      label: userspace apps
+    - id: gui_cad_3d_modeling_printing_apps
+      label: CAD and 3D-modeling/printing software
+    - id: gui_browsers_optional_extra
+      label: optional extra GUI browsers
+
+    system_packages_registry:
+    - name: >-
+        */*::guru
+      mask: yes
+    - name: >-
+        */*::hyproverlay
+      mask: yes
+    - name: dev-cpp/sdbus-c++::gentoo
+      accept_keywords:
+        header_comment: |-
+          # required by gui-libs/xdg-desktop-portal-hyprland
+        list:
+        - ~amd64
+    - name: dev-cpp/glaze::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: dev-libs/hyprlang::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: dev-util/hyprwayland-scanner::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: gui-libs/aquamarine::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: gui-libs/hyprcursor::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: gui-libs/hyprland-guiutils::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: gui-libs/hyprland-qt-support::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: gui-libs/hyprtoolkit::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: gui-libs/hyprwire::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: dev-libs/hyprgraphics::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: dev-libs/hyprland-protocols::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: gui-libs/hyprutils::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64
+      unmask: yes
+    - name: sys-apps/systemd
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - boot  # Used to be called `gnuefi`; pulls-in systemd-boot
+        - curl
+        - fido2  # FIDO 2 support for e.g. YubiKey and Solo v2 USB devices
+        - idn
+        - importd
+        - lzma
+        - pkcs11
+        - qrcode  # printing a QR code in console error output
+        - tpm  # Trusted Platform Module support
+        - xkb
+    - name: sys-kernel/installkernel
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - dracut  # for sys-kernel/gentoo-kernel-bin
+        - systemd-boot
+        disabled:
+        - 
+    - name: net-firewall/iptables
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - nftables  # Podman requires this in iptables
+    - name: dev-python/pyqt6
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - qml  # for www-client/qutebrowser
+        - webchannel  # for www-client/qutebrowser
+        disabled:
+        - 
+    - name: dev-qt/qttools
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - designer  # for media-gfx/freecad
+    - name: dev-python/pyside
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - designer  # for media-gfx/freecad
+        - quick  # for media-gfx/freecad
+        - uitools  # for media-gfx/freecad
+        - webengine  # for media-gfx/freecad
+        - webchannel  # for media-gfx/freecad
+    - name: sci-libs/opencascade
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - json  # for media-gfx/freecad
+        - vtk  # for media-gfx/freecad
+    - name: sci-libs/cgnslib
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - hdf5  # for media-gfx/freecad
+    - name: media-libs/tiff
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - lzma  # for media-gfx/freecad
+        - zstd  # for media-gfx/freecad
+    - name: sci-libs/hdf5
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - cxx  # for media-gfx/freecad
+    - name: sci-libs/vtk
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        disabled:
+        - qt5  # for media-gfx/freecad
+    - name: dev-qt/qtwebengine
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        disabled:
+        - bindist  # for www-client/qutebrowser
+    - name: dev-qt/qtmultimedia
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        disabled:
+        - vaapi  # triggers conflicts with media-video/ffmpeg versions
+    - name: media-video/ffmpeg
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        disabled:
+        - vaapi  # triggers conflicts with media-libs/nv-codec-headers versions
+    - name: media-video/pipewire
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - pipewire-alsa  # https://www.reddit.com/r/Gentoo/comments/1cd894n/comment/l1aeido/ / https://wiki.gentoo.org/wiki/Qutebrowser#No_sound_with_Pipewire
+        - screencast  # screen share support
+        - sound-server  # https://wiki.gentoo.org/wiki/PipeWire#USE_flags
+    - name: media-libs/qhull
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - static-libs  # for media-gfx/prusaslicer
+    - name: x11-libs/wxGTK
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - webkit  # for media-gfx/prusaslicer
+
+    - name: net-wireless/bluez  # Bluetooth; not enabling global `bluetooth` USE-flags to avoid compiling more
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/bolt  # boltctl
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/dmidecode  # Desktop Management Interface table related utils
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/fwupd  # laptop firmware updater
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/inxi  # hardware and system information
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/irqbalance  # Distribute hardware interrupts across CPU cores
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/lm-sensors  # device temperatures, et al.
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/usbutils  # lsusb
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/util-linux  # fstrim.timer for doing TRIM/discard on SSD
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-auth/fprintd  # fingerprint reader support
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-apps/smartmontools  # smartctl
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: app-arch/lz4  # initramfs compression
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: app-crypt/efitools
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: app-crypt/sbctl
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: app-crypt/sbsigntools
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: app-crypt/tpm2-tools  # dracut `systemd-cryptsetup` <- `tpm2-tss` module's dep
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: app-crypt/tpm2-tss  # TCG Trusted Platform Module 2.0 Software Stack
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: media-libs/nvidia-vaapi-driver  # VAAPI GPU hardware accelleration
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: media-video/libva-utils  # VAAPI inspection
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: net-print/cups
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: net-print/cups-browsed
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-boot/efibootmgr  # secure boot
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-boot/mokutil::gentoo  # secure boot
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: >-  # splash screen during boot / must be installed before dracut meaning kernel config
+        sys-boot/plymouth
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-boot/shim  # secure boot
+      install_stage: hardware_stuff_with_kernel_boot
+    # - name: sys-firmware/nvidia-firmware  # for nouveau
+    #   install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-firmware/sof-firmware
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-fs/cryptsetup  # LUKS
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-fs/lvm2  # LVM management
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-fs/xfsprogs  # XFS resize et al. / https://wiki.gentoo.org/wiki/XFS#Expanding_a_filesystem
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-kernel/dracut
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-kernel/gentoo-kernel-bin
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-kernel/linux-firmware  # AMDGPU
+      install_stage: hardware_stuff_with_kernel_boot
+      licenses:
+      - linux-fw-redistributable
+    - name: sys-power/acpid  # power management
+      install_stage: hardware_stuff_with_kernel_boot
+    # - name: sys-power/nvidia-exec::guru  # https://github.com/pedro00dk/nvidia-exec
+    #   install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-power/upower  # power devices stats
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: sys-process/usbtop  # shows an estimated instantaneous bandwidth on USB buses and devices
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: x11-apps/mesa-progs  # glxinfo / glxgears
+      install_stage: hardware_stuff_with_kernel_boot
+    - name: >-
+        >=x11-drivers/nvidia-drivers-581
+
+      # NOTE: This package warns that version 581 and higher are incompatible
+      # NOTE: with older graphics cards and `dmesg`'s also complaining on P50:
+      #  * 
+      #  * ***WARNING***
+      #  * 
+      #  * You are installing a version of nvidia-drivers known not to work
+      #  * with a GPU of the current system. If unwanted, add the mask:
+      #  * 
+      #  *   echo '>=x11-drivers/nvidia-drivers-581' > /etc/portage/package.mask/nvidia-drivers
+      #  * 
+      #  * ...then downgrade to a legacy[1] branch if possible (not all old versions
+      #  * are available or fully functional, may need to consider nouveau[2]).
+      #  * 
+      #  * [1] https://www.nvidia.com/object/IO_32667.html
+      #  * [2] https://wiki.gentoo.org/wiki/Nouveau
+      mask: yes
+    - name: >-  # must be in the same group as gentoo-kernel-bin, else attempts building kernel from src
+        x11-drivers/nvidia-drivers
+      install_stage: hardware_stuff_with_kernel_boot
+      licenses:
+      - NVIDIA-2025
+      - NVIDIA-2023
+      - NVIDIA-r2
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+          #
+          # NOTE: We may want to disable X too because there's no plan to use
+          # NOTE: it and also there's been  warnings that the newest driver
+          # NOTE: series might not work w/ the Lenovo P50's NVIDIA video card.
+          # NOTE: So we may need to mask versions below 581 or something like
+          # NOTE: that, `dmesg`'s also complaining on P50:
+          #  * 
+          #  * ***WARNING***
+          #  * 
+          #  * You are installing a version of nvidia-drivers known not to work
+          #  * with a GPU of the current system. If unwanted, add the mask:
+          #  * 
+          #  *   echo '>=x11-drivers/nvidia-drivers-581' > /etc/portage/package.mask/nvidia-drivers
+          #  * 
+          #  * ...then downgrade to a legacy[1] branch if possible (not all old versions
+          #  * are available or fully functional, may need to consider nouveau[2]).
+          #  * 
+          #  * [1] https://www.nvidia.com/object/IO_32667.html
+          #  * [2] https://wiki.gentoo.org/wiki/Nouveau
+        disabled:
+        - kernel-open  # open source driver variant  <-- this seems to be defunct on P50
+        - tools  # causes `gtk+-2.x/ctkvdpau.h:26:10: fatal error` somehow
+
+    - name: net-analyzer/net-snmp  # SNMP support; provides `snmpwalk`; could be pulled in by global USE-flag `snmp`
+      install_stage: network_stack_tools
+    - name: net-analyzer/nmap  # port knocker
+      install_stage: network_stack_tools
+    - name: net-analyzer/traceroute  # network path discovery
+      install_stage: network_stack_tools
+    - name: net-analyzer/wireshark  # spying on own network traffic
+      install_stage: network_stack_tools
+    - name: net-misc/dropbear  # `dropbearconvert` / `dropbearkey` for OpenWRT compat  <-- own image builder scripts
+      install_stage: network_stack_tools
+    - name: net-misc/networkmanager
+      install_stage: network_stack_tools
+    - name: net-misc/openssh
+      install_stage: network_stack_tools
+    - name: net-misc/sshpass  # intercept SSH password prompts under Ansible
+      install_stage: network_stack_tools
+    - name: net-misc/telnet-bsd  # Telnet client; useful with pudb
+      install_stage: network_stack_tools
+    - name: net-vpn/networkmanager-openvpn
+      install_stage: network_stack_tools
+    - name: net-vpn/wireguard-tools
+      install_stage: network_stack_tools
+    - name: sys-apps/ethtool  # ethernet network interfaces analyzer
+      install_stage: network_stack_tools
+
+    - name: media-fonts/arphicfonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      install_stage: gui_fonts
+    - name: media-fonts/font-isas-misc  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      install_stage: gui_fonts
+    - name: media-fonts/fontawesome  # for yambar
+      install_stage: gui_fonts
+    - name: media-fonts/ipamonafont  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+      licenses:
+      - grass-ipafonts
+    - name: media-fonts/ja-ipafonts  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+    - name: media-fonts/kochi-substitute  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+      licenses:
+      - free-noncomm
+    - name: media-fonts/liberation-fonts  # Gentoo-recommended fonts
+      install_stage: gui_fonts
+    - name: media-fonts/monafont  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+    - name: >-  # Patched fonts with dev icons for use in terminal, known as media-fonts/nerd-fonts on other overlays
+        media-fonts/nerdfonts::guru
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_fonts
+      unmask: yes
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+          # NOTE: euse doesn't support overlay scoping
+          # Ref: https://bugs.gentoo.org/981395
+        enabled:
+        - dejavusansmono
+        - droidsansmono
+        - firacode
+        - firamono
+        - hack
+        - intelonemono
+        - iosevka
+        - iosevkaterm
+        - iosevkatermslab
+        # - jetbrainsmono  # NOTE: ruscists. never enable.
+        - liberationmono
+        # - martianmono  # NOTE: ruscists. never enable.
+        - monaspace  # GitHub Next
+        - nerdfontssymbolsonly
+        - noto
+        - opendyslexic
+        - robotomono
+        - sourcecodepro
+        - spacemono
+        - terminus
+        - ubuntu
+        - ubuntumono
+        - ubuntusans
+    - name: media-fonts/mplus-outline-fonts  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+    - name: media-fonts/noto  # Gentoo-recommended fonts
+      install_stage: gui_fonts
+    - name: media-fonts/noto-cjk  # Chinese/Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese / https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+    - name: media-fonts/noto-emoji  # Emoji fallback  # https://wiki.gentoo.org/wiki/Fonts
+      install_stage: gui_fonts
+    - name: media-fonts/opendesktop-fonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      install_stage: gui_fonts
+    - name: media-fonts/sazanami  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+    - name: media-fonts/ubuntu-font-family  # Gentoo-recommended fonts
+      install_stage: gui_fonts
+    - name: media-fonts/vlgothic  # Japanese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Japanese
+      install_stage: gui_fonts
+    - name: media-fonts/wqy-zenhei  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      install_stage: gui_fonts
+    - name: media-fonts/zh-kcfonts  # Chinese font  # https://wiki.gentoo.org/wiki/How_to_read_and_write_in_Chinese
+      install_stage: gui_fonts
+
+    - name: app-admin/eclean-kernel  # kernel leftovers cleanup
+      install_stage: quality_of_life_utils
+    - name: app-admin/sudo  # privilege escalation
+      install_stage: quality_of_life_utils
+    - name: app-containers/podman  # userspace over privilege escalation
+      install_stage: quality_of_life_utils
+    - name: app-misc/brightnessctl::guru  # monitor and keyboard backlights
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: quality_of_life_utils
+      unmask: yes
+    - name: app-misc/tmux  # terminal multiplexer
+      install_stage: quality_of_life_utils
+    - name: app-portage/eix  # fast portage tree search
+      install_stage: quality_of_life_utils
+    - name: sys-apps/bat  # fancy cat clone in Rust
+      install_stage: quality_of_life_utils
+    - name: sys-apps/ripgrep  # rg
+      install_stage: quality_of_life_utils
+    - name: sys-apps/ripgrep-all  # for structured content
+      install_stage: quality_of_life_utils
+    - name: sys-devel/mold  # A Modern Linker
+      install_stage: quality_of_life_utils
+    - name: sys-process/btop  # a monitor of resources
+      install_stage: quality_of_life_utils
+    - name: sys-process/glances  # fancy process monitoring
+      install_stage: quality_of_life_utils
+    - name: sys-process/htop  # process monitoring
+      install_stage: quality_of_life_utils
+    - name: sys-process/lsof  # lists files open by processes
+      install_stage: quality_of_life_utils
+
+    - name: app-admin/bitwarden-desktop-bin::gentoo  # password manager
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_base_user_utils
+    - name: app-crypt/keybase::gentoo  # encrypted cloud fs and chat
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_base_user_utils
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - fuse  # kbfs
+    - name: app-crypt/kbfs::gentoo
+      accept_keywords:
+        list:
+        - ~amd64
+    - name: media-sound/spotifyd::guru  # remote streaming daemon for spotify
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_base_user_utils
+      unmask: yes
+    - name: >-  # https://wiki.gentoo.org/wiki/SSD#Web_browser_profile.28s.29_and_cache_on_tmpfs
+        www-misc/profile-sync-daemon
+      install_stage: gui_base_user_utils
+
+    - name: app-editors/helix  # A post-modern modal text editor
+      install_stage: gui_dev_env_tools
+    # - name: app-editors/neovide::guru  # NeoVim GUI  # <- should we? does not compile
+    #   accept_keywords:
+    #     list:
+    #     - ~amd64
+    #   install_stage: gui_dev_env_tools
+    #   unmask: yes
+    - name: app-editors/neovim  # favorite editor!
+      install_stage: gui_dev_env_tools
+    - name: app-editors/zed  # collaborative code editor in Rust
+      install_stage: gui_dev_env_tools
+    - name: >-  # fuzzy finder for interactive text completion / search
+        app-shells/fzf
+      install_stage: gui_dev_env_tools
+    - name: app-shells/zsh  # the shell of choice
+      install_stage: gui_dev_env_tools
+    - name: app-text/typst::guru  # a markup-based typesetting system
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_dev_env_tools
+      unmask: yes
+    - name: dev-debug/gdb  # GNU debugger
+      install_stage: gui_dev_env_tools
+    - name: dev-debug/strace  # spying on syscalls
+      install_stage: gui_dev_env_tools
+    - name: dev-python/pynvim  # Python support in NeoVim
+      install_stage: gui_dev_env_tools
+    - name: dev-python/uv  # provides uvx as a pipx replacement
+      install_stage: gui_dev_env_tools
+    - name: dev-util/ccache  # fast compiler cache
+      install_stage: gui_dev_env_tools
+    - name: dev-util/github-cli::gentoo  # GH CLI
+      accept_keywords:
+        header_comment: |-
+          # Used in the Assembly Workbench of FreeCAD and dev env
+        list:
+        - ~amd64
+      install_stage: gui_dev_env_tools
+    - name: dev-util/pixi::gentoo  # dev env with package manager wrapping conda and uv
+      accept_keywords:
+        header_comment: |-
+          # Used in the Assembly Workbench of FreeCAD
+        list:
+        - ~amd64
+      install_stage: gui_dev_env_tools
+    - name: dev-util/pkgcheck  # A linter for contributing to gentoo/gentoo
+      install_stage: gui_dev_env_tools
+    - name: dev-util/pkgdev  # Gentoo dev tools
+      install_stage: gui_dev_env_tools
+
+    - name: gui-apps/ashell::guru  # status bar for Hyprland
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: gui-apps/hypridle::hyproverlay  # idle
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: gui-apps/hyprlock::hyproverlay  # session locker
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: gui-apps/hyprpaper::hyproverlay  # Wallpaper
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: gui-apps/hyprpicker::hyproverlay  # color picker
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: gui-apps/hyprshot::hyproverlay  # screenshoter
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: gui-apps/tuigreet::gentoo  # login screen TUI
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+    - name: gui-apps/wl-clipboard  # Wayland clipboard integration
+      install_stage: gui_window_management_and_desktop_env
+    - name: gui-apps/wofi  # application launcher
+      install_stage: gui_window_management_and_desktop_env
+    - name: gui-libs/xdg-desktop-portal-hyprland::hyproverlay  # Screenshare
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: gui-wm/hyprland::hyproverlay  # tiling compositor for Wayland
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: >-  # shake-to-find cursor integration
+        hyprland-plugin/dynamic-cursors::hyproverlay
+      accept_keywords:
+        list:
+        - ~amd64  # managed -- differentiate??
+        - >-  # unstable
+          **
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: media-sound/pavucontrol  # sound control GUI
+      install_stage: gui_window_management_and_desktop_env
+    - name: media-sound/playerctl  # MPRIS
+      install_stage: gui_window_management_and_desktop_env
+    - name: net-wireless/blueman  # Bluetooth GUI
+      install_stage: gui_window_management_and_desktop_env
+    - name: sys-auth/hyprpolkitagent::hyproverlay  # polkit agent
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_window_management_and_desktop_env
+      unmask: yes
+    - name: sys-auth/rtkit  # realtime pipewire
+      install_stage: gui_window_management_and_desktop_env
+    - name: x11-misc/dunst  # notification daemon
+      install_stage: gui_window_management_and_desktop_env
+
+    - name: kde-apps/dolphin  # file manager from KDE land, suggested by Hyprland
+      install_stage: gui_userspace_apps
+    - name: media-video/vlc  # video player
+      install_stage: gui_userspace_apps
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        disabled:
+        - vaapi  # triggers conflicts with media-video/ffmpeg versions
+    - name: net-im/signal-desktop-bin  # secure intant messenger
+      install_stage: gui_userspace_apps
+    - name: net-im/slack::gentoo  # corporate IM
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_userspace_apps
+      licenses:
+      - all-rights-reserved
+    - name: net-misc/remmina  # VNC client / for connecting to remote macOS hosts
+      install_stage: gui_userspace_apps
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - vnc
+    - name: www-client/firefox-bin  # browser of choice
+      install_stage: gui_userspace_apps
+    - name: www-client/google-chrome  # backup browser
+      install_stage: gui_userspace_apps
+      licenses:
+      - google-chrome
+    - name: x11-terms/kitty  # favorite terminal emulator!
+      install_stage: gui_userspace_apps
+
+    - name: >-  # transitive build dep of FreeCAD+PrusaSlicer through OpenCascade
+        dev-lang/tk
+      # Ref: https://bugs.gentoo.org/974715
+      install_stage: gui_cad_3d_modeling_printing_apps
+    - name: media-gfx/blender-bin::gentoo  # 3D modeling software
+      accept_keywords:
+        list:
+        - ~amd64
+      install_stage: gui_cad_3d_modeling_printing_apps
+    - name: media-gfx/freecad  # 3D CAD software
+      install_stage: gui_cad_3d_modeling_printing_apps
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        enabled:
+        - addonmgr  # Addon Manager
+        - assembly  # Assembly Workbench
+        - cam  # CAM Workbench
+    - name: '=media-gfx/freecad-1.0.0-r5::gentoo'
+      accept_keywords:
+        header_comment: |-
+          # 1.0.0-r3 is the first version to re-introduce the `assembly` USE-flag
+          # Ref: https://github.com/gentoo/gentoo/commit/e0a107e8
+          # 1.0.0-r5 is the first version to introduce the Python 3.13 target
+        list:
+        - ~amd64
+    - name: sci-libs/ondselsolver::gentoo
+      accept_keywords:
+        header_comment: |-
+          # Used in the Assembly Workbench of FreeCAD
+        list:
+        - ~amd64
+    - name: media-gfx/prusaslicer  # software for turning 3D models into G-code
+      install_stage: gui_cad_3d_modeling_printing_apps
+
+    - name: media-libs/gst-plugins-bad  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
+      install_stage: gui_browsers_optional_extra
+    - name: media-libs/gst-plugins-base  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
+      install_stage: gui_browsers_optional_extra
+    - name: media-libs/gst-plugins-good  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
+      install_stage: gui_browsers_optional_extra
+    - name: media-libs/gst-plugins-ugly  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
+      install_stage: gui_browsers_optional_extra
+    - name: media-plugins/gst-plugins-libav  # for Qutebrowser / https://wiki.gentoo.org/wiki/Qutebrowser#Video_or_sound_not_working_well
+      install_stage: gui_browsers_optional_extra
+    - name: media-video/mpv  # qutebrowser plugins
+      install_stage: gui_browsers_optional_extra
+      use_flags:
+        header_comment: |-
+          # Enabling custom USE-flags prevents binary build from being selected
+        disabled:
+        - vaapi  # triggers conflicts with media-libs/ffmpeg versions
+    - name: net-misc/yt-dlp  # qutebrowser plugins
+      install_stage: gui_browsers_optional_extra
+    - name: www-client/qutebrowser  # hackable browser
+      install_stage: gui_browsers_optional_extra
+    - name: www-plugins/chrome-binary-plugins  # qutebrowser plugins
+      install_stage: gui_browsers_optional_extra
+      licenses:
+      - google-chrome
+
+    gentoo_prefix: /mnt/gentoo
+    lvm_volume_group: lvm-on-luks
+
+  vars_prompt:
+  - name: luks_password
+    private: true
+    prompt: Enter the LUKS password
+  - name: machine_id
+    private: false
+    prompt: Enter the machine-id value
+
+  tasks:
+  - name: Detect NVME drives
+    set_fact:
+      nvme_devices: >-
+        {{
+          ansible_devices
+          | dict2items
+          | rejectattr('value.removable', 'eq', '1')
+          | rejectattr('value.rotational', 'eq', '1')
+          | selectattr('key', 'match', 'nvme[0-9]+n[0-9]+')
+          | sort(attribute='value.sectors')
+        }}
+  - name: Set individual NVME drive variables
+    set_fact:
+      nvme_1tb_disk: >-
+        {{ (nvme_devices | first).key }}
+      nvme_2tb_disk: >-
+        {{ (nvme_devices | last).key }}
+
+  - name: Set privileges for the shared memory devices
+    ansible.builtin.file:
+      force: true
+      mode: 1777
+      path: >-
+        {{ mount_point }}
+      state: directory
+    loop:
+    - /dev/shm
+    - /run/shm
+    loop_control:
+      loop_var: mount_point
+
+  - name: Set the block device variables
+    set_fact:
+      rootfs_dev: /dev/{{ lvm_volume_group }}/rootfs
+      homefs_dev: /dev/{{ lvm_volume_group }}/homefs
+      swap_dev: /dev/{{ lvm_volume_group }}/swap
+      efifs_dev: /dev/{{ nvme_2tb_disk }}p1
+
+  - name: Stop the dirmngr daemon from the previous run
+    ansible.builtin.command:
+      argv:
+      - killall
+      - dirmngr
+    failed_when: false
+  - name: Unmount any mounted in-chroot file systems
+    ansible.builtin.command:
+      argv:
+      - umount
+      - --recursive
+      - >-
+        {{ gentoo_prefix }}
+    when: >-
+      ansible_mounts
+      | selectattr(
+        'mount',
+        'eq',
+        gentoo_prefix
+      )
+      | length > 0
+  - name: Unmount swap on LUKS
+    ansible.builtin.command:
+      argv:
+      - swapoff
+      - >-
+        {{ swap_dev }}
+    failed_when: false
+
+  - name: Set the LUKS device path vars
+    set_fact:
+      first_nvme_disk_luks_dev: >-
+        /dev/{{ nvme_2tb_disk }}p2
+      second_nvme_disk_luks_dev: >-
+        /dev/{{ nvme_1tb_disk }}p1
+
+  - name: Ensure LUKS devices sealed if they exist
+    community.crypto.luks_device:
+      device: >-
+        {{ device_path }}
+      name: >-
+        decrypted-luks-{{ luks_container_index }}
+      state: closed
+    failed_when: false
+    loop:
+    - >-
+      {{ first_nvme_disk_luks_dev }}
+    - >-
+      {{ second_nvme_disk_luks_dev }}
+    loop_control:
+      loop_var: device_path
+      index_var: luks_container_index
+
+  - name: Refresh the facts gathered from the host
+    ansible.builtin.gather_facts:
+
+  - name: Create an EFI partition
+    community.general.parted:
+      device: >-
+        {{ device_path }}
+      flags:
+      - esp
+      fs_type: fat32
+      label: gpt
+      name: unencrypted-efi-on-2tb-nvme
+      number: 1
+      part_end: 1GiB
+      state: present
+      # state: absent
+      unit: GiB
+    vars:
+      device_path: /dev/{{ nvme_2tb_disk }}
+
+  - name: Create a LUKS partition on 2 TB disk
+    community.general.parted:
+      device: >-
+        {{ device_path }}
+      label: gpt
+      name: luks-on-2tb-nvme
+      number: 2
+      part_start: 1GiB
+      part_end: 100%
+      state: present
+      # state: absent
+      unit: GiB
+    vars:
+      device_path: /dev/{{ nvme_2tb_disk }}
+  - name: Create a LUKS partition on 1 TB disk
+    community.general.parted:
+      device: >-
+        {{ device_path }}
+      label: gpt
+      name: luks-on-1tb-nvme
+      number: 1
+      part_start: 0%
+      part_end: 100%
+      state: present
+      # state: absent
+      unit: GiB
+    vars:
+      device_path: /dev/{{ nvme_1tb_disk }}
+
+  - name: Initialize LUKS partitions
+    community.crypto.luks_device:
+      allow_discards: true  # TRIM: https://wiki.gentoo.org/wiki/SSD
+      cipher: aes-cbc-essiv:sha256
+      device: >-
+        {{ device_path }}
+      passphrase: >-
+        {{ luks_password }}
+      pbkdf:
+        algorithm: argon2id
+        # parallel: >-  # ThinkPad P16v has 16 cores
+        #   {{ ansible_processor_nproc | int + 1 }}
+        #
+        # ThinkPad P50 has 8 cores but `utils_pbkdf.c` freaks out with
+        # "luks_device error: Error while creating LUKS on /dev/nvme0n1p2:
+        # Requested maximum PBKDF parallel cost is too high (maximum is 4).\n
+        # Failed to set pbkdf parameters.\n"
+        # for unknown reason. So we set it to 4 here.
+        parallel: >-
+          {{
+            (
+              (
+                ansible_processor_nproc | int
+              ) / 2
+            ) | int
+          }}
+      persistent: true
+      state: present
+      # state: absent
+      type: luks2
+    loop:
+    - >-
+      {{ first_nvme_disk_luks_dev }}
+    - >-
+      {{ second_nvme_disk_luks_dev }}
+    loop_control:
+      loop_var: device_path
+
+  - name: Retrieve the 2tb disk LUKS UUID
+    ansible.builtin.command:
+      argv:
+      - cryptsetup
+      - luksUUID
+      - >-
+        {{ first_nvme_disk_luks_dev }}
+    register: cryptsetup_2tb_uuid_cmd
+
+  - name: Save the 2tb disk LUKS UUID
+    set_fact:
+      first_luks_dev_uuid: >-
+        {{ cryptsetup_2tb_uuid_cmd.stdout | trim }}
+
+  - name: Retrieve the 1tb disk LUKS UUID
+    ansible.builtin.command:
+      argv:
+      - cryptsetup
+      - luksUUID
+      - >-
+        {{ second_nvme_disk_luks_dev }}
+    register: cryptsetup_1tb_uuid_cmd
+
+  - name: Save the 1tb disk LUKS UUID
+    set_fact:
+      second_luks_dev_uuid: >-
+        {{ cryptsetup_1tb_uuid_cmd.stdout | trim }}
+
+  - name: Unseal LUKS partitions
+    community.crypto.luks_device:
+      allow_discards: true  # TRIM: https://wiki.gentoo.org/wiki/SSD
+      device: >-
+        {{ device_path }}
+      name: >-
+        decrypted-luks-{{ luks_container_index }}
+      passphrase: >-
+        {{ luks_password }}
+      state: opened
+    loop:
+    - >-
+      {{ first_nvme_disk_luks_dev }}
+    - >-
+      {{ second_nvme_disk_luks_dev }}
+    loop_control:
+      loop_var: device_path
+      index_var: luks_container_index
+
+  - name: Add unsealed LUKS partition to LVM volume group
+    community.general.lvg:
+      pvs:
+      - /dev/mapper/decrypted-luks-0
+      - /dev/mapper/decrypted-luks-1
+      state: present
+      vg: >-
+        {{ lvm_volume_group }}
+
+  - name: Create a root LVM partition
+    community.general.lvol:
+      active: true
+      lv: rootfs
+      size: 150G
+      shrink: false
+      state: present
+      vg: >-
+        {{ lvm_volume_group }}
+
+  - name: Create a home LVM partition
+    community.general.lvol:
+      active: true
+      lv: homefs
+      size: 350G
+      shrink: false
+      state: present
+      vg: >-
+        {{ lvm_volume_group }}
+
+  - name: Create a SWAP LVM partition
+    community.general.lvol:
+      active: true
+      lv: swap
+      size: 64G
+      shrink: false
+      state: present
+      vg: >-
+        {{ lvm_volume_group }}
+
+  - name: Make a SWAP filesystem
+    community.general.filesystem:
+      dev: >-
+        {{ swap_dev }}
+      fstype: swap
+
+  - name: Retrieve the swap dev UUID
+    ansible.builtin.command:
+      argv:
+      - blkid
+      - --match-tag
+      - UUID
+      - --output
+      - value
+      - >-
+        {{ swap_dev }}
+    register: swap_dev_blkid_cmd
+
+  - name: Save the swap dev UUID
+    set_fact:
+      swap_dev_uuid: >-
+        {{ swap_dev_blkid_cmd.stdout | trim }}
+
+  - name: Make an EFI filesystem
+    community.general.filesystem:
+      dev: >-
+        {{ efifs_dev }}
+      force: true
+      fstype: vfat  # EFI
+  - name: Make home and root filesystems
+    community.general.filesystem:
+      dev: >-
+        {{ device_path }}
+      # force: true
+      fstype: xfs  # https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks#Filesystems
+    loop:
+    - >-
+      {{ rootfs_dev }}
+    - >-
+      {{ homefs_dev }}
+    loop_control:
+      loop_var: device_path
+
+  - name: Retrieve the efi dev UUID
+    ansible.builtin.command:
+      argv:
+      - blkid
+      - --match-tag
+      - UUID
+      - --output
+      - value
+      - >-
+        {{ efifs_dev }}
+    register: efifs_dev_blkid_cmd
+
+  - name: Save the efifs dev UUID
+    set_fact:
+      efifs_dev_uuid: >-
+        {{ efifs_dev_blkid_cmd.stdout | trim }}
+
+  - name: Retrieve the rootfs dev UUID
+    ansible.builtin.command:
+      argv:
+      - blkid
+      - --match-tag
+      - UUID
+      - --output
+      - value
+      - >-
+        {{ rootfs_dev }}
+    register: rootfs_dev_blkid_cmd
+
+  - name: Save the rootfs dev UUID
+    set_fact:
+      rootfs_dev_uuid: >-
+        {{ rootfs_dev_blkid_cmd.stdout | trim }}
+
+  - name: Retrieve the homefs dev UUID
+    ansible.builtin.command:
+      argv:
+      - blkid
+      - --match-tag
+      - UUID
+      - --output
+      - value
+      - >-
+        {{ homefs_dev }}
+    register: homefs_dev_blkid_cmd
+
+  - name: Save the homefs dev UUID
+    set_fact:
+      homefs_dev_uuid: >-
+        {{ homefs_dev_blkid_cmd.stdout | trim }}
+
+  # https://github.com/ansible-collections/ansible.posix/issues/106
+  # - ansible.posix.mount:
+  #     fstype: swap
+  #     opts: auto,sw,lazytime
+  #     path: none
+  #     src: >-
+  #       {{ swap_dev }}
+  #     state: ephemeral  # mount but don't amend /etc/fstab
+  - name: Activate swap
+    ansible.builtin.command:
+      argv:
+      - swapon
+      - >-
+        {{ swap_dev }}
+    failed_when: false
+
+  - name: Mount {{ rootfs_dev }} @ {{ gentoo_prefix }}
+    # As soon as `/dev/lvm-on-luks/rootfs` @ `/mnt/gentoo` gets
+    # mounted, it starts containing a `/etc/resolv.conf` (and its
+    # copy at `/usr/lib/systemd/resolv.conf`).
+    ansible.posix.mount:
+      fstype: xfs
+      opts: auto,rw,lazytime
+      path: >-
+        {{ gentoo_prefix }}
+      src: >-
+        {{ rootfs_dev }}
+      state: ephemeral  # mount but don't amend /etc/fstab
+  - name: Mount {{ efifs_dev }} @ {{ gentoo_prefix }}/efi
+    ansible.posix.mount:
+      fstype: vfat
+      opts: >-
+        auto,defaults,discard,rw,lazytime,uid=0,gid=0,umask=0077,x-systemd.automount,x-systemd.idle-timeout=600,errors=remount-ro
+      path: >-
+        {{ gentoo_prefix }}/efi
+      src: >-
+        {{ efifs_dev }}
+      state: ephemeral  # mount but don't amend /etc/fstab
+  - name: Mount {{ homefs_dev }} @ {{ gentoo_prefix }}/home
+    ansible.posix.mount:
+      fstype: xfs
+      opts: auto,rw,lazytime
+      path: >-
+        {{ gentoo_prefix }}/home
+      src: >-
+        {{ homefs_dev }}
+      state: ephemeral  # mount but don't amend /etc/fstab
+
+  - name: Refresh the facts gathered from the host
+    ansible.builtin.gather_facts:
+
+  # - community.crypto.openssl_signature_info_module:
+  - name: Download the latest stage3 metadata
+    ansible.builtin.uri:
+      return_content: true
+      url: https://ftp.fi.muni.cz/pub/linux/gentoo/releases/amd64/autobuilds/latest-stage3-amd64-desktop-systemd.txt
+    register: latest_stage3_data
+
+  - name: Compose the latest stage3 URL
+    set_fact:
+      latest_stage3_url: >-
+        https://ftp.fi.muni.cz/pub/linux/gentoo/releases/amd64/autobuilds/{{
+          (
+            latest_stage3_data.content
+            | ansible.builtin.split('-----BEGIN PGP SIGNATURE-----')
+            | first
+            | trim
+            | ansible.builtin.split
+          )[-2]
+        }}
+
+  - name: Compose the latest stage3 SHA-256 hash file URL
+    set_fact:
+      latest_stage3_sha256_url: >-
+        {{ latest_stage3_url }}.sha256
+
+  - name: Retrieve the latest stage3 metadata
+    ansible.builtin.uri:
+      return_content: true
+      url: >-
+        {{ latest_stage3_sha256_url }}
+    register: latest_stage3_sha256_data
+
+  - name: Compose the latest stage3 SHA-256 hash value
+    set_fact:
+      latest_stage3_sha256_hash: >-
+        {{
+          (
+            latest_stage3_sha256_data.content
+            | ansible.builtin.split('-----BEGIN PGP SIGNATURE-----')
+            | first
+            | trim
+            | ansible.builtin.split
+          )[-2]
+        }}
+
+  - name: Inspect the unpacked stage3 layout in chroot
+    ansible.builtin.stat:
+      path: >-
+        {{ gentoo_prefix }}/var/tmp
+    register: var_tmp_stat_data
+
+  - name: Download the latest stage3 archive
+    ansible.builtin.get_url:
+      checksum: >-
+        sha256:{{ latest_stage3_sha256_hash }}
+      dest: /tmp
+      url: >-
+        {{ latest_stage3_url }}
+    register: latest_stage3
+    when: not var_tmp_stat_data.stat.exists
+
+  # this probably doesn't preserve all the args
+  # - ansible.builtin.unarchive:
+  #     dest: >-
+  #       {{ gentoo_prefix }}
+  #     remote_src: true
+  #     src: >-
+  #       {{ latest_stage3.dest }}
+  #   when: not var_tmp_stat_data.stat.exists
+
+  - name: Unpack Gentoo stage3 base file system layout
+    ansible.builtin.command:
+      argv:
+      - tar
+      - xpvf
+      - >-
+        {{ latest_stage3.dest }}
+      - --xattrs-include='*.*'
+      - --numeric-owner
+      chdir: >-
+        {{ gentoo_prefix }}
+      creates: >-
+        {{ gentoo_prefix }}/var/tmp
+    when: not var_tmp_stat_data.stat.exists
+
+  - name: Create EFI directory layout
+    ansible.builtin.file:
+      path: >-
+        {{ mount_point }}
+      state: directory
+    loop:
+    - >-
+      {{ gentoo_prefix }}
+    - >-
+      {{ gentoo_prefix }}/efi
+    - >-
+      {{ gentoo_prefix }}/efi/EFI
+    - >-
+      {{ gentoo_prefix }}/efi/EFI/BOOT
+    - >-
+      {{ gentoo_prefix }}/efi/EFI/systemd
+    loop_control:
+      loop_var: mount_point
+
+  - name: Configure crypttab
+    ansible.builtin.copy:
+      content: |
+        decrypted-luks-0 UUID={{ first_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14+15,discard
+        decrypted-luks-1 UUID={{ second_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14+15,discard
+      dest: >-
+        {{ gentoo_prefix }}/etc/crypttab
+
+  - name: Set up tmp directories' privileges
+    ansible.builtin.file:
+      mode: 1777
+      path: >-
+        {{ mount_point }}
+      state: directory
+    loop:
+    - >-
+      {{ gentoo_prefix }}/tmp
+    - >-
+      {{ gentoo_prefix }}/var/tmp
+    loop_control:
+      loop_var: mount_point
+
+  - name: Copy the DNS configuration from the live OS into chroot
+    ansible.builtin.copy:
+      dest: >-
+        {{ gentoo_prefix }}/etc/resolv.conf
+      # https://wiki.gentoo.org/wiki/Handbook:AMD64/Full/Installation/en#Copy_DNS_info
+      local_follow: true  # --dereference
+      remote_src: true  # so that the config was from the live USB iso env
+      src: /etc/resolv.conf
+
+  - name: Ensure the configuration entries present in `make.conf`
+    ansible.builtin.lineinfile:
+      line: >-
+        {{ entry }}
+      path: >-
+        {{ gentoo_prefix }}/etc/portage/make.conf
+    loop:
+    - >-
+      MAKEOPTS="-j{{
+        ansible_processor_nproc
+      }} -l{{
+        ansible_processor_nproc | int + 1
+      }}"
+    - >-
+      FEATURES="${FEATURES} getbinpkg"
+    - >-
+      FEATURES="${FEATURES} binpkg-request-signature"
+    - >-
+      GENTOO_MIRRORS="https://ftp.fi.muni.cz/pub/linux/gentoo/ https://mirror.it4i.cz/gentoo/ https://mirror.dkm.cz/gentoo/"
+    - >-
+      PORTAGE_RSYNC_EXTRA_OPTS="-4"
+    loop_control:
+      loop_var: entry
+
+  # mutate the config:
+  # https://github.com/ansible-collections/ansible.posix/issues/106
+  - name: Add {{ swap_dev }} as swap to fstab in chroot
+    ansible.posix.mount:
+      dump: 0  # fs_freq
+      fstab: >-
+        {{ gentoo_prefix }}/etc/fstab
+      fstype: swap
+      opts: auto,sw,lazytime
+      passno: 0
+      path: none
+      src: >-
+        UUID={{ swap_dev_uuid }}
+      state: present  # amend /etc/fstab but don't mount
+  - name: Add a {{ rootfs_dev }} @ / mount point to fstab in chroot
+    ansible.posix.mount:
+      dump: 1  # fs_freq
+      fstab: >-
+        {{ gentoo_prefix }}/etc/fstab
+      fstype: xfs
+      opts: auto,rw,lazytime
+      passno: 1
+      path: /
+      src: >-
+        UUID={{ rootfs_dev_uuid }}
+      state: present  # amend /etc/fstab but don't mount
+  - name: Add a {{ efifs_dev }} @ /efi mount point to fstab in chroot
+    # https://wiki.gentoo.org/wiki/EFI_System_Partition
+    ansible.posix.mount:
+      dump: 1  # fs_freq
+      fstab: >-
+        {{ gentoo_prefix }}/etc/fstab
+      fstype: vfat
+      opts: >-
+        auto,defaults,discard,rw,lazytime,uid=0,gid=0,umask=0077,x-systemd.automount,x-systemd.idle-timeout=600,errors=remount-ro
+      passno: 2
+      path: /efi
+      src: >-
+        UUID={{ efifs_dev_uuid }}
+      state: present  # amend /etc/fstab but don't mount
+  - name: Add a {{ homefs_dev }} @ /home mount point to fstab in chroot
+    ansible.posix.mount:
+      dump: 1  # fs_freq
+      fstab: >-
+        {{ gentoo_prefix }}/etc/fstab
+      fstype: xfs
+      opts: auto,rw,lazytime
+      passno: 2
+      path: /home
+      src: >-
+        UUID={{ homefs_dev_uuid }}
+      state: present  # amend /etc/fstab but don't mount
+  - name: Add a tmpfs @ /tmp mount point to fstab in chroot
+    # TODO: consider using zram
+    # noatime,noexec,nodev,nosuid,rootcontext=system_u:object_r:var_run_t:s0
+    ansible.builtin.lineinfile:
+      line: >-
+        tmpfs
+        /tmp
+        tmpfs
+        noatime,nodev,nosuid
+        0
+        0
+      path: >-
+        {{ gentoo_prefix }}/etc/fstab
+
+  - name: Mount virtual filesystems into chroot
+    ansible.builtin.command: >-
+      mount {{ mount_cmd }}
+    loop:
+    - >-
+      --types proc /proc {{ gentoo_prefix }}/proc
+    - >-
+      --rbind /sys {{ gentoo_prefix }}/sys
+    - >-
+      --make-rslave {{ gentoo_prefix }}/sys
+    - >-
+      --rbind /dev {{ gentoo_prefix }}/dev
+    - >-
+      --make-rslave {{ gentoo_prefix }}/dev
+    - >-
+      --bind /run {{ gentoo_prefix }}/run
+    - >-
+      --make-slave {{ gentoo_prefix }}/run
+    - >-  # https://wiki.gentoo.org/wiki/SELinux/Installation#Setting_file_system_contexts
+      --types tmpfs --options nosuid,nodev,noexec shm /dev/shm
+    # - >-
+    #   --types tmpfs --options nosid,nodev,noexec,rootcontext=system_u:object_r:var_run_t:s0 shm /dev/shm
+    # failed: [lenovo-p50] (item=--types tmpfs --options nosuid,nodev,noexec,rootcontext=system_u:object_r:var_run_t:s0 tmpfs /mnt/gentoo/tmp) => {"ansible_loop_var": "mount_cmd", "changed": true, "cmd": ["mount", "--types", "tmpfs", "--options", "nosuid,nodev,noexec,rootcontext=system_u:object_r:var_run_t:s0", "tmpfs", "/mnt/gentoo/tmp"], "delta": "0:00:00.002611", "end": "2026-08-24 22:18:40.661312", "mount_cmd": "--types tmpfs --options nosuid,nodev,noexec,rootcontext=system_u:object_r:var_run_t:s0 tmpfs /mnt/gentoo/tmp", "msg": "non-zero return code", "rc": 32, "start": "2026-08-24 22:18:40.658701", "stderr": "mount: /mnt/gentoo/tmp: fsconfig() failed: tmpfs: Unknown parameter 'rootcontext'.\n       dmesg(1) may have more information after failed mount system call.", "stderr_lines": ["mount: /mnt/gentoo/tmp: fsconfig() failed: tmpfs: Unknown parameter 'rootcontext'.", "       dmesg(1) may have more information after failed mount system call."], "stdout": "", "stdout_lines": []}
+    # - >-
+    #   --types tmpfs --options nosuid,nodev,noexec,rootcontext=system_u:object_r:var_run_t:s0 tmpfs {{ gentoo_prefix }}/tmp
+    - >-
+      --types tmpfs --options nosuid,nodev,noexec tmpfs {{ gentoo_prefix }}/tmp
+    loop_control:
+      loop_var: mount_cmd
+
+  - name: >-  # https://bugs.gentoo.org/982088
+      Overlay in-chroot /dev/shm to work around FEATURES=userpriv isolation
+    #
+    # Without the internal shared memory device, emerge's feature to isolate
+    # the build to the `portage` user seems to backfire as the Python processes
+    # that create subprocesses access `/dev/shm` and get permission errors.
+    # This is happening somewhere in `concurrent.futures.ProcessPoolExecutor`
+    # via `multiprocessing`. The working theory is that the chroot isolation
+    # is somehow incompatible with giving in-chroot users access to shared
+    # memory devices created on the outside and so the kernel rejects the
+    # requests.
+    #
+    # Another workaround is disabling the feature. So far, this was seen
+    # breaking Kitty and qtwebengine. The working hack was:
+    #
+    # $ chroot /mnt/gentoo \
+    #     env FEATURES='-userpriv' \
+    #       emerge dev-qt/qtwebengine x11-terms/kitty
+    #
+    # Refs:
+    # * https://stackoverflow.com/a/2009505
+    # * https://forums.gentoo.org/viewtopic-t-1147068-start-0.html
+    # * https://wiki.gentoo.org/wiki/User:Spawns/Bootstrap_with_emerge#Using_unshare
+    #
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - mount
+      - --types=tmpfs
+      - --options=nosuid,nodev,noexec
+      - shm
+      - /dev/shm
+
+  - name: Instruct systemd to reload the unit files
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - daemon-reload
+
+  - name: Accept per-package licenses
+    include_role:
+      name: webknjaz.gentoo.portage_package_license
+    loop: >-
+      {{ system_packages_registry }}
+    loop_control:
+      loop_var: package_entry
+    vars:
+      package_name: >-
+        {{ package_entry.name }}
+      package_licenses: >-
+        {{ package_entry.licenses }}
+    when:
+    - >-
+      'licenses' in package_entry
+    - package_entry.licenses | length > 0
+
+  - name: Set up per-package accept keywords
+    include_role:
+      name: webknjaz.gentoo.portage_package_accept_keywords
+    loop: >-
+      {{ system_packages_registry }}
+    loop_control:
+      loop_var: package_entry
+    vars:
+      package_name: >-
+        {{ package_entry.name }}
+      package_keywords: >-
+        {{ package_entry.accept_keywords }}
+    when:
+    - >-
+      'accept_keywords' in package_entry
+    - >-
+      'list' in package_entry.accept_keywords
+    - package_entry.accept_keywords.list | length > 0
+
+  - name: Mask packages
+    include_role:
+      name: webknjaz.gentoo.portage_package_mask
+    loop: >-
+      {{ system_packages_registry }}
+    loop_control:
+      loop_var: package_entry
+    vars:
+      package_name: >-
+        {{ package_entry.name }}
+    when:
+    - >-
+      'mask' in package_entry
+    - package_entry.mask | bool
+
+  - name: Unmask packages
+    include_role:
+      name: webknjaz.gentoo.portage_package_unmask
+    loop: >-
+      {{ system_packages_registry }}
+    loop_control:
+      loop_var: package_entry
+    vars:
+      package_name: >-
+        {{ package_entry.name }}
+    when:
+    - >-
+      'unmask' in package_entry
+    - package_entry.unmask | bool
+
+  - name: Set up package USE-flags
+    include_role:
+      name: webknjaz.gentoo.portage_package_use
+    loop: >-
+      {{ system_packages_registry }}
+    loop_control:
+      loop_var: package_entry
+    vars:
+      package_name: >-
+        {{ package_entry.name }}
+      package_use_flags: >-
+        {{ package_entry.use_flags }}
+    when:
+    - >-
+      'use_flags' in package_entry
+    - >-
+      (package_entry.use_flags.get('enabled', []) | length > 0)
+      or
+      (package_entry.use_flags.get('disabled', []) | length > 0)
+
+  - name: Inspect portage binary repos config
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.stat:
+      path: >-
+        /etc/portage/binrepos.conf
+    register: binrepos_conf
+  - name: Initialize portage binary repos config directory
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.file:
+      path: >-
+        /etc/portage/binrepos.conf
+      state: directory
+    when: not binrepos_conf.stat.exists
+
+  - name: Configure the MUNI binary packages host
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        [binhost]
+        priority = 9999
+        sync-uri = https://ftp.fi.muni.cz/pub/linux/gentoo/releases/amd64/binpackages/23.0/x86-64-v3/
+      dest: >-
+        /etc/portage/binrepos.conf/gentoobinhost.conf
+
+  - name: Set the timeone to Europe/Prague
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.file:
+      dest: >-
+        /etc/localtime
+      force: true
+      src: ../usr/share/zoneinfo/Europe/Prague
+      state: link
+
+  - name: Configure the supported locales
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.lineinfile:
+      line: >-
+        {{ locale }}
+      path: >-
+        /etc/locale.gen
+    loop:
+    - C.UTF8 UTF-8
+    - en_US.UTF-8 UTF-8
+    - uk_UA.UTF-8 UTF-8
+    loop_control:
+      loop_var: locale
+
+  - name: Generate the locale files
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - locale-gen
+
+  - name: Set the system locale via `eselect locale`
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - eselect
+      - locale
+      - set
+      - en_US.UTF-8
+
+  - name: Set the system locale via `localectl`
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - localectl
+      - set-locale
+      - en_US.UTF-8
+    failed_when: false  # needs systemd to be the runtime!? huh?
+
+  - name: Sync the portage database via `emerge-webrsync`
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge-webrsync
+
+  - name: Set the GNOME systemd profile v23.0
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - eselect
+      - profile
+      - set
+      - >-  # unknown until emerge-webrsync happens, hard dependency
+        default/linux/amd64/23.0/desktop/gnome/systemd
+
+  - name: Set up the keyring for binary package verification
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - getuto
+
+  - name: Sync the portage database
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - --sync
+    failed_when: false
+    # - emerge_proc.rc
+    # - >-
+    #   'Please note: common gentoo-netiquette says you should not'
+    #   not in emerge_proc.stdout
+    register: emerge_proc
+
+  - name: Install system repository management tooling
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - >-  # use binary packages whenever possible
+        --binpkg-respect-use=n
+      - --newuse
+      - app-eselect/eselect-repository  # overlay management via `eselect repository`
+      - app-portage/gentoolkit  # euse and co.
+ 
+  - name: Ensure the main gentoo portage repository is enabled
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - eselect
+      - repository
+      - enable
+      - gentoo
+
+  - name: Enable the overlays
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - eselect
+      - repository
+      - enable
+      - guru
+      - hyproverlay  # Hyprland stuff
+    failed_when: false
+
+  - name: Sync the overlays
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emaint
+      - sync
+      - --auto
+    failed_when: false
+
+  - name: Set global USE-flags
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - euse
+      - -E
+      - cryptsetup  # LUKS disk encryption
+      - dist-kernel  # for virtual/dist-kernel
+      - fortran  # for media-gfx/freecad
+      - lvm  # needed by the same-named dracut module
+      - minizip  # for dev-qt/qtwebengine
+      - modules-sign  # signing kernel modules
+      - nftables  # for net-firewall/iptables
+      - nvenc  # NVIDIA Encoder/Decoder API
+      - nvidia  # NVIDIA support in various apps
+      - qml  # kde-apps/dolphin
+      - secureboot  # UEFI secure boot support
+      - tpm  # Trusted Platform Module
+      - vaapi  # system-wide VAAPI support for hardware video acceleration
+      # - >-  # https://wiki.gentoo.org/wiki/VDPAU says it's been removed from mesa and VAAPI is the way
+      #   vdpau  # Video Decode and Presentation API for Unix acceleration interface
+      - vulkan  # Vulkan graphics API
+      - wayland  # choosing this over X
+    failed_when:
+    - euse_proc.rc
+    - >-
+      'is already enabled' not in euse_proc.stdout
+    register: euse_proc
+
+  - name: Set the secure boot signing key path
+    set_fact:
+      secure_boot_signing_key_path: /root/secureboot/MOK.pem
+
+  - name: Set the secure boot signing x509 DER certificate path
+    set_fact:
+      secure_boot_signing_cert_der_path: >-
+        {{
+          secure_boot_signing_key_path
+          | ansible.builtin.splitext
+          | first
+        }}.cer
+
+  - name: Ensure the secure boot signing key dir exists
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.file:
+      mode: u=rwx,g=,o=
+      path: >-
+        {{ secure_boot_signing_key_path | ansible.builtin.dirname }}
+      state: directory
+
+  - name: Inspect the secure boot signing key existence
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.stat:
+      path: >-
+        {{ secure_boot_signing_key_path }}
+    register: secure_boot_signing_key_stat_data
+ 
+  - name: Install OpenSSL software
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - >-  # use binary packages whenever possible
+        --binpkg-respect-use=n
+      - --newuse
+      - dev-libs/openssl  # for making a secure boot signing key
+    when: not secure_boot_signing_key_stat_data.stat.exists
+
+  - name: Generate a signing key for secure boot
+    # https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel#Optional:_Signing_the_kernel_image_.28Secure_Boot.29
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - openssl
+      - req
+      - -new
+      - -nodes
+      - -utf8
+      - -sha512
+      - -x509
+      - -outform
+      - PEM
+      - -out
+      - >-
+        {{ secure_boot_signing_key_path }}
+      - -keyout
+      - >-
+        {{ secure_boot_signing_key_path }}
+      - -subj
+      - /CN=webknjaz/
+    when: not secure_boot_signing_key_stat_data.stat.exists
+
+  - name: >-
+      Convert the signing certificate for secure boot
+      into x509 DER format (.cer) for MokManager
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - openssl
+      - x509
+      - -outform
+      - DER
+      - -in
+      - >-
+        {{ secure_boot_signing_key_path }}
+      - -out
+      - >-
+        {{ secure_boot_signing_cert_der_path }}
+    when: not secure_boot_signing_key_stat_data.stat.exists
+
+  - name: Ensure signing key configuration entries present in `make.conf`
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.lineinfile:
+      line: >-
+        {{ entry }}
+      path: >-
+        /etc/portage/make.conf
+    loop:
+    - >-
+      MODULES_SIGN_KEY="{{ secure_boot_signing_key_path }}"
+    - >-
+      MODULES_SIGN_CERT="{{ secure_boot_signing_key_path }}"
+    - >-
+      MODULES_SIGN_HASH="sha512"
+    - >-
+      SECUREBOOT_SIGN_KEY="{{ secure_boot_signing_key_path }}"
+    - >-
+      SECUREBOOT_SIGN_CERT="{{ secure_boot_signing_key_path }}"
+    loop_control:
+      loop_var: entry
+
+  - name: Install systemd early
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - >-  # use binary packages whenever possible
+        --binpkg-respect-use=n
+      - --newuse
+      - sys-apps/systemd
+
+  - name: Set system locale via localectl
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - localectl
+      - set-x11-keymap
+      - us,ua
+      - pc104
+      - qwerty
+      - >-
+        grp:caps_toggle,compose:ralt
+    failed_when: false  # needs systemd to be the runtime!? huh?
+
+  - name: Correct system locale via localectl
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - localectl
+      - set-keymap
+      - us
+      - ua
+      - --no-convert
+    failed_when: false  # needs systemd to be the runtime!? huh?
+
+  - name: Set system timezone via timedatectl
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - timedatectl
+      - set-timezone
+      - Europe/Prague
+    failed_when: false  # needs systemd to be the runtime!? huh?
+
+  - name: Set system hostname via hostnamectl
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - hostnamectl
+      - hostname
+      - lenovo-thinkpad-p50
+    failed_when: false  # needs systemd to be the runtime!? huh?
+
+  - name: Set system hostname via systemd-firstboot
+    # https://www.freedesktop.org/software/systemd/man/latest/systemd-firstboot.html
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemd-firstboot
+      - --hostname=lenovo-thinkpad-p50
+
+  - name: Populate `machine-id` from the variable if provided
+    # https://www.freedesktop.org/software/systemd/man/latest/machine-id.html
+    # https://systemd.io/BUILDING_IMAGES/
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        {{ machine_id }}
+      dest: >-
+        /etc/machine-id
+    when: machine_id
+  - name: >-
+      Invoke `systemd-machine-id-setup` to generate a fresh `machine-id`
+      if it's unset
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemd-machine-id-setup
+      - --print
+    register: make_machine_id_cmd
+  - name: Set the final `machine-id` variable
+    set_fact:
+      machine_id: >-
+        {{ make_machine_id_cmd.stdout_lines | last }}
+
+  - name: Set up a workaround for Wi-Fi hang-on-resume  # FIXME??
+    # https://wiki.archlinux.org/title/Lenovo_ThinkPad_P16s_(AMD)_Gen_2#Hang_on_resume
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        #!/bin/sh
+
+        start_nm() {
+          systemctl is-enabled NetworkManager.service && systemctl start NetworkManager.service
+        }
+
+        start_systemd_networkd() {
+          systemctl is-enabled systemd-networkd.socket && systemctl start systemd-networkd.socket
+          systemctl is-enabled systemd-networkd.service && systemctl start systemd-networkd.service
+        }
+
+        case $1 in
+          pre) /usr/bin/systemctl stop NetworkManager.service systemd-networkd.service systemd-networkd.socket; /usr/bin/modprobe -r ath11k_pci ;;
+          post) start_nm; start_systemd_network; /usr/bin/modprobe ath11k_pci || exit 0 ;;
+        esac
+      dest: >-
+        /usr/lib/systemd/system-sleep/ath11k_pci
+      mode: u=rwx,g=rx,o=r
+
+  - name: Create dracut configs directory layout
+    # https://wiki.gentoo.org/wiki/Dracut
+    # https://wiki.archlinux.org/title/Dracut#Advanced_configuration
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.file:
+      path: >-
+        /etc/dracut.conf.d
+      state: directory
+
+  - name: Enable Bluetooth support in dracut
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        add_dracutmodules+=" bluetooth "
+      dest: >-
+        /etc/dracut.conf.d/bluetooth.conf
+
+  - name: Configure dracut-generated image compression
+    # https://cj.rs/blog/should-i-compress-my-initramfs/
+    # https://wiki.archlinux.org/title/Dracut#Advanced_configuration
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        compress="lz4"
+      dest: >-
+        /etc/dracut.conf.d/compression.conf
+
+  - name: Configure dracut to decrypt LUKS
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        add_dracutmodules+=" systemd-cryptsetup "
+
+        # NOTE: `/etc/crypttab` is only used with `hostonly="yes"`. So we don't
+        # NOTE: have to enumerate any other LUKS options in kernel cmdline
+        # NOTE: explicitly:
+        kernel_cmdline+=" rd.luks.crypttab=1 "
+      dest: >-
+        /etc/dracut.conf.d/crypt.conf
+
+  - name: Configure dracut to decorate the boot process
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        add_dracutmodules+=" plymouth "
+        kernel_cmdline+=" quiet splash "
+      dest: >-
+        /etc/dracut.conf.d/decoration.conf
+
+  - name: Configure dracut to automatically assemble block device layers
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        kernel_cmdline+=" rd.auto "
+      dest: >-
+        /etc/dracut.conf.d/device-auto-assembly.conf
+
+  - name: Configure dracut to build host-only images
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        hostonly="yes"  # bluetooth + crypttab https://wiki.archlinux.org/title/Dracut#Bluetooth_keyboard_support
+      dest: >-
+        /etc/dracut.conf.d/hostonly.conf
+
+  - name: Configure dracut to support coming back from hibernation
+    # https://wiki.gentoo.org/wiki/Suspend_and_hibernate#Dracut_configured_without_resume_module
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        kernel_cmdline+=" resume=UUID={{ swap_dev_uuid }} "
+        add_dracutmodules+=" resume "
+      dest: >-
+        /etc/dracut.conf.d/hibernation.conf
+
+  - name: Configure dracut with to activate LVM
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        add_dracutmodules+=" lvm "
+        kernel_cmdline+=" rd.lvm.vg={{ lvm_volume_group }} root=UUID={{ rootfs_dev_uuid }} "
+      dest: >-
+        /etc/dracut.conf.d/lvm.conf
+
+  - name: Configure dracut to load NVME
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        kernel_cmdline+=" rd.driver.pre=nvme "
+      dest: >-
+        /etc/dracut.conf.d/nvme.conf
+
+  - name: Configure dracut to mount root in read-only mode
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        kernel_cmdline+=" ro "
+      dest: >-
+        /etc/dracut.conf.d/readonly.conf
+
+  - name: Configure kernel cmdline config for `kernel-install`
+    # https://man7.org/linux/man-pages/man7/dracut.cmdline.7.html
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        quiet
+        rd.driver.pre=nvme
+        rd.auto
+        rd.luks.crypttab=1
+        rd.lvm.vg={{ lvm_volume_group }}
+        resume=UUID={{ swap_dev_uuid }}
+        ro
+        root=UUID={{ rootfs_dev_uuid }}
+        splash
+      dest: >-
+        /etc/kernel/cmdline
+
+  - name: Rebuild the world
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - >-  # use binary packages whenever possible
+        --binpkg-respect-use=n
+      - --newuse
+      - --verbose
+      - --deep
+      - >-
+        @world
+
+  - name: >-
+      Install {{ _stage_label }}
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv: >-
+        {{ _emerge_cmd }}
+    loop: >-
+      {{ system_packages_install_stage_order }}
+    loop_control:
+      loop_var: install_stage
+    vars:
+      _stage_id: >-
+        {{ install_stage.id }}
+      _stage_label: >-
+        {{ install_stage.label }}
+      _system_packages: |
+        {{
+          system_packages_registry
+          | selectattr('install_stage', 'defined')
+          | selectattr('install_stage', 'eq', _stage_id)
+          | map(attribute='name')
+        }}
+      _emerge_cmd: |
+        {{
+          [
+            'emerge',
+            '--binpkg-respect-use=n',
+            '--newuse',
+            '--update',
+          ]
+          + _system_packages
+        }}
+    when: _system_packages | length > 0
+
+  - name: Rebuild the world
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - >-  # use binary packages whenever possible
+        --binpkg-respect-use=n
+      - --newuse
+      - --verbose
+      - --deep
+      - >-
+        @world
+
+  - name: Clean up unnecessary software
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - --depclean
+
+  - name: Ensure group {{ os_group.name }} exists
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - groupadd
+      - --gid={{ os_group.id }}
+      - >-
+        {{ os_group.name }}
+    failed_when: false
+
+  - name: Ensure user {{ os_user.name }} exists
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - useradd
+      - --comment={{ os_user.comment }}
+      - --create-home
+      - --gid={{ os_group.id }}
+      # https://wiki.gentoo.org/wiki/PipeWire#Audio_Groups
+      # https://wiki.gentoo.org/wiki/Handbook:AMD64/Full/Installation#Adding_a_user_for_daily_use
+      - >-  # pcap allows running Wireshark capture, pipewire is for realtime audio scheduling, plugdev is here for NetworkManager, video improves fps under Wayland
+        --groups=pcap,pipewire,plugdev,usb,video,wheel
+      - --shell=/usr/bin/zsh
+      - --uid={{ os_user.id }}
+      - >-
+        {{ os_user.name }}
+    failed_when: false
+
+  - name: >-
+      SSH into the target machine now and invoke
+      `sudo chroot {{ gentoo_prefix }} passwd {{ os_user.name }}`
+      and `sudo chroot {{ gentoo_prefix }} passwd {{ os_user.name }}`
+    ansible.builtin.debug:
+      msg: >-
+        SSH into the target machine now and invoke
+        `sudo chroot {{ gentoo_prefix }} passwd {{ os_user.name }}`
+        and `sudo chroot {{ gentoo_prefix }} passwd root`
+
+  - ansible.builtin.pause:
+
+  - name: Add {{ os_user.name }} to sudoers
+    connection: webknjaz.stdlib.chroot_over_ssh
+    lineinfile:
+      create: yes
+      group: root
+      line: >-
+        {{ os_user.name }} ALL=(ALL) ALL
+      mode: u=r,g=r,o=
+      owner: root
+      path: >-
+        /etc/sudoers.d/{{ os_user.name }}-user
+      regexp: ^{{ os_user.name }}\s[^=]+=[^=]+$
+      state: present
+
+  - name: Create SSH config folder for {{ os_user.name }}
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.file:
+      owner: >-
+        {{ os_user.id }}
+      group: >-
+        {{ os_group.id }}
+      mode: u=rwx,g=,o
+      path: >-
+        /home/{{ os_user.name }}/.ssh
+      state: directory
+  - name: Set up SSH config permissions for {{ os_user.name }}
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.file:
+      owner: >-
+        {{ os_user.id }}
+      group: >-
+        {{ os_group.id }}
+      mode: u=rw,g=,o
+      path: >-
+        /home/{{ os_user.name }}/.ssh/authorized_keys
+      state: touch
+  - name: Set up SSH access for {{ os_user.name }}
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.lineinfile:
+      line: >-
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKfVXabLvtPE8LhoD1+CjZ0hQHLq24eYo3fqFxGfp9IWNN8pXUQH1VpiSs9qd+YQH2KeiJubXaLG61fm+hRLreNn8HLu1sQEgmeLjl2IREk/yrfEWiPuoboN90KHy187gK515yVQmx1HFqQ9112fpVhnbyU/4D2sx07kpUDIR97OC1NW+XQjlWF0+tRh1xU+EEALQbzSVBLobz0DNlUPzDg2vNLbIcYSGvfiYGyj5Opb/tnK3JNN8EzYxZInBcVE52oLOYM3jPkiVWUuTFp5zq12JCiGXrxiPA4KtB/QjD6CbVHBc+eDMTFqMD26CjAuaSg6O/nCY7CSapESxDuVfd
+      path: >-
+        /home/{{ os_user.name }}/.ssh/authorized_keys
+
+  - name: Configure greetd to invoke tuigreet
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      content: |
+        [terminal]
+        # The VT to run the greeter on. Can be "next", "current" or a number
+        # designating the VT.
+        vt = 7
+
+        # The default session, also known as the greeter.
+        [default_session]
+
+        # `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
+        # with whatever you want started, such as `sway`.
+        # command = "agreety --cmd /bin/sh"
+        command = "tuigreet"
+
+        # The user to run the command as. The privileges this user must have depends
+        # on the greeter. A graphical greeter may for example require the user to be
+        # in the `video` group.
+        user = "greetd"
+      dest: >-
+        /etc/greetd/config.toml
+
+  - name: Invoke `systemctl preset-all`
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - preset-all
+      # - --preset-mode=enable-only
+
+  - name: Enable Network Manager on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - NetworkManager
+
+  - name: Disable systemd-networkd on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - disable
+      - systemd-networkd.service
+      - systemd-networkd.socket
+      - systemd-networkd-wait-online.service
+
+  - name: Enable SSHD on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - sshd
+
+  - name: Enable greetd on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - greetd
+
+  - name: Enable LVM2 monitor on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - lvm2-monitor
+
+  - name: Enable irqbalance on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - irqbalance
+
+  - name: Schedule a periodic SSD TRIM/discard procedure
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - fstrim.timer
+
+  - name: Set up auto-updating systemd-boot bootloader on start
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - systemd-boot-update
+
+  - name: Enable Bluetooth on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - bluetooth
+
+  - name: Enable lm_sensors on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - lm_sensors
+
+  - name: Enable acpid on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - acpid
+
+  - name: Enable CUPS on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - cups
+
+  - name: Enable cups-browsed on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - cups-browsed
+
+  # - name: Enable nvidia-suspend for hibernation
+  #   connection: webknjaz.stdlib.chroot_over_ssh
+  #   ansible.builtin.command:
+  #     argv:
+  #     - systemctl
+  #     - enable
+  #     - nvidia-suspend
+
+  # - name: Enable nvidia-suspend for hibernation
+  #   connection: webknjaz.stdlib.chroot_over_ssh
+  #   ansible.builtin.command:
+  #     argv:
+  #     - systemctl
+  #     - enable
+  #     - nvidia-hibernate
+
+  # - name: Enable nvidia-suspend for hibernation
+  #   connection: webknjaz.stdlib.chroot_over_ssh
+  #   ansible.builtin.command:
+  #     argv:
+  #     - systemctl
+  #     - enable
+  #     - nvidia-resume
+
+  - name: >-
+      Enable Switcheroo Control Proxy (dual-GPU availability checker)
+      on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - switcheroo-control
+
+  - name: Clean up kernels except for the latest 3
+    # https://wiki.gentoo.org/wiki/Kernel/Removal
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - eclean-kernel
+      - -n
+      - 3
+
+  - name: Inspect whether systemd-boot is installed to EFI
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - bootctl
+      - is-installed
+      - --esp-path=/efi
+    ignore_errors: true
+    register: bootctl_status
+
+  - name: >-
+      {{ bootctl_action | title }} systemd-boot in EFI
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - bootctl
+      - >-
+        {{ bootctl_action }}
+      - --esp-path=/efi
+    failed_when:
+    - bootctl_efi_status is failed
+    - >-
+      'Skipping' not in bootctl_efi_status.stderr
+    register: bootctl_efi_status
+    vars:
+      bootctl_action: >-
+        {{ 'update' if bootctl_status is succeeded else 'install' }}
+
+  - name: Put BOOTX64 shim into the EFI partition
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      dest: >-
+        /efi/EFI/BOOT/BOOTX64.EFI
+      remote_src: true
+      src: >-
+        /usr/share/shim/BOOTX64.EFI
+  - name: Put mmx64 shim into the EFI partition
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      dest: >-
+        /efi/EFI/BOOT/mmx64.efi
+      remote_src: true
+      src: >-
+        /usr/share/shim/mmx64.efi
+  - name: Put grubx64 shim into the EFI partition
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.copy:
+      dest: >-
+        /efi/EFI/BOOT/grubx64.efi
+      remote_src: true
+      src: >-
+        /efi/EFI/systemd/systemd-bootx64.efi
+
+  - name: Select the first kernel available
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - eselect
+      - kernel
+      - set
+      - 1
+
+  - name: Read the current kernel details
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - eselect
+      - kernel
+      - show
+    register: current_kernel_info
+
+  - name: Rebuild kernel modules
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - >-
+        @module-rebuild
+
+  - name: Rebuild initramfs
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - emerge
+      - --config
+      - >-
+        sys-kernel/gentoo-kernel-bin:{{
+          current_kernel_info.stdout_lines[-1].split('/linux-')[-1].split('-')
+          | first
+        }}
+
+  - name: >-
+      Enroll the prebuilt binary kernel's signing key certificate to secure
+      boot (running `mokutil --import {{ x509_der_cert_path }}`
+      in chroot)
+    # https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#shim
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - mokutil
+      - --ignore-keyring
+      - --import
+      - >-
+        {{ x509_der_cert_path }}
+      stdin: |-
+        {{ luks_password }}
+        {{ luks_password }}
+    changed_when: >-
+      'SKIP: ' ~ x509_der_cert_path ~ ' is already enrolled'
+      not in mokutil_import_cmd.stdout
+    loop:
+      - /usr/src/linux/certs/signing_key.x509
+      - >-
+        {{ secure_boot_signing_cert_der_path }}
+    loop_control:
+      loop_var: x509_der_cert_path
+    no_log: true
+    register: mokutil_import_cmd
+
+  - name: >-
+      SSH into the target machine and invoke
+      `sudo chroot {{ gentoo_prefix }} systemd-tty-ask-password-agent`
+      several times to type in the password `systemd-cryptenroll` is
+      going to ask for
+    ansible.builtin.debug:
+      msg: >-
+        SSH into the target machine and invoke
+        `sudo chroot {{ gentoo_prefix }} systemd-tty-ask-password-agent`
+        several times to type in the password `systemd-cryptenroll` is
+        going to ask for
+
+  - name: Enroll TPM2 to unseal LUKS volumes
+    # https://discussion.fedoraproject.org/t/biometric-at-powerup-to-unlock-luks/83534/3
+    # https://www.reddit.com/r/archlinux/comments/1wykdmb/psa_if_youre_using_a_tpm2_luks_unlock_with_dracut/
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemd-cryptenroll
+      - --tpm2-device=auto
+      - >-  # https://community.frame.work/t/guide-setup-tpm2-autodecrypt/39005/9
+        --tpm2-pcrs=1+5+7+8+11+12+14
+      - --tpm2-with-pin=true
+      - --wipe-slot=tpm2
+      - >-
+        {{ device_path }}
+      stdin: >-
+        {{ luks_password }}
+    changed_when: >-
+      'New TPM2 token enrolled as key slot'
+      in luks_tpm2_enroll_cmd.stderr
+    loop:
+    - >-
+      {{ first_nvme_disk_luks_dev }}
+    - >-
+      {{ second_nvme_disk_luks_dev }}
+    loop_control:
+      loop_var: device_path
+    register: luks_tpm2_enroll_cmd
+
+  - name: Add a LUKS recovery key
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemd-cryptenroll
+      - --recovery-key
+      - --wipe-slot=recovery
+      - >-
+        {{ device_path }}
+      stdin: >-
+        {{ luks_password }}
+    changed_when: >-
+      'A secret recovery key has been generated for this volume'
+      in luks_recovery_key_gen_cmd.stderr
+    loop:
+    - >-
+      {{ first_nvme_disk_luks_dev }}
+    - >-
+      {{ second_nvme_disk_luks_dev }}
+    loop_control:
+      loop_var: device_path
+    register: luks_recovery_key_gen_cmd
+
+  - name: >-
+      Recovery keys:
+      {{
+        luks_recovery_key_gen_cmd.results
+        | map(attribute='stdout')
+        | map('trim')
+        | list
+        | join(', ')
+      }}
+    ansible.builtin.debug:
+      msg: >-
+        Recovery keys:
+        {{
+          luks_recovery_key_gen_cmd.results
+          | map(attribute='stdout')
+          | map('trim')
+          | list
+          | join(', ')
+        }}
+
+  # TODO: Consider moving XDG cache to tmpfs
+  # https://wiki.gentoo.org/wiki/SSD#XDG_cache_on_tmpfs
+
+  # TODO: Explore using Clevis+Tang
+  # https://wiki.gentoo.org/wiki/Trusted_Platform_Module/LUKS
+
+...
