@@ -2548,8 +2548,7 @@
     ansible.builtin.command:
       argv:
       - eclean-kernel
-      - -n
-      - 3
+      - --num=3
 
   - name: Inspect whether systemd-boot is installed to EFI
     connection: webknjaz.stdlib.chroot_over_ssh
