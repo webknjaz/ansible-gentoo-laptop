@@ -2679,9 +2679,11 @@
     ansible.builtin.debug:
       msg: >-
         SSH into the target machine and invoke
-        `sudo chroot {{ gentoo_prefix }} systemd-tty-ask-password-agent`
+        `sudo chroot {{ gentoo_prefix }} systemd-tty-ask-password-agent --watch`
         several times to type in the password `systemd-cryptenroll` is
         going to ask for
+
+  - ansible.builtin.pause:
 
   - name: Enroll TPM2 to unseal LUKS volumes
     # https://discussion.fedoraproject.org/t/biometric-at-powerup-to-unlock-luks/83534/3
