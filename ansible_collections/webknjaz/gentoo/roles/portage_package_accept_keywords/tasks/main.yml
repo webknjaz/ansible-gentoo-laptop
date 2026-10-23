@@ -1,6 +1,6 @@
 ---
 
-- name: Ensure  there's a config folder for accepted keywords
+- name: Ensure there's a config folder for accepted keywords
   ansible.builtin.file:
     path: >-
       {{ gentoo_prefix }}/etc/portage/package.accept_keywords
