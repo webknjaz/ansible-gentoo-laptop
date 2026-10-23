@@ -2549,6 +2549,8 @@
       argv:
       - eclean-kernel
       - --num=3
+    # will likely fail under chroot and might not work with /efi and no /boot:
+    ignore_errors: true
 
   - name: Inspect whether systemd-boot is installed to EFI
     connection: webknjaz.stdlib.chroot_over_ssh
@@ -2708,6 +2710,7 @@
     loop_control:
       loop_var: device_path
     register: luks_tpm2_enroll_cmd
+    ignore_errors: true  # this might fail and should be repeated post-reboot
 
   - name: Add a LUKS recovery key
     connection: webknjaz.stdlib.chroot_over_ssh
