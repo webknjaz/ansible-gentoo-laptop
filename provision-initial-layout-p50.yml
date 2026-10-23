@@ -1443,8 +1443,8 @@
   - name: Configure crypttab
     ansible.builtin.copy:
       content: |
-        decrypted-luks-0 UUID={{ first_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14+15,discard
-        decrypted-luks-1 UUID={{ second_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14+15,discard
+        decrypted-luks-0 UUID={{ first_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14,discard
+        decrypted-luks-1 UUID={{ second_luks_dev_uuid }} none luks,fido2-device=auto,tpm2-device=auto,tpm2-pcrs=1+5+7+8+11+12+14,discard
       dest: >-
         {{ gentoo_prefix }}/etc/crypttab
 
