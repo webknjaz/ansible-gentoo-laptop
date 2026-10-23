@@ -2682,8 +2682,10 @@
         `sudo chroot {{ gentoo_prefix }} systemd-tty-ask-password-agent --watch`
         several times to type in the password `systemd-cryptenroll` is
         going to ask for
+    when: false  # TPM2 handling seems to be broken in initramfs @ systemd on P50
 
   - ansible.builtin.pause:
+    when: false  # TPM2 handling seems to be broken in initramfs @ systemd on P50
 
   - name: Enroll TPM2 to unseal LUKS volumes
     # https://discussion.fedoraproject.org/t/biometric-at-powerup-to-unlock-luks/83534/3
@@ -2713,6 +2715,7 @@
       loop_var: device_path
     register: luks_tpm2_enroll_cmd
     ignore_errors: true  # this might fail and should be repeated post-reboot
+    when: false  # TPM2 handling seems to be broken in initramfs @ systemd on P50
 
   - name: Add a LUKS recovery key
     connection: webknjaz.stdlib.chroot_over_ssh
