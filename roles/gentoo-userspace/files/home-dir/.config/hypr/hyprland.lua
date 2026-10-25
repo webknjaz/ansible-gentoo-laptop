@@ -93,6 +93,20 @@ hl.monitor({
 -- })
 
 
+-----------------------
+---- HiDPI XWayland ---
+-----------------------
+
+-- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/XWayland/
+
+-- unscale XWayland
+hl.config({
+  xwayland = {
+    force_zero_scaling = true
+  }
+})
+
+
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
