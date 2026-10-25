@@ -2317,7 +2317,7 @@
   - name: >-
       SSH into the target machine now and invoke
       `sudo chroot {{ gentoo_prefix }} passwd {{ os_user.name }}`
-      and `sudo chroot {{ gentoo_prefix }} passwd {{ os_user.name }}`
+      and then `sudo chroot {{ gentoo_prefix }} passwd root`
     ansible.builtin.debug:
       msg: >-
         SSH into the target machine now and invoke
