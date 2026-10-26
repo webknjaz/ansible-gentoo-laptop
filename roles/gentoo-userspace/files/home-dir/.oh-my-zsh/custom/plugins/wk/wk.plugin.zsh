@@ -11,6 +11,8 @@ export ANSIBLE_TEST_PREFER_PODMAN=1
 #     export PATH="${PATH}":"${COMPUTED_PIPX_BIN_DIR}"
 # fi
 
+export PATH="${HOME}/.local/bin":"${PATH}"
+
 export PATH="${HOME}/bin":"${PATH}"
 
 export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
