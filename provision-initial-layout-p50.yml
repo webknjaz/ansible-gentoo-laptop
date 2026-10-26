@@ -2406,6 +2406,14 @@
       - preset-all
       # - --preset-mode=enable-only
 
+  - name: Enable spacenavd on startup
+    connection: webknjaz.stdlib.chroot_over_ssh
+    ansible.builtin.command:
+      argv:
+      - systemctl
+      - enable
+      - spacenavd
+
   - name: Enable Network Manager on startup
     connection: webknjaz.stdlib.chroot_over_ssh
     ansible.builtin.command:
