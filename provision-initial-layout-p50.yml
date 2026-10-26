@@ -854,6 +854,9 @@
     - name: x11-terms/kitty  # favorite terminal emulator!
       install_stage: gui_userspace_apps
 
+    - name: >-  # 3Dconnecxion SpaceMouse Wireless Bluetooth config editor
+        x11-misc/spnavcfg
+      install_stage: gui_cad_3d_modeling_printing_apps
     - name: >-  # transitive build dep of FreeCAD+PrusaSlicer through OpenCascade
         dev-lang/tk
       # Ref: https://bugs.gentoo.org/974715
@@ -872,6 +875,7 @@
         - addonmgr  # Addon Manager
         - assembly  # Assembly Workbench
         - cam  # CAM Workbench
+        - spacenav  # 3Dconnecxion SpaceMouse support
     - name: '=media-gfx/freecad-1.0.0-r5::gentoo'
       accept_keywords:
         header_comment: |-
