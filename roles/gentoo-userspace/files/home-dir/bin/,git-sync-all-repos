@@ -12,4 +12,5 @@ cd ~/src/github/webknjaz/ansible-gentoo-laptop
 
 ansible-playbook configure-userspace.yml \
   -e ansible_python_interpreter="$(pyenv which python)" \
-  --start-at='Sync source code repos'
+  --tags=untagged,git-repo-checkouts-structure \
+  --start-at='Compute Git SSH opts for remote src layout provisioning'
