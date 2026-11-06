@@ -523,6 +523,8 @@
       install_stage: network_stack_tools
     - name: net-analyzer/wireshark  # spying on own network traffic
       install_stage: network_stack_tools
+    - name: net-dns/avahi  # mDNS / DNS service discovery
+      install_stage: network_stack_tools
     - name: net-misc/dropbear  # `dropbearconvert` / `dropbearkey` for OpenWRT compat  <-- own image builder scripts
       install_stage: network_stack_tools
     - name: net-misc/networkmanager
